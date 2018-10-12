@@ -1,0 +1,40 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Dataset",
+  "@id": "https://doi.org/10.5285/d901af69-7e44-470b-8967-e6ae760733c6",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "doi",
+    "value": "https://doi.org/10.5285/d901af69-7e44-470b-8967-e6ae760733c6"
+  },
+  "additionalType": "Magnetospheric Data",
+  "name": "Data supporting the evaluation if a worst case for a severe space weather event driven by a fast solar wind stream",
+  "author": {
+    "@type": "Person",
+    "@id": "https://orcid.org/0000-0002-0412-6407",
+    "name": "Horne, Richard",
+    "givenName": "Richard",
+    "familyName": "Horne"
+  },
+  "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3",
+  "keywords": "\"EARTH SCIENCE\",\"SUN-EARTH INTERACTIONS\",\"IONOSPHERE/MAGNETOSPHERE DYNAMICS\", \"EARTH SCIENCE\",\"SUN-EARTH INTERACTIONS\",\"IONOSPHERE/MAGNETOSPHERE DYNAMICS\",\"GEOMAGNETIC FORECASTS\"",
+  "inLanguage": "en",
+  "contentSize": [
+    "23 files",
+    "18.7 MB"
+  ],
+  "datePublished": "2018",
+  "schemaVersion": "http://datacite.org/schema/kernel-4",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Polar Data Centre, Natural Environment Research Council, UK Research & Innovation"
+  },
+  "funding": {
+    "@type": "Award",
+    "name": "(:tba)",
+    "funder": {
+      "@type": "Organization",
+      "name": "(:tba)"
+    }
+  }
+}

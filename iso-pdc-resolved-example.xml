@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmx http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas/srv/1.0/srv.xsd">
+  <gmd:fileIdentifier>
+		<gco:CharacterString>GB/NERC/BAS/PDC/01103</gco:CharacterString>
+	</gmd:fileIdentifier>
+  <gmd:language>
+    <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">eng</gmd:LanguageCode>
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+    <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+  </gmd:hierarchyLevel>
+  <gmd:hierarchyLevelName>
+    <gco:CharacterString>dataset</gco:CharacterString>
+  </gmd:hierarchyLevelName>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:organisationName>
+        <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+      </gmd:organisationName>
+      <gmd:positionName>
+        <gco:CharacterString>Data Manager</gco:CharacterString>
+      </gmd:positionName>
+      <gmd:contactInfo>
+        <gmd:CI_Contact>
+          <gmd:phone>
+            <gmd:CI_Telephone>
+              <gmd:voice>
+                <gco:CharacterString>+44 (0)1223 221400</gco:CharacterString>
+              </gmd:voice>
+            </gmd:CI_Telephone>
+          </gmd:phone>
+          <gmd:address>
+            <gmd:CI_Address>
+              <gmd:deliveryPoint>
+                <gco:CharacterString>British Antarctic Survey, High Cross, Madingely Road</gco:CharacterString>
+              </gmd:deliveryPoint>
+              <gmd:city>
+                <gco:CharacterString>Cambridge</gco:CharacterString>
+              </gmd:city>
+              <gmd:administrativeArea>
+                <gco:CharacterString>Cambridgeshire</gco:CharacterString>
+              </gmd:administrativeArea>
+              <gmd:postalCode>
+                <gco:CharacterString>CB3 0ET</gco:CharacterString>
+              </gmd:postalCode>
+              <gmd:country>
+                <gco:CharacterString>United Kingdom</gco:CharacterString>
+              </gmd:country>
+              <gmd:electronicMailAddress>
+                <gco:CharacterString>polardatacentre@bas.ac.uk</gco:CharacterString>
+              </gmd:electronicMailAddress>
+            </gmd:CI_Address>
+          </gmd:address>
+          <gmd:onlineResource>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre/</gmd:URL>
+              </gmd:linkage>
+            </gmd:CI_OnlineResource>
+          </gmd:onlineResource>
+        </gmd:CI_Contact>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+    <gco:DateTime>2018-10-08T14:40:44Z</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+    <gco:CharacterString>ISO 19115 (UK GEMINI)</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+    <gco:CharacterString>1.0 (2.3)</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+</gmd:MD_Metadata>
+
+<!-- Changes -->
+<!-- 
+1. [/(Root)] XML declaration and encoding type specified, required by Gemini [[1] 2.2.1]
+2. [/gmd:MD_Metadata] 'srv' XML namespace attribute added, required by Gemini [[1] 2.2.2]
+3. [/gmd:MD_Metadata] optional 'xsi' XML namespace attribute added
+4. [/gmd:MD_Metadata] XML namespaces re-ordered
+5. [/gmd:MD_Metadata] schama location attribute added pointing to GMX schema XSD
+6. [/gmd:LanguageCode] element value changed from 'English' to 'eng', which matches CodeList value and recommended by
+   Gemini [3]
+7. [/gmd:characterSet] element added, recommended by NOAA [4]
+8. [/gmd:hierarchyLevelName] element added, required by Gemini [[1] 2.3.1]
+9. [/gmd:MD_Metadata/../gmd:contact/../gmd:organisationName] element value changed from 'British Antarctic Survey' to 
+   'UK Polar Data Centre'
+10. [/gmd:MD_Metadata/../gmd:contact/../gmd:PositionName] element added, as recommended, but not required, 
+    by Gemini [[1] 2.2.8]
+11. [/gmd:MD_Metadata/../gmd:contact/../gmd:Address] 'deliveryPoint', 'city', 'administrativeArea', 'postalCode', 
+    'country' elements added, as recommended, but not required, by Gemini [[1] 2.2.8]
+12. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] element value changed from 'pdc@bas.ac.uk' to 
+    'polardatacentre@bas.ac.uk'
+13. [/gmd:MD_Metadata/../gmd:contact/../gmd:onlineResource] element added linked to UK-PDC page on the BAS website 
+14. [/gmd:dateStamp] element changed from date to dateTime with UTC timezone
+15. [gmd:metadataStandardName] element value changed to reflect more generic nature
+16. [gmd:metadataStandardVersion] element value changed to reflect more generic nature
+
+[1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
+[2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
+[3] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#33
+[4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Character_Set:
+-->
+
+<!-- For discussion -->
+<!--
+1. [gmd:MD_Metadata] Gemini doesn't require the 'schemaLocation' attribute to be set, should/do we? [[1] 2.2.2]
+2. [gmd:fileIdentifier] should this change to the scheme recommended by NOAA [2] [3]?
+2.1.1. E.g. 'uk.ac.bas.class:PDC-01103' or 
+2.1.2. 'https://isni.ringgold.com/api/stable/institution/0000000405983800:PDC-01103' using ISNI (Ringgold) or
+2.1.3. 'https://search.crossref.org/funding?q=501100007849' CrossRef funder database
+2.2. should this change to using UUIDs recommended by Gemini [[1] 2.2.6] and by ISO [4]
+3. [/gmd:MD_Metadata/../gmd:contact/../gmd:organisationName] what should our name be? [British Antarctic Survey,
+   Polar Data Centre, UK Polar Data Centre]?
+4. [/gmd:MD_Metadata/../gmd:contact/../gmd:PositionName] would this change per-record? Value based on Gemini example
+4.1. should this be (org) 'Naturual Environment Research Council' (pos) 'Polar Data Centre'
+4.2. should this be (org) 'British Antarctic Survey' (pos) 'Polar Data Centre'
+4.3. should this be (org) 'UK Polar Data Centre' (pos) '(Environmental) Data Centre'
+4.4. does the (org) need to be a real org - i.e. BAS has an ISNI, the PDC doesn't
+4.5. worth considering other providers, e.g.
+4.5.1. (org) 'British Antarctic Survey' (pos) 'Polar Data Centre'
+4.5.2. (org) 'British Antarctic Survey' (pos) 'Mapping and Geographic Information Centre'
+4.5.3. (org) 'British Antarctic Survey' (pos) 'Archives Service'
+5. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] check this is now our address
+
+[1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
+[2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
+[3] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#File_Identifier:
+[4] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#45 - 
+    "ISO AP 1.0 recommends that it is a UUID"
+-->
+
+<!-- Notes -->
+<!-- 
+1. [/gmd:dateStamp] "The ISO definition of this field is "date that the metadata was created". Common usage seems to be 
+   evolving towards "date that the metadata was created or updated" because it seems reasonable that, once the metadata 
+   have been updated, the date of that update is more interesting than the original creation date. Also, the update 
+   actually creates the current metadata, so this usage seems consistent with the ISO definition." [1]
+
+[1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
+-->
+
+<!-- TODO -->
+<!-- 
+1. include BGS example
+2. review contents of NERC Catalogue (required keywords)
+3. review XML element order [1]
+
+[1] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
+-->
