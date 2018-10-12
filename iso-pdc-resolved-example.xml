@@ -129,12 +129,14 @@
 4.5.2. (org) 'British Antarctic Survey' (pos) 'Mapping and Geographic Information Centre'
 4.5.3. (org) 'British Antarctic Survey' (pos) 'Archives Service'
 5. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] check this is now our address
+6. [/gmd:MD_Metadata/dataSetURI] element removed due to [5] which recommends two alternatives
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
 [3] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#File_Identifier:
 [4] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#45 - 
     "ISO AP 1.0 recommends that it is a UUID"
+[5] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_FAQ#What_is_the_Dataset_URI.3F
 -->
 
 <!-- Notes -->

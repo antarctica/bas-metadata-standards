@@ -45,10 +45,10 @@
     <gmd:metadataStandardVersion>
         <gco:CharacterString>1.0</gco:CharacterString>
     </gmd:metadataStandardVersion>
-    <!-- Not reviewed below -->
     <gmd:dataSetURI>
         <gco:CharacterString>http://www.antarctica.ac.uk/dms/metadata.php?id=GB/NERC/BAS/PDC/01103</gco:CharacterString>
     </gmd:dataSetURI>
+    <!-- Not reviewed below -->
     <gmd:referenceSystemInfo>
         <gmd:MD_ReferenceSystem>
             <gmd:referenceSystemIdentifier>
