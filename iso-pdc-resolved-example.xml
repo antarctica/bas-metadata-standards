@@ -145,8 +145,10 @@
    evolving towards "date that the metadata was created or updated" because it seems reasonable that, once the metadata 
    have been updated, the date of that update is more interesting than the original creation date. Also, the update 
    actually creates the current metadata, so this usage seems consistent with the ISO definition." [1]
+2. We are using the 2007 versions of the ISO 19139 schemas as defined by the Inspire Technical Guidance for ISO 19115 [2]
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
+[2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
 -->
 
 <!-- TODO -->
