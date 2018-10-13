@@ -138,10 +138,10 @@
 3. [/gmd:MD_Metadata] optional 'xsi' XML namespace attribute added
 4. [/gmd:MD_Metadata] XML namespaces re-ordered
 5. [/gmd:MD_Metadata] schama location attribute added pointing to GMX schema XSD
-6. [/gmd:LanguageCode] element value changed from 'English' to 'eng', which matches CodeList value and recommended by
-   Gemini [3]
-7. [/gmd:characterSet] element added, recommended by NOAA [4]
-8. [/gmd:hierarchyLevelName] element added, required by Gemini [[1] 2.3.1]
+6. [/gmd:MD_Metadata/gmd:LanguageCode] element value changed from 'English' to 'eng', which matches CodeList value and 
+   recommended by Gemini [3]
+7. [/gmd:MD_Metadata/gmd:characterSet] element added, recommended by NOAA [4]
+8. [/gmd:MD_Metadata/gmd:hierarchyLevelName] element added, required by Gemini [[1] 2.3.1]
 9. [/gmd:MD_Metadata/../gmd:contact/../gmd:organisationName] element value changed from 'British Antarctic Survey' to 
    'UK Polar Data Centre'
 10. [/gmd:MD_Metadata/../gmd:contact/../gmd:PositionName] element added, as recommended, but not required, 
@@ -151,13 +151,13 @@
 12. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] element value changed from 'pdc@bas.ac.uk' to 
     'polardatacentre@bas.ac.uk'
 13. [/gmd:MD_Metadata/../gmd:contact/../gmd:onlineResource] element added linked to UK-PDC page on the BAS website 
-14. [/gmd:dateStamp] element changed from date to dateTime with UTC timezone
-15. [gmd:metadataStandardName] element value changed to use value used by Gemini
-16. [gmd:metadataStandardVersion] element value changed to use value used by Gemini
+14. [/gmd:MD_Metadata/gmd:dateStamp] element changed from date to dateTime with UTC timezone
+15. [/gmd:MD_Metadata/gmd:metadataStandardName] element value changed to use value used by Gemini
+16. [/gmd:MD_Metadata/gmd:metadataStandardVersion] element value changed to use value used by Gemini
 17. [/gmd:MD_Metadata/dataSetURI] element removed due to [5] which recommends two alternatives
-18. [/gmd:referenceSystemInfo/../gmd:authority] element added because we use a gmd:code ('4326' AKA 'WGS84') not in 
-    Annex D.4 (Default Coordinate Reference Systems) in the Inspire ISO-19139 technical guidance ([6]), Gemini requires 
-    a well known register that defines the reference system to be included [7]
+18. [/gmd:MD_Metadata/gmd:referenceSystemInfo/../gmd:authority] element added because we use a gmd:code ('4326' AKA 
+    'WGS84') not in Annex D.4 (Default Coordinate Reference Systems) in the Inspire ISO-19139 technical guidance ([6]), 
+    Gemini requires a well known register that defines the reference system to be included [7]
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -189,7 +189,7 @@
 4.5.2. (org) 'British Antarctic Survey' (pos) 'Mapping and Geographic Information Centre'
 4.5.3. (org) 'British Antarctic Survey' (pos) 'Archives Service'
 5. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] check this is now our address
-6. [/gmd:referenceSystemInfo] presumably this will vary and use non-WGS84 values (for PDC metadata)
+6. [/gmd:referenceSystemInfo] presumably this will vary and non-WGS84 values could be used? (for PDC metadata)
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
@@ -223,6 +223,13 @@
 2. review contents of NERC Catalogue (required keywords)
 3. review XML element order [1]
 4. map 'gco:nilReason' options to datacite
+5. summarise failures against NERC metadata standards
+6. when generating a boilerplate record use '<gmd:citation gco:nilReason="template"/>' convention
+7. when generating documentation, see outline XML in section starting 'The merge template specifies a Level 4' [2]
+8. send to Paul [3]
+9. check how we referenced DOIs in existing metadata to see how different new recommendations are
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
+[2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
+[3] https://geo-ide.noaa.gov/wiki/index.php?title=NetCDF_Attribute_Convention_for_Dataset_Discovery
 -->
