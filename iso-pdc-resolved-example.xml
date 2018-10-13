@@ -64,7 +64,7 @@
         </gmd:CI_Contact>
       </gmd:contactInfo>
       <gmd:role>
-        <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+        <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
       </gmd:role>
     </gmd:CI_ResponsibleParty>
   </gmd:contact>
@@ -146,6 +146,8 @@
    have been updated, the date of that update is more interesting than the original creation date. Also, the update 
    actually creates the current metadata, so this usage seems consistent with the ISO definition." [1]
 2. We are using the 2007 versions of the ISO 19139 schemas as defined by the Inspire Technical Guidance for ISO 19115 [2]
+3. All references to CodeList references from non-2007 versions of ISO 19139 have been updated to use the 2007 version,
+   including those taken from other sources (i.e. examples from others have been updated where necessary)
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
