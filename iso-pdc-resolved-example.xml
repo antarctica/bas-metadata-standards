@@ -372,6 +372,13 @@
           </gmd:role>
         </gmd:CI_ResponsibleParty>
       </gmd:pointOfContact>
+      <gmd:resourceMaintenance>
+        <gmd:MD_MaintenanceInformation>
+          <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
+          </gmd:maintenanceAndUpdateFrequency>
+        </gmd:MD_MaintenanceInformation>
+      </gmd:resourceMaintenance>
       <gmd:resourceConstraints>
         <gmd:MD_LegalConstraints>
           <gmd:otherConstraints>
@@ -432,6 +439,7 @@
     to 'distributor' as per Gemini requirement [11] and reference to NOAA guidance [14] [15]
 26. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] additional organisation instance added with role of
     'pointOfContact' with reference to NOAA guidance [14] [15]
+27. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_MaintenanceFrequencyCode] value changed from 'unknown' to 'asNeeded'
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -538,8 +546,10 @@
 7. when generating documentation, see outline XML in section starting 'The merge template specifies a Level 4' [2]
 8. send to Paul [3]
 9. check how we referenced DOIs in existing metadata to see how different new recommendations are
+10. look into MD_ProgressCode [4]
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
 [3] https://geo-ide.noaa.gov/wiki/index.php?title=NetCDF_Attribute_Convention_for_Dataset_Discovery
+[4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
 -->

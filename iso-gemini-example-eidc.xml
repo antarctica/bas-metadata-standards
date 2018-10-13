@@ -306,7 +306,6 @@
                     </gmd:role>
                 </gmd:CI_ResponsibleParty>
             </gmd:pointOfContact>
-            <!-- Not reviewed below -->
             <gmd:resourceMaintenance>
                 <gmd:MD_MaintenanceInformation>
                     <gmd:maintenanceAndUpdateFrequency>
@@ -314,6 +313,7 @@
                     </gmd:maintenanceAndUpdateFrequency>
                 </gmd:MD_MaintenanceInformation>
             </gmd:resourceMaintenance>
+            <!-- Not reviewed below -->
             <gmd:descriptiveKeywords>
                 <gmd:MD_Keywords>
                     <gmd:keyword>
