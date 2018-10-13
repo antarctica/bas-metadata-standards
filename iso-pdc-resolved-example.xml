@@ -100,13 +100,15 @@
     'polardatacentre@bas.ac.uk'
 13. [/gmd:MD_Metadata/../gmd:contact/../gmd:onlineResource] element added linked to UK-PDC page on the BAS website 
 14. [/gmd:dateStamp] element changed from date to dateTime with UTC timezone
-15. [gmd:metadataStandardName] element value changed to reflect more generic nature
-16. [gmd:metadataStandardVersion] element value changed to reflect more generic nature
+15. [gmd:metadataStandardName] element value changed to use value used by Gemini
+16. [gmd:metadataStandardVersion] element value changed to use value used by Gemini
+17. [/gmd:MD_Metadata/dataSetURI] element removed due to [5] which recommends two alternatives
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
 [3] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#33
 [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Character_Set:
+[5] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_FAQ#What_is_the_Dataset_URI.3F
 -->
 
 <!-- For discussion -->
@@ -119,6 +121,7 @@
 2.2. should this change to using UUIDs recommended by Gemini [[1] 2.2.6] and by ISO [4]
 3. [/gmd:MD_Metadata/../gmd:contact/../gmd:organisationName] what should our name be? [British Antarctic Survey,
    Polar Data Centre, UK Polar Data Centre]?
+3.1. The Inspire technical guidance recommends a full name is used without abbreivations [[5] TG Recommendation C.2]
 4. [/gmd:MD_Metadata/../gmd:contact/../gmd:PositionName] would this change per-record? Value based on Gemini example
 4.1. should this be (org) 'Naturual Environment Research Council' (pos) 'Polar Data Centre'
 4.2. should this be (org) 'British Antarctic Survey' (pos) 'Polar Data Centre'
@@ -129,14 +132,14 @@
 4.5.2. (org) 'British Antarctic Survey' (pos) 'Mapping and Geographic Information Centre'
 4.5.3. (org) 'British Antarctic Survey' (pos) 'Archives Service'
 5. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] check this is now our address
-6. [/gmd:MD_Metadata/dataSetURI] element removed due to [5] which recommends two alternatives
+6. [/gmd:referenceSystemInfo] presumably this will vary and use non-WGS84 values (for PDC metadata)
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
 [3] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#File_Identifier:
 [4] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#45 - 
     "ISO AP 1.0 recommends that it is a UUID"
-[5] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_FAQ#What_is_the_Dataset_URI.3F
+[5] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 -->
 
 <!-- Notes -->
@@ -149,6 +152,8 @@
 3. All references to CodeList references from non-2007 versions of ISO 19139 have been updated to use the 2007 version,
    including those taken from other sources (i.e. examples from others have been updated where necessary)
 4. [/gmd:MD_Metadata/../gmd:contact/../gmd:CI_roleCode] 'pointOfContact' value required by Inspire [[3] TG Requirement C.6]
+3. [/gmd:MD_Metadata/gmd:hierarchyLevel] If the value is not 'service', 'dataset' or 'series', the metadata set is out 
+   of scope of Inspire [[2]- '1.2 INSPIREspecificconstraints(SC)']
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
@@ -160,6 +165,7 @@
 1. include BGS example
 2. review contents of NERC Catalogue (required keywords)
 3. review XML element order [1]
+4. map 'gco:nilReason' options to datacite
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
 -->
