@@ -187,7 +187,6 @@
                     </gmd:maintenanceAndUpdateFrequency>
                 </gmd:MD_MaintenanceInformation>
             </gmd:resourceMaintenance>
-            <!-- Not reviewed below -->
             <gmd:descriptiveKeywords>
                 <gmd:MD_Keywords>
                     <gmd:keyword>
@@ -288,6 +287,7 @@
                     </gmd:thesaurusName>
                 </gmd:MD_Keywords>
             </gmd:descriptiveKeywords>
+            <!-- Not reviewed below -->
             <gmd:resourceConstraints>
                 <gmd:MD_Constraints>
                     <gmd:useLimitation>
