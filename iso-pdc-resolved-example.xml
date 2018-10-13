@@ -165,6 +165,206 @@
       <gmd:abstract>
         <gco:CharacterString>The dataset contains oxygen stable isotope and salinity measurements from water samples collected from sea ice and meltwater pools in April 2016 in the region of South Georgia, Signy and deep within the Weddell Sea pack ice during the marine survey JR15006. &#13; The d18O and salinity measurements from sea ice and meltwater sources complement the same analysis from CTD casts and underway non-toxic flow water system on the RRS James Clark Ross during the JR15006. Establishing d18O and salinity values for saline water and oceanic freshwater components can be used to identify sources and changes of freshwater contributions to the ocean.&#13;</gco:CharacterString>
       </gmd:abstract>
+      <gmd:pointOfContact>
+        <gmd:citedResponsibleParty>
+          <gmd:CI_ResponsibleParty>
+            <gmd:individualName>
+              <gmx:Anchor xlink:href="https://orcid.org/0000-0002-7342-7756" xlink:title="ORCID record" xlink:actuate="onRequest">Michael Meredith</gmx:Anchor>
+            </gmd:individualName>
+            <gmd:organisationName>
+              <gco:CharacterString>British Antarctic Survey</gco:CharacterString>
+            </gmd:organisationName>
+            <gmd:contactInfo>
+              <gmd:CI_Contact>
+                <gmd:address>
+                  <gmd:CI_Address>
+                    <gmd:electronicMailAddress>
+                      <gco:CharacterString>mmm@bas.ac.uk</gco:CharacterString>
+                    </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+                </gmd:address>
+                <gmd:onlineResource>
+                  <gmd:CI_OnlineResource>
+                    <gmd:linkage>
+                      <gmd:URL>https://www.bas.ac.uk/profile/mmm</gmd:URL>
+                    </gmd:linkage>
+                  </gmd:CI_OnlineResource>
+                </gmd:onlineResource>
+                <gmd:onlineResource>
+                  <gmd:CI_OnlineResource>
+                    <gmd:linkage>
+                      <gmd:URL>http://orcid.org/0000-0002-7342-7756</gmd:URL>
+                    </gmd:linkage>
+                    <gmd:name>
+                      <gco:CharacterString>ORCID record</gco:CharacterString>
+                    </gmd:name>
+                    <gmd:description>
+                      <gco:CharacterString>ORCID is an open, non-profit, community-driven effort to create and maintain a registry of unique researcher identifiers and a transparent method of linking research activities and outputs to these identifiers.</gco:CharacterString>
+                    </gmd:description>
+                  </gmd:CI_OnlineResource>
+                </gmd:onlineResource>
+              </gmd:CI_Contact>
+            </gmd:contactInfo>
+            <gmd:role>
+              <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+            </gmd:role>
+          </gmd:CI_ResponsibleParty>
+        </gmd:citedResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:pointOfContact>
+        <gmd:citedResponsibleParty>
+          <gmd:CI_ResponsibleParty>
+            <gmd:individualName>
+              <gco:CharacterString>Carol Arrowsmith</gco:CharacterString>
+            </gmd:individualName>
+            <gmd:organisationName>
+              <gco:CharacterString>British Geological Survey</gco:CharacterString>
+            </gmd:organisationName>
+            <gmd:contactInfo>
+              <gmd:CI_Contact>
+                <gmd:address>
+                  <gmd:CI_Address>
+                    <gmd:electronicMailAddress gco:nilReason="unknown"/>
+                  </gmd:CI_Address>
+                </gmd:address>
+              </gmd:CI_Contact>
+            </gmd:contactInfo>
+            <gmd:role>
+              <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+            </gmd:role>
+          </gmd:CI_ResponsibleParty>
+        </gmd:citedResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:pointOfContact>
+        <gmd:citedResponsibleParty>
+          <gmd:CI_ResponsibleParty>
+            <gmd:individualName>
+              <gco:CharacterString>Melanie Leng</gco:CharacterString>
+            </gmd:individualName>
+            <gmd:organisationName>
+              <gco:CharacterString>British Geological Survey</gco:CharacterString>
+            </gmd:organisationName>
+            <gmd:contactInfo>
+              <gmd:CI_Contact>
+                <gmd:address>
+                  <gmd:CI_Address>
+                    <gmd:electronicMailAddress gco:nilReason="unknown"/>
+                  </gmd:CI_Address>
+                </gmd:address>
+              </gmd:CI_Contact>
+            </gmd:contactInfo>
+            <gmd:role>
+              <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+            </gmd:role>
+          </gmd:CI_ResponsibleParty>
+        </gmd:citedResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:organisationName>
+            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:positionName>
+            <gco:CharacterString>Data Manager</gco:CharacterString>
+          </gmd:positionName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone>
+                <gmd:CI_Telephone>
+                  <gmd:voice>
+                    <gco:CharacterString>+44 (0)1223 221400</gco:CharacterString>
+                  </gmd:voice>
+                </gmd:CI_Telephone>
+              </gmd:phone>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint>
+                    <gco:CharacterString>British Antarctic Survey, High Cross, Madingely Road</gco:CharacterString>
+                  </gmd:deliveryPoint>
+                  <gmd:city>
+                    <gco:CharacterString>Cambridge</gco:CharacterString>
+                  </gmd:city>
+                  <gmd:administrativeArea>
+                    <gco:CharacterString>Cambridgeshire</gco:CharacterString>
+                  </gmd:administrativeArea>
+                  <gmd:postalCode>
+                    <gco:CharacterString>CB3 0ET</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country>
+                    <gco:CharacterString>United Kingdom</gco:CharacterString>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>polardatacentre@bas.ac.uk</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre/</gmd:URL>
+                  </gmd:linkage>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="distributor">distributor</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:organisationName>
+            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:positionName>
+            <gco:CharacterString>Data Manager</gco:CharacterString>
+          </gmd:positionName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone>
+                <gmd:CI_Telephone>
+                  <gmd:voice>
+                    <gco:CharacterString>+44 (0)1223 221400</gco:CharacterString>
+                  </gmd:voice>
+                </gmd:CI_Telephone>
+              </gmd:phone>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint>
+                    <gco:CharacterString>British Antarctic Survey, High Cross, Madingely Road</gco:CharacterString>
+                  </gmd:deliveryPoint>
+                  <gmd:city>
+                    <gco:CharacterString>Cambridge</gco:CharacterString>
+                  </gmd:city>
+                  <gmd:administrativeArea>
+                    <gco:CharacterString>Cambridgeshire</gco:CharacterString>
+                  </gmd:administrativeArea>
+                  <gmd:postalCode>
+                    <gco:CharacterString>CB3 0ET</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country>
+                    <gco:CharacterString>United Kingdom</gco:CharacterString>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>polardatacentre@bas.ac.uk</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre/</gmd:URL>
+                  </gmd:linkage>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
       <gmd:resourceConstraints>
         <gmd:MD_LegalConstraints>
           <gmd:otherConstraints>
@@ -211,6 +411,20 @@
     is based on the recommendations by Gemini [8] and NOAA [9], the DOI reference/URL is based on CrossRef [10]
 22. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints] new element added to
     hold citation as used by NOAA [9]
+23. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] originator instance split into individual instances
+24. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] instances for individuals wrapped in 
+    gmd:citedResponsibleParty elements
+24. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] first instance enchanced
+24.1. [./gmd:individualName] value changed from gco:characterString to gmx:Anchor with link to ORCID ID, as per NOAA 
+      example [12] and ORCID guidelines [13]
+24.2. [./gmd:onlineResource] element added with link to ORCID ID as per NOAA example [12] and ORCID guidelines [13]
+24.3. [./gmd:organisationName] element added as per Gemini requirement [11]
+24.4. [./gmd:contactInfo/../electronicMailAddress] element added as per Gemini requirement [11]
+24.5. [./gmd:onlineResource] element added to online profile
+25. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact/../role] organisation instance changed form 'curator' 
+    to 'distributor' as per Gemini requirement [11] and reference to NOAA guidance [14] [15]
+26. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] additional organisation instance added with role of
+    'pointOfContact' with reference to NOAA guidance [14] [15]
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -222,6 +436,11 @@
 [8] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#36
 [9] https://geo-ide.noaa.gov/wiki/index.php?title=DOI_Minting_Procedure#Third.2C_Include_the_DOI_and_citation_text_in_the_ISO_Metadata_Record
 [10] https://www.crossref.org/display-guidelines/
+[11] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#23
+[12] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Researcher_ID
+[13] https://orcid.org/trademark-and-id-display-guidelines
+[14] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_People
+[15] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#CI_RoleCode
 -->
 
 <!-- For discussion -->
@@ -261,6 +480,15 @@
 8.6.1. what is our preferred format? Datacite defaults to APA
 8.6.2. inconsistency between name of the PDC - are we 'Polar Data Centre' or 'UK Polar Data Centre'
 8.6.3. EIDC use dataset as citation
+9. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] instance(s) for organisation (i.e. PDC)
+9.1. Gemini requires an instance with a role of 'distributor', looking at NOAA's guidance [7] [8] this 'identifies the 
+     people that manage orders and data access at a Data Center. These people have expertise in data access systems but 
+     may not be a good source for more scientific information on the resource' - which makes sense for us but we are also
+9.2. a role of 'pointOfContact' is usually 'the Data Manager or the Data Center that preserves the data. These people 
+     serve as contacts when the originator of the dataset is no longer available or interested in dealing with questions 
+     about the dataset. This person has scientific expertise or experience but may not be a good source for information 
+     on data access or data order processing.' which I think fits our role
+9.3. other roles could be added as well (e.g. for curator) if we felt this was useful
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
@@ -269,6 +497,8 @@
     "ISO AP 1.0 recommends that it is a UUID"
 [5] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 [6] https://www.crossref.org/display-guidelines/
+[7] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_People
+[8] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#CI_RoleCode
 -->
 
 <!-- Notes -->
@@ -283,6 +513,7 @@
 4. [/gmd:MD_Metadata/../gmd:contact/../gmd:CI_roleCode] 'pointOfContact' value required by Inspire [[3] TG Requirement C.6]
 3. [/gmd:MD_Metadata/gmd:hierarchyLevel] If the value is not 'service', 'dataset' or 'series', the metadata set is out 
    of scope of Inspire [[2]- '1.2 INSPIREspecificconstraints(SC)']
+4. role 'pointOfContact' for gmd:CI_ResponsibleParty seems to be a 'default' or 'generic' value 
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1

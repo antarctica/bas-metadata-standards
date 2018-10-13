@@ -116,7 +116,6 @@
             <gmd:abstract>
                 <gco:CharacterString>Defined Planning Applications in South Staffordshire Council; the limit of each area is recorded as a polygon. Upon accessing this Licensed Data you will be deemed to have accepted the terms of the Public Sector End User Licence - INSPIRE.</gco:CharacterString>
             </gmd:abstract>
-            <!-- Not reviewed below -->
             <gmd:pointOfContact>
                 <gmd:CI_ResponsibleParty>
                     <gmd:individualName>
@@ -170,6 +169,7 @@
                     </gmd:role>
                 </gmd:CI_ResponsibleParty>
             </gmd:pointOfContact>
+            <!-- Not reviewed below -->
             <gmd:resourceMaintenance>
                 <gmd:MD_MaintenanceInformation>
                     <gmd:maintenanceAndUpdateFrequency>
