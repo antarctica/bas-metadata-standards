@@ -148,9 +148,11 @@
 2. We are using the 2007 versions of the ISO 19139 schemas as defined by the Inspire Technical Guidance for ISO 19115 [2]
 3. All references to CodeList references from non-2007 versions of ISO 19139 have been updated to use the 2007 version,
    including those taken from other sources (i.e. examples from others have been updated where necessary)
+4. [/gmd:MD_Metadata/../gmd:contact/../gmd:CI_roleCode] 'pointOfContact' value required by Inspire [[3] TG Requirement C.6]
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
+[3] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 -->
 
 <!-- TODO -->
