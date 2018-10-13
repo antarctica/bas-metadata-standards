@@ -113,10 +113,10 @@
                     </gmd:identifier>
                 </gmd:CI_Citation>
             </gmd:citation>
-            <!-- Not reviewed below -->
             <gmd:abstract>
                 <gco:CharacterString>Defined Planning Applications in South Staffordshire Council; the limit of each area is recorded as a polygon. Upon accessing this Licensed Data you will be deemed to have accepted the terms of the Public Sector End User Licence - INSPIRE.</gco:CharacterString>
             </gmd:abstract>
+            <!-- Not reviewed below -->
             <gmd:pointOfContact>
                 <gmd:CI_ResponsibleParty>
                     <gmd:individualName>
