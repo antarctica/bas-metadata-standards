@@ -68,7 +68,6 @@
             </gmd:referenceSystemIdentifier>
         </gmd:MD_ReferenceSystem>
     </gmd:referenceSystemInfo>
-    <!-- Not reviewed below -->
     <gmd:identificationInfo>
         <gmd:MD_DataIdentification>
             <gmd:citation>
@@ -118,6 +117,7 @@
                     </gmd:otherCitationDetails>
                 </gmd:CI_Citation>
             </gmd:citation>
+            <!-- Not reviewed below -->
             <gmd:abstract>
                 <gco:CharacterString>This dataset details the germination rates of seeds from Eschscholzia californica plants introduced to habitats comprising different floral cover. Data was collected in June 2015 at the Hillesden estate, Buckinghamshire, UK. Experimental arrays were introduced across the study site, Arrays comprised of three E.californica plants separated by 1m and arranged in a triangular formation. A total of sixteen arrays were introduced across four 100ha replicate blocks, each separated by &gt;500m. At the centre of each block, four experimental arrays were placed at 50m intervals along a 150m transect laid symmetrically across the boundary between an established wildflower patch and bare, fallow ground or grazed grassland (two arrays within the florally rich habitat and two arrays within the florally poor habitat). After 16 days plants were collected in and stored under glasshouse conditions. Upon fruit maturation, 20 seeds from each of the 48 field exposed plants was sown into compost and the number which successfully germinated was counted. The dataset was part of a larger experiment looking at the effect of floral resources on the pollination services to isolated plants.</gco:CharacterString>
             </gmd:abstract>

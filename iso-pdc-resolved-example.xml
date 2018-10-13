@@ -129,6 +129,48 @@
       </gmd:referenceSystemIdentifier>
     </gmd:MD_ReferenceSystem>
   </gmd:referenceSystemInfo>
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title>
+            <gco:CharacterString>Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April 2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006</gco:CharacterString>
+          </gmd:title>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:Date>2018-10-08</gco:Date>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:identifier>
+            <gmd:MD_Identifier>
+              <gmd:code>
+                <gco:CharacterString>https://data.bas.ac.uk/metadata.php?id=GB/NERC/BAS/PDC/01103</gco:CharacterString>
+              </gmd:code>
+            </gmd:MD_Identifier>
+          </gmd:identifier>
+          <gmd:identifier>
+            <gmd:MD_Identifier>
+              <gmd:code>
+                <gmx:Anchor xlink:href="https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e" xlink:title="DOI" xlink:actuate="onRequest">https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e</gmx:Anchor>
+              </gmd:code>
+            </gmd:MD_Identifier>
+          </gmd:identifier>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:otherConstraints>
+            <gco:CharacterString>Arrowsmith, C., Leng, M., Meredith, M. (2018). Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April 2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006. [Data set]. Polar Data Centre, Natural Environment Research Council, UK. https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e</gco:CharacterString>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
 </gmd:MD_Metadata>
 
 <!-- Changes -->
@@ -158,6 +200,14 @@
 18. [/gmd:MD_Metadata/gmd:referenceSystemInfo/../gmd:authority] element added because we use a gmd:code ('4326' AKA 
     'WGS84') not in Annex D.4 (Default Coordinate Reference Systems) in the Inspire ISO-19139 technical guidance ([6]), 
     Gemini requires a well known register that defines the reference system to be included [7]
+19. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:alternateTitle] element removed it appears non-standard
+20. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:identifier[0]] element changed to gmd:MD_Identifier 
+    with direct link to DMS record as recommended by Gemini [8]
+21. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:identifier[1]] additional element added for DOI related
+    to dataset - this examples uses a DOI in the DataCite test prefix as this dataset doesn't have a DOI - the structure 
+    is based on the recommendations by Gemini [8] and NOAA [9], the DOI reference/URL is based on CrossRef [10]
+22. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints] new element added to
+    hold citation as used by NOAA [9]
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -166,6 +216,9 @@
 [5] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_FAQ#What_is_the_Dataset_URI.3F
 [6] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 [7] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#17
+[8] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#36
+[9] https://geo-ide.noaa.gov/wiki/index.php?title=DOI_Minting_Procedure#Third.2C_Include_the_DOI_and_citation_text_in_the_ISO_Metadata_Record
+[10] https://www.crossref.org/display-guidelines/
 -->
 
 <!-- For discussion -->
@@ -190,6 +243,21 @@
 4.5.3. (org) 'British Antarctic Survey' (pos) 'Archives Service'
 5. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] check this is now our address
 6. [/gmd:referenceSystemInfo] presumably this will vary and non-WGS84 values could be used? (for PDC metadata)
+7. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:alternateTitle] recommended dropping this as I don't 
+   think it adds anything since it can be trivially generated if needed, and prevents us using this value for an actual 
+   alternate title
+8. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints] element added for DOI
+   citation
+8.1. don't understand current usage in DMS as citation point to papers and not the resource (assumed intentional)
+8.2. should we show both citations with guidance on which to use, or only show one preferrred citation
+8.3. worth noting anyone can run a DOI through DataCite and get a citation for the Dataset which we would be valid and
+     not preventable
+8.4. do we want a difference in the citations available to humans than machines?
+8.5. CrossMark recommend using 'https://doi.org/[doi]' not 'doi:[doi]' [6]
+8.6. assuming a dataset citation is used
+8.6.1. what is our preferred format? Datacite defaults to APA
+8.6.2. inconsistency between name of the PDC - are we 'Polar Data Centre' or 'UK Polar Data Centre'
+8.6.3. EIDC use dataset as citation
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
@@ -197,6 +265,7 @@
 [4] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#45 - 
     "ISO AP 1.0 recommends that it is a UUID"
 [5] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
+[6] https://www.crossref.org/display-guidelines/
 -->
 
 <!-- Notes -->
