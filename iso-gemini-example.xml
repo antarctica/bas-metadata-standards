@@ -70,7 +70,6 @@
     <gmd:metadataStandardVersion>
         <gco:CharacterString>1.0 (2.2)</gco:CharacterString>
     </gmd:metadataStandardVersion>
-    <!-- Not reviewed below -->
     <gmd:referenceSystemInfo>
         <gmd:MD_ReferenceSystem>
             <gmd:referenceSystemIdentifier>
@@ -82,6 +81,7 @@
             </gmd:referenceSystemIdentifier>
         </gmd:MD_ReferenceSystem>
     </gmd:referenceSystemInfo>
+    <!-- Not reviewed below -->
     <gmd:identificationInfo>
         <gmd:MD_DataIdentification>
             <gmd:citation>

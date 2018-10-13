@@ -48,7 +48,6 @@
     <gmd:dataSetURI>
         <gco:CharacterString>http://www.antarctica.ac.uk/dms/metadata.php?id=GB/NERC/BAS/PDC/01103</gco:CharacterString>
     </gmd:dataSetURI>
-    <!-- Not reviewed below -->
     <gmd:referenceSystemInfo>
         <gmd:MD_ReferenceSystem>
             <gmd:referenceSystemIdentifier>
@@ -63,6 +62,7 @@
             </gmd:referenceSystemIdentifier>
         </gmd:MD_ReferenceSystem>
     </gmd:referenceSystemInfo>
+    <!-- Not reviewed below -->
     <gmd:identificationInfo>
         <gmd:MD_DataIdentification>
             <gmd:citation>

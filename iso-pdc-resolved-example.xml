@@ -77,6 +77,58 @@
   <gmd:metadataStandardVersion>
     <gco:CharacterString>1.0 (2.3)</gco:CharacterString>
   </gmd:metadataStandardVersion>
+  <gmd:referenceSystemInfo>
+    <gmd:MD_ReferenceSystem>
+      <gmd:referenceSystemIdentifier>
+        <gmd:RS_Identifier>
+          <gmd:authority>
+            <gmd:CI_Citation>
+              <gmd:title>
+                <gco:CharacterString>European Petroleum Survey Group (EPSG) Geodetic Parameter Registry</gco:CharacterString>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2008-11-12</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:citedResponsibleParty>
+                <gmd:CI_ResponsibleParty>
+                  <gmd:organisationName>
+                    <gco:CharacterString>European Petroleum Survey Group</gco:CharacterString>
+                  </gmd:organisationName>
+                  <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                      <gmd:onlineResource>
+                        <gmd:CI_OnlineResource>
+                          <gmd:linkage>
+                            <gmd:URL>http://www.epsg-registry.org/</gmd:URL>
+                          </gmd:linkage>
+                        </gmd:CI_OnlineResource>
+                      </gmd:onlineResource>
+                    </gmd:CI_Contact>
+                  </gmd:contactInfo>
+                  <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="publisher">publisher</gmd:CI_RoleCode>
+                  </gmd:role>
+                </gmd:CI_ResponsibleParty>
+              </gmd:citedResponsibleParty>                          
+            </gmd:CI_Citation>
+          </gmd:authority>
+          <gmd:code>
+              <gco:CharacterString>urn:ogc:def:crs:EPSG:4326</gco:CharacterString>
+          </gmd:code>
+          <gmd:version>
+              <gco:CharacterString>6.18.3</gco:CharacterString>
+          </gmd:version>
+        </gmd:RS_Identifier>
+      </gmd:referenceSystemIdentifier>
+    </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
 </gmd:MD_Metadata>
 
 <!-- Changes -->
@@ -103,12 +155,17 @@
 15. [gmd:metadataStandardName] element value changed to use value used by Gemini
 16. [gmd:metadataStandardVersion] element value changed to use value used by Gemini
 17. [/gmd:MD_Metadata/dataSetURI] element removed due to [5] which recommends two alternatives
+18. [/gmd:referenceSystemInfo/../gmd:authority] element added because we use a gmd:code ('4326' AKA 'WGS84') not in 
+    Annex D.4 (Default Coordinate Reference Systems) in the Inspire ISO-19139 technical guidance ([6]), Gemini requires 
+    a well known register that defines the reference system to be included [7]
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
 [3] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#33
 [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Character_Set:
 [5] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_FAQ#What_is_the_Dataset_URI.3F
+[6] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
+[7] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#17
 -->
 
 <!-- For discussion -->
