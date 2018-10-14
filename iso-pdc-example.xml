@@ -404,7 +404,6 @@
             </gmd:transferOptions>
         </gmd:MD_Distribution>
     </gmd:distributionInfo>
-    <!-- Not reviewed below -->
     <gmd:dataQualityInfo>
         <gmd:DQ_DataQuality>
             <gmd:scope>
@@ -414,6 +413,7 @@
                     </gmd:level>
                 </gmd:DQ_Scope>
             </gmd:scope>
+            <!-- Not reviewed below -->
             <gmd:report>
                 <gmd:DQ_DomainConsistency>
                     <gmd:measureIdentification>

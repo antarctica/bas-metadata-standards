@@ -520,7 +520,6 @@
             </gmd:transferOptions>    
         </gmd:MD_Distribution>
     </gmd:distributionInfo>
-    <!-- Not reviewed below -->
     <gmd:dataQualityInfo>
         <gmd:DQ_DataQuality>
             <gmd:scope>
@@ -537,6 +536,7 @@
                     </gmd:levelDescription>
                 </gmd:DQ_Scope>
             </gmd:scope>
+            <!-- Not reviewed below -->
             <gmd:lineage>
                 <gmd:LI_Lineage>
                     <gmd:statement>
