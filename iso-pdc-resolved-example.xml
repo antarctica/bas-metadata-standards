@@ -584,6 +584,11 @@
       <gmd:spatialRepresentationType>
         <gmd:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="textTable">textTable</gmd:MD_SpatialRepresentationTypeCode>
       </gmd:spatialRepresentationType>
+      <gmd:spatialResolution>
+        <gmd:MD_Resolution>
+          <gmd:distance gco:nilReason="inapplicable"/>
+        </gmd:MD_Resolution>
+      </gmd:spatialResolution>
     </gmd:MD_DataIdentification>
   </gmd:identificationInfo>
 </gmd:MD_Metadata>
@@ -655,6 +660,7 @@
 31.2. instance for OGL in usage constraints added, as per Gemini guidance [19] with OGL citation as per National Archive 
       guidance [20]
 31.3. instance for Copyright in usage constraints added
+32. [/gmd:MD_Metadata/gmd:identificationInfo/../spatialRepresentationType] element added as per Gemini requirement [21]
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -676,6 +682,7 @@
 [18] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#25
 [19] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#26
 [20] http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/open-government-licence/copyright-notices-attribution-statements/
+[21] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#50
 -->
 
 <!-- For discussion -->
