@@ -320,7 +320,6 @@
             </gmd:supplementalInformation>
         </gmd:MD_DataIdentification>
     </gmd:identificationInfo>
-    <!-- Not reviewed below -->
     <gmd:distributionInfo>
         <gmd:MD_Distribution>
             <gmd:distributionFormat>
@@ -333,7 +332,6 @@
                     </gmd:version>
                 </gmd:MD_Format>
             </gmd:distributionFormat>
-            <!-- Not reviewed below -->
             <gmd:transferOptions>
                 <gmd:MD_DigitalTransferOptions>
                     <gmd:onLine>
@@ -366,6 +364,7 @@
             </gmd:transferOptions>
         </gmd:MD_Distribution>
     </gmd:distributionInfo>
+    <!-- Not reviewed below -->
     <gmd:dataQualityInfo>
         <gmd:DQ_DataQuality>
             <gmd:scope>

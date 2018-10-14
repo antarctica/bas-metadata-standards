@@ -388,7 +388,6 @@
                     </gmd:distributorContact>
                 </gmd:MD_Distributor>
             </gmd:distributor>
-            <!-- Not reviewed below -->
             <gmd:transferOptions>
                 <gmd:MD_DigitalTransferOptions>
                     <gmd:onLine>
@@ -405,6 +404,7 @@
             </gmd:transferOptions>
         </gmd:MD_Distribution>
     </gmd:distributionInfo>
+    <!-- Not reviewed below -->
     <gmd:dataQualityInfo>
         <gmd:DQ_DataQuality>
             <gmd:scope>

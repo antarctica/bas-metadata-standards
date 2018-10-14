@@ -703,6 +703,46 @@
           </gmd:distributorContact>
         </gmd:MD_Distributor>
       </gmd:distributor>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://www.bodc.ac.uk/data/bodc_database/nodb/data_collection/6618/</gmd:URL>
+              </gmd:linkage>
+              <gmd:name>
+                <gco:CharacterString>Get Data</gco:CharacterString>
+              </gmd:name>
+              <gmd:description>
+                <gco:CharacterString>Download underlying CTD data</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download">download</gmd:CI_OnLineFunctionCode>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://ramadda.data.bas.ac.uk/repository/entry/show?entryid=63af1e57-8f20-4fb1-a55c-bd0e703f8a56</gmd:URL>
+              </gmd:linkage>
+              <gmd:name>
+                <gco:CharacterString>Get Data</gco:CharacterString>
+              </gmd:name>
+              <gmd:description>
+                <gco:CharacterString>Download measurement data</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download">download</gmd:CI_OnLineFunctionCode>
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
     <gmd:MD_Distribution>
   <gmd:distributionInfo>
 </gmd:MD_Metadata>
@@ -783,6 +823,9 @@
     Gemini [23], using a reference to IANA media-types list, as recommended by Inspire [24]
 36. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributor] is a copy of the CI_ResponsibleParty added as a 
     gmd:PointOfContact in gmd:identificationInfo
+37. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:transferOptions]
+37.1. name and description elements added to existing instance to distingish from others
+37.2. additional instance added linking to Ramadda entry
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -877,6 +920,8 @@
     only a single file - link to IANA definition is arguably most official (and generally applicable) but something like
     this [13] might be more useful to people
 15. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] as an aside, should this information not be a CSV?
+16. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:transferOptions] where there are multiple sources of data how are we
+    going to describe them, currently very generic
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
