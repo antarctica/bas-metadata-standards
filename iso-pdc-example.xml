@@ -309,10 +309,10 @@
                     <gmd:distance gco:nilReason="inapplicable"/>
                 </gmd:MD_Resolution>
             </gmd:spatialResolution>
-            <!-- Not reviewed below -->
             <gmd:language>
                 <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">English</gmd:LanguageCode>
             </gmd:language>
+            <!-- Not reviewed below -->
             <gmd:topicCategory>
                 <gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
             </gmd:topicCategory>
