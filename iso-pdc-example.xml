@@ -287,7 +287,6 @@
                     </gmd:thesaurusName>
                 </gmd:MD_Keywords>
             </gmd:descriptiveKeywords>
-            <!-- Not reviewed below -->
             <gmd:resourceConstraints>
                 <gmd:MD_Constraints>
                     <gmd:useLimitation>
@@ -305,6 +304,7 @@
                     </gmd:otherConstraints>
                 </gmd:MD_LegalConstraints>
             </gmd:resourceConstraints>
+            <!-- Not reviewed below -->
             <gmd:spatialResolution>
                 <gmd:MD_Resolution>
                     <gmd:distance gco:nilReason="inapplicable"/>

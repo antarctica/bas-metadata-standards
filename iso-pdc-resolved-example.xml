@@ -558,8 +558,26 @@
       </gmd:descriptiveKeywords>
       <gmd:resourceConstraints>
         <gmd:MD_LegalConstraints>
+          <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
+          </gmd:accessConstraints>
           <gmd:otherConstraints>
-            <gco:CharacterString>Arrowsmith, C., Leng, M., Meredith, M. (2018). Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April 2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006. [Data set]. Polar Data Centre, Natural Environment Research Council, UK. https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e</gco:CharacterString>
+            <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations" xlink:actuate="onRequest">no limitations</gmx:Anchor>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:useConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
+          </gmd:useConstraints>
+          <gmd:otherConstraints>
+            <gco:CharacterString>© UK Research and Innovation, 2018</gco:CharacterString>
+          <gmd:otherContraints>
+            <gmx:Anchor xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" xlink:actuate="onRequest">This information is licensed under the Open Government Licence v3.0. To view this licence, visit http://www.nationalarchives.gov.uk/doc/open-government-licence/</gmx:Anchor>
+          </gmd:otherConstraints>
+          <gmd:otherConstraints>
+            <gco:CharacterString>Cite this information as "Arrowsmith, C., Leng, M., Meredith, M. (2018). Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April 2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006. [Data set]. Polar Data Centre, Natural Environment Research Council, UK. https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e"</gco:CharacterString>
           </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
@@ -625,6 +643,15 @@
 28.5. GCMD (science themes) keywords type added, based on NOAA guidelines [[17] Implementation Guidance, A.]
 28.6. BAS/PDC free-text keywords type added for completeness
 28.7. BAS/PDC free-text keywords thesaurus removed as it is uncontrolled
+29. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints] order of 'use' and 'access' constraint 
+    instances swapped (to 'access' followed by 'use') based on Gemini guidance [18] [19]
+30. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:UseLimitation] value changed to use code
+    list value as per Gemini guidance [19]
+31. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints]
+31.1. instance for OGL in access constraints changed to no limitations, as per Gemini guidance [18]
+31.2. instance for OGL in usage constraints added, as per Gemini guidance [19] with OGL citation as per National Archive 
+      guidance [20]
+31.3. instance for Copyright in usage constraints added
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -643,6 +670,9 @@
 [15] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#CI_RoleCode
 [16] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#6
 [17] https://geo-ide.noaa.gov/wiki/images/d/df/AB-GUID-01910_R0_KeywordImplementationRecommendations_v1.0.pdf
+[18] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#25
+[19] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#26
+[20] http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/open-government-licence/copyright-notices-attribution-statements/
 -->
 
 <!-- For discussion -->
@@ -695,6 +725,14 @@
 10.1. 'NDGO0001' keyword removed because EIDC don't use it
 10.2. 'NERC_DDC' keyword removed because EIDC don't use it and it related to OAI-PMH which we aren't officially supporting
 10.3. thesaurus for free-text keywords removed because since they're intentionally uncontrolled I don't think attribution makes sense
+11. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints]
+11.1. from the Gemini examples [9], it is not common to include licences such as the OGL as an access constraint 
+      (irrespective of whether it is used as a usage constraint as well)
+11.2. the Gemini guidance for access constraints states 'Limitations on public access are different from Use constraints 
+      which are warnings about its suitability for particular types of usage, or constraints on the use that can be made 
+      of the data.' - the contents of the related Inspire code list [10] (explained in [11]) relate to factors such as
+      (a) 'confidentiality' or (d) 'commerically sensitive information' - which does seem to be describing something other
+      than how the data should be used
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
@@ -705,6 +743,9 @@
 [6] https://www.crossref.org/display-guidelines/
 [7] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_People
 [8] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#CI_RoleCode
+[9] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#25
+[10] http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess
+[11] https://inspire.ec.europa.eu/legislation-details/directive-20072ec-article-13
 -->
 
 <!-- Notes -->

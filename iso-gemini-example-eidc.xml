@@ -370,7 +370,6 @@
                     </gmd:type>
                 </gmd:MD_Keywords>
             </gmd:descriptiveKeywords>
-            <!-- Not reviewed below -->
             <gmd:resourceConstraints>
                 <gmd:MD_Constraints>
                     <gmd:useLimitation>
@@ -394,6 +393,7 @@
                     </gmd:otherConstraints>
                 </gmd:MD_LegalConstraints>
             </gmd:resourceConstraints>
+            <!-- Not reviewed below -->
             <gmd:spatialRepresentationType>
                 <gmd:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="textTable">textTable</gmd:MD_SpatialRepresentationTypeCode>
             </gmd:spatialRepresentationType>
