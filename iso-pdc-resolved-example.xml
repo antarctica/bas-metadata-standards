@@ -592,6 +592,9 @@
       <gmd:language>
         <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">eng</gmd:LanguageCode>
       </gmd:language>
+      <gmd:characterSet>
+        <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
+      </gmd:characterSet>
     </gmd:MD_DataIdentification>
   </gmd:identificationInfo>
 </gmd:MD_Metadata>
@@ -666,6 +669,7 @@
 32. [/gmd:MD_Metadata/gmd:identificationInfo/../spatialRepresentationType] element added as per Gemini requirement [21]
 33. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:LanguageCode] element value changed from 'English' to 'eng', which 
     matches CodeList value and recommended by Gemini [3]
+34. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:characterSet] element added, recommended by Gemini [22]
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -688,6 +692,7 @@
 [19] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#26
 [20] http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/open-government-licence/copyright-notices-attribution-statements/
 [21] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#50
+[22] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#51
 -->
 
 <!-- For discussion -->
@@ -748,6 +753,9 @@
       of the data.' - the contents of the related Inspire code list [10] (explained in [11]) relate to factors such as
       (a) 'confidentiality' or (d) 'commerically sensitive information' - which does seem to be describing something other
       than how the data should be used
+12. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:characterSet] strinctly speaking we only need to include this element
+    if the value is not 'utf8' but we may as well for completeness - we do need to ensure this is the encoding used in the
+    data however, i.e. if ASCII we need to state this
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
