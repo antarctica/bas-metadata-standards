@@ -274,7 +274,6 @@
             <gmd:topicCategory>
                 <gmd:MD_TopicCategoryCode>planningCadastre</gmd:MD_TopicCategoryCode>
             </gmd:topicCategory>
-            <!-- Not reviewed below -->
             <gmd:extent>
                 <gmd:EX_Extent>
                     <gmd:geographicElement>
@@ -321,6 +320,7 @@
             </gmd:supplementalInformation>
         </gmd:MD_DataIdentification>
     </gmd:identificationInfo>
+    <!-- Not reviewed below -->
     <gmd:distributionInfo>
         <gmd:MD_Distribution>
             <gmd:distributionFormat>
