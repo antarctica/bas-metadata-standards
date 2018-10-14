@@ -705,7 +705,7 @@
 31.2. instance for OGL in usage constraints added, as per Gemini guidance [19] with OGL citation as per National Archive 
       guidance [20]
 31.3. instance for Copyright in usage constraints added
-32. [/gmd:MD_Metadata/gmd:identificationInfo/../spatialRepresentationType] element added as per Gemini requirement [21]
+32. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:spatialRepresentationType] element added as per Gemini requirement [21]
 33. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:LanguageCode] element value changed from 'English' to 'eng', which 
     matches CodeList value and recommended by Gemini [3]
 34. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:characterSet] element added, recommended by Gemini [22]
@@ -844,7 +844,7 @@
 8. send to Paul [3]
 9. check how we referenced DOIs in existing metadata to see how different new recommendations are
 10. look into MD_ProgressCode [4]
-11. add other GCMD keyword types [5]
+11. add other GCMD keyword types [5] - see [6] for using locations
 12. is there an Inspire recommended way of embargoing data?
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
@@ -852,4 +852,5 @@
 [3] https://geo-ide.noaa.gov/wiki/index.php?title=NetCDF_Attribute_Convention_for_Dataset_Discovery
 [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
 [5] https://geo-ide.noaa.gov/wiki/images/d/df/AB-GUID-01910_R0_KeywordImplementationRecommendations_v1.0.pdf
+[6] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Extents#Bounding_Extent
 -->
