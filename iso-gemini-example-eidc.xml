@@ -441,7 +441,6 @@
             </gmd:extent>
         </gmd:MD_DataIdentification>
     </gmd:identificationInfo>
-    <!-- Not reviewed below -->
     <gmd:distributionInfo>
         <gmd:MD_Distribution>
             <gmd:distributionFormat>
@@ -454,6 +453,7 @@
                     </gmd:version>
                 </gmd:MD_Format>
             </gmd:distributionFormat>
+            <!-- Not reviewed below -->
             <gmd:distributor>
                 <gmd:MD_Distributor>
                     <gmd:distributorContact>

@@ -333,6 +333,7 @@
                     </gmd:version>
                 </gmd:MD_Format>
             </gmd:distributionFormat>
+            <!-- Not reviewed below -->
             <gmd:transferOptions>
                 <gmd:MD_DigitalTransferOptions>
                     <gmd:onLine>

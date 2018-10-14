@@ -636,6 +636,18 @@
       </gmd:extent>
     </gmd:MD_DataIdentification>
   </gmd:identificationInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gmx:Anchor xlink:href="https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" xlink:actuate="onRequest">Microsoft Excel Workbook</gmx:Anchor>
+          </gmd:name>
+          <gmd:version gco:nilReason="unknown"/>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+    <gmd:MD_Distribution>
+  <gmd:distributionInfo>
 </gmd:MD_Metadata>
 
 <!-- Changes -->
@@ -709,6 +721,9 @@
 33. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:LanguageCode] element value changed from 'English' to 'eng', which 
     matches CodeList value and recommended by Gemini [3]
 34. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:characterSet] element added, recommended by Gemini [22]
+35. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] element changed to implementation (rather than 
+    nilreason='inapplicable'), value set to XLSX (as per related Ramadda holding) using a gmx:Anchor as recommended by
+    Gemini [23], using a reference to IANA media-types list, as recommended by Inspire [24]
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -732,6 +747,8 @@
 [20] http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/open-government-licence/copyright-notices-attribution-statements/
 [21] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#50
 [22] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#51
+[23] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#21
+[24] https://inspire.ec.europa.eu/media-types/application
 -->
 
 <!-- For discussion -->
@@ -797,6 +814,10 @@
     data however, i.e. if ASCII we need to state this
 13. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:extent] do we have any examples of linking to a gazetteer? - this 
     seems to be the preferred way to indicate geographic extent [12] and could be combined with a bounding box as well
+14. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] not sure why this was inapplicable given there was
+    only a single file - link to IANA definition is arguably most official (and generally applicable) but something like
+    this [13] might be more useful to people
+15. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] as an aside, should this information not be a CSV?
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
@@ -811,6 +832,7 @@
 [10] http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess
 [11] https://inspire.ec.europa.eu/legislation-details/directive-20072ec-article-13
 [12] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#15
+[13] https://www.loc.gov/preservation/digital/formats/fdd/fdd000398.shtml
 -->
 
 <!-- Notes -->

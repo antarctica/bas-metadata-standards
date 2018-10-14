@@ -353,10 +353,10 @@
             </gmd:extent>
         </gmd:MD_DataIdentification>
     </gmd:identificationInfo>
-    <!-- Not reviewed below -->
     <gmd:distributionInfo>
         <gmd:MD_Distribution>
             <gmd:distributionFormat gco:nilReason="inapplicable"/>
+            <!-- Not reviewed below -->
             <gmd:distributor>
                 <gmd:MD_Distributor>
                     <gmd:distributorContact>
