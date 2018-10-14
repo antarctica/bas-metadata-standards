@@ -356,7 +356,6 @@
     <gmd:distributionInfo>
         <gmd:MD_Distribution>
             <gmd:distributionFormat gco:nilReason="inapplicable"/>
-            <!-- Not reviewed below -->
             <gmd:distributor>
                 <gmd:MD_Distributor>
                     <gmd:distributorContact>
@@ -389,6 +388,7 @@
                     </gmd:distributorContact>
                 </gmd:MD_Distributor>
             </gmd:distributor>
+            <!-- Not reviewed below -->
             <gmd:transferOptions>
                 <gmd:MD_DigitalTransferOptions>
                     <gmd:onLine>

@@ -646,6 +646,63 @@
           <gmd:version gco:nilReason="unknown"/>
         </gmd:MD_Format>
       </gmd:distributionFormat>
+      <gmd:distributor>
+        <gmd:MD_Distributor>
+          <gmd:distributorContact>
+            <gmd:CI_ResponsibleParty>
+              <gmd:organisationName>
+                <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+              </gmd:organisationName>
+              <gmd:positionName>
+                <gco:CharacterString>Data Manager</gco:CharacterString>
+              </gmd:positionName>
+              <gmd:contactInfo>
+                <gmd:CI_Contact>
+                  <gmd:phone>
+                    <gmd:CI_Telephone>
+                      <gmd:voice>
+                        <gco:CharacterString>+44 (0)1223 221400</gco:CharacterString>
+                      </gmd:voice>
+                    </gmd:CI_Telephone>
+                  </gmd:phone>
+                  <gmd:address>
+                    <gmd:CI_Address>
+                      <gmd:deliveryPoint>
+                        <gco:CharacterString>British Antarctic Survey, High Cross, Madingely Road</gco:CharacterString>
+                      </gmd:deliveryPoint>
+                      <gmd:city>
+                        <gco:CharacterString>Cambridge</gco:CharacterString>
+                      </gmd:city>
+                      <gmd:administrativeArea>
+                        <gco:CharacterString>Cambridgeshire</gco:CharacterString>
+                      </gmd:administrativeArea>
+                      <gmd:postalCode>
+                        <gco:CharacterString>CB3 0ET</gco:CharacterString>
+                      </gmd:postalCode>
+                      <gmd:country>
+                        <gco:CharacterString>United Kingdom</gco:CharacterString>
+                      </gmd:country>
+                      <gmd:electronicMailAddress>
+                        <gco:CharacterString>polardatacentre@bas.ac.uk</gco:CharacterString>
+                      </gmd:electronicMailAddress>
+                    </gmd:CI_Address>
+                  </gmd:address>
+                  <gmd:onlineResource>
+                    <gmd:CI_OnlineResource>
+                      <gmd:linkage>
+                        <gmd:URL>https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre/</gmd:URL>
+                      </gmd:linkage>
+                    </gmd:CI_OnlineResource>
+                  </gmd:onlineResource>
+                </gmd:CI_Contact>
+              </gmd:contactInfo>
+              <gmd:role>
+                <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="distributor">distributor</gmd:CI_RoleCode>
+              </gmd:role>
+            </gmd:CI_ResponsibleParty>
+          </gmd:distributorContact>
+        </gmd:MD_Distributor>
+      </gmd:distributor>
     <gmd:MD_Distribution>
   <gmd:distributionInfo>
 </gmd:MD_Metadata>
@@ -724,6 +781,8 @@
 35. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] element changed to implementation (rather than 
     nilreason='inapplicable'), value set to XLSX (as per related Ramadda holding) using a gmx:Anchor as recommended by
     Gemini [23], using a reference to IANA media-types list, as recommended by Inspire [24]
+36. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributor] is a copy of the CI_ResponsibleParty added as a 
+    gmd:PointOfContact in gmd:identificationInfo
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -868,6 +927,9 @@
 10. look into MD_ProgressCode [4]
 11. add other GCMD keyword types [5] - see [6] for using locations
 12. is there an Inspire recommended way of embargoing data?
+13. test whether Gemini requires the distributor CI_ResponsibleParty to be specified in identificationInfo or if this 
+    can be in distributionInfo where it more naturally fits (and was previously defined) - if so remove duplicate and
+    consider changing role for other PDC instance still in indentificationInfo back to 'curator'.
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
