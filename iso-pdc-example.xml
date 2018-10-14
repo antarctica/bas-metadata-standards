@@ -413,7 +413,6 @@
                     </gmd:level>
                 </gmd:DQ_Scope>
             </gmd:scope>
-            <!-- Not reviewed below -->
             <gmd:report>
                 <gmd:DQ_DomainConsistency>
                     <gmd:measureIdentification>
