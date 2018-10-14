@@ -271,10 +271,10 @@
             <gmd:language>
                 <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">eng</gmd:LanguageCode>
             </gmd:language>
-            <!-- Not reviewed below -->
             <gmd:topicCategory>
                 <gmd:MD_TopicCategoryCode>planningCadastre</gmd:MD_TopicCategoryCode>
             </gmd:topicCategory>
+            <!-- Not reviewed below -->
             <gmd:extent>
                 <gmd:EX_Extent>
                     <gmd:geographicElement>

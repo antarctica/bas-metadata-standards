@@ -402,10 +402,10 @@
             <gmd:characterSet>
                 <MD_CharacterSetCode xmlns="http://www.isotc211.org/2005/gmd" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</MD_CharacterSetCode>
             </gmd:characterSet>
-            <!-- Not reviewed below -->
             <gmd:topicCategory>
                 <gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
             </gmd:topicCategory>
+            <!-- Not reviewed below -->
             <gmd:extent>
                 <gmd:EX_Extent>
                     <gmd:temporalElement>
