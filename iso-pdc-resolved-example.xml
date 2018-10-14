@@ -646,11 +646,11 @@
 28.5. GCMD (science themes) keywords type added, based on NOAA guidelines [[17] Implementation Guidance, A.]
 28.6. BAS/PDC free-text keywords type added for completeness
 28.7. BAS/PDC free-text keywords thesaurus removed as it is uncontrolled
-29. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints] order of 'use' and 'access' constraint 
+29. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_resourceConstraints] order of 'use' and 'access' constraint 
     instances swapped (to 'access' followed by 'use') based on Gemini guidance [18] [19]
-30. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:UseLimitation] value changed to use code
-    list value as per Gemini guidance [19]
-31. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints]
+30. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_resourceConstraints/../gmd:UseLimitation] value changed to use 
+    code list value as per Gemini guidance [19]
+31. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_resourceConstraints/../gmd:OtherConstraints]
 31.1. instance for OGL in access constraints changed to no limitations, as per Gemini guidance [18]
 31.2. instance for OGL in usage constraints added, as per Gemini guidance [19] with OGL citation as per National Archive 
       guidance [20]
@@ -782,9 +782,12 @@
 8. send to Paul [3]
 9. check how we referenced DOIs in existing metadata to see how different new recommendations are
 10. look into MD_ProgressCode [4]
+11. add other GCMD keyword types [5]
+12. is there an Inspire recommended way of embargoing data?
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
 [3] https://geo-ide.noaa.gov/wiki/index.php?title=NetCDF_Attribute_Convention_for_Dataset_Discovery
 [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
+[5] https://geo-ide.noaa.gov/wiki/images/d/df/AB-GUID-01910_R0_KeywordImplementationRecommendations_v1.0.pdf
 -->
