@@ -753,6 +753,33 @@
             <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
           </gmd:level>
         </gmd:DQ_Scope>
+        <gmd:report>
+          <gmd:DQ_DomainConsistency>
+            <gmd:result>
+              <gmd:DQ_ConformanceResult>
+                <gmd:specification>
+                  <gmd:CI_Citation>
+                    <gmd:title>
+                      <gmx:Anchor xlink:href="http://data.europa.eu/eli/reg/2010/1089">Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gmx:Anchor>
+                    </gmd:title>
+                    <gmd:date>
+                      <gmd:CI_Date>
+                        <gmd:date>
+                          <gco:Date>2010-12-08</gco:Date>
+                        </gmd:date>
+                        <gmd:dateType>
+                          <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                        </gmd:dateType>
+                      </gmd:CI_Date>
+                    </gmd:date>
+                  </gmd:CI_Citation>
+                </gmd:specification>
+                <gmd:explanation gco:nilReason="inapplicable"/>
+                <gmd:pass gco:nilReason="unknown"/>
+              </gmd:DQ_ConformanceResult>
+            </gmd:result>
+          </gmd:DQ_DomainConsistency>
+        </gmd:report>
       </gmd:scope>
     </gmd:DQ_DataQuality>
   </gmd:dataQualityInfo>
@@ -837,6 +864,10 @@
 37. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:transferOptions]
 37.1. name and description elements added to existing instance to distingish from others
 37.2. additional instance added linking to Ramadda entry
+38. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:report] 
+38.1. gmd:measureIdentification element removed as this isn't required by Inspire
+38.2. gmd:result element replaced with Inspire complaint version (mandatory citation)
+38.3. gmd:pass changed to nilReason='unknown' to reflect pre-validation status
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -933,6 +964,8 @@
 15. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] as an aside, should this information not be a CSV?
 16. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:transferOptions] where there are multiple sources of data how are we
     going to describe them, currently very generic
+17. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:report] was this checking Inspire complainace generally or something
+    more specific, the description stated 'INSPIRE Data Specification on unknown theme Guidelines' which seems odd
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
