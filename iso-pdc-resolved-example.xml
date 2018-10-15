@@ -1007,36 +1007,51 @@
 3. [/gmd:MD_Metadata/gmd:hierarchyLevel] If the value is not 'service', 'dataset' or 'series', the metadata set is out 
    of scope of Inspire [[2]- '1.2 INSPIREspecificconstraints(SC)']
 4. role 'pointOfContact' for gmd:CI_ResponsibleParty seems to be a 'default' or 'generic' value 
+5. when generating a boilerplate record: use '<gmd:citation gco:nilReason="template"/>' convention
+6. when generating documentation, see outline XML in section starting 'The merge template specifies a Level 4' [4]
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
 [3] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
+[4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
 -->
 
 <!-- TODO -->
-<!-- 
-1. include BGS example
-2. review contents of NERC Catalogue (required keywords)
-3. review XML element order [1]
-4. map 'gco:nilReason' options to datacite
-5. summarise failures against NERC metadata standards
-6. when generating a boilerplate record use '<gmd:citation gco:nilReason="template"/>' convention
-7. when generating documentation, see outline XML in section starting 'The merge template specifies a Level 4' [2]
-8. send to Paul [3]
-9. check how we referenced DOIs in existing metadata to see how different new recommendations are
-10. look into MD_ProgressCode [4] shown in DMS but no exposed in metadata
-11. add other GCMD keyword types [5] - see [6] for using locations
-12. is there an Inspire recommended way of embargoing data?
-13. test whether Gemini requires the distributor CI_ResponsibleParty to be specified in identificationInfo or if this 
-    can be in distributionInfo where it more naturally fits (and was previously defined) - if so remove duplicate and
-    consider changing role for other PDC instance still in indentificationInfo back to 'curator'.
-14. link GCMD keywords to their API as we do with Inspire terms (TG Recommendation C.8 in [7])
-15. check validate against other ISO 19115 constraints using validator
+<!--
 
-[1] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
-[2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
-[3] https://geo-ide.noaa.gov/wiki/index.php?title=NetCDF_Attribute_Convention_for_Dataset_Discovery
-[4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
-[5] https://geo-ide.noaa.gov/wiki/images/d/df/AB-GUID-01910_R0_KeywordImplementationRecommendations_v1.0.pdf
-[6] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Extents#Bounding_Extent
+Internal changes:
+
+1. incorporate changes made in Inspire validated example
+2. add discussion point to consider changing gmd:role for PDC instance in gmd:identificationInfo back to back to 'curator',
+   if so update other discussion points accordingly
+3. check spelling of comments
+
+Creation of reference examples:
+
+1. create MEDIN complaint example
+2. create NERC complaint example
+
+Comparison across data centres:
+
+1. check how we referenced DOIs in existing metadata to see how different new recommendations are
+2. include BGS example
+3. include BODC example
+4. include CEDA example
+5. review contents of NERC Catalogue (keywords required)
+
+Further improvements to metadata:
+
+1. link GCMD keywords to their API as we do with Inspire terms (TG Recommendation C.8 in [7])
+2. look into MD_ProgressCode [2] shown in DMS but no exposed in metadata
+3. add other GCMD keyword types [3] - see [4] for using locations
+4. is there an Inspire recommended way of embargoing data?
+
+Interoperability across standards:
+
+1. map 'gco:nilReason' options to datacite
+
+[1] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
+[2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
+[3] https://geo-ide.noaa.gov/wiki/images/d/df/AB-GUID-01910_R0_KeywordImplementationRecommendations_v1.0.pdf
+[4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Extents#Bounding_Extent
 -->
