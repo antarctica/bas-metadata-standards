@@ -128,7 +128,8 @@
             </gmd:CI_Citation>
           </gmd:authority>
           <gmd:code>
-              <gco:CharacterString>urn:ogc:def:crs:EPSG:4326</gco:CharacterString>
+              <!-- x_vc="22" -->
+              <gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/4326" xlink:actuate="onRequest">urn:ogc:def:crs:EPSG:4326</gmx:Anchor>
           </gmd:code>
           <gmd:version>
               <gco:CharacterString>6.18.3</gco:CharacterString>
@@ -849,6 +850,8 @@
 19. [x_vc="19"] keyword terms changed from (GEMET) Thematic listings to (GEMET) INSPIRE Spatial Data Themes (mistake)
 20. [x_vc="20"] keyword terms changed from (GEMET) Thematic listings to (GEMET) INSPIRE Spatial Data Themes (mistake)
 21. [x_vc="21"] keyword terms changed from (GEMET) Thematic listings to (GEMET) INSPIRE Spatial Data Themes (mistake)
+22. [x_vc="22"] gmd:referenceSystemIdentifier/gmd:code element value changed from gco:CharacterString to gmx:Anchor, as 
+    per Inspire [[4] 3.2.1.1 TG Recommendation 2.2]
 
 [1] http://www.datypic.com/sc/niem21/e-gmd_CI_Contact.html - "gmd:onlineResource [0..1]"
 [2] http://www.datypic.com/sc/niem21/e-gmd_pointOfContact-1.html - "gmd:CI_ResponsibleParty [0..1]"
@@ -882,6 +885,25 @@
 4.6. looking at [4] Inspire recommend [A] but that isn't working, so I'm tempted to report this on that forum and check
 4.7. email address for reporting issues: JRC-INSPIRE-SUPPORT@ec.europa.eu
 4.8. since this document now validates, I have set this value to true for now
+5. validation errors with Inspire validator conformance class: Metadata for interoperability
+5.1. it is acknowledged this test suite is in draft with limitations and known errors (version 0.2.3)
+5.2. we fail on two points
+5.3. failure for coordinate reference system
+5.3.1. test failure because of: https://github.com/inspire-eu-validation/data/blob/3.0rc3/interoperability-metadata/coordinate-reference-system.md
+5.3.2. test is based on 3.2.1.1 and TG Recommendation 2.2 of [5]
+5.3.3. we fail because the test is looking for the xpath 'gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gco:CharacterString'
+       but we use an xpath 'gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gmx:Anchor'
+       as per TG Recommendation 2.2 of [5] and shown in example 3.14 of [5]
+5.3.4. I think this is a bug and should be reported to Inspire [6]
+5.4. failure for (distribution) encoding
+5.4.1. test failure because of: https://github.com/inspire-eu-validation/data/blob/3.0rc3/interoperability-metadata/encoding.md
+5.4.2. test is based on 3.2.3.1 TG Requirement 2.6 of [5]
+5.4.3. we fail because the test is looking for the element at xpath 'gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:version/gco:CharacterString'
+       being non-empty, including where a gco:nilReason attribute is used (on the parent gmd:version element). This is
+       counter to the Inspire guidelines: "If the version of the encoding is unknown or if the encoding is not versioned, 
+       the gmd:version shall be left empty and the nil reason attribute shall be provided with either value "unknown" or 
+       "inapplicable" correspondingly (Attribute gco:nilReason="unknown" or "inapplicable".)" as shown in example 3.18 of [5]
+5.4.4. I think this is a bug and should be reported to Inspire [6]
 
 [A]
 
@@ -901,12 +923,15 @@
 [2] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID1954fa0f-5092-4289-b73d-bbb61fbe15b1.html
 [3] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID4f1654aa-d4d4-465d-bae8-c2b208e822b3.html
 [4] https://ies-svn.jrc.ec.europa.eu/issues/3293
+[5] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
+[6] https://github.com/inspire-eu-validation/data/issues
 -->
 
 <!-- Notes -->
 <!-- 
 1. this file is based on 'iso-pdc-resolved-example.xml', specifically this file in commit 96b4467
 2. up to section 3.2 (pp 48) in [1]
+3. the CRS used is not an Inspire Default Coordinate Reference System Identifier, as per Annex D.4 in [1]
 
 [1] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 -->
@@ -946,10 +971,17 @@
 
 5. (attempt 4) [5]
 4.1. All pass
+6. (attempt 6) [6]
+6.1. Inspire metadata for interoperability
+6.1.1. Coordinate reference system
+6.1.1.1 Errors: 1 (see discussion 5.3.)
+6.1.2. Encoding
+6.1.2.1 Errors: 1 (see discussion 5.4.)
 
 [1] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID129f1b19-6fd3-44cb-bb08-d6d182fe3ad8.html
 [2] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID80db5d43-9e2e-411b-9e17-0627fc676614.html
 [3] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID1954fa0f-5092-4289-b73d-bbb61fbe15b1.html
 [4] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID4f1654aa-d4d4-465d-bae8-c2b208e822b3.html
 [5] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EIDbe6e15fe-2d88-48ef-98fc-30c8638706fc.html
+[6] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EIDad8f63c1-acc5-4ab4-9f19-3e31f1e27b54.html
 -->
