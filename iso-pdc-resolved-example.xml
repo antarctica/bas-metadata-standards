@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmx http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas/srv/1.0/srv.xsd">
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas/srv/1.0/srv.xsd">
   <gmd:fileIdentifier>
 		<gco:CharacterString>GB/NERC/BAS/PDC/01103</gco:CharacterString>
 	</gmd:fileIdentifier>
@@ -127,7 +127,7 @@
             </gmd:CI_Citation>
           </gmd:authority>
           <gmd:code>
-              <gco:CharacterString>urn:ogc:def:crs:EPSG:4326</gco:CharacterString>
+            <gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/4326" xlink:actuate="onRequest">urn:ogc:def:crs:EPSG:4326</gmx:Anchor>
           </gmd:code>
           <gmd:version>
               <gco:CharacterString>6.18.3</gco:CharacterString>
@@ -173,149 +173,87 @@
         <gco:CharacterString>The dataset contains oxygen stable isotope and salinity measurements from water samples collected from sea ice and meltwater pools in April 2016 in the region of South Georgia, Signy and deep within the Weddell Sea pack ice during the marine survey JR15006. &#13; The d18O and salinity measurements from sea ice and meltwater sources complement the same analysis from CTD casts and underway non-toxic flow water system on the RRS James Clark Ross during the JR15006. Establishing d18O and salinity values for saline water and oceanic freshwater components can be used to identify sources and changes of freshwater contributions to the ocean.&#13;</gco:CharacterString>
       </gmd:abstract>
       <gmd:pointOfContact>
-        <gmd:citedResponsibleParty>
-          <gmd:CI_ResponsibleParty>
-            <gmd:individualName>
-              <gmx:Anchor xlink:href="https://orcid.org/0000-0002-7342-7756" xlink:title="ORCID record" xlink:actuate="onRequest">Michael Meredith</gmx:Anchor>
-            </gmd:individualName>
-            <gmd:organisationName>
-              <gco:CharacterString>British Antarctic Survey</gco:CharacterString>
-            </gmd:organisationName>
-            <gmd:contactInfo>
-              <gmd:CI_Contact>
-                <gmd:address>
-                  <gmd:CI_Address>
-                    <gmd:electronicMailAddress>
-                      <gco:CharacterString>mmm@bas.ac.uk</gco:CharacterString>
-                    </gmd:electronicMailAddress>
-                  </gmd:CI_Address>
-                </gmd:address>
-                <gmd:onlineResource>
-                  <gmd:CI_OnlineResource>
-                    <gmd:linkage>
-                      <gmd:URL>https://www.bas.ac.uk/profile/mmm</gmd:URL>
-                    </gmd:linkage>
-                  </gmd:CI_OnlineResource>
-                </gmd:onlineResource>
-                <gmd:onlineResource>
-                  <gmd:CI_OnlineResource>
-                    <gmd:linkage>
-                      <gmd:URL>http://orcid.org/0000-0002-7342-7756</gmd:URL>
-                    </gmd:linkage>
-                    <gmd:name>
-                      <gco:CharacterString>ORCID record</gco:CharacterString>
-                    </gmd:name>
-                    <gmd:description>
-                      <gco:CharacterString>ORCID is an open, non-profit, community-driven effort to create and maintain a registry of unique researcher identifiers and a transparent method of linking research activities and outputs to these identifiers.</gco:CharacterString>
-                    </gmd:description>
-                  </gmd:CI_OnlineResource>
-                </gmd:onlineResource>
-              </gmd:CI_Contact>
-            </gmd:contactInfo>
-            <gmd:role>
-              <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
-            </gmd:role>
-          </gmd:CI_ResponsibleParty>
-        </gmd:citedResponsibleParty>
-      </gmd:pointOfContact>
-      <gmd:pointOfContact>
-        <gmd:citedResponsibleParty>
-          <gmd:CI_ResponsibleParty>
-            <gmd:individualName>
-              <gco:CharacterString>Carol Arrowsmith</gco:CharacterString>
-            </gmd:individualName>
-            <gmd:organisationName>
-              <gco:CharacterString>British Geological Survey</gco:CharacterString>
-            </gmd:organisationName>
-            <gmd:contactInfo>
-              <gmd:CI_Contact>
-                <gmd:address>
-                  <gmd:CI_Address>
-                    <gmd:electronicMailAddress gco:nilReason="unknown"/>
-                  </gmd:CI_Address>
-                </gmd:address>
-              </gmd:CI_Contact>
-            </gmd:contactInfo>
-            <gmd:role>
-              <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
-            </gmd:role>
-          </gmd:CI_ResponsibleParty>
-        </gmd:citedResponsibleParty>
-      </gmd:pointOfContact>
-      <gmd:pointOfContact>
-        <gmd:citedResponsibleParty>
-          <gmd:CI_ResponsibleParty>
-            <gmd:individualName>
-              <gco:CharacterString>Melanie Leng</gco:CharacterString>
-            </gmd:individualName>
-            <gmd:organisationName>
-              <gco:CharacterString>British Geological Survey</gco:CharacterString>
-            </gmd:organisationName>
-            <gmd:contactInfo>
-              <gmd:CI_Contact>
-                <gmd:address>
-                  <gmd:CI_Address>
-                    <gmd:electronicMailAddress gco:nilReason="unknown"/>
-                  </gmd:CI_Address>
-                </gmd:address>
-              </gmd:CI_Contact>
-            </gmd:contactInfo>
-            <gmd:role>
-              <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
-            </gmd:role>
-          </gmd:CI_ResponsibleParty>
-        </gmd:citedResponsibleParty>
-      </gmd:pointOfContact>
-      <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
+          <gmd:individualName>
+            <gmx:Anchor xlink:href="https://orcid.org/0000-0002-7342-7756" xlink:title="ORCID record" xlink:actuate="onRequest">Michael Meredith</gmx:Anchor>
+          </gmd:individualName>
           <gmd:organisationName>
-            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+            <gco:CharacterString>British Antarctic Survey</gco:CharacterString>
           </gmd:organisationName>
-          <gmd:positionName>
-            <gco:CharacterString>Data Manager</gco:CharacterString>
-          </gmd:positionName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
-              <gmd:phone>
-                <gmd:CI_Telephone>
-                  <gmd:voice>
-                    <gco:CharacterString>+44 (0)1223 221400</gco:CharacterString>
-                  </gmd:voice>
-                </gmd:CI_Telephone>
-              </gmd:phone>
               <gmd:address>
                 <gmd:CI_Address>
-                  <gmd:deliveryPoint>
-                    <gco:CharacterString>British Antarctic Survey, High Cross, Madingely Road</gco:CharacterString>
-                  </gmd:deliveryPoint>
-                  <gmd:city>
-                    <gco:CharacterString>Cambridge</gco:CharacterString>
-                  </gmd:city>
-                  <gmd:administrativeArea>
-                    <gco:CharacterString>Cambridgeshire</gco:CharacterString>
-                  </gmd:administrativeArea>
-                  <gmd:postalCode>
-                    <gco:CharacterString>CB3 0ET</gco:CharacterString>
-                  </gmd:postalCode>
-                  <gmd:country>
-                    <gco:CharacterString>United Kingdom</gco:CharacterString>
-                  </gmd:country>
                   <gmd:electronicMailAddress>
-                    <gco:CharacterString>polardatacentre@bas.ac.uk</gco:CharacterString>
+                    <gco:CharacterString>mmm@bas.ac.uk</gco:CharacterString>
                   </gmd:electronicMailAddress>
                 </gmd:CI_Address>
               </gmd:address>
               <gmd:onlineResource>
                 <gmd:CI_OnlineResource>
                   <gmd:linkage>
-                    <gmd:URL>https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre/</gmd:URL>
+                    <gmd:URL>http://orcid.org/0000-0002-7342-7756</gmd:URL>
                   </gmd:linkage>
+                  <gmd:name>
+                    <gco:CharacterString>ORCID record</gco:CharacterString>
+                  </gmd:name>
+                  <gmd:description>
+                    <gco:CharacterString>ORCID is an open, non-profit, community-driven effort to create and maintain a registry of unique researcher identifiers and a transparent method of linking research activities and outputs to these identifiers.</gco:CharacterString>
+                  </gmd:description>
                 </gmd:CI_OnlineResource>
               </gmd:onlineResource>
             </gmd:CI_Contact>
           </gmd:contactInfo>
           <gmd:role>
-            <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="distributor">distributor</gmd:CI_RoleCode>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:individualName>
+            <gco:CharacterString>Carol Arrowsmith</gco:CharacterString>
+          </gmd:individualName>
+          <gmd:organisationName>
+            <gco:CharacterString>British Geological Survey</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>polardatacentre-intercept@bas.ac.uk</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:individualName>
+            <gco:CharacterString>Melanie Leng</gco:CharacterString>
+          </gmd:individualName>
+          <gmd:organisationName>
+            <gco:CharacterString>British Geological Survey</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>polardatacentre-intercept@bas.ac.uk</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
           </gmd:role>
         </gmd:CI_ResponsibleParty>
       </gmd:pointOfContact>
@@ -382,30 +320,24 @@
       <gmd:descriptiveKeywords>
         <gmd:MD_Keywords>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/concept/7769" xlink:actuate="onRequest">snow</gmx:Anchor>
+            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/of" xlink:actuate="onRequest">Oceanographic geographical features</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/concept/8229" xlink:actuate="onRequest">surface water</gmx:Anchor>
+            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/sr" xlink:actuate="onRequest">Sea regions</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
             <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/concept/4131" xlink:actuate="onRequest">ice</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/concept/4133" xlink:actuate="onRequest">ice pack</gmx:Anchor>
+            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/lc" xlink:actuate="onRequest">Land Cover</gmx:Anchor>
           </gmd:keyword>
-          <gmd:keyword>
-            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/concept/12226" xlink:actuate="onRequest">water salinity</gmx:Anchor>
-          </gmd:keyword>
-          <gmd:type>
-            <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
-          </gmd:type>
           <gmd:type>
             <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
           </gmd:type>
           <gmd:thesaurusName>
             <gmd:CI_Citation>
               <gmd:title>
-                <gco:characterString>General Multilingual Environmental Thesaurus</gco:characterString>
+                <gmx:Anchor xlink:href="http://www.eionet.europa.eu/gemet/inspire_themes">General Multilingual Environmental Thesaurus - INSPIRE themes</gmx:Anchor>
               </gmd:title>
               <gmd:date>
                 <gmd:CI_Date>
@@ -420,36 +352,38 @@
               <gmd:edition>
                 <gco:CharacterString>4.1.2</gco:CharacterString>
               </gmd:edition>
-              <gmd:CI_ResponsibleParty>
-                <gmd:organisationName>
-                  <gco:CharacterString>European Environment Information and Observation Network (EIONET), European Environment Agency (EEA)</gco:CharacterString>
-                </gmd:organisationName>
-                <gmd:contactInfo>
-                  <gmd:CI_Contact>
-                    <gmd:address>
-                      <gmd:CI_Address>
-                        <gmd:electronicMailAddress gco:nilReason="unknown"/>
-                      </gmd:CI_Address>
-                    </gmd:address>
-                    <gmd:onlineResource>
-                      <gmd:CI_OnlineResource>
-                        <gmd:linkage>
-                          <gmd:URL>https://www.eionet.europa.eu/gemet/en/themes/</gmd:URL>
-                        </gmd:linkage>
-                        <gmd:name>
-                          <gco:CharacterString>General Multilingual Environmental Thesaurus (GEMET) themes</gco:CharacterString>
-                        </gmd:name>
-                        <gmd:function>
-                          <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
-                        </gmd:function>
-                      </gmd:CI_OnlineResource>
-                    </gmd:onlineResource>
-                  </gmd:CI_Contact>
-                </gmd:contactInfo>
-                <gmd:role>
-                  <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher">publisher</gmd:CI_RoleCode>
-                </gmd:role>
-              </gmd:CI_ResponsibleParty>
+              <gmd:citedResponsibleParty>
+                <gmd:CI_ResponsibleParty>
+                  <gmd:organisationName>
+                    <gco:CharacterString>European Environment Information and Observation Network (EIONET), European Environment Agency (EEA)</gco:CharacterString>
+                  </gmd:organisationName>
+                  <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                      <gmd:address>
+                        <gmd:CI_Address>
+                          <gmd:electronicMailAddress gco:nilReason="unknown"/>
+                        </gmd:CI_Address>
+                      </gmd:address>
+                      <gmd:onlineResource>
+                        <gmd:CI_OnlineResource>
+                          <gmd:linkage>
+                            <gmd:URL>https://www.eionet.europa.eu/gemet/en/themes/</gmd:URL>
+                          </gmd:linkage>
+                          <gmd:name>
+                            <gco:CharacterString>General Multilingual Environmental Thesaurus (GEMET) themes</gco:CharacterString>
+                          </gmd:name>
+                          <gmd:function>
+                            <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+                          </gmd:function>
+                        </gmd:CI_OnlineResource>
+                      </gmd:onlineResource>
+                    </gmd:CI_Contact>
+                  </gmd:contactInfo>
+                  <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher">publisher</gmd:CI_RoleCode>
+                  </gmd:role>
+                </gmd:CI_ResponsibleParty>
+              </gmd:citedResponsibleParty>
             </gmd:CI_Citation>
           </gmd:thesaurusName>
         </gmd:MD_Keywords>              
@@ -477,7 +411,7 @@
           <gmd:thesaurusName>
             <gmd:CI_Citation>
               <gmd:title>
-                <gco:CharacterString>Global Change Master Directory (GCMD) Science Keywords</gco:CharacterString>
+                <gmx:Anchor xlink:href="https://earthdata.nasa.gov/about/gcmd/global-change-master-directory-gcmd-keywords">Global Change Master Directory (GCMD) Science Keywords</gmx:Anchor>
               </gmd:title>
               <gmd:date>
                 <gmd:CI_Date>
@@ -492,48 +426,50 @@
               <gmd:edition>
                 <gco:CharacterString>8.6</gco:CharacterString>
               </gmd:edition>
-              <gmd:CI_ResponsibleParty>
-                <gmd:organisationName>
-                  <gco:CharacterString>Global Change Data Center, Science and Exploration Directorate, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA)</gco:CharacterString>
-                </gmd:organisationName>
-                <gmd:contactInfo>
-                  <gmd:CI_Contact>
-                    <gmd:address>
-                      <gmd:CI_Address>
-                        <gmd:city>
-                          <gco:CharacterString>Greenbelt</gco:CharacterString>
-                        </gmd:city>
-                        <gmd:administrativeArea>
-                          <gco:CharacterString>MD</gco:CharacterString>
-                        </gmd:administrativeArea>
-                        <gmd:country>
-                          <gco:CharacterString>United States of America</gco:CharacterString>
-                        </gmd:country>
-                        <gmd:electronicMailAddress gco:nilReason="unknown"/>
-                      </gmd:CI_Address>
-                    </gmd:address>
-                    <gmd:onlineResource>
-                      <gmd:CI_OnlineResource>
-                        <gmd:linkage>
-                          <gmd:URL>https://earthdata.nasa.gov/about/gcmd/global-change-master-directory-gcmd-keywords</gmd:URL>
-                        </gmd:linkage>
-                        <gmd:name>
-                          <gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
-                        </gmd:name>
-                        <gmd:description>
-                          <gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords are structured, used and accessed. It also provides information on how users can participate in the further development of the keywords.</gco:CharacterString>
-                        </gmd:description>
-                        <gmd:function>
-                          <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
-                        </gmd:function>
-                      </gmd:CI_OnlineResource>
-                    </gmd:onlineResource>
-                  </gmd:CI_Contact>
-                </gmd:contactInfo>
-                <gmd:role>
-                  <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher">publisher</gmd:CI_RoleCode>
-                </gmd:role>
-              </gmd:CI_ResponsibleParty>
+              <gmd:citedResponsibleParty>
+                <gmd:CI_ResponsibleParty>
+                  <gmd:organisationName>
+                    <gco:CharacterString>Global Change Data Center, Science and Exploration Directorate, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA)</gco:CharacterString>
+                  </gmd:organisationName>
+                  <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                      <gmd:address>
+                        <gmd:CI_Address>
+                          <gmd:city>
+                            <gco:CharacterString>Greenbelt</gco:CharacterString>
+                          </gmd:city>
+                          <gmd:administrativeArea>
+                            <gco:CharacterString>MD</gco:CharacterString>
+                          </gmd:administrativeArea>
+                          <gmd:country>
+                            <gco:CharacterString>United States of America</gco:CharacterString>
+                          </gmd:country>
+                          <gmd:electronicMailAddress gco:nilReason="unknown"/>
+                        </gmd:CI_Address>
+                      </gmd:address>
+                      <gmd:onlineResource>
+                        <gmd:CI_OnlineResource>
+                          <gmd:linkage>
+                            <gmd:URL>https://earthdata.nasa.gov/about/gcmd/global-change-master-directory-gcmd-keywords</gmd:URL>
+                          </gmd:linkage>
+                          <gmd:name>
+                            <gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+                          </gmd:name>
+                          <gmd:description>
+                            <gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords are structured, used and accessed. It also provides information on how users can participate in the further development of the keywords.</gco:CharacterString>
+                          </gmd:description>
+                          <gmd:function>
+                            <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+                          </gmd:function>
+                        </gmd:CI_OnlineResource>
+                      </gmd:onlineResource>
+                    </gmd:CI_Contact>
+                  </gmd:contactInfo>
+                  <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher">publisher</gmd:CI_RoleCode>
+                  </gmd:role>
+                </gmd:CI_ResponsibleParty>
+              </gmd:citedResponsibleParty>
             </gmd:CI_Citation>
           </gmd:thesaurusName>
         </gmd:MD_Keywords>                
@@ -583,6 +519,13 @@
           </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
+      <gmd:resourceConstraints>
+        <gmd:MD_Constraints>
+          <gmd:useLimitation>
+            <gmx:Anchor xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" xlink:actuate="onRequest">This information is licensed under the Open Government Licence v3.0. To view this licence, visit http://www.nationalarchives.gov.uk/doc/open-government-licence/</gmx:Anchor>
+          </gmd:useLimitation>
+        </gmd:MD_Constraints>
+      </gmd:resourceConstraints>
       <gmd:spatialRepresentationType>
         <gmd:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="textTable">textTable</gmd:MD_SpatialRepresentationTypeCode>
       </gmd:spatialRepresentationType>
@@ -627,7 +570,7 @@
           <gmd:temporalElement>
             <gmd:EX_TemporalExtent>
               <gmd:extent>
-                <gml:TimePeriod>
+                <gml:TimePeriod gml:id="boundingExtent">
                   <gml:beginPosition>2016-03-31</gml:beginPosition>
                   <gml:endPosition>2016-04-26</gml:endPosition>
                 </gml:TimePeriod>
@@ -758,6 +701,16 @@
       </gmd:scope>
       <gmd:report>
         <gmd:DQ_DomainConsistency>
+          <gmd:measureIdentification>
+            <gmd:RS_Identifier>
+              <gmd:code>
+                <gco:CharacterString>Conformity_001</gco:CharacterString>
+              </gmd:code>
+              <gmd:codeSpace>
+                <gco:CharacterString>INSPIRE</gco:CharacterString>
+              </gmd:codeSpace>
+            </gmd:RS_Identifier>
+          </gmd:measureIdentification>
           <gmd:result>
             <gmd:DQ_ConformanceResult>
               <gmd:specification>
@@ -777,8 +730,12 @@
                   </gmd:date>
                 </gmd:CI_Citation>
               </gmd:specification>
-              <gmd:explanation gco:nilReason="inapplicable"/>
-              <gmd:pass gco:nilReason="unknown"/>
+              <gmd:explanation>
+                <gco:CharacterString>See the referenced specification</gco:CharacterString>
+              </gmd:explanation>
+              <gmd:pass>
+                <gco:Boolean>true</gco:Boolean>
+              </gmd:pass>
             </gmd:DQ_ConformanceResult>
           </gmd:result>
         </gmd:DQ_DomainConsistency>
@@ -801,6 +758,7 @@
 3. [/gmd:MD_Metadata] optional 'xsi' XML namespace attribute added
 4. [/gmd:MD_Metadata] XML namespaces re-ordered
 5. [/gmd:MD_Metadata] schama location attribute added pointing to GMX schema XSD
+5v. [/gmd:MD_Metadata] schema location attribute added point to GMD, required by Inspire validator 'gmd:MD_Metadata' element check
 6. [/gmd:MD_Metadata/gmd:LanguageCode] element value changed from 'English' to 'eng', which matches CodeList value and 
    recommended by Gemini [3]
 7. [/gmd:MD_Metadata/gmd:characterSet] element added, recommended by NOAA [4]
@@ -821,6 +779,8 @@
 18. [/gmd:MD_Metadata/gmd:referenceSystemInfo/../gmd:authority] element added because we use a gmd:code ('4326' AKA 
     'WGS84') not in Annex D.4 (Default Coordinate Reference Systems) in the Inspire ISO-19139 technical guidance ([6]), 
     Gemini requires a well known register that defines the reference system to be included [7]
+18v. [/gmd:MD_Metadata/gmd:referenceSystemInfo/../gmd:referenceSystemIdentifier/gmd:code element value added as gmx:Anchor, as 
+    per Inspire [[6] 3.2.1.1 TG Recommendation 2.2]
 19. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:alternateTitle] element removed it appears non-standard
 20. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:identifier[0]] element changed to gmd:MD_Identifier 
     with direct link to DMS record as recommended by Gemini [8]
@@ -830,26 +790,25 @@
 22. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints] new element added to
     hold citation as used by NOAA [9]
 23. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] originator instance split into individual instances
-24. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] instances for individuals wrapped in 
-    gmd:citedResponsibleParty elements
 24. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] first instance enchanced
 24.1. [./gmd:individualName] value changed from gco:characterString to gmx:Anchor with link to ORCID ID, as per NOAA 
       example [12] and ORCID guidelines [13]
 24.2. [./gmd:onlineResource] element added with link to ORCID ID as per NOAA example [12] and ORCID guidelines [13]
 24.3. [./gmd:organisationName] element added as per Gemini requirement [11]
-24.4. [./gmd:contactInfo/../electronicMailAddress] element added as per Gemini requirement [11]
-24.5. [./gmd:onlineResource] element added to online profile
-25. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact/../role] organisation instance changed form 'curator' 
-    to 'distributor' as per Gemini requirement [11] and reference to NOAA guidance [14] [15]
+24.4v. [./gmd:contactInfo/../electronicMailAddress] element added as per Gemini requirement [11] and Inspire [[25] 2.10.1 TG Requirement 35]
+25. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact/../gmd:role] organisation instance changed form 'curator' 
+    to more generic, 'pointOfContact' as per NOAA guidance [14] [15]
 26. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] additional organisation instance added with role of
     'pointOfContact' with reference to NOAA guidance [14] [15]
 27. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_MaintenanceFrequencyCode] value changed from 'unknown' to 'asNeeded'
 28. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:descriptiveKeywords] 
 28.1. 'NDGO0001' keyword removed
 28.2. 'NERC_DDC' keyword removed
-28.3. GEMET keywords added, based on closed equivalents to GCMD terms, as per Gemini/Inspire requirement [16]
+28.3. Inspire theme keywords added, based on closest equivalents to GCMD terms, as per Gemini/Inspire requirement [16]
+28.4. gmd:thesaurusName/gmd:title value changed from gco:CharacterString to gmx:Anchor, as per Inspire [[6] 2.3.5 TG Recommendation 1.9]
 28.4. GCMD (science themes) keywords thesaurus citation added, based on NOAA guidelines [[17] Implementation Guidance, A.]
 28.5. GCMD (science themes) keywords type added, based on NOAA guidelines [[17] Implementation Guidance, A.]
+28.5v. gmd:thesaurusName/../gmd:CI_ResponsibleParty elements wrapped in gmd:citedResponsibleParty element as per ISO specification [
 28.6. BAS/PDC free-text keywords type added for completeness
 28.7. BAS/PDC free-text keywords thesaurus removed as it is uncontrolled
 29. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_resourceConstraints] order of 'use' and 'access' constraint 
@@ -861,22 +820,21 @@
 31.2. instance for OGL in usage constraints added, as per Gemini guidance [19] with OGL citation as per National Archive 
       guidance [20]
 31.3. instance for Copyright in usage constraints added
+31v. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_resourceConstraints/../gmd:useLimitation] element added due to [[25] 2.9.2 TG Requirement 33/34]
 32. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:spatialRepresentationType] element added as per Gemini requirement [21]
 33. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:LanguageCode] element value changed from 'English' to 'eng', which 
     matches CodeList value and recommended by Gemini [3]
 34. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:characterSet] element added, recommended by Gemini [22]
+34v. [/gmd:MD_Metadata/gmd:identificationInfo/../gml:TimePeriod] ID value changed to 'boundingExtent' as per NOAA recommenations [27]
 35. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] element changed to implementation (rather than 
     nilreason='inapplicable'), value set to XLSX (as per related Ramadda holding) using a gmx:Anchor as recommended by
     Gemini [23], using a reference to IANA media-types list, as recommended by Inspire [24]
-36. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributor] is a copy of the CI_ResponsibleParty added as a 
-    gmd:PointOfContact in gmd:identificationInfo
 37. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:transferOptions]
 37.1. name and description elements added to existing instance to distingish from others
 37.2. additional instance added linking to Ramadda entry
 38. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:report] 
-38.1. gmd:measureIdentification element removed as this isn't required by Inspire
 38.2. gmd:result element replaced with Inspire complaint version (mandatory citation)
-38.3. gmd:pass changed to nilReason='unknown' to reflect pre-validation status
+38.3. gmd:pass set to pass to aid in validation (see related discussion)
 39. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:lineage] value changed from 'no special comments' to lineage shown in DMS
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
@@ -889,7 +847,6 @@
 [8] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#36
 [9] https://geo-ide.noaa.gov/wiki/index.php?title=DOI_Minting_Procedure#Third.2C_Include_the_DOI_and_citation_text_in_the_ISO_Metadata_Record
 [10] https://www.crossref.org/display-guidelines/
-[11] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#23
 [12] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Researcher_ID
 [13] https://orcid.org/trademark-and-id-display-guidelines
 [14] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_People
@@ -903,6 +860,9 @@
 [22] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#51
 [23] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#21
 [24] https://inspire.ec.europa.eu/media-types/application
+[25] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
+[26] http://www.datypic.com/sc/niem21/e-gmd_CI_Citation.html
+[27] https://geo-ide.noaa.gov/wiki/index.php?title=Extent_Spiral
 -->
 
 <!-- For discussion -->
@@ -925,7 +885,14 @@
 4.5.1. (org) 'British Antarctic Survey' (pos) 'Polar Data Centre'
 4.5.2. (org) 'British Antarctic Survey' (pos) 'Mapping and Geographic Information Centre'
 4.5.3. (org) 'British Antarctic Survey' (pos) 'Archives Service'
-5. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] check this is now our address
+5. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] 
+5.1. check this is now our address
+5.2. element required because of test [17] as per [[15] 2.10.1 and TG Requirement]
+5.3. elememt is not required in Gemini guidance
+5.4. where an author is from a external organisation do we collect their email address?
+5.5. even if we do, do we want to necessarily list it?
+5.6. should we have some sort intercept email we can use for this (which could send a bounce-back?)
+5.7. worth noting this requirement ignores the gco:nilReason convention which is used in most other cases
 6. [/gmd:referenceSystemInfo] presumably this will vary and non-WGS84 values could be used? (for PDC metadata)
 7. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:alternateTitle] recommended dropping this as I don't 
    think it adds anything since it can be trivially generated if needed, and prevents us using this value for an actual 
@@ -949,8 +916,17 @@
 9.2. a role of 'pointOfContact' is usually 'the Data Manager or the Data Center that preserves the data. These people 
      serve as contacts when the originator of the dataset is no longer available or interested in dealing with questions 
      about the dataset. This person has scientific expertise or experience but may not be a good source for information 
-     on data access or data order processing.' which I think fits our role
-9.3. other roles could be added as well (e.g. for curator) if we felt this was useful
+     on data access or data order processing.' [7] [8] which I think fits our role
+9.3. initially, a gmd:pointOfContact element with gmd:role='distributor' was added in gmd:identificationInfo, as this is
+     listed in all the examples, but this duplicated the gmd:distributionInfo/gmd:distributor element
+9.4. having validated the record, the 'distributor' role does not need to be repeated so the additional 'distributor' 
+     element was removed (leaving only the gmd:distributionInfo/gmd:distributor element)
+9.5. this leaves us with a single gmd:pointOfContact element in gmd:identificationInfo with a role of 'pointOfContact'
+     as per [7] [8]
+9.6. this could arugably be changed back to a role of 'curator' if it's felt this was better, although 'pointOfContact'
+     is aruably the more generic term (and we are the generic contact in most cases), there may also be an impact on
+     other systems which may ignore more specialist roles
+9.7. there is nothing to stop us adding the PDC (or other organisations) as multiple roles if it's felt that would be useful
 10. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:descriptiveKeywords] 
 10.1. 'NDGO0001' keyword removed because EIDC don't use it
 10.2. 'NERC_DDC' keyword removed because EIDC don't use it and it related to OAI-PMH which we aren't officially supporting
@@ -963,6 +939,10 @@
       of the data.' - the contents of the related Inspire code list [10] (explained in [11]) relate to factors such as
       (a) 'confidentiality' or (d) 'commerically sensitive information' - which does seem to be describing something other
       than how the data should be used
+12v. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:useLimitation]
+12v.1. elememt is not required in Gemini guidance
+12v.2. elememt required because of test [14] based on [[15] 2.9.2 and TG Requirement 33/34]
+12v.3. is there a way we can remove the gmd:useConstraints element and use gmd:useLimitations instead?
 12. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:characterSet] strinctly speaking we only need to include this element
     if the value is not 'utf8' but we may as well for completeness - we do need to ensure this is the encoding used in the
     data however, i.e. if ASCII we need to state this
@@ -977,6 +957,59 @@
 17. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:report] was this checking Inspire complainace generally or something
     more specific, the description stated 'INSPIRE Data Specification on unknown theme Guidelines' which seems odd
 18. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:lineage] presumably we want the lineage to be same everywhere
+19. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:pass]
+19.1. issue with test [18], based on [[15] 2.8.1 TG Requirement 29]
+19.2. I don't think it is possible to satisfy this requirement using an 'unknown' value - true or false are fine
+19.3. if [A] is used, the ISO 19115 conformance checks pass, but the Inspire profile for ISO 19115 checks fail [19]
+19.4. if [B] is used, the ISO 19115 conformance checks fail, but the Inspire profile for ISO 19115 checks pass [20]
+19.5. looking at [21] Inspire recommend [A] but that isn't working, so I'm tempted to report this on that forum and check
+19.6. email address for reporting issues: JRC-INSPIRE-SUPPORT@ec.europa.eu
+19.7. since this document now validates, I have set this value to 'true' for now
+20. validation errors with Inspire validator conformance class: Metadata for interoperability
+20.1. it is acknowledged this test suite is in draft with limitations and known errors (version 0.2.3)
+20.2. we fail on two points
+20.3. failure for coordinate reference system
+20.3.1. test failure because of test [22], based on [[5] 3.2.1.1 TG Recommendation 2.2]
+20.3.2. we fail because the test is looking for the xpath 'gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gco:CharacterString'
+       but we use an xpath 'gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gmx:Anchor'
+       as per TG Recommendation 2.2 of [5] and shown in example 3.14 of [5]
+20.3.3. I think this is a bug and should be reported to Inspire [23]
+20.4. failure for (distribution) encoding
+20.4.1. test failure because of this test [24] based on [[5] 3.2.3.1 TG Requirement 2.6]
+20.4.2. we fail because the test is looking for the element at xpath 'gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:version/gco:CharacterString'
+       being non-empty, including where a gco:nilReason attribute is used (on the parent gmd:version element). This is
+       counter to the Inspire guidelines: "If the version of the encoding is unknown or if the encoding is not versioned, 
+       the gmd:version shall be left empty and the nil reason attribute shall be provided with either value "unknown" or 
+       "inapplicable" correspondingly (Attribute gco:nilReason="unknown" or "inapplicable".)" as shown in example 3.18 of [5]
+20.4.3. I think this is a bug and should be reported to Inspire [23]
+21. [/gmd:MD_Metadata/../gmd:contact/../gmd:onlineResource] need to think about what we want to use this for as we can 
+    only have one [16]
+22. validation errors with BAS metadata validator service: Gemini standard
+22.1. this validation is performed by our validation service
+22.2. this validation is based on rules defined by the Gemini schematron (2.3, 1.0) [25]
+22.3. test is based on 3.2.2.2 TG Requirement 2.5 of [5]
+22.3.1. we fail because the Gemini schematron requires the space normalised value of the gmd:codeListValue element must 
+       be defined in the identifier of one of the elements in [26] - this codeListValue is for the gmd:characterSet
+       element defined within the gmd:identificationInfo element, which is option if using 'utf8'
+22.3.2. for this example record we use 'utf8' and so this element could be removed and validation will pass
+22.3.3. we use a value listed in the code list specified by the Gemini schematron but this is found to be invalid when tested
+22.3.4. it isn't known if this is a problem with validator, or the schematron, although I can't see any obvious reason 
+       for the schematron to fail
+22.3.5. possibly the value being compared, as interpretted by the validator, isn't correct somehow
+
+[A]
+
+```xml
+<gmd:pass gco:nilReason="unknown"/>
+```
+
+[B]
+
+```xml
+<gmd:pass>
+  <gco:Boolean gco:nilReason="unknown">null</gco:Boolean>
+</gmd:pass>
+```
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Identifiers#fileIdentifiers_and_parentIdentifiers
@@ -992,6 +1025,19 @@
 [11] https://inspire.ec.europa.eu/legislation-details/directive-20072ec-article-13
 [12] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#15
 [13] https://www.loc.gov/preservation/digital/formats/fdd/fdd000398.shtml
+[14] https://github.com/inspire-eu-validation/metadata/blob/1.3/iso-19115-19119/ds-access-use.md
+[15] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
+[16] http://www.datypic.com/sc/niem21/e-gmd_CI_Contact.html
+[17] https://github.com/inspire-eu-validation/metadata/blob/1.3/iso-19115-19119/responsible-party-contact-info.md
+[18] https://github.com/inspire-eu-validation/metadata/blob/master/iso-19115-19119/ds-conformity.md
+[19] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID1954fa0f-5092-4289-b73d-bbb61fbe15b1.html
+[20] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID4f1654aa-d4d4-465d-bae8-c2b208e822b3.html
+[21] https://ies-svn.jrc.ec.europa.eu/issues/3293
+[22] https://github.com/inspire-eu-validation/data/blob/3.0rc3/interoperability-metadata/coordinate-reference-system.md
+[23] https://github.com/inspire-eu-validation/data/issues
+[24] https://github.com/inspire-eu-validation/data/blob/3.0rc3/interoperability-metadata/encoding.md
+[25] https://www.agi.org.uk/about/resources/category/125-schematron
+[26] https://www.agi.org.uk/images/xslt/MD_CharacterSetCode.xml
 -->
 
 <!-- Notes -->
@@ -1009,11 +1055,18 @@
 4. role 'pointOfContact' for gmd:CI_ResponsibleParty seems to be a 'default' or 'generic' value 
 5. when generating a boilerplate record: use '<gmd:citation gco:nilReason="template"/>' convention
 6. when generating documentation, see outline XML in section starting 'The merge template specifies a Level 4' [4]
+7. [/gmd:MD_Metadata/gmd:referenceSystemInfo/gmd:code] is not an Inspire Default Coordinate Reference System Identifier, as per Annex D.4 in [3]
+3. this file is valid against the Inspire Technical Guidance for ISO 19115 [2]
+4. this file is valid against the Inspire Technical Guidance for ISO 19139 [3]
+5. this file can be be made valid against the Gemini profile for ISO 19115 [5] (see discussion section)
+6. this file is valid against the Gemini XML element order [6]
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
 [3] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
+[5] https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini
+[6] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
 -->
 
 <!-- TODO -->
@@ -1021,7 +1074,7 @@
 
 Internal changes:
 
-1. incorporate changes made in Inspire validated example
+1. review merged changes, discussion and notes to ensure internal consistency
 2. add discussion point to consider changing gmd:role for PDC instance in gmd:identificationInfo back to back to 'curator',
    if so update other discussion points accordingly
 3. check spelling of comments
@@ -1045,6 +1098,7 @@ Further improvements to metadata:
 2. look into MD_ProgressCode [2] shown in DMS but no exposed in metadata
 3. add other GCMD keyword types [3] - see [4] for using locations
 4. is there an Inspire recommended way of embargoing data?
+5. is there a way we can list other identifiers (controlled) for things like the Registers Service in CI_Contacts?
 
 Interoperability across standards:
 
@@ -1054,4 +1108,60 @@ Interoperability across standards:
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
 [3] https://geo-ide.noaa.gov/wiki/images/d/df/AB-GUID-01910_R0_KeywordImplementationRecommendations_v1.0.pdf
 [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Extents#Bounding_Extent
+-->
+
+<!-- Validations (errors only) -->
+<!-- 
+1. (attempt 1, Inspire validator) [1]
+1.1. ISO 19115
+1.1.1. Schema validation
+1.1.1.1 Errors: 7
+1.2. ISO 19115 (Inspire Profile)
+1.2.1. Access and use conditions
+1.2.1.1 Errors: 1
+1.2.2. Specification
+1.2.2.1. Errors: 1
+1.2.3. Responsible party contact info
+1.2.3.1. Errors: 6
+1.2.4. Responsible party role
+1.2.4.1. Errors: 1
+
+2. (attempt 2, Inspire validator) [2]
+2.1. ISO 19115 (Inspire Profile)
+2.1.1. Specification
+2.1.1.1. Errors: 1
+2.1.2. Responsible party contact info
+2.1.2.1. Errors: 2
+
+3. (attempt 3 A, Inspire validator) [3]
+3.1. ISO 19115 (Inspire Profile)
+3.1.1. Specification
+3.1.1.1. Errors: 1
+
+4. (attempt 3 B, Inspire validator) [4]
+4.1. ISO 19115
+4.1.1. Schema validation
+4.1.1.1 Errors: 7
+
+5. (attempt 5, Inspire validator) [5]
+5.1. All pass
+
+6. (attempt 6, Inspire validator) [6]
+6.1. Inspire metadata for interoperability
+6.1.1. Coordinate reference system
+6.1.1.1. Errors: 1 (see discussion 5.3.)
+6.1.2. Encoding
+6.1.2.1. Errors: 1 (see discussion 5.4.)
+
+7. (attempt 7, BAS metadata validator service)
+7.1 Gemini standard
+7.1.1. Gemini schematron
+7.1.1.1. Errors: 
+
+[1] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID129f1b19-6fd3-44cb-bb08-d6d182fe3ad8.html
+[2] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID80db5d43-9e2e-411b-9e17-0627fc676614.html
+[3] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID1954fa0f-5092-4289-b73d-bbb61fbe15b1.html
+[4] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EID4f1654aa-d4d4-465d-bae8-c2b208e822b3.html
+[5] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EIDbe6e15fe-2d88-48ef-98fc-30c8638706fc.html
+[6] http://inspire-sandbox.jrc.ec.europa.eu/etf-webapp/v2/TestRuns/EIDad8f63c1-acc5-4ab4-9f19-3e31f1e27b54.html
 -->
