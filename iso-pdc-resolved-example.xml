@@ -943,7 +943,9 @@
 9.7. there is nothing to stop us adding the PDC (or other organisations) as multiple roles if it's felt that would be useful
 10. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords] 
 10.1. 'NDGO0001' keyword removed because EIDC don't use it and we are initially removing NERC specific metadata requirements
+10.1.1. in reviewing the contents of the NERC Data Catalogue service [27] this keyword is not needed for harvesting to take place
 10.2. 'NERC_DDC' keyword removed because EIDC don't use it and we are initially removing NERC specific metadata requirements
+10.2.1. in reviewing the contents of the NERC Data Catalogue service [27] this keyword is not needed for harvesting to take place
 10.3. thesaurus for free-text keywords removed because since they're intentionally uncontrolled, I don't think 
       an attribution makes sense since they are non-authoritative
 11. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:OtherConstraints]
@@ -1014,6 +1016,50 @@
 22.3.4. it isn't known if this is a problem with validator, or the schematron, although I can't see any obvious reason 
        for the schematron to fail
 22.3.5. possibly the value being compared, as interpreted by the validator, isn't correct somehow
+23. review of NERC Data Catalogue Service [27]
+23.1. based on GeoNetwork
+23.1.1. current version: 3.2.0 (September 2016)
+23.1.2. latest version: 3.4.3 (May 2018)
+23.2. filtering
+23.2.1. Inspire Spatial Data Themes [28]
+23.2.1.1. now supported by this candidate record but not historically
+23.2.2. ISO 19115 Topic Category [29]
+23.2.2.1. supported historically due to Inspire requirement [[15] 2.3.1]
+23.3. record view (arguably a review of a CEDA metadata record) [30]
+23.3.1. point of contact
+23.3.1.1. duplicate the point of contact for the 'distributor' role
+23.3.1.2. point of contact names linked to a mailto: (which is empty)
+23.3.1.2.1. is this actually reading the email address field?
+23.3.1.2.1. is this to workaround the mandatory email address problem with inspire (i.e. an empty value)
+23.3.1.3. role='funder' contact listed
+23.3.1.3. the data centre is listed numerous times for different roles (including 'curator' and 'pointOfContact')
+23.3.2. gmd:descriptiveKeywords
+23.3.2.1. lists keyword for 'NDGO0003' [31]
+23.3.2.1.1. this is 'Natural Environment Research Council Designated Data Centres'
+23.3.2.1.2. this is different to the term we have used 'NDGO0003' [32] which is 'Marine Environmental Data and Information Network'
+23.3.2.1.3. does this mean we have publishing to the wrong portal all along?
+23.3.2.1.4. or does this mean our records come through to the NERC portal regardless of the missing keyword
+23.3.2.1.4. as an aside 'NDGO0005' [33] refers to 'data.gov.uk'
+23.3.2.1.5. these keywords do not have a citation
+23.3.3. gmd:transferOptions 
+23.3.3.1. element for the CEDA data catalogue (ID is also listed in the citation, but not as a URL)
+23.3.3.2. element for a link to a paper (interesting concept, link is ad-hoc and not a DOI)
+23.3.4. gmd:metadataStandardName set to 'UK GEMINI' but does not comply (missing conformance element for example)
+23.4. record view (arugably a review of a PDC metadata record) [31]
+23.4.1. 'Provided by' UI element shows an unacceptably small BAS logo - not sure where this is defined
+23.5. comparison across different data centres
+23.5.1. counts per centre
+23.5.1.1. 'BAS-PDC' - 349
+23.5.1.2. 'BGS-NGDC' - 473
+23.5.1.3. 'BODC' - 1077
+23.5.1.4. 'CEDA' - 4450
+23.5.1.5. 'CEH-EIDC' - 881
+23.4.2. last record update time (now = 2018-10-17)
+23.5.2.1. 'BAS-PDC' - 'GB/NERC/BAS/AEDC/01041' - 2017-11-16 (~1 year)
+23.5.2.2. 'BGS-NGDC' - 'ce867cc7-0216-58a8-e044-0003ba9b0d98' - 2018-10-17 (today)
+23.5.2.3. 'BODC' - '660171a74c8a5eb4b5a748d7b68788eb' - 2018-09-13 (~1 month)
+23.5.2.4. 'CEDA' - 'e29f31861df08ccab92cf408e9e673e2' - 2018-10-17 (today)
+23.5.2.5. 'CEH-EIDC' - 'e3c79781-09af-4c4f-b6ad-b0bc323e203f' - 2018-10-12 (~1 week)
 
 [A]
 
@@ -1056,6 +1102,14 @@
 [24] https://github.com/inspire-eu-validation/data/blob/3.0rc3/interoperability-metadata/encoding.md
 [25] https://www.agi.org.uk/about/resources/category/125-schematron
 [26] https://www.agi.org.uk/images/xslt/MD_CharacterSetCode.xml
+[27] https://csw-nerc.ceda.ac.uk
+[28] https://www.eionet.europa.eu/gemet/en/inspire-themes/
+[29] http://inspire.ec.europa.eu/metadata-codelist/TopicCategory
+[30] https://csw-nerc.ceda.ac.uk/geonetwork/srv/eng/catalog.search#/metadata/0f29b5f7ca774bd590a2ade5f94e9ddb
+[31] http://vocab.nerc.ac.uk/collection/N01/current/NDGO0003/2/
+[32] http://vocab.nerc.ac.uk/collection/N01/current/NDGO0003/2/
+[33] http://vocab.nerc.ac.uk/collection/N01/current/NDGO0005/1/
+[34] https://csw-nerc.ceda.ac.uk/geonetwork/srv/eng/catalog.search#/metadata/GB/NERC/BAS/AEDC/00393
 -->
 
 <!-- Notes -->
@@ -1101,7 +1155,6 @@ Comparison across data centres:
 2. include BGS example
 3. include BODC example
 4. include CEDA example
-5. review contents of NERC Catalogue (keywords required)
 
 Further improvements to metadata:
 
