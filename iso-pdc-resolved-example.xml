@@ -753,89 +753,100 @@
 
 <!-- Changes -->
 <!-- 
-1. [/(Root)] XML declaration and encoding type specified, required by Gemini [[1] 2.2.1]
-2. [/gmd:MD_Metadata] 'srv' XML namespace attribute added, required by Gemini [[1] 2.2.2]
-3. [/gmd:MD_Metadata] optional 'xsi' XML namespace attribute added
-4. [/gmd:MD_Metadata] XML namespaces re-ordered
-5. [/gmd:MD_Metadata] schama location attribute added pointing to GMX schema XSD
-5v. [/gmd:MD_Metadata] schema location attribute added point to GMD, required by Inspire validator 'gmd:MD_Metadata' element check
-6. [/gmd:MD_Metadata/gmd:LanguageCode] element value changed from 'English' to 'eng', which matches CodeList value and 
-   recommended by Gemini [3]
-7. [/gmd:MD_Metadata/gmd:characterSet] element added, recommended by NOAA [4]
-8. [/gmd:MD_Metadata/gmd:hierarchyLevelName] element added, required by Gemini [[1] 2.3.1]
-9. [/gmd:MD_Metadata/../gmd:contact/../gmd:organisationName] element value changed from 'British Antarctic Survey' to 
-   'UK Polar Data Centre'
-10. [/gmd:MD_Metadata/../gmd:contact/../gmd:PositionName] element added, as recommended, but not required, 
-    by Gemini [[1] 2.2.8]
-11. [/gmd:MD_Metadata/../gmd:contact/../gmd:Address] 'deliveryPoint', 'city', 'administrativeArea', 'postalCode', 
-    'country' elements added, as recommended, but not required, by Gemini [[1] 2.2.8]
-12. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] element value changed from 'pdc@bas.ac.uk' to 
-    'polardatacentre@bas.ac.uk'
-13. [/gmd:MD_Metadata/../gmd:contact/../gmd:onlineResource] element added linked to UK-PDC page on the BAS website 
-14. [/gmd:MD_Metadata/gmd:dateStamp] element changed from date to dateTime with UTC timezone
-15. [/gmd:MD_Metadata/gmd:metadataStandardName] element value changed to use value used by Gemini
-16. [/gmd:MD_Metadata/gmd:metadataStandardVersion] element value changed to use value used by Gemini
-17. [/gmd:MD_Metadata/dataSetURI] element removed due to [5] which recommends two alternatives
-18. [/gmd:MD_Metadata/gmd:referenceSystemInfo/../gmd:authority] element added because we use a gmd:code ('4326' AKA 
-    'WGS84') not in Annex D.4 (Default Coordinate Reference Systems) in the Inspire ISO-19139 technical guidance ([6]), 
-    Gemini requires a well known register that defines the reference system to be included [7]
-18v. [/gmd:MD_Metadata/gmd:referenceSystemInfo/../gmd:referenceSystemIdentifier/gmd:code element value added as gmx:Anchor, as 
-    per Inspire [[6] 3.2.1.1 TG Recommendation 2.2]
-19. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:alternateTitle] element removed it appears non-standard
-20. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:identifier[0]] element changed to gmd:MD_Identifier 
-    with direct link to DMS record as recommended by Gemini [8]
-21. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:identifier[1]] additional element added for DOI related
-    to dataset - this examples uses a DOI in the DataCite test prefix as this dataset doesn't have a DOI - the structure 
-    is based on the recommendations by Gemini [8] and NOAA [9], the DOI reference/URL is based on CrossRef [10]
-22. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints] new element added to
-    hold citation as used by NOAA [9]
-23. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] originator instance split into individual instances
-24. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] first instance enchanced
-24.1. [./gmd:individualName] value changed from gco:characterString to gmx:Anchor with link to ORCID ID, as per NOAA 
-      example [12] and ORCID guidelines [13]
-24.2. [./gmd:onlineResource] element added with link to ORCID ID as per NOAA example [12] and ORCID guidelines [13]
-24.3. [./gmd:organisationName] element added as per Gemini requirement [11]
-24.4v. [./gmd:contactInfo/../electronicMailAddress] element added as per Gemini requirement [11] and Inspire [[25] 2.10.1 TG Requirement 35]
-25. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact/../gmd:role] organisation instance changed form 'curator' 
-    to more generic, 'pointOfContact' as per NOAA guidance [14] [15]
-26. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] additional organisation instance added with role of
-    'pointOfContact' with reference to NOAA guidance [14] [15]
-27. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_MaintenanceFrequencyCode] value changed from 'unknown' to 'asNeeded'
-28. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:descriptiveKeywords] 
-28.1. 'NDGO0001' keyword removed
-28.2. 'NERC_DDC' keyword removed
-28.3. Inspire theme keywords added, based on closest equivalents to GCMD terms, as per Gemini/Inspire requirement [16]
-28.4. gmd:thesaurusName/gmd:title value changed from gco:CharacterString to gmx:Anchor, as per Inspire [[6] 2.3.5 TG Recommendation 1.9]
-28.4. GCMD (science themes) keywords thesaurus citation added, based on NOAA guidelines [[17] Implementation Guidance, A.]
-28.5. GCMD (science themes) keywords type added, based on NOAA guidelines [[17] Implementation Guidance, A.]
-28.5v. gmd:thesaurusName/../gmd:CI_ResponsibleParty elements wrapped in gmd:citedResponsibleParty element as per ISO specification [
-28.6. BAS/PDC free-text keywords type added for completeness
-28.7. BAS/PDC free-text keywords thesaurus removed as it is uncontrolled
-29. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_resourceConstraints] order of 'use' and 'access' constraint 
-    instances swapped (to 'access' followed by 'use') based on Gemini guidance [18] [19]
-30. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_resourceConstraints/../gmd:UseLimitation] value changed to use 
-    code list value as per Gemini guidance [19]
-31. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_resourceConstraints/../gmd:OtherConstraints]
-31.1. instance for OGL in access constraints changed to no limitations, as per Gemini guidance [18]
-31.2. instance for OGL in usage constraints added, as per Gemini guidance [19] with OGL citation as per National Archive 
-      guidance [20]
-31.3. instance for Copyright in usage constraints added
-31v. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:MD_resourceConstraints/../gmd:useLimitation] element added due to [[25] 2.9.2 TG Requirement 33/34]
-32. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:spatialRepresentationType] element added as per Gemini requirement [21]
-33. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:LanguageCode] element value changed from 'English' to 'eng', which 
-    matches CodeList value and recommended by Gemini [3]
-34. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:characterSet] element added, recommended by Gemini [22]
-34v. [/gmd:MD_Metadata/gmd:identificationInfo/../gml:TimePeriod] ID value changed to 'boundingExtent' as per NOAA recommenations [27]
-35. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] element changed to implementation (rather than 
-    nilreason='inapplicable'), value set to XLSX (as per related Ramadda holding) using a gmx:Anchor as recommended by
-    Gemini [23], using a reference to IANA media-types list, as recommended by Inspire [24]
-37. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:transferOptions]
-37.1. name and description elements added to existing instance to distingish from others
-37.2. additional instance added linking to Ramadda entry
-38. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:report] 
-38.2. gmd:result element replaced with Inspire complaint version (mandatory citation)
-38.3. gmd:pass set to pass to aid in validation (see related discussion)
-39. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:lineage] value changed from 'no special comments' to lineage shown in DMS
+1. [/ (Root)] XML declaration and encoding type specified, required by Gemini [[1] 2.2.1]
+2. [/gmd:MD_Metadata] 
+2.1. 'srv' XML namespace attribute added, required by Gemini [[1] 2.2.2]
+2.2. optional 'xsi' XML namespace attribute added, to facilitate expressing schema locations [[1] 2.2.2]
+2.3. XML namespaces re-ordered, cosmetic
+2.4. schama location attribute added pointing to GMX schema XSD, as per convention
+2.5. schema location attribute added point to GMD, required by Inspire validator ('gmd:MD_Metadata' element check)
+3. [/gmd:MD_Metadata/gmd:LanguageCode] element value changed from 'English' to 'eng', which matches CodeList value, 
+   recommended by Gemini [3] and NOAA [2]
+4. [/gmd:MD_Metadata/gmd:characterSet] element added, recommended by NOAA [4]
+5. [/gmd:MD_Metadata/gmd:hierarchyLevelName] element added, required by Gemini [[1] 2.3.1]
+6. [/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName] element value changed from 
+   'British Antarctic Survey' to 'UK Polar Data Centre' (see discussion)
+7. [/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:PositionName] element added, as recommended by Gemini [[1] 2.2.8]
+8. [/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address]
+8.1. [./gmd:deliveryPoint] element added, recommended by Gemini [[1] 2.2.8]
+8.2. [./gmd:city] element added, recommended by Gemini [[1] 2.2.8]
+8.1. [./gmd:administrativeArea] element added, recommended by Gemini [[1] 2.2.8]
+8.1. [./gmd:postalCode] element added, recommended by Gemini [[1] 2.2.8]
+9. [/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress]
+   element value changed from 'pdc@bas.ac.uk' to 'polardatacentre@bas.ac.uk' (see discussion)
+10. [/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource] element 
+    added pointing to UK-PDC page on the BAS website, for completeness
+11. [/gmd:MD_Metadata/gmd:dateStamp] element changed from gmd:date element to gmd:dateTime (with UTC timezone) to allow
+    changes within a day to be detectable
+12. [/gmd:MD_Metadata/gmd:metadataStandardName] element value changed, to remove NERC specifics
+13. [/gmd:MD_Metadata/gmd:metadataStandardVersion] element value changed, to remove NERC specifics
+14. [/gmd:MD_Metadata/dataSetURI] element removed, as recommended by NOAA [5]
+15. [/gmd:MD_Metadata/gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:authority]
+    element added, required by Gemini [7] where a a gmd:code value not in Annex D.4 (Default Coordinate Reference Systems) 
+    in Inspire ISO-19139 technical guidance [6]
+16. [/gmd:MD_Metadata/gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code]
+    element value changed from gco:CharacterString element to gmx:Anchor, recommended by Inspire [[6] 3.2.1.1 TG Recommendation 2.2]
+17. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:alternateTitle]
+    element removed (seemed redundant, see discussion)
+18. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier[0]]
+    element changed from gmd:RS_Identifier to gmd:MD_Identifier with direct link to DMS record, recommended by Gemini [8]
+19. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier[1]]
+    additional element added for DOI pointing to dataset, recommended by Gemini [8] and NOAA [9], DOI format recommended 
+    by CrossRef [10]
+20. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints]
+    new element added for DOI citation, recommended by NOAA [9]
+21. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact]
+21.1. [./ gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode(@gmd:codeListValue="originator")] element replaced
+21.2. [./ gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode(@gmd:codeListValue="author")] elements added for each author 
+      (taken from removed 'originator' instance)
+21.3. [.[1]/gmd:CI_ResponsibleParty/gmd:individualName] element value changed from gco:characterString to gmx:Anchor 
+      with link to ORCID ID, recommended by NOAA [12], ORCID reference specified by ORCID guidelines [13]
+21.4. [.[1]/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource] element added for ORCID ID, 
+      recommended by NOAA [12], ORCID reference specified by ORCID guidelines [13]
+21.5. [./ gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode(@gmd:codeListValue="curator")] value changed from 'curator'
+      to 'pointOfContact'
+22. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency/gmd:MD_MaintenanceFrequencyCode]
+    value changed from 'unknown' to 'asNeeded', seemed more accurate
+23. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords]
+23.1. element added for Inspire theme keywords, required by Gemini [16]
+23.2. [./gmd:MD_Keywords/gmd:keyword] 'NDGO0001' keyword removed, to remove NERC specifics
+23.3. [./gmd:MD_Keywords/gmd:keyword] 'NERC_DDC' keyword removed, to remove NERC specifics
+23.4. [./gmd:thesaurusName/gmd:title] element value changed from gco:characterString to gmx:Anchor with link to Thesaurus
+      title, recommended by Inspire [[6] 2.3.5 TG Recommendation 1.9]
+23.5. [./gmd:thesaurusName/gmd:CI_Citation] gmd:CI_ResponsibleParty elements wrapped in gmd:citedResponsibleParty elements,
+      required by ISO 19115 [26]
+23.6. [./gmd:CI_Citation] for 'GCMD science themes' changed, recommended by NOAA [[17] Implementation Guidance, A.]
+23.7. [./gmd:type] for 'GCMD science themes' added, recommended by NOAA [[17] Implementation Guidance, A.]
+23.8. [./gmd:type] for 'BAS/PDC free-text keywords' added, for completeness
+23.9. [./gmd:thesaurusName] for 'BAS/PDC free-text keywords' removed, as it is uncontrolled (see discussion)
+24. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceMaintenance] order of 'use' and 
+    'access' (as abstract terms), as implemented by their concrete elements, reordered, recommended by Gemini [18] [19] 
+25. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useConstraints] element
+    added with gmd:MD_RestrictionCode value, required by Gemini [19]
+26. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:OtherConstraints]
+26.1. instance for OGL in 'access' constraints changed to 'no limitations' code list value, required by Gemini [18] 
+      (see discussion)
+26.2. instance for OGL in 'usage' constraints changed, recommended by Gemini [19], OGL citation specified by National 
+      Archive guidance [20]
+26.3. instance for copyright statement in 'usage' constraints added, for completeness (see discussion)
+27. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:spatialRepresentationType] element added, required by Gemini [21]
+28. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:LanguageCode] element value changed from 'English' to 'eng', which 
+    matches CodeList value, recommended by Gemini [3]
+29. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:characterSet] element added, recommended by Gemini [22]
+30. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod(@gml:id)]
+    attribute value changed to 'boundingExtent', recommended by NOAA [27]
+31. [/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat] element implemented rather than
+    set to nilreason='inapplicable', value set to XLSX (Microsoft Excel) taken from related Ramadda holding using
+    gmx:Anchor element referencing IANA media-types list, recommended by Gemini [23] and Inspire [24]
+32. [/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions]
+32.1. [./[0]/gmd:name] element added, to distinguish from other gmd:transferOptions instances
+32.2. [./[0]/gmd:description] element added, to distinguish from other gmd:transferOptions instances
+32.3. [./[1]] additional instance added relating to Ramadda entry listed in DMS entry
+33. [/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_DomainConsistency/gmd:result/gmd:DQ_ConformanceResult]
+33.1. [./gmd:specification] element refactored with mandatory citation, required by Inspire [25]
+33.2. [./gmd:pass] element set to 'true' to pass Inspire validator (see discussion)
+34. [/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:statement] value changed
+    from 'no special comments' to lineage shown in DMS entry, for completeness
 
 [1] https://www.agi.org.uk/gemini/40-gemini/1048-uk-gemini-encoding-guidance#2.1
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Metadata_and_Resource_Language:
@@ -849,8 +860,6 @@
 [10] https://www.crossref.org/display-guidelines/
 [12] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Researcher_ID
 [13] https://orcid.org/trademark-and-id-display-guidelines
-[14] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_People
-[15] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#CI_RoleCode
 [16] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#6
 [17] https://geo-ide.noaa.gov/wiki/images/d/df/AB-GUID-01910_R0_KeywordImplementationRecommendations_v1.0.pdf
 [18] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#25
@@ -868,16 +877,17 @@
 <!-- For discussion -->
 <!--
 1. [gmd:MD_Metadata] Gemini doesn't require the 'schemaLocation' attribute to be set, should/do we? [[1] 2.2.2]
-2. [gmd:fileIdentifier] should this change to the scheme recommended by NOAA [2] [3]?
+2. [gmd:MD_Metadata/gmd:fileIdentifier] should this change to the scheme recommended by NOAA [2] [3]?
 2.1.1. E.g. 'uk.ac.bas.class:PDC-01103' or 
 2.1.2. 'https://isni.ringgold.com/api/stable/institution/0000000405983800:PDC-01103' using ISNI (Ringgold) or
 2.1.3. 'https://search.crossref.org/funding?q=501100007849' CrossRef funder database
 2.2. should this change to using UUIDs recommended by Gemini [[1] 2.2.6] and by ISO [4]
-3. [/gmd:MD_Metadata/../gmd:contact/../gmd:organisationName] what should our name be? [British Antarctic Survey,
-   Polar Data Centre, UK Polar Data Centre]?
-3.1. The Inspire technical guidance recommends a full name is used without abbreivations [[5] TG Recommendation C.2]
-4. [/gmd:MD_Metadata/../gmd:contact/../gmd:PositionName] would this change per-record? Value based on Gemini example
-4.1. should this be (org) 'Naturual Environment Research Council' (pos) 'Polar Data Centre'
+3. [/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName] what should our name be? (British 
+   Antarctic Survey, Polar Data Centre, UK Polar Data Centre]?
+3.1. The Inspire technical guidance recommends a full name is used without abbreviations [[5] TG Recommendation C.2]
+4. [/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:PositionName] would this change per-record? Value based on 
+   Gemini example
+4.1. should this be (org) 'Natural Environment Research Council' (pos) 'Polar Data Centre'
 4.2. should this be (org) 'British Antarctic Survey' (pos) 'Polar Data Centre'
 4.3. should this be (org) 'UK Polar Data Centre' (pos) '(Environmental) Data Centre'
 4.4. does the (org) need to be a real org - i.e. BAS has an ISNI, the PDC doesn't
@@ -885,31 +895,35 @@
 4.5.1. (org) 'British Antarctic Survey' (pos) 'Polar Data Centre'
 4.5.2. (org) 'British Antarctic Survey' (pos) 'Mapping and Geographic Information Centre'
 4.5.3. (org) 'British Antarctic Survey' (pos) 'Archives Service'
-5. [/gmd:MD_Metadata/../gmd:contact/../gmd:electronicMailAddress] 
+5. [/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress]
 5.1. check this is now our address
 5.2. element required because of test [17] as per [[15] 2.10.1 and TG Requirement]
-5.3. elememt is not required in Gemini guidance
+5.3. element is not required in Gemini guidance
 5.4. where an author is from a external organisation do we collect their email address?
 5.5. even if we do, do we want to necessarily list it?
 5.6. should we have some sort intercept email we can use for this (which could send a bounce-back?)
 5.7. worth noting this requirement ignores the gco:nilReason convention which is used in most other cases
-6. [/gmd:referenceSystemInfo] presumably this will vary and non-WGS84 values could be used? (for PDC metadata)
-7. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:citation/gmd:alternateTitle] recommended dropping this as I don't 
-   think it adds anything since it can be trivially generated if needed, and prevents us using this value for an actual 
-   alternate title
-8. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints] element added for DOI
-   citation
-8.1. don't understand current usage in DMS as citation point to papers and not the resource (assumed intentional)
-8.2. should we show both citations with guidance on which to use, or only show one preferrred citation
+6. [/gmd:MD_Metadata//gmd:referenceSystemInfo] presumably this will vary and non-WGS84 values could be used? (for PDC 
+   metadata)
+7. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:alternateTitle]
+   recommended dropping this as I don't think it adds anything since it can be trivially generated if needed, and 
+   prevents us using this value for an actual alternate title (although you can have multiple values)
+8. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:OtherConstraints]
+   element added for DOI citation
+8.1. don't understand current usage in other DMS records as citation point to papers and not the resource (assumed 
+     intentional)
+8.2. should we show both citations with guidance on which to use, or only show one preferred citation
 8.3. worth noting anyone can run a DOI through DataCite and get a citation for the Dataset which we would be valid and
      not preventable
 8.4. do we want a difference in the citations available to humans than machines?
 8.5. CrossMark recommend using 'https://doi.org/[doi]' not 'doi:[doi]' [6]
 8.6. assuming a dataset citation is used
-8.6.1. what is our preferred format? Datacite defaults to APA
+8.6.1. what is our preferred format? DataCite defaults to APA
 8.6.2. inconsistency between name of the PDC - are we 'Polar Data Centre' or 'UK Polar Data Centre'
 8.6.3. EIDC use dataset as citation
-9. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:pointOfContact] instance(s) for organisation (i.e. PDC)
+8.6.4. DOI shown in this example record is not real, using the DataCite test prefix and a random UUID 
+9. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact] instance(s) for organisation 
+   (i.e. PDC)
 9.1. Gemini requires an instance with a role of 'distributor', looking at NOAA's guidance [7] [8] this 'identifies the 
      people that manage orders and data access at a Data Center. These people have expertise in data access systems but 
      may not be a good source for more scientific information on the resource' - which makes sense for us but we are also
@@ -923,41 +937,45 @@
      element was removed (leaving only the gmd:distributionInfo/gmd:distributor element)
 9.5. this leaves us with a single gmd:pointOfContact element in gmd:identificationInfo with a role of 'pointOfContact'
      as per [7] [8]
-9.6. this could arugably be changed back to a role of 'curator' if it's felt this was better, although 'pointOfContact'
-     is aruably the more generic term (and we are the generic contact in most cases), there may also be an impact on
+9.6. this could arguably be changed back to a role of 'curator' if it's felt this was better, although 'pointOfContact'
+     is arguably the more generic term (and we are the generic contact in most cases), there may also be an impact on
      other systems which may ignore more specialist roles
 9.7. there is nothing to stop us adding the PDC (or other organisations) as multiple roles if it's felt that would be useful
-10. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:descriptiveKeywords] 
-10.1. 'NDGO0001' keyword removed because EIDC don't use it
-10.2. 'NERC_DDC' keyword removed because EIDC don't use it and it related to OAI-PMH which we aren't officially supporting
-10.3. thesaurus for free-text keywords removed because since they're intentionally uncontrolled I don't think attribution makes sense
-11. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:OtherConstraints]
+10. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords] 
+10.1. 'NDGO0001' keyword removed because EIDC don't use it and we are initially removing NERC specific metadata requirements
+10.2. 'NERC_DDC' keyword removed because EIDC don't use it and we are initially removing NERC specific metadata requirements
+10.3. thesaurus for free-text keywords removed because since they're intentionally uncontrolled, I don't think 
+      an attribution makes sense since they are non-authoritative
+11. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:OtherConstraints]
 11.1. from the Gemini examples [9], it is not common to include licences such as the OGL as an access constraint 
       (irrespective of whether it is used as a usage constraint as well)
 11.2. the Gemini guidance for access constraints states 'Limitations on public access are different from Use constraints 
       which are warnings about its suitability for particular types of usage, or constraints on the use that can be made 
       of the data.' - the contents of the related Inspire code list [10] (explained in [11]) relate to factors such as
-      (a) 'confidentiality' or (d) 'commerically sensitive information' - which does seem to be describing something other
+      (a) 'confidentiality' or (d) 'commercially sensitive information' - which does seem to be describing something other
       than how the data should be used
-12v. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_resourceConstraints/../gmd:useLimitation]
-12v.1. elememt is not required in Gemini guidance
-12v.2. elememt required because of test [14] based on [[15] 2.9.2 and TG Requirement 33/34]
-12v.3. is there a way we can remove the gmd:useConstraints element and use gmd:useLimitations instead?
-12. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:characterSet] strinctly speaking we only need to include this element
-    if the value is not 'utf8' but we may as well for completeness - we do need to ensure this is the encoding used in the
-    data however, i.e. if ASCII we need to state this
-13. [/gmd:MD_Metadata/gmd:identificationInfo/../gmd:extent] do we have any examples of linking to a gazetteer? - this 
-    seems to be the preferred way to indicate geographic extent [12] and could be combined with a bounding box as well
-14. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] not sure why this was inapplicable given there was
-    only a single file - link to IANA definition is arguably most official (and generally applicable) but something like
-    this [13] might be more useful to people
-15. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:distributionFormat] as an aside, should this information not be a CSV?
-16. [/gmd:MD_Metadata/gmd:distributionInfo/../gmd:transferOptions] where there are multiple sources of data how are we
-    going to describe them, currently very generic
-17. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:report] was this checking Inspire complainace generally or something
-    more specific, the description stated 'INSPIRE Data Specification on unknown theme Guidelines' which seems odd
-18. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:lineage] presumably we want the lineage to be same everywhere
-19. [/gmd:MD_Metadata/gmd:dataQualityInfo/../gmd:pass]
+12. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_Constraints/gmd:useLimitation]
+12.1. element is not required in Gemini guidance
+12.2. element required because of test [14] based on [[15] 2.9.2 and TG Requirement 33/34]
+12.3. is there a way we can remove the gmd:useConstraints element and use gmd:useLimitations instead?
+13. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:characterSet] strictly speaking we only need 
+    to include this element if the value is not 'utf8' but we may as well for completeness - we do need to ensure this 
+    encoding is used in the data however, i.e. if ASCII we need to state this
+14. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent] do we have any examples of linking to 
+    a gazetteer? - this seems to be the preferred way to indicate geographic extent [12] and could be combined with a 
+    bounding box as well
+15. [/gmd:MD_Metadata/gmd:distributionInfo/MD_Distribution/gmd:distributionFormat] 
+15.1. not sure why this was 'inapplicable' given there was only a single file
+15.2. link to IANA definition is arguably most official (and generally applicable) but something like this [13] might be 
+      more useful to people
+15.3 as an aside, should this information not be a CSV?
+16. [/gmd:MD_Metadata/gmd:distributionInfo/MD_Distribution/gmd:transferOptions] where there are multiple sources of data 
+    how are we going to describe them, currently very generic
+17. [/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_DomainConsistency/gmd:result/gmd:DQ_ConformanceResult/gmd:specification]
+    was this checking Inspire compliance generally or something more specific, the description stated 'INSPIRE Data 
+    Specification on unknown theme Guidelines' which seems odd
+18. [/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage] presumably we want the lineage to be same everywhere
+19. [/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_DomainConsistency/gmd:result/gmd:DQ_ConformanceResult/gmd:pass]
 19.1. issue with test [18], based on [[15] 2.8.1 TG Requirement 29]
 19.2. I don't think it is possible to satisfy this requirement using an 'unknown' value - true or false are fine
 19.3. if [A] is used, the ISO 19115 conformance checks pass, but the Inspire profile for ISO 19115 checks fail [19]
@@ -995,7 +1013,7 @@
 22.3.3. we use a value listed in the code list specified by the Gemini schematron but this is found to be invalid when tested
 22.3.4. it isn't known if this is a problem with validator, or the schematron, although I can't see any obvious reason 
        for the schematron to fail
-22.3.5. possibly the value being compared, as interpretted by the validator, isn't correct somehow
+22.3.5. possibly the value being compared, as interpreted by the validator, isn't correct somehow
 
 [A]
 
@@ -1042,7 +1060,7 @@
 
 <!-- Notes -->
 <!-- 
-1. [/gmd:dateStamp] "The ISO definition of this field is "date that the metadata was created". Common usage seems to be 
+1. [gmd:dateStamp] "The ISO definition of this field is "date that the metadata was created". Common usage seems to be 
    evolving towards "date that the metadata was created or updated" because it seems reasonable that, once the metadata 
    have been updated, the date of that update is more interesting than the original creation date. Also, the update 
    actually creates the current metadata, so this usage seems consistent with the ISO definition." [1]
@@ -1072,13 +1090,6 @@
 <!-- TODO -->
 <!--
 
-Internal changes:
-
-1. review merged changes, discussion and notes to ensure internal consistency
-2. add discussion point to consider changing gmd:role for PDC instance in gmd:identificationInfo back to back to 'curator',
-   if so update other discussion points accordingly
-3. check spelling of comments
-
 Creation of reference examples:
 
 1. create MEDIN complaint example
@@ -1102,7 +1113,7 @@ Further improvements to metadata:
 
 Interoperability across standards:
 
-1. map 'gco:nilReason' options to datacite
+1. map 'gco:nilReason' options to DataCite
 
 [1] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
