@@ -1163,6 +1163,10 @@ Further improvements to metadata:
 3. add other GCMD keyword types [3] - see [4] for using locations
 4. is there an Inspire recommended way of embargoing data?
 5. is there a way we can list other identifiers (controlled) for things like the Registers Service in CI_Contacts?
+6. how do we link to projects ('series'?)
+7. how do we link to grants?
+8. Aerial photography (display)
+9. using BAS gazetteer in metadata (extent) - how we do we express this in a record - speak to Louise
 
 Interoperability across standards:
 
