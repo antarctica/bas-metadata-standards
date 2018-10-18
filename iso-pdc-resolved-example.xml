@@ -1151,6 +1151,9 @@ Creation of reference examples:
 
 1. create MEDIN complaint example
 2. create NERC complaint example
+3. annotate a DMS record with fields exposed and map to metadata
+4. assess NERC metadata review criteria for automation
+5. if possible add a comparision of how obligation varies across the different standards
 
 Comparison across data centres:
 
@@ -1171,6 +1174,7 @@ Further improvements to metadata:
 8. aerial photography (display)
 9. using BAS gazetteer in metadata (extent) - how we do we express this in a record - speak to Louise
 10. meta-metadata
+11. how do we represent superceeded records
 
 Interoperability across standards:
 
