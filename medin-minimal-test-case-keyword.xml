@@ -1,0 +1,92 @@
+<!-- Minimal test case for validating MEDIN Discovery Metadata Profile (v2.3.8) Element 11 - OAI Harvesting -->
+
+<!-- Original Schematron based on file in [1] (version 1.8) -->
+<!-- Examples based on entries in this guidance [2] (version 2.3.8) -->
+
+<!-- Tested using [3], Current Schematron fails (both examples), Proposed Schematron passes (both examples) -->
+
+<!-- 1. Current Schematron (version 1.8) -->
+
+<sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt" schemaVersion="1.7">
+
+  <sch:title>MEDIN Discovery Metadata Profile</sch:title>
+  
+  <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2" />
+  <sch:ns prefix="gmd" uri="http://www.isotc211.org/2005/gmd"/>
+  <sch:ns prefix="gco" uri="http://www.isotc211.org/2005/gco"/>
+  <sch:ns prefix="gmx" uri="http://www.isotc211.org/2005/gmx"/>
+  <sch:ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
+  <sch:ns prefix="srv" uri="http://www.isotc211.org/2005/srv"/>
+  
+  <sch:pattern fpi="MedinKeywords">
+    <sch:title>Element 11 - Keywords (M)</sch:title>
+    <sch:rule context="/*/gmd:identificationInfo">
+      <sch:assert test="count(*/gmd:descriptiveKeywords/*/gmd:keyword[starts-with(*/@xlink:href,'http://vocab.ndg.nerc.ac.uk/term/N010/')][substring-after(*/@xlink:href,'http://vocab.ndg.nerc.ac.uk/term/N010/')][contains(*/@xlink:href,'/NDGO0001')]) + 
+                  count(*/gmd:descriptiveKeywords/*/gmd:keyword[*/@xlink:href='http://vocab.ndg.nerc.ac.uk/term/N010/0']) &gt;= 1">
+        The NERC Data Grid OAI harvesting keyword must be provided.
+      </sch:assert>
+    </sch:rule>
+  </sch:pattern>
+</sch:schema>
+
+<!-- 2. Proposed Schematron (version 1.9-draft) -->
+
+<sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt" schemaVersion="1.7">
+
+  <sch:title>MEDIN Discovery Metadata Profile</sch:title>
+  
+  <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2" />
+  <sch:ns prefix="gmd" uri="http://www.isotc211.org/2005/gmd"/>
+  <sch:ns prefix="gco" uri="http://www.isotc211.org/2005/gco"/>
+  <sch:ns prefix="gmx" uri="http://www.isotc211.org/2005/gmx"/>
+  <sch:ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
+  <sch:ns prefix="srv" uri="http://www.isotc211.org/2005/srv"/>
+  
+  <sch:pattern fpi="MedinKeywords">
+    <sch:title>Element 11 - Keywords (M)</sch:title>
+    <sch:rule context="/*/gmd:identificationInfo">
+      <sch:assert test="count(*/gmd:descriptiveKeywords/*/gmd:keyword[starts-with(*/@xlink:href,'http://vocab.ndg.nerc.ac.uk/term/N010/')][substring-after(*/@xlink:href,'http://vocab.ndg.nerc.ac.uk/term/N010/')][contains(*/@xlink:href,'/NDGO0001')]) + 
+                  count(*/gmd:descriptiveKeywords/*/gmd:keyword[*/@xlink:href='http://vocab.ndg.nerc.ac.uk/term/N010/0']) + 
+                  count(*/gmd:descriptiveKeywords/*/gmd:keyword[*/@xlink:href='http://vocab.nerc.ac.uk/collection/N01/current/NDGO0001']) + 
+                  count(*/gmd:descriptiveKeywords/*/gmd:keyword[*/@xlink:href='https://vocab.nerc.ac.uk/collection/N01/current/NDGO0001']) &gt;= 1">
+        The NERC Data Grid OAI harvesting keyword must be provided.
+      </sch:assert>
+    </sch:rule>
+  </sch:pattern>
+</sch:schema>
+
+<!-- 2. Example (as taken from Medin guidance) [1]: -->
+
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas/srv/1.0/srv.xsd">
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+          	<gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/N01/current/NDGO0001">Marine Environmental Data and Information Network</gmx:Anchor>
+          </gmd:keyword>
+        </gmd:MD_Keywords> 
+      </gmd:descriptiveKeywords>
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+</gmd:MD_Metadata>
+
+<!-- 3. Example (using HTTPS protocol) -->
+
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas/srv/1.0/srv.xsd">
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+          	<gmx:Anchor xlink:href="https://vocab.nerc.ac.uk/collection/N01/current/NDGO0001">Marine Environmental Data and Information Network</gmx:Anchor>
+          </gmd:keyword>
+        </gmd:MD_Keywords> 
+      </gmd:descriptiveKeywords>
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+</gmd:MD_Metadata>
+
+<!-- [1] http://www.medin.org.uk/medin/sites/medin/files/documents/schematron_update_8feb12.zip -->
+<!-- [2] http://www.oceannet.org/medin/sites/medin/files/documents/medin_schema_doc_2_3_8.pdf -->
+<!-- [3] https://www.liquid-technologies.com/online-schematron-validator -->

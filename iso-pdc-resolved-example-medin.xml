@@ -72,10 +72,10 @@
     <gco:DateTime>2018-10-08T14:40:44Z</gco:DateTime>
   </gmd:dateStamp>
   <gmd:metadataStandardName>
-    <gco:CharacterString>ISO 19115 (UK GEMINI)</gco:CharacterString>
+    <gco:CharacterString>MEDIN Discovery Metadata Standard</gco:CharacterString>
   </gmd:metadataStandardName>
   <gmd:metadataStandardVersion>
-    <gco:CharacterString>1.0 (2.3)</gco:CharacterString>
+    <gco:CharacterString>Version 2.3</gco:CharacterString>
   </gmd:metadataStandardVersion>
   <gmd:referenceSystemInfo>
     <gmd:MD_ReferenceSystem>
@@ -254,6 +254,59 @@
           </gmd:contactInfo>
           <gmd:role>
             <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:organisationName>
+            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:positionName>
+            <gco:CharacterString>Data Manager</gco:CharacterString>
+          </gmd:positionName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone>
+                <gmd:CI_Telephone>
+                  <gmd:voice>
+                    <gco:CharacterString>+44 (0)1223 221400</gco:CharacterString>
+                  </gmd:voice>
+                </gmd:CI_Telephone>
+              </gmd:phone>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint>
+                    <gco:CharacterString>British Antarctic Survey, High Cross, Madingely Road</gco:CharacterString>
+                  </gmd:deliveryPoint>
+                  <gmd:city>
+                    <gco:CharacterString>Cambridge</gco:CharacterString>
+                  </gmd:city>
+                  <gmd:administrativeArea>
+                    <gco:CharacterString>Cambridgeshire</gco:CharacterString>
+                  </gmd:administrativeArea>
+                  <gmd:postalCode>
+                    <gco:CharacterString>CB3 0ET</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country>
+                    <gco:CharacterString>United Kingdom</gco:CharacterString>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>polardatacentre@bas.ac.uk</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre/</gmd:URL>
+                  </gmd:linkage>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
           </gmd:role>
         </gmd:CI_ResponsibleParty>
       </gmd:pointOfContact>
@@ -691,6 +744,62 @@
               </gmd:northBoundLatitude>
             </gmd:EX_GeographicBoundingBox>
           </gmd:geographicElement>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicDescription>
+              <gmd:geographicIdentifier>
+                <gmd:MD_Identifier>
+                  <gmd:authority>
+                    <gmd:CI_Citation>
+                      <gmd:title>
+                        <gco:CharacterString>SeaVoX salt and fresh water body gazetteer</gco:CharacterString>
+                      </gmd:title>
+                      <gmd:date>
+                        <gmd:CI_Date>
+                          <gmd:date>
+                            <gco:Date>2018-02-21</gco:Date>
+                          </gmd:date>
+                          <gmd:dateType>
+                            <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                          </gmd:dateType>
+                        </gmd:CI_Date>
+                      </gmd:date>
+                    </gmd:CI_Citation>
+                  </gmd:authority>
+                  <gmd:code>
+                    <gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/C19/current/10_1/" xlink:actuate="onRequest">Weddell Sea</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:geographicIdentifier>
+            </gmd:EX_GeographicDescription>
+          </gmd:geographicElement>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicDescription>
+              <gmd:geographicIdentifier>
+                <gmd:MD_Identifier>
+                  <gmd:authority>
+                    <gmd:CI_Citation>
+                      <gmd:title>
+                        <gco:CharacterString>SeaVoX salt and fresh water body gazetteer</gco:CharacterString>
+                      </gmd:title>
+                      <gmd:date>
+                        <gmd:CI_Date>
+                          <gmd:date>
+                            <gco:Date>2018-02-21</gco:Date>
+                          </gmd:date>
+                          <gmd:dateType>
+                            <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                          </gmd:dateType>
+                        </gmd:CI_Date>
+                      </gmd:date>
+                    </gmd:CI_Citation>
+                  </gmd:authority>
+                  <gmd:code>
+                    <gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/C19/current/4_2/" xlink:actuate="onRequest">Scotia Sea</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:geographicIdentifier>
+            </gmd:EX_GeographicDescription>
+          </gmd:geographicElement>
           <gmd:temporalElement>
             <gmd:EX_TemporalExtent>
               <gmd:extent>
@@ -711,6 +820,14 @@
         <gmd:MD_Format>
           <gmd:name>
             <gmx:Anchor xlink:href="https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" xlink:actuate="onRequest">Microsoft Excel Workbook</gmx:Anchor>
+          </gmd:name>
+          <gmd:version gco:nilReason="unknown"/>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gmx:Anchor xlink:href="https://vocab.nerc.ac.uk/collection/M01/current/DEL/1/" xlink:actuate="onRequest">Delimited</gmx:Anchor>
           </gmd:name>
           <gmd:version gco:nilReason="unknown"/>
         </gmd:MD_Format>
@@ -878,9 +995,20 @@
 <!-- Changes -->
 <!-- 
 1. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords] element added for 
-   SeaDataNet Parameter Discovery Vocabulary (BODC/NERC Vocabulary Service P02), recommended by Medin [[2] Element 11]
+   SeaDataNet Parameter Discovery Vocabulary (BODC/NERC Vocabulary Service P02), recommended by Medin [[1] Element 11]
 2. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords] element added for 
-   MEDIN metadata record availability (BODC/NERC Vocabulary Service N01), required by Medin [[2] Element 11]
+   MEDIN metadata record availability (BODC/NERC Vocabulary Service N01), required by Medin [[1] Element 11]
+3. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent] elements added for
+   terms from SeaVoX salt and fresh water body gazetteer, recommended by Medin [[1] Element 13]
+4. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact] element added with role of 
+   'curator' as per Medin requirement [[1] Element 22.2]
+5. [/gmd:MD_metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat]
+6. [/gmd:MD_metadata/gmd:metadataStandardName] value changed to 'MEDIN Discovery Metadata Standard', as per Medin 
+   requirement (element) and recommendation (content) [[1] Element 27]
+7. [/gmd:MD_metadata/gmd:metadataStandardVersion] value changed to '2.3', as per Medin requirement (element) and 
+   recommendation (content) [[1] Element 28]
+
+[1] http://www.oceannet.org/medin/sites/medin/files/documents/medin_schema_doc_2_3_8.pdf
 -->
 
 <!-- For discussion -->
@@ -911,10 +1039,48 @@
 4.2.2. as the record identifer will be the same this shouldn't be a problem
 5. Medin guidance states 'MEDIN have mapped the MEDIN keywords (see element 11) to the ISO Topic Categories' [[2] Element 9]
 5.1. where is this mapping?
+6. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent]
+6.1. the terms added are not exhaustive but intended to be representative
+6.2. [./gmd:geographicElement/gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier/gmd:code] values 
+     are gmx:Anchor elements to allow a human readable name to be used linking to their vocabulary terms
+6.3. [./gmd:geographicElement/gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier/gmd:authority/gmd:CI_Citation/gmd:title] 
+     element could be enchanced by using a gmx:Anchor element
+6.4. a verticial extent element [[2] element 14] was considered but not added as it wasn't known (as per recommendation)
+7. [/gmd:MD_metadata/gmd:identificationInfo/gmd:pointOfContact]
+7.1. Medin requires a role of 'originator' [[2] Element 22.1]
+7.2. we already use this but as this is a requirement it should be noted
+8. [/gmd:MD_metadata/gmd:metadataStandardName]
+8.1. worth noting a different value for this element could be used if required by another standard 
+9. [/gmd:MD_metadata/gmd:metadataStandardVersion]
+9.1. worth noting a different value for this element could be used if required by another standard
+10. validation errors with BAS metadata validator service: Medin standard
+10.1. this validation is performed by our validation service
+10.2. this validation is based on rules defined by the Medin schematron [4]
+10.3. test based on [[2] Element 11]
+10.3.1. specifically the requirements in the 'Making Metadata Available to the MEDIN portal and data.gov.uk via OAI, 
+        CSW and WAF' section
+10.3.2. we fail because a keyword with a value 'http://vocab.ndg.nerc.ac.uk/term/N010/0' is required for metadata 
+        harvesting records into the Medin data catalogue (i.e. all Medin records must be marked as being harvestable by 
+        the Medin data catalogue)
+10.3.3. we use a gmx:Anchor element with a href attribute 'https://vocab.nerc.ac.uk/collection/N01/current/NDGO0001/3/' 
+        (HTTPS protocol) and a value of 'Marine Environmental Data and Information Network' (the name of the related 
+        vocabulary term), this does not match the required rule
+10.3.4. testing with the example in the Medin guidance [[2] Element 11] also fails this test
+10.3.15. this should be reported to Medin as I think the URL just hasn't been updated in the assertion
+10.3.15.1. this test should be protocol neutral
+10.3.15.2. I have fixed this in a draft 1.9 schematron sent to Medin for review (2018-10-18)
+10.4. test based on [[5] Element 6]
+10.4.1. we fail because only on gmd:identifier element can be specified, we use two for a link to the DMS and for a DOI
+10.4.2. the Medin guidance was updated in 2013 to allow multiple occurences of this element, previously one one was allowed
+10.4.3. this should be reported to Medin as I think the assertion just hasn't been updated to allow multiple elements
+10.4.3.1 I have fixed this in a draft 1.9 schematron sent to Medin for review (2018-10-18)
 
 [1] http://www.oceannet.org/medin/sites/medin/files/documents/medin_disc_metadata_stnd_interp_of_gemini_2.pdf
 [2] http://www.oceannet.org/medin/sites/medin/files/documents/medin_schema_doc_2_3_8.pdf
 [3] http://vocab.nerc.ac.uk/collection/P02/current/
+[4] http://www.medin.org.uk/medin/sites/medin/files/documents/schematron_update_8feb12.zip
+[5] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#6
+[6] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
 -->
 
 <!-- Notes -->
@@ -927,16 +1093,11 @@
 [1] http://www.oceannet.org/medin/sites/medin/files/documents/medin_schema_doc_2_3_8.pdf
 -->
 
-<!-- TODO -->
-<!--
-1. vertical extent information must be completed
--->
-
 <!-- Validations (errors only) -->
 <!-- 
 
 1. (attempt 1, BAS metadata validator service)
 1.1 Medin standard
-1.1.1. Medin schematron
-1.1.1.1. Errors: 
+1.1.1. Medin schematron (1.8)
+1.1.1.1. Errors: 2
 -->
