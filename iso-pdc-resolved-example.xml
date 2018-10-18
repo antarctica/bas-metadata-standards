@@ -1060,6 +1060,8 @@
 23.5.2.3. 'BODC' - '660171a74c8a5eb4b5a748d7b68788eb' - 2018-09-13 (~1 month)
 23.5.2.4. 'CEDA' - 'e29f31861df08ccab92cf408e9e673e2' - 2018-10-17 (today)
 23.5.2.5. 'CEH-EIDC' - 'e3c79781-09af-4c4f-b6ad-b0bc323e203f' - 2018-10-12 (~1 week)
+24. Gemini only applies to gmd:hierarchyLevel element to 'dataset', 'service' or 'series'
+24.1. need to clarify accuracy of this (lack of examples), [] gives a starting point
 
 [A]
 
@@ -1110,6 +1112,7 @@
 [32] http://vocab.nerc.ac.uk/collection/N01/current/NDGO0003/2/
 [33] http://vocab.nerc.ac.uk/collection/N01/current/NDGO0005/1/
 [34] https://csw-nerc.ceda.ac.uk/geonetwork/srv/eng/catalog.search#/metadata/GB/NERC/BAS/AEDC/00393
+[35] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#47
 -->
 
 <!-- Notes -->
@@ -1165,8 +1168,9 @@ Further improvements to metadata:
 5. is there a way we can list other identifiers (controlled) for things like the Registers Service in CI_Contacts?
 6. how do we link to projects ('series'?)
 7. how do we link to grants?
-8. Aerial photography (display)
+8. aerial photography (display)
 9. using BAS gazetteer in metadata (extent) - how we do we express this in a record - speak to Louise
+10. meta-metadata
 
 Interoperability across standards:
 
