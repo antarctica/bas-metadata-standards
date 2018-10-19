@@ -956,6 +956,7 @@
       of the data.' - the contents of the related Inspire code list [10] (explained in [11]) relate to factors such as
       (a) 'confidentiality' or (d) 'commercially sensitive information' - which does seem to be describing something other
       than how the data should be used
+11.3. I am getting confused between access to metadata which is always unrestricted (unless unpublished) and access to the data (which can be embargoed for example)
 12. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_Constraints/gmd:useLimitation]
 12.1. element is not required in Gemini guidance
 12.2. element required because of test [14] based on [[15] 2.9.2 and TG Requirement 33/34]
@@ -1061,7 +1062,7 @@
 23.5.2.4. 'CEDA' - 'e29f31861df08ccab92cf408e9e673e2' - 2018-10-17 (today)
 23.5.2.5. 'CEH-EIDC' - 'e3c79781-09af-4c4f-b6ad-b0bc323e203f' - 2018-10-12 (~1 week)
 24. Gemini only applies to gmd:hierarchyLevel element to 'dataset', 'service' or 'series'
-24.1. need to clarify accuracy of this (lack of examples), [] gives a starting point
+24.1. need to clarify accuracy of this (lack of examples), [35] gives a starting point
 
 [A]
 
@@ -1154,6 +1155,7 @@ Creation of reference examples:
 2. annotate a DMS record with fields exposed and map to metadata
 3. assess NERC metadata review criteria for automation
 4. if possible add a comparision of how obligation varies across the different standards
+5. write up summary document
 
 Comparison across data centres:
 
