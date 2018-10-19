@@ -1093,10 +1093,7 @@
 <!--
 1. this file was used to tweak a metadata record such that it passes the Medin schematron
 2. this file was based on 'iso-pdc-resolved-example.xml', specifically at commit b76eb4f
-3. based on the contents of this record it is assumed it is within the scope of Medin
-4. up-to Element 13 in [1]
-
-[1] http://www.oceannet.org/medin/sites/medin/files/documents/medin_schema_doc_2_3_8.pdf
+3. based on the contents of this record, it is assumed it is within the scope of Medin
 -->
 
 <!-- Validations (errors only) -->
