@@ -1131,10 +1131,11 @@
 5. when generating a boilerplate record: use '<gmd:citation gco:nilReason="template"/>' convention
 6. when generating documentation, see outline XML in section starting 'The merge template specifies a Level 4' [4]
 7. [/gmd:MD_Metadata/gmd:referenceSystemInfo/gmd:code] is not an Inspire Default Coordinate Reference System Identifier, as per Annex D.4 in [3]
-3. this file is valid against the Inspire Technical Guidance for ISO 19115 [2]
-4. this file is valid against the Inspire Technical Guidance for ISO 19139 [3]
-5. this file can be be made valid against the Gemini profile for ISO 19115 [5] (see discussion section)
-6. this file is valid against the Gemini XML element order [6]
+8. this file is valid against the Inspire Technical Guidance for ISO 19115 [2]
+9. this file is valid against the Inspire Technical Guidance for ISO 19139 [3]
+10. this file can be be made valid against the Gemini profile for ISO 19115 [5] (see discussion section)
+11. this file is valid against the Gemini XML element order [6]
+12. a version of this file adapted to comply with the Medin standard is available as 'is0-pdc-resolved-example-medin.xml'
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
@@ -1149,11 +1150,10 @@
 
 Creation of reference examples:
 
-1. create MEDIN complaint example
-2. create NERC complaint example
-3. annotate a DMS record with fields exposed and map to metadata
-4. assess NERC metadata review criteria for automation
-5. if possible add a comparision of how obligation varies across the different standards
+1. create NERC complaint example
+2. annotate a DMS record with fields exposed and map to metadata
+3. assess NERC metadata review criteria for automation
+4. if possible add a comparision of how obligation varies across the different standards
 
 Comparison across data centres:
 

@@ -1074,6 +1074,11 @@
 10.4.2. the Medin guidance was updated in 2013 to allow multiple occurences of this element, previously one one was allowed
 10.4.3. this should be reported to Medin as I think the assertion just hasn't been updated to allow multiple elements
 10.4.3.1 I have fixed this in a draft 1.9 schematron sent to Medin for review (2018-10-18)
+11. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName]
+11.1. Medin requires a thesaurus element for every keyword element [[2] Element 11.2]
+11.2. this would preclude any free-form set of keywords, such as our list
+11.3. highlights a reason not to use Medin for all records
+11.4. this requirement is relaxed by the NERC requirements [[7] 7.3]
 
 [1] http://www.oceannet.org/medin/sites/medin/files/documents/medin_disc_metadata_stnd_interp_of_gemini_2.pdf
 [2] http://www.oceannet.org/medin/sites/medin/files/documents/medin_schema_doc_2_3_8.pdf
@@ -1081,6 +1086,7 @@
 [4] http://www.medin.org.uk/medin/sites/medin/files/documents/schematron_update_8feb12.zip
 [5] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#6
 [6] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
+[6] https://ishare.apps.nerc.ac.uk/teams/edcs/Standards/NERC-Discovery-Metadata-Standard-v-1.docx
 -->
 
 <!-- Notes -->
