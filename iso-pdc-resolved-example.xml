@@ -1151,10 +1151,12 @@
 
 Creation of reference examples:
 
+1. assess NERC metadata review criteria for automation
 2. annotate a DMS record with fields exposed and map to metadata
-3. assess NERC metadata review criteria for automation
-4. if possible add a comparision of how obligation varies across the different standards
-5. write up summary document
+3. create a NERC schematron
+4. write up summary document
+4.1. if possible add a comparision of how obligation varies across the different standards
+4.2. if possible include how issue identified in metadata review will be addressed by changes (see discussion)
 
 Comparison across data centres:
 
