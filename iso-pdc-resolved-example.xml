@@ -1063,6 +1063,118 @@
 23.5.2.5. 'CEH-EIDC' - 'e3c79781-09af-4c4f-b6ad-b0bc323e203f' - 2018-10-12 (~1 week)
 24. Gemini only applies to gmd:hierarchyLevel element to 'dataset', 'service' or 'series'
 24.1. need to clarify accuracy of this (lack of examples), [35] gives a starting point
+25. feedback from NERC metadata review (2016) for the PDC [36]
+25.1. issues identified with PDC records
+25.1.1. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract]
+25.1.1.1. issues were around content of element and so can't be automatically checked or provided easily
+25.1.2. [/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage]
+25.1.2.1. issues were around missing or 'No special comments'
+25.1.2.2. this is likely due to the XML template as there are differences in this value between CSW and the data catalogue
+25.1.3. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:resourceConstraints]
+25.1.3.1. issues over missing content and/or information in the wrong places and/or duplication
+25.1.4. [/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine]
+2.5.1.4.1. issues over missing title and description
+25.1.4.2. this is possibly due to a lack of options within the DMS admin interface but could possibly be added to the template
+25.2. review criteria used [36 - Appendix B]
+25.2.1. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title]
+25.2.1.1. understandable
+25.2.1.1.1. requirement level: major
+25.2.1.1.2. requires manual review
+25.2.1.2. concise
+25.2.1.2.1. requirement level: major
+25.2.1.2.2. could add automatic length check with manual review
+25.2.1.3. unexplained technical terms or acronyms
+25.2.1.3.1. requirement level: major
+25.2.1.3.2. requires manual review but blacklists/watchlists could be used where values that should be flagged are known
+25.2.1.3.2.1. detecting acronyms in text is difficult unless an abbreivation element is used for example (as part of 
+              templating)
+25.2.1.3.3 NERC metadata guidance [[37] 4.3] says it's permissible to use acroynmns in titles providing it's for a 
+          title and it's explained in the abstract, other well known acroymns can also be used (e.g. NASA)
+25.2.1.4. describe the resource not the activity
+25.2.1.4.1. requirement level: major
+25.2.1.4.2. requires manual review
+25.2.1.5. sentence case formatting
+25.2.1.5.1. requirement level: minor
+25.2.1.5.2. can be checked automatically
+25.2.1.5.3. can be corrected automatically
+25.2.1.6. contains non-standard characters
+25.2.1.6.1. requirement level: major
+25.2.1.6.2. can be checked automatically if this can be defined
+25.2.1.6.3. general feedback on NERC metadata review process [38 - Additional Recommendations, point 1] provides examples
+            for this, such as non-resolved characters and htm/escaped chatacters such as '&quote;' instead of '"'
+25.2.1.7. free text comments
+25.2.1.7.1. not applicable for review
+25.2.2. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract] 
+25.2.2.1. describe the resource not the activity
+25.2.2.1.1. requirement level: major
+25.2.2.1.2. requires manual review
+25.2.2.2. initial sentences summarise resource contents
+25.2.2.2.1. requirement level: minor
+25.2.2.2.2. requires manual review
+25.2.2.3. who, what, where and how
+25.2.2.3.1. requirement level: major
+25.2.2.3.2. requires manual review
+25.2.2.4. written in plain language
+25.2.2.4.1. requirement level: major
+25.2.2.4.2. requires manual review
+25.2.2.5. understandable
+25.2.2.5.1. requirement level: major
+25.2.2.5.2. requires manual review
+25.2.2.6. unexplained technical terms or acronyms
+25.2.2.6.1. requirement level: major
+25.2.2.6.2. requires manual review but blacklists/watchlists could be used where values that should be flagged are known
+25.2.2.6.2.1. detecting acronyms in text is difficult unless an abbreivation element is used for example (as part of 
+              templating)
+25.2.2.7. contains non-standard characters
+25.2.2.7.1. requirement level: major
+25.2.2.7.2. can be checked automatically if this can be defined
+25.2.2.8. free text comments
+25.2.2.8.1. not applicable for review
+25.2.3. [/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage] 
+25.2.3.1. written in plain language
+25.2.3.1.1. requirement level: major
+25.2.3.1.2. requires manual review
+25.2.3.2. explain existance
+25.2.3.2.1. requirement level: minor
+25.2.3.2.2. requires manual review
+25.2.3.3. describe data processing stages
+25.2.3.3.1. requirement level: minor
+25.2.3.3.2. requires manual review
+25.2.3.4. contains non-standard characters
+25.2.3.4.1. requirement level: major
+25.2.3.4.2. can be checked automatically if this can be defined
+25.2.3.5. free text comments
+25.2.3.5.1. not applicable for review
+25.2.4. [/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine]
+25.2.4.1. consise and accurate title elements
+25.2.4.1.1. requirement level: major
+25.2.4.1.2. presense of element can be checked automatically
+25.2.4.1.3. content requires manual review
+25.2.4.1. description elements
+25.2.4.2.1. requirement level: minor
+25.2.4.2.2. presense of element can be checked automatically
+25.2.4.2.3. content requires manual review
+25.2.4.3. free text comments
+25.2.4.3.1. not applicable for review
+25.2.5. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:resourceConstraints]
+25.2.5.1. limits on public access describing conditions restricting use
+25.2.5.1.1. requirement level: major
+25.2.5.1.2. requires manual review
+25.2.5.2. use constraints describe conditions restricting use
+25.2.5.2.1. requirement level: major
+25.2.5.2.2. requires manual review
+25.2.5.3. specific to given resource
+25.2.5.3.1. requirement level: major
+25.2.5.3.2. known boilerplate values can be checked automatically but would require manual check for context
+25.2.5.4. free text comments
+25.2.5.4.1. not applicable for review
+25.2.6. general comments
+25.2.6.1. not applicable for review
+26. general feedback on NERC metadata review process
+26.1. amendments to the review process include 'removal of review items that could be undertaken via scripted checks 
+      and identification of other areas that could be bulk checked by appriopriate scripting' [38 - summary, point 3]
+2.6.1.1. was this work pursued in terms of identifying things that could be automated and/or implementing this action?
+2.6.2. more generally, will there be another around of this review (comissioning metric?)
 
 [A]
 
@@ -1114,6 +1226,9 @@
 [33] http://vocab.nerc.ac.uk/collection/N01/current/NDGO0005/1/
 [34] https://csw-nerc.ceda.ac.uk/geonetwork/srv/eng/catalog.search#/metadata/GB/NERC/BAS/AEDC/00393
 [35] https://www.agi.org.uk/gemini/40-gemini/1062-gemini-datasets-and-data-series#47
+[36] https://docs.google.com/document/d/1mtfgK-NChHWNICdEEx_m64w9QE1fPi3QocjrO8btfQQ
+[37] https://ishare.apps.nerc.ac.uk/teams/sis/sisproject/Discovery%20Metadata/Metadata%20Guidance.docx
+[38] https://docs.google.com/document/d/1g0QxljxsgM8f7aSQFxexKgK0bpXJbSteozBqBV37st0/edit#heading=h.26w73yencpbj
 -->
 
 <!-- Notes -->
@@ -1151,12 +1266,11 @@
 
 Creation of reference examples:
 
-1. assess NERC metadata review criteria for automation
-2. annotate a DMS record with fields exposed and map to metadata
-3. create a NERC schematron
-4. write up summary document
-4.1. if possible add a comparision of how obligation varies across the different standards
-4.2. if possible include how issue identified in metadata review will be addressed by changes (see discussion)
+1. annotate a DMS record with fields exposed and map to metadata
+2. create a NERC schematron
+3. write up summary document
+3.1. if possible add a comparision of how obligation varies across the different standards
+3.2. if possible include how issue identified in metadata review will be addressed by changes (see discussion)
 
 Comparison across data centres:
 
