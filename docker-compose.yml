@@ -1,0 +1,23 @@
+---
+version: '2'
+
+services:
+  app:
+    build: .
+    image: docker-registry.data.bas.ac.uk/felnne/metadata-standards:0.1.0-alpine
+    command: ['watch']
+    volumes:
+      - ./gulpfile.js:/usr/src/app/gulpfile.js
+      - ./iso-pdc-resolved-example.xml:/usr/src/app/data/iso-pdc-resolved-example-rubric.xml
+      - ./iso-pdc-resolved-example.xml:/usr/src/app/data/iso-pdc-resolved-example-html.xml
+      - ./assets:/usr/src/app/assets
+      - ./public:/usr/src/app/public
+
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./public:/usr/share/nginx/html/public
+      - ./assets:/usr/share/nginx/html/public/assets
+    ports:
+      - "9000:9000"

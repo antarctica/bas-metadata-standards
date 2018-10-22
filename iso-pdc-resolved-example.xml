@@ -1563,6 +1563,22 @@
 10. this file can be be made valid against the Gemini profile for ISO 19115 [5] (see discussion section)
 11. this file is valid against the Gemini XML element order [6]
 12. a version of this file adapted to comply with the Medin standard is available as 'iso-pdc-resolved-example-medin.xml'
+13. a local webserver is included for reviewing the affect of XML stylesheets
+13.1. Docker and Docker Compose are required [7]
+13.2. two containers are defined
+13.2.1. 'app' container
+13.2.1.1. built using 'Dockerfile'
+13.2.1.2. built using NodeJS depenedencies defined in 'package.json'
+13.2.1.3. uses Gulp [8] to generate files
+13.2.2. 'web' container
+13.2.2.1. uses Nginx webserver image
+13.2.2.2. runs using 'nginx/default.conf' configuration file
+13.3. containers can be started with: '$ docker-compose up'
+13.3.1. on first run, the 'app' container will be built
+13.3.1.1. unless you run '$ docker-compose pull' (requires access to BAS GitLab)
+13.4. containers can be stopped with: '$ docker-compose down'
+14. a version of this file with the 'ISO Rubric' XML stylesheet [9] is available through the local webserver [10]
+15. a version of this file with the 'ISO to HTML' XML stylesheet [11][12] is available through the local webserver [13]
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
@@ -1570,6 +1586,13 @@
 [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
 [5] https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini
 [6] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
+[7] https://docs.docker.com/compose/overview/
+[8] https://gulpjs.com
+[9] http://www.ngdc.noaa.gov/metadata/published/xsl/isoRubricHTML.xsl
+[10] http://localhost:9000/iso-pdc-resolved-example-rubric.xml
+[11] https://www.ncddc.noaa.gov/metadata-standards/metadata-xml/
+[12] https://service.ncddc.noaa.gov/rdn/www/metadata-standards/metadata-xml/documents/ISOxml2html.zip
+[13] http://localhost:9000/iso-pdc-resolved-example-html.xml
 -->
 
 <!-- TODO -->
@@ -1583,12 +1606,9 @@ Creation of reference examples:
 4. write up summary document
 5.1. if possible add a comparision of how obligation varies across the different standards
 5.2. if possible include how issue identified in metadata review will be addressed by changes (see discussion)
-6. add and document XML stylesheets
-6.1. ISO rubric [7] 
-6.2. ISO for humans [8]
-7. formalise project
-8. look at NASA ISO standards [5]
-9. document and add record display example
+6. formalise project
+7. look at NASA ISO standards [5]
+8. document and add record display example
 
 Comparison across data centres:
 
@@ -1620,7 +1640,7 @@ Interoperability across standards:
 
 When implementing:
 
-1. generate DOI citation dynamically use CrossCite [10]
+1. generate DOI citation dynamically use CrossCite [7]
 
 [1] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
@@ -1628,10 +1648,7 @@ When implementing:
 [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Extents#Bounding_Extent
 [5] https://wiki.earthdata.nasa.gov/display/NASAISO/NASA+ISO+for+EOSDIS
 [6] http://rightsstatements.org/page/InC/1.0/?language=en
-[7] http://www.ngdc.noaa.gov/metadata/published/xsl/isoRubricHTML.xsl
-[8] https://www.ncddc.noaa.gov/metadata-standards/metadata-xml/
-[9] https://service.ncddc.noaa.gov/rdn/www/metadata-standards/metadata-xml/documents/ISOxml2html.zip
-[10] https://citation.crosscite.org/docs.html
+[7] https://citation.crosscite.org/docs.html
 -->
 
 <!-- Validations (errors only) -->
