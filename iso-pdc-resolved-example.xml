@@ -163,7 +163,7 @@
           <gmd:identifier>
             <gmd:MD_Identifier>
               <gmd:code>
-                <gmx:Anchor xlink:href="https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e" xlink:title="DOI" xlink:actuate="onRequest">https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e</gmx:Anchor>
+                <gmx:Anchor xlink:href="https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f" xlink:title="DOI" xlink:actuate="onRequest">https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f</gmx:Anchor>
               </gmd:code>
             </gmd:MD_Identifier>
           </gmd:identifier>
@@ -515,7 +515,7 @@
             <gmx:Anchor xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" xlink:actuate="onRequest">This information is licensed under the Open Government Licence v3.0. To view this licence, visit http://www.nationalarchives.gov.uk/doc/open-government-licence/</gmx:Anchor>
           </gmd:otherConstraints>
           <gmd:otherConstraints>
-            <gco:CharacterString>Cite this information as "Arrowsmith, C., Leng, M., Meredith, M. (2018). Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April 2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006. [Data set]. Polar Data Centre, Natural Environment Research Council, UK. https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e"</gco:CharacterString>
+            <gco:CharacterString>Cite this information as: "Bougamont, M. (2018). Ice flow model output for Pine Island Glacier (West Antarctica), from numerical inversions of ice surface velocities observed in 1996 and 2014 [Data set]. Polar Data Centre, Natural Environment Research Council, UK Research &amp; Innovation. https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f"</gco:CharacterString>
           </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
@@ -792,7 +792,7 @@
     element changed from gmd:RS_Identifier to gmd:MD_Identifier with direct link to DMS record, recommended by Gemini [8]
 19. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier[1]]
     additional element added for DOI pointing to dataset, recommended by Gemini [8] and NOAA [9], DOI format recommended 
-    by CrossRef [10]
+    by CrossRef [10] (see discussion)
 20. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints]
     new element added for DOI citation, recommended by NOAA [9]
 21. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact]
@@ -921,7 +921,7 @@
 8.6.1. what is our preferred format? DataCite defaults to APA
 8.6.2. inconsistency between name of the PDC - are we 'Polar Data Centre' or 'UK Polar Data Centre'
 8.6.3. EIDC use dataset as citation
-8.6.4. DOI shown in this example record is not real, using the DataCite test prefix and a random UUID 
+8.6.4. DOI shown in this example record is real but for a different dataset 
 9. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact] instance(s) for organisation 
    (i.e. PDC)
 9.1. Gemini requires an instance with a role of 'distributor', looking at NOAA's guidance [7] [8] this 'identifies the 
@@ -1173,8 +1173,8 @@
 26. general feedback on NERC metadata review process
 26.1. amendments to the review process include 'removal of review items that could be undertaken via scripted checks 
       and identification of other areas that could be bulk checked by appriopriate scripting' [38 - summary, point 3]
-2.6.1.1. was this work pursued in terms of identifying things that could be automated and/or implementing this action?
-2.6.2. more generally, will there be another around of this review (comissioning metric?)
+26.1.1. was this work pursued in terms of identifying things that could be automated and/or implementing this action?
+26.2. more generally, will there be another around of this review (comissioning metric?)
 
 [A]
 
@@ -1267,10 +1267,17 @@
 Creation of reference examples:
 
 1. annotate a DMS record with fields exposed and map to metadata
-2. create a NERC schematron
-3. write up summary document
-3.1. if possible add a comparision of how obligation varies across the different standards
-3.2. if possible include how issue identified in metadata review will be addressed by changes (see discussion)
+2. update MEDIN/NERC and copy without comments examples to latest version of this file
+3. create a NERC schematron
+4. write up summary document
+5.1. if possible add a comparision of how obligation varies across the different standards
+5.2. if possible include how issue identified in metadata review will be addressed by changes (see discussion)
+6. add and document XML stylesheets
+6.1. ISO rubric [7] 
+6.2. ISO for humans [8]
+7. formalise project
+8. look at NASA ISO standards [5]
+9. document and add record display example
 
 Comparison across data centres:
 
@@ -1292,15 +1299,26 @@ Further improvements to metadata:
 9. using BAS gazetteer in metadata (extent) - how we do we express this in a record - speak to Louise
 10. meta-metadata
 11. how do we represent superceeded records
+12. rights statement [6]
 
 Interoperability across standards:
 
 1. map 'gco:nilReason' options to DataCite
 
+When implementing:
+
+1. generate DOI citation dynamically use CrossCite [10]
+
 [1] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 [2] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
 [3] https://geo-ide.noaa.gov/wiki/images/d/df/AB-GUID-01910_R0_KeywordImplementationRecommendations_v1.0.pdf
 [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Extents#Bounding_Extent
+[5] https://wiki.earthdata.nasa.gov/display/NASAISO/NASA+ISO+for+EOSDIS
+[6] http://rightsstatements.org/page/InC/1.0/?language=en
+[7] http://www.ngdc.noaa.gov/metadata/published/xsl/isoRubricHTML.xsl
+[8] https://www.ncddc.noaa.gov/metadata-standards/metadata-xml/
+[9] https://service.ncddc.noaa.gov/rdn/www/metadata-standards/metadata-xml/documents/ISOxml2html.zip
+[10] https://citation.crosscite.org/docs.html
 -->
 
 <!-- Validations (errors only) -->
