@@ -1562,7 +1562,7 @@
 9. this file is valid against the Inspire Technical Guidance for ISO 19139 [3]
 10. this file can be be made valid against the Gemini profile for ISO 19115 [5] (see discussion section)
 11. this file is valid against the Gemini XML element order [6]
-12. a version of this file adapted to comply with the Medin standard is available as 'is0-pdc-resolved-example-medin.xml'
+12. a version of this file adapted to comply with the Medin standard is available as 'iso-pdc-resolved-example-medin.xml'
 
 [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
@@ -1614,7 +1614,9 @@ Further improvements to metadata:
 
 Interoperability across standards:
 
-1. map 'gco:nilReason' options to DataCite
+1. DataCite DOI
+1.1. map 'gco:nilReason' options to DataCite
+2. Schema.org (dataset)
 
 When implementing:
 
