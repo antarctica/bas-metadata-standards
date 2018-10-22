@@ -1112,9 +1112,6 @@
 3.3. [/gmd:MD_Metadata/gmd:metadataStandardVersion]
 3.2.1. required value
 
-Do comparision of obligation between Gemini and Medin
-Do comparision of obligation between Gemini and NERC
-
 [1] https://ishare.apps.nerc.ac.uk/teams/edcs/Standards/NERC-Discovery-Metadata-Standard-v-1.doc
 [2] http://www.oceannet.org/medin/sites/medin/files/documents/medin_schema_doc_2_3_8.pdf
 [3] http://vocab.nerc.ac.uk/collection/N01/current/NDGO0003/

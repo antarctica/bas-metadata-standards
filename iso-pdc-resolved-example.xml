@@ -1658,6 +1658,14 @@
 29.4.6. depth
 29.4.7. min depth
 29.4.8. max depth
+30. dates
+30.1. which dates do we want to support?
+30.1.1. we currently support
+30.1.1.1. [/gmd:MD_Metadata/gmd:datestamp]
+30.1.1.2. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date]
+          as 'publication' date
+30.2. do we add explicit support for 'created' and 'revised' dates as well or instead of 'publication' date?
+
 [A]
 
 ```xml
@@ -1781,8 +1789,8 @@
 13.3.1. on first run, the 'app' container will be built
 13.3.1.1. unless you run '$ docker-compose pull' (requires access to BAS GitLab)
 13.4. containers can be stopped with: '$ docker-compose down'
-14. a version of this file with the 'ISO Rubric' XML stylesheet [9] is available through the local webserver [10]
-15. a version of this file with the 'ISO to HTML' XML stylesheet [11][12] is available through the local webserver [13]
+14. a version of this file with the 'ISO Rubric' XML stylesheet [9] applied is available through the local webserver [10]
+15. a version of this file with the 'ISO to HTML' XML stylesheet [11][12] applied is available through the local webserver [13]
 16. an annotated example of this record in the DMS external application is available through the local webserver [14]
 16.1. the annotations in this example relate to a comparision between the same record in DMS external and generated XML (see discussion)
 
@@ -1807,13 +1815,13 @@
 
 Creation of reference examples:
 
-2. create a NERC schematron
-3. write up summary document
-3.1. if possible add a comparision of how obligation varies across the different standards
-3.2. if possible include how issue identified in metadata review will be addressed by changes (see discussion)
-4. formalise project
-5. look at NASA ISO standards [5]
-6. document and add record display example
+1. write up summary document
+1.1. if possible add a comparision of how obligation varies across the different standards
+1.2. if possible include how issue identified in metadata review will be addressed by changes (see discussion)
+2. formalise project
+3. look at NASA ISO standards [5]
+4. document and add record display example
+5. create a NERC schematron
 
 Comparison across data centres:
 
