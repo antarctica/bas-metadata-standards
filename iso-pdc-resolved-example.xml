@@ -1483,6 +1483,37 @@
 27.4. additional guidance [41]
 27.5. Some questions, such as off-site backups, aren't listed here because they aren't really relevant to metadata 
       (although could be part of a linked general overview resource for the PDC (i.e. advantages/services it offers))
+28. comparision of data portals
+28.1. examples compared
+28.1.1. EIDC (British) [42]
+28.1.2. NERC Data Catalogue Service (British) [43]
+28.1.3. Inspire Geoportal (European) [44]
+28.1.4. Medin portal [45]
+28.1.5. data.gov.uk (non-CKAN) [46]
+28.1.6. data.gov.uk (CKAN, Archived) [47]
+28.1.7. National Georegister (Dutch) [48]
+28.1.8. NSF Arctic data portal (American) [49]
+28.1.9. Polar Data portal (Canadian) [50]
+28.1.10. Earth Observing Laboratory (UCAR) [51]
+28.1.11  Research Data Archive (UCAR) [52]
+28.1.12. National Snow & Ice Data Center (American) [53]
+28.1.13. National Centers for Environmental Information (National Oceanographic Data Centre) (American) [54]
+28.1.14. NASA Global Change Master Directory [55]
+28.1.15. Antarctic Master Directory (nno-beta portal) [56]
+28.1.16. Ices Metadata Catalogue [57]
+28.1.17. Biological & Chemical Oceanography Data Management Office (American) [58]
+28.1.18. The Digital Archaeological Record [59]
+28.1.19. National Centers for Environmental Information (National Climatic Data Center) (American) [60]
+28.1.20. Arctic Portal [61]
+28.1.21. Australian Antarctic Data Centre [62]
+28.1.22. Data catalogue (Norwegian [63]
+28.1.23. West African Science Service Centre on Climate Change and Adapted Land Use [64]
+28.1.24. ABoVE Profiles Dashboard (NASA) (American) [65]
+28.1.25. London DataStore (British) [66]
+28.1.26. IOOS [67]
+28.1.27. data.gov (American) [68]
+28.1.28. EU Open Data Portal [69]
+28.1.29. University of Cambridge data repository [70]
 
 [A]
 
@@ -1540,6 +1571,36 @@
 [39] https://certificates.theodi.org/en
 [40] https://certificates.theodi.org/en/datasets/219449/certificates/276281
 [41] https://github.com/theodi/open-data-licensing/blob/master/guides/publisher-guide.md
+[42] https://catalogue.ceh.ac.uk/documents/10d419c8-8f65-4b85-a78a-3d6e0485fa1f
+[43] https://csw-nerc.ceda.ac.uk/geonetwork/srv/eng/catalog.search;jsessionid=4AC1AAEE59B9CAEA128FC849D711A5D2#/metadata/dd0a9eb5fd144573a615369f77c025d8
+[44] http://inspire-geoportal.ec.europa.eu/download_details.html?view=downloadDetails&resourceId=%2FINSPIRE-f89f4772-05f5-11e1-b7de-52540004b857_20181018-120134%2Fservices%2F1%2FPullResults%2F14461-14480%2Fdatasets%2F10&expandedSection=metadata
+[45] http://portal.oceannet.org/portal/start.php#details?tpc=009_122e253d-f620-4702-a4f9-29a19251e7a6
+[46] https://data.gov.uk/dataset/4d843e52-a5dc-4c90-83f3-31a210e22925/geosure-shrink-swell-deposits
+[47] http://webarchive.nationalarchives.gov.uk/20161022034051/https://data.gov.uk/dataset/average-temperature-and-rainfall-england-and-wales
+[48] http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/41023936-009d-48ec-a90d-c966895463c1?tab=general
+[49] https://arcticdata.io/catalog/#quality/doi%3A10.18739%2FA2TH8BM6X
+[50] https://www.polardata.ca/pdcsearch/viewmetadata.ccin?action=dis...etadata&ccin_ref_number=12871&rowIndex=1&prev=12870&next=12953
+[51] https://data.eol.ucar.edu/dataset/408.001
+[52] https://rda.ucar.edu/datasets/ds504.0/
+[53] https://nsidc.org/data/NSIDC-0051
+[54] https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.nodc:0000446
+[55] https://gcmd.nasa.gov/search/Metadata.do?entry=GLAH09_033#metadata
+[56] https://gcmd.nasa.gov/KeywordSearch/Metadata.do?Portal=amd&KeywordPath=Parameters%7CCLIMATE+INDICATORS%7CBIOSPHERIC+INDICATORS%7CBREEDING+PRODUCTIVITY&OrigMetadataNode=AADC&EntryId=AAS_4088_SGP_2011-2015&MetadataView=Full&MetadataType=0&lbnode=mdlb3
+[57] http://gis.ices.dk/geonetwork/srv/eng/catalog.search#/metadata/561291a5-f26c-43aa-8310-e59fb2208809
+[58] https://www.bco-dmo.org/dataset/746307
+[59] https://core.tdar.org/dataset/400918/2014-southeastern-archaeology-publication-survey-data
+[60] https://www.ncdc.noaa.gov/paleo-search/study/23235
+[61] http://gtnpdatabase.org/boreholes/view/369/
+[62] https://data.aad.gov.au/metadata/records/Polar_Environmental_Data
+[63] https://data.npolar.no/dataset/9174e644-3540-44e8-b00b-c629acbf1339
+[64] https://wascal-dataportal.org/geonetwork/apps/search/?uuid=43b49387-97b8-4231-b3f2-ad2a3fe54d0f
+[65] https://above.nasa.gov/profiles_/above_products.html?projType=product&projID=1119&progID=6
+[66] https://data.london.gov.uk/dataset/local-authority-collected-waste-management-london
+[67] https://data.ioos.us/dataset/physical-oceanographic-data-in-the-gulf-of-alaska-shelikof-strait-september-2001
+[68] https://catalog.data.gov/dataset/protected-areas-database-of-the-united-states-pad-us
+[69] https://data.europa.eu/euodp/data/dataset/statistics_barometer-statistics
+[70] https://www.repository.cam.ac.uk/handle/1810/256566
+
 -->
 
 <!-- Notes -->
