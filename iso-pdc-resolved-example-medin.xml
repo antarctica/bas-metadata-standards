@@ -163,7 +163,7 @@
           <gmd:identifier>
             <gmd:MD_Identifier>
               <gmd:code>
-                <gmx:Anchor xlink:href="https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e" xlink:title="DOI" xlink:actuate="onRequest">https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e</gmx:Anchor>
+                <gmx:Anchor xlink:href="https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f" xlink:title="DOI" xlink:actuate="onRequest">https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f</gmx:Anchor>
               </gmd:code>
             </gmd:MD_Identifier>
           </gmd:identifier>
@@ -692,7 +692,7 @@
             <gmx:Anchor xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" xlink:actuate="onRequest">This information is licensed under the Open Government Licence v3.0. To view this licence, visit http://www.nationalarchives.gov.uk/doc/open-government-licence/</gmx:Anchor>
           </gmd:otherConstraints>
           <gmd:otherConstraints>
-            <gco:CharacterString>Cite this information as "Arrowsmith, C., Leng, M., Meredith, M. (2018). Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April 2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006. [Data set]. Polar Data Centre, Natural Environment Research Council, UK. https://doi.org/10.5072/3de40325-be7d-4fa8-aad7-cacf3556a14e"</gco:CharacterString>
+            <gco:CharacterString>Cite this information as: "Bougamont, M. (2018). Ice flow model output for Pine Island Glacier (West Antarctica), from numerical inversions of ice surface velocities observed in 1996 and 2014 [Data set]. Polar Data Centre, Natural Environment Research Council, UK Research &amp; Innovation. https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f"</gco:CharacterString>
           </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
@@ -1095,7 +1095,7 @@
 <!-- Notes -->
 <!--
 1. this file was used to tweak a metadata record such that it passes the Medin schematron
-2. this file was based on 'iso-pdc-resolved-example.xml', specifically at commit b76eb4f
+2. this file was based on 'iso-pdc-resolved-example.xml', specifically at commit db966d8
 3. based on the contents of this record, it is assumed it is within the scope of Medin
 -->
 
