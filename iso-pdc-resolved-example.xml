@@ -1175,6 +1175,314 @@
       and identification of other areas that could be bulk checked by appriopriate scripting' [38 - summary, point 3]
 26.1.1. was this work pursued in terms of identifying things that could be automated and/or implementing this action?
 26.2. more generally, will there be another around of this review (comissioning metric?)
+27. Open Data Institute (ODI) certificates [39]
+27.1. criteria
+27.1.1. title
+27.1.1.1. can be taken from the record
+27.1.2. publisher
+27.1.2.1. can be taken from the record
+27.1.3. release type
+27.1.3.1. can likely be infered from the record with manual verification
+27.1.3.2. available options
+27.1.3.2.1. 'a one-off release of a single dataset'
+27.1.3.2.1.1. 'This is a single file and you don’t currently plan to publish similar files in the future.'
+27.1.3.2.2. 'a one-off release of a set of related datasets'
+27.1.3.2.2.1. 'This is a collection of related files about the same data and you don’t currently plan to publish similar 
+              collections in the future.'
+27.1.3.2.3. 'ongoing release of a series of related datasets'
+27.1.3.2.3.1. 'This is a sequence of datasets with planned periodic updates in the future.'
+27.1.3.2.4. 'a service or API for accessing open data'
+27.1.3.2.4.1. 'This could be a web service for developers to access and interact with your data through an interface, 
+               or a snapshot taken directly from a database that gets updated in real-time.'
+27.1.4. data publishing rights
+27.1.4.1. I assume we have the rights? Can this vary?
+27.1.4.2. available options
+27.1.4.2.1. 'yes, you have the rights to publish this data as open data'
+27.1.4.2.2. 'no, you don't have the rights to publish this data as open data'
+27.1.4.2.3. 'you're not sure if you have the rights to publish this data as open data'
+27.1.4.2.4. 'the rights in this data are complicated or unclear'
+27.1.4.3. guidance
+27.1.4.3.1. 'If your organisation didn't originally create or gather this data then you might not have the right to publish
+            it. If you’re not sure, check with the data owner because you will need their permission to publish it.'
+27.1.4.4. default value can be choosen with manual verification
+27.1.5. single source
+27.1.5.1. presumably this will vary where other institutions are involved
+27.1.5.1.1. for NERC grants is there an automatic ownership
+27.1.5.2 available options
+27.1.5.2.1. 'yes'
+27.1.5.2.2. 'no, it uses external sources'
+27.1.5.3. guidance
+27.1.5.3.1. 'If any part of this data was sourced outside your organisation by other individuals or organisations then 
+            you need to give extra information about your right to publish it.'
+27.1.5.4. default value can be choosen with manual verification
+27.1.6. licensing rights statement
+27.1.6.1. guidance
+27.1.6.1.1. 'Give the URL to a page that describes the right to re-use this dataset. This should include a reference to 
+            its license, attribution requirements, and a statement about relevant copyright. A rights statement helps 
+            people understand what they can and can't do with the data.' 
+27.1.6.1.2. 'It's good practice to embed information about rights in machine-readable formats so people can automatically 
+            attribute this data back to you when they use it.'
+27.1.6.1.2.1. worth noting the ODI refer to use of DCAT and other standards for doing this, we can get this out of CSW 
+              and either embed where needed in the page or provide as a alt link as we will for schema.org
+27.1.6.2. machine readable properties
+27.1.6.2.1. data licence
+27.1.6.2.2. content licence
+27.1.6.2.3. attribution text
+27.1.6.2.4. attribution URL
+27.1.6.2.5. copyright notice or statement
+27.1.6.2.6. copyright year
+27.1.6.2.7. copyright holder
+27.1.6.2.8. database right year
+27.1.6.2.8.1.1. not sure we can do this
+27.1.6.2.9. database right holder
+27.1.6.2.9.1. not sure we can do this
+27.1.6.3. all of the information can be taken from the record
+27.1.7. license
+27.1.7.1. worth noting 'facts' aren't copyrightable
+27.1.7.2. the OGL is an option
+27.1.7.3. can be taken from the record
+27.1.8. copyright
+27.1.8.1. available options
+27.1.8.1.1. 'no, the data only contains facts and numbers'
+27.1.8.1.1.1. 'There is no copyright in factual information. If the data does not contain any content that was created 
+              through intellectual effort, there are no rights in the content.'
+27.1.8.1.2 'yes, and the rights are all held by the same person or organisation'
+27.1.8.1.2.1. 'Choose this option if the content in the data was all created by or transferred to the same person or 
+              organisation.'
+27.1.8.1.3. 'yes, and the rights are held by different people or organisations'
+27.1.8.1.3.1. 'In some data, the rights in different records are held by different people or organisations. Information 
+              about rights needs to be kept in the data too.'
+27.1.8.2. in our case I assume this is the second option as even if it's in another NERC data centre that's still the 
+          same legal body
+27.1.8.3. default value can be used with manual verification
+27.1.9. data protection
+27.1.9.1. not sure this is part of any existing checks given our data
+27.1.9.2. could possibly flag for review by Archives
+27.1.9.3. available options
+27.1.9.3.1. 'no, the data is not about people or their activities'
+27.1.9.3.1.1. 'Remember that individuals can still be identified even if data isn't directly about them. For example, 
+              road traffic flow data combined with an individual's commuting patterns could reveal information about 
+              that person.'
+27.1.9.3.2. 'no, the data has been anonymised by aggregating individuals into groups, so they can't be distinguished 
+            from other people in the group'
+27.1.9.3.2.1. 'Statistical disclosure controls can help to make sure that individuals are not identifiable within 
+              aggregate data.'
+27.1.9.3.3. 'yes, there is a risk that individuals be identified, for example by third parties with access to extra information'
+27.1.9.3.3.1. 'Some data is legitimately about individuals like civil service pay or public expenses for example.'
+27.1.9.4. should require manual verification for auditing
+27.1.10. part of a collection
+27.1.10.1. guidance
+27.1.10.1.1. 'Answer yes if this dataset has been registered somewhere else (e.g. as part of a group or collection of 
+              related datasets). This helps make your data more discoverable.'
+27.1.10.2. not sure if keyword groupings count
+27.1.10.3. we could say marine records are part of the Medin portal (i.e. discipline specific)
+27.1.10.4. in the future we could say datasets are grouped by project
+27.1.10.5. in the future we could say datasets are grouped by facility (instrument/station)
+27.1.10.6. can be automated
+27.1.11. cited in publications
+27.1.11.1. guidance
+27.1.11.1.1. 'Have you included direct links to this dataset in any of your own publications or communication channels? 
+              These could be reports, press releases, blog posts, presentations or any publication that helps to provide 
+              context to your data and encourages people to discover and understand the data better.'
+27.1.11.2. it sounds like this needn't be formal citations, although (metrics non-withstanding) that would be the 
+           easiest way to answer this
+27.1.11.3. could be automated providing there are suitable data sources
+27.1.12. accuracy
+27.1.12.1. don't think this can be inferred automatically from the record
+27.1.12.2. available options
+27.1.12.2.1. 'yes, this data will go out of date'
+27.1.12.2.1.1. 'For example, a dataset of bus stop locations will go out of date over time as some are moved or new ones 
+               created.'
+27.1.12.2.2. 'yes, this data will go out of date over time but it’s time stamped'
+27.1.12.2.2.1. 'For example, population statistics usually include a fixed timestamp to indicate when the statistics 
+               were relevant.'
+27.1.12.2.3. 'no, this data does not contain any time-sensitive information'
+27.1.12.2.3.1. 'For example, the results of an experiment will not go out of date because the data accurately reports 
+               observed outcomes.'
+27.1.13. errors
+27.1.13.1. guidance
+27.1.13.1.1. 'Give a URL where people can find out about the quality of your data. People accept that errors are 
+             inevitable, from equipment malfunctions or mistakes that happen in system migrations. You should be open 
+             about quality so people can judge how much to rely on this data.'
+27.1.13.2. providing a suitable field exists, this could be taken automatically from the record
+27.1.13.3. do we record this sort of information already?
+27.1.14. data quality statement
+27.1.14.1. guidance
+27.1.14.1.1. 'Give a URL for people to learn about ongoing checks on your data, either automatic or manual. This 
+             reassures them that you take quality seriously and encourages improvements that benefit everyone.'
+27.1.14.2. providing a suitable field exists, this could be taken automatically from the record
+27.1.14.3. do we record this? presumably would be discipline specific rather than a blanket policy
+27.1.15. data location
+27.1.15.1. guidance
+27.1.15.1.1. 'Please provide the exact URL to a data file for download; so the link should end with a file extension, 
+             e.g. CSV. Open data should be linked to directly on the web so people can easily find and reuse it.'
+27.1.15.2. we can't do this to the actual file as there's useful more than one, and even if multiple were allowed that 
+           would be infesible usually
+27.1.15.3. should we use this to link to the Ramadda entry instead
+27.1.15.3.1. care should be taken to avoid listing Ramadda URLs directly since these aren't guarenteed to be stable
+27.1.15.3.2. if we did, this could be be automatically taken from the record unless multiple online resources are provided
+27.1.15.4. only 1 URL can be given
+27.1.16. machine readable data
+27.1.16.1. guidance
+27.1.16.1.1. 'Machine-readable data is a structured data that can be easily processed and interpreted by a computer. 
+             This makes the data much more reusable. Examples of machine-readable formats include: CSV, JSON, XML, RDF. 
+             In contrast, an unstructured data such as HTML, PDFs and documents that have been scanned as images, are 
+             not machine-readable.'
+27.1.16.2. can be taken automatically from the record
+27.1.17. open data formats 
+27.1.17.1. guidance
+27.1.17.1.1. 'Open standards are created through a fair, transparent and collaborative process. Anyone can implement 
+             them and there’s lots of support so it’s easier for you to share data with more people. For example, XML, 
+             CSV and JSON are open standards.'
+27.1.17.2. can be inferred automatically from the record (mapping of open/closed formats needed)
+27.1.18. types of data
+27.1.18.1. not sure this can be determined automatically (unless sets of criteria are defined [e.g. CTD profiles])
+27.1.18.2. available options (can be more than one)
+27.1.18.2.1. 'human-readable documents'
+27.1.18.2.1.1. 'Choose this if your data is meant for human consumption. For example; policy documents, white papers, 
+               reports and meeting minutes. These usually have some structure to them but are mostly text.'
+27.1.18.2.2. 'statistical data like counts, averages and percentages'
+27.1.18.2.2.1. 'Choose this if your data is statistical or numeric data like counts, averages or percentages. Like 
+               census results, traffic flow information or crime statistics for example.'
+27.1.18.2.3. 'geographic information, such as points and boundaries'
+27.1.18.2.3.1. 'Choose this if your data can be plotted on a map as points, boundaries or lines.'
+27.1.18.2.4. 'other kinds of structured data'
+27.1.18.2.4.1. 'Choose this if your data is structured in other ways. Like event details, railway timetables, contact 
+               information or anything that can be interpreted as data, and analysed and presented in multiple ways.'
+27.1.18.3. would these options be useful filters in the data portal (where people aren't necessarily technical?)
+27.1.19. 'human readable documents' data formats
+27.1.19.1. available options
+27.1.19.1. 'formats which describe semantic structure like HTML, Docbook or Markdown'
+27.1.19.1.1. 'These formats label structures like chapters, headings and tables that make it easy to automatically 
+             create summaries like tables of contents and glossaries. They also make it easy to apply different styles 
+             to the document so its appearance changes.'
+27.1.19.1. 'formats which describe information on formatting like OOXML or PDF'
+27.1.19.1.1. 'These formats emphasise appearance like fonts, colours and positioning of different elements within the 
+             page. These are good for human consumption, but aren't as easy for people to process automatically and 
+             change style.'
+27.1.19.1. 'formats which aren't meant for documents like Excel, JSON or CSV'
+27.1.19.1.1. 'These formats better suit tabular or structured data.'
+27.1.19.2. could be automatically inferred from the data formats listed in the record
+27.1.20. 'statistical data files' data formats
+27.1.20.1. available options
+27.1.20.1. 'formats which expose the structure of statistical hypercube data like SDMX or Data Cube'
+27.1.20.1.1. 'Individual observations in hypercubes relate to a particular measure and a set of dimensions. Each 
+             observation may also be related to annotations that give extra context. Formats like SDMX and Data Cube are 
+             designed to express this underlying structure.'
+27.1.20.1. 'formats which treat statistical data as a table like CSV'
+27.1.20.1.1. 'These formats arrange statistical data within a table of rows and columns. This lacks extra context about 
+             the underlying hypercube but is easy to process.'
+27.1.20.1. 'formats which focus on the format of tabular data like Excel'
+27.1.20.1.1. 'Spreadsheets use formatting like italic or bold text, and indentation within fields to describe its 
+             appearance and underlying structure. This styling helps people to understand the meaning of your data but 
+             makes it less suitable for computers to process.'
+27.1.20.1. 'formats which aren't meant for statistical or tabular data like Word or PDF'
+27.1.20.1.1. 'These formats don't suit statistical data because they obscure the underlying structure of the data.'
+27.1.20.2. could be automatically inferred from the data formats listed in the record
+27.1.21. 'geographic data files' data formats
+27.1.21.1. available options
+27.1.21.1.1. 'formats which are designed for geographic data like KML or GeoJSON'
+27.1.21.1.1.1. 'These formats describe points, lines and boundaries, and expose structures in the data which make it 
+               easier to process automatically.'
+27.1.21.1.2. 'formats which keep data structured like JSON, XML or CSV'
+27.1.21.1.2.1. 'Any format that stores normal structured data can express geographic data too, particularly if it only 
+               holds data about points.'
+27.1.21.1.3. 'formats which aren't designed for geographic data like Word or PDF'
+27.1.21.1.3.1. 'These formats don't suit geographic data because they obscure the underlying structure of the data.'
+27.1.21.2. could be automatically inferred from the data formats listed in the record
+27.1.22. 'structured data files' data formats
+27.1.22.1. available options
+27.1.22.1.1. 'formats which are designed for structured data like JSON, XML, Turtle or CSV'
+27.1.22.1.1.1. 'These formats organise data into a basic structure of things which have values for a known set of 
+               properties. These formats are easy for computers to process automatically.'
+27.1.22.1.2. 'formats which aren't designed for structured data like Word or PDF'
+27.1.22.1.2.1. 'These formats don't suit this kind of data because they obscure its underlying structure.'
+27.1.22.2. could be automatically inferred from the data formats listed in the record
+27.1.23. persistent identifiers within data
+27.1.23.1. guidance
+27.1.23.1.1. 'Data is usually about real things like schools or roads or uses a coding scheme. If data from different 
+             sources use the same persistent and unique identifier to refer to the same things, people can combine 
+             sources easily to create more useful data. Identifiers might be GUIDs, DOIs or URLs.'
+27.1.23.2. this can't be automated as it relates to the data itself, not metadata
+27.1.23.2.1. this could possibly be provided for automated data-sets
+27.1.23.3. this is arguably starting to get a bit too close to the data and out of scope for this process
+27.1.24. machine-readable provenance
+27.1.24.1. guidance
+27.1.24.1.1. 'This about the origins of how your data was created and processed before it was published. It builds trust 
+             in the data you publish because people can trace back how it has been handled.'
+27.1.24.1.2. http://www.w3.org/TR/prov-primer/
+27.1.24.2. yes/no
+27.1.24.3. could be automatically taken from the record (checking for fields)
+27.1.25. data verification information
+27.1.25.1. guidance
+27.1.25.1.1. 'If you deliver important data to people they should be able to check that what they receive is the same as 
+             what you published. For example, you can digitally sign the data you publish, so people can tell if it has 
+             been tampered with.'
+27.1.25.2. arugably we do provide important information that we want to ensure is authenticate and hasn't been tampered 
+           with
+27.1.25.3. this could be a general policy that applies to all datasets
+27.1.25.4. default value could be provided
+27.1.26. data documentation
+27.1.26.1. machine readable properties
+27.1.26.1.1. title
+27.1.26.1.2. description
+27.1.26.1.3. release date
+27.1.26.1.4. modification date
+27.1.26.1.5. frequency of releases
+27.1.26.1.6. identifier
+27.1.26.1.7. landing page
+27.1.26.1.8. language
+27.1.26.1.9. publisher
+27.1.26.1.10. spatial/geographical coverage
+27.1.26.1.11. temporal coverage
+27.1.26.1.12. theme(s)
+27.1.26.1.13. keyword(s) or tag(s)
+27.1.26.1.14. distribution(s)
+27.1.26.2. these can all be taken automatically from the record
+27.1.27. technical information
+27.1.27.1. guidance
+27.1.27.1.1. 'This could be the precise details for the format(s) of the data and how to access the data via an API. 
+             This documentation will be aimed at technical re-users, such as developers.'
+27.1.27.2. same as metadata record (with relevant links)
+27.1.28. vocabularies and schemas within data
+27.1.28.1. guidance
+27.1.28.1.1. 'Formats like CSV, JSON, XML or Turtle use custom vocabularies or schemas which say what columns or 
+             properties the data contains.'
+27.1.28.2. yes/no
+27.1.28.3. this can't be automated as it relates to the data itself, not metadata
+27.1.28.3.1. this could possibly be provided for automated data-sets
+27.1.28.4. this is arguably starting to get a bit too close to the data and out of scope for this process
+27.1.29. codes used within data
+27.1.29.1. guidance
+27.1.29.1.1. 'If your data uses codes to refer to things like geographical areas, spending categories or diseases for 
+             example, these need to be explained to people.'
+27.1.29.2. yes/no
+27.1.29.3. this can't be automated as it relates to the data itself, not metadata
+27.1.29.3.1. this could possibly be provided for automated data-sets
+27.1.29.4. this is arguably starting to get a bit too close to the data and out of scope for this process
+27.1.30. support contact
+27.1.30.1. guidance
+27.1.30.1.1. 'Provide the link (URL) to the webpage containing the contact details of the person(s) responsible for, or 
+             could respond to questions about, this data.'
+27.1.30.2. this can be taken automatically from the record
+27.1.31. improvements contact
+27.1.31.1. this can be taken automatically from the record (with suitable prompts to the user)
+27.1.32. privacy contact
+27.1.32.1. guidance
+27.1.32.1.1. 'Provide the link to the webpage containing the contact details for reporting a privacy related issue with 
+             the data, i.e. when the data has not been fully anonymised, so it is possible to draw personal identifying information from it.'
+27.1.32.2. this can be a template value
+27.1.33. tools for working with data
+27.1.33.1. guidance
+27.1.33.1.1. 'Give a URL that lists the tools you know or recommend people can use when they work with your data.'
+27.1.33.2. this would argubably be a good thing to include but would be data-type/disicpline specific
+27.1.33.3. could not be automated
+27.2. in general, these questions feel much more 'human' and useful in people (possibly lay-people) understanding the 
+      usefulness of a dataset
+27.3. with the information available in this record we score a 'silver' badge [40]
+27.4. additional guidance [41]
+27.5. Some questions, such as off-site backups, aren't listed here because they aren't really relevant to metadata 
+      (although could be part of a linked general overview resource for the PDC (i.e. advantages/services it offers))
 
 [A]
 
@@ -1229,6 +1537,9 @@
 [36] https://docs.google.com/document/d/1mtfgK-NChHWNICdEEx_m64w9QE1fPi3QocjrO8btfQQ
 [37] https://ishare.apps.nerc.ac.uk/teams/sis/sisproject/Discovery%20Metadata/Metadata%20Guidance.docx
 [38] https://docs.google.com/document/d/1g0QxljxsgM8f7aSQFxexKgK0bpXJbSteozBqBV37st0/edit#heading=h.26w73yencpbj
+[39] https://certificates.theodi.org/en
+[40] https://certificates.theodi.org/en/datasets/219449/certificates/276281
+[41] https://github.com/theodi/open-data-licensing/blob/master/guides/publisher-guide.md
 -->
 
 <!-- Notes -->
