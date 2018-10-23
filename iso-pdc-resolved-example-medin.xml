@@ -1082,6 +1082,47 @@
 11.2. this would preclude any free-form set of keywords, such as our list
 11.3. highlights a reason not to use Medin for all records
 11.4. this requirement is relaxed by the NERC requirements [[7] 7.3]
+12. comparision between Medin and Gemini
+12.1. this comparision takes into account differences in obligation, it doesn't take into account differences in 
+      guidance, examples, etc.
+12.2. this comparision was based on compairing Medin requirements against Gemini, rather than Gemini's against Medins
+12.2.1. as Medin is an interpretation of Gemini this shouldn't be a problem
+12.2.2. where a Medin obligation is less than Gemini a check has been made against Inspire, if the element obligation 
+        is greater the Medin obligation is changed as we must comply with Inspire, this may remove a difference
+12.3. differences
+12.3.1. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:language]
+12.3.1.1. mandatory in Gemini
+12.3.1.2. optional in Medin
+12.3.1.2.1. element is mandatory in Inspire [[6] 2.2.7 TG Requirement 8]
+12.3.1.2.2. since we are required to comply with Inspire, this element is effectively required
+12.3.1.2.3. obligation resolved to mandatory in Medin, giving no difference between Medin and Gemini
+12.3.2. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName]
+12.3.1.1. optional in Gemini
+12.3.1.2. mandatory in Medin
+12.3.3. [/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report]
+12.3.3.1. mandatory in Gemini
+12.3.3.2. optional in Medin
+12.3.3.2.1. element is mandatory in Inspire [[6] 2.8 TG Requirement 28]
+12.3.3.2.2. since we are required to comply with Inspire, this element is effectively required
+12.3.3.2.3. obligation resolved to mandatory in Medin, giving no difference between Medin and Gemini
+12.3.4. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact] role='originator'
+12.3.4.1. optional (not mentioned) in Gemini
+12.3.4.2. mandatory in Medin
+12.3.5. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact] role='curator'
+12.3.5.1. optional (not mentioned) in Gemini
+12.3.5.2. mandatory in Medin
+12.3.6. [/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name]
+12.3.6.1. mandatory in Gemini
+12.3.6.2. optional in Medin
+12.3.7. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation>/gmd:maintenanceAndUpdateFrequency]
+12.3.7.1. optional in Gemini
+12.3.7.2. mandatory in Medin
+12.3.8. [/gmd:MD_Metadata/gmd:metadataStandardName]
+12.3.8.1. optional (not mentioned) in Gemini
+12.3.8.2. mandatory in Medin
+12.3.9. [/gmd:MD_Metadata/gmd:metadataStandardVersion]
+12.3.9.1. optional (not mentioned) in Gemini
+12.3.9.2. mandatory in Medin
 
 [1] http://www.oceannet.org/medin/sites/medin/files/documents/medin_disc_metadata_stnd_interp_of_gemini_2.pdf
 [2] http://www.oceannet.org/medin/sites/medin/files/documents/medin_schema_doc_2_3_8.pdf
