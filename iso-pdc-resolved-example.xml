@@ -192,7 +192,7 @@
               <gmd:onlineResource>
                 <gmd:CI_OnlineResource>
                   <gmd:linkage>
-                    <gmd:URL>http://orcid.org/0000-0002-7342-7756</gmd:URL>
+                    <gmd:URL>https://orcid.org/0000-0002-7342-7756</gmd:URL>
                   </gmd:linkage>
                   <gmd:name>
                     <gco:CharacterString>ORCID record</gco:CharacterString>
@@ -758,7 +758,7 @@
 2.1. 'srv' XML namespace attribute added, required by Gemini [[1] 2.2.2]
 2.2. optional 'xsi' XML namespace attribute added, to facilitate expressing schema locations [[1] 2.2.2]
 2.3. XML namespaces re-ordered, cosmetic
-2.4. schama location attribute added pointing to GMX schema XSD, as per convention
+2.4. schema location attribute added pointing to GMX schema XSD, as per convention
 2.5. schema location attribute added point to GMD, required by Inspire validator ('gmd:MD_Metadata' element check)
 3. [/gmd:MD_Metadata/gmd:LanguageCode] element value changed from 'English' to 'eng', which matches CodeList value, 
    recommended by Gemini [3] and NOAA [2]
@@ -956,7 +956,8 @@
       of the data.' - the contents of the related Inspire code list [10] (explained in [11]) relate to factors such as
       (a) 'confidentiality' or (d) 'commercially sensitive information' - which does seem to be describing something other
       than how the data should be used
-11.3. I am getting confused between access to metadata which is always unrestricted (unless unpublished) and access to the data (which can be embargoed for example)
+11.3. I am getting confused between access to metadata which is always unrestricted (unless unpublished) and access to 
+      the data (which can be embargoed for example)
 12. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_Constraints/gmd:useLimitation]
 12.1. element is not required in Gemini guidance
 12.2. element required because of test [14] based on [[15] 2.9.2 and TG Requirement 33/34]
@@ -967,6 +968,7 @@
 14. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent] do we have any examples of linking to 
     a gazetteer? - this seems to be the preferred way to indicate geographic extent [12] and could be combined with a 
     bounding box as well
+14.1. See Medin example record for doing this with keywords
 15. [/gmd:MD_Metadata/gmd:distributionInfo/MD_Distribution/gmd:distributionFormat] 
 15.1. not sure why this was 'inapplicable' given there was only a single file
 15.2. link to IANA definition is arguably most official (and generally applicable) but something like this [13] might be 
@@ -1046,7 +1048,7 @@
 23.3.3.1. element for the CEDA data catalogue (ID is also listed in the citation, but not as a URL)
 23.3.3.2. element for a link to a paper (interesting concept, link is ad-hoc and not a DOI)
 23.3.4. gmd:metadataStandardName set to 'UK GEMINI' but does not comply (missing conformance element for example)
-23.4. record view (arugably a review of a PDC metadata record) [31]
+23.4. record view (arguably a review of a PDC metadata record) [31]
 23.4.1. 'Provided by' UI element shows an unacceptably small BAS logo - not sure where this is defined
 23.5. comparison across different data centres
 23.5.1. counts per centre
@@ -1086,10 +1088,10 @@
 25.2.1.3. unexplained technical terms or acronyms
 25.2.1.3.1. requirement level: major
 25.2.1.3.2. requires manual review but blacklists/watchlists could be used where values that should be flagged are known
-25.2.1.3.2.1. detecting acronyms in text is difficult unless an abbreivation element is used for example (as part of 
+25.2.1.3.2.1. detecting acronyms in text is difficult unless an abbreviation element is used for example (as part of 
               templating)
-25.2.1.3.3 NERC metadata guidance [[37] 4.3] says it's permissible to use acroynmns in titles providing it's for a 
-          title and it's explained in the abstract, other well known acroymns can also be used (e.g. NASA)
+25.2.1.3.3 NERC metadata guidance [[37] 4.3] says it's permissible to use acronym's in titles providing it's for a 
+          title and it's explained in the abstract, other well known acronym's can also be used (e.g. NASA)
 25.2.1.4. describe the resource not the activity
 25.2.1.4.1. requirement level: major
 25.2.1.4.2. requires manual review
@@ -1101,7 +1103,7 @@
 25.2.1.6.1. requirement level: major
 25.2.1.6.2. can be checked automatically if this can be defined
 25.2.1.6.3. general feedback on NERC metadata review process [38 - Additional Recommendations, point 1] provides examples
-            for this, such as non-resolved characters and htm/escaped chatacters such as '&quote;' instead of '"'
+            for this, such as non-resolved characters and htm/escaped characters such as '&quote;' instead of '"'
 25.2.1.7. free text comments
 25.2.1.7.1. not applicable for review
 25.2.2. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract] 
@@ -1123,7 +1125,7 @@
 25.2.2.6. unexplained technical terms or acronyms
 25.2.2.6.1. requirement level: major
 25.2.2.6.2. requires manual review but blacklists/watchlists could be used where values that should be flagged are known
-25.2.2.6.2.1. detecting acronyms in text is difficult unless an abbreivation element is used for example (as part of 
+25.2.2.6.2.1. detecting acronyms in text is difficult unless an abbreviation element is used for example (as part of 
               templating)
 25.2.2.7. contains non-standard characters
 25.2.2.7.1. requirement level: major
@@ -1134,7 +1136,7 @@
 25.2.3.1. written in plain language
 25.2.3.1.1. requirement level: major
 25.2.3.1.2. requires manual review
-25.2.3.2. explain existance
+25.2.3.2. explain existence
 25.2.3.2.1. requirement level: minor
 25.2.3.2.2. requires manual review
 25.2.3.3. describe data processing stages
@@ -1146,13 +1148,13 @@
 25.2.3.5. free text comments
 25.2.3.5.1. not applicable for review
 25.2.4. [/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine]
-25.2.4.1. consise and accurate title elements
+25.2.4.1. concise and accurate title elements
 25.2.4.1.1. requirement level: major
-25.2.4.1.2. presense of element can be checked automatically
+25.2.4.1.2. presence of element can be checked automatically
 25.2.4.1.3. content requires manual review
 25.2.4.1. description elements
 25.2.4.2.1. requirement level: minor
-25.2.4.2.2. presense of element can be checked automatically
+25.2.4.2.2. presence of element can be checked automatically
 25.2.4.2.3. content requires manual review
 25.2.4.3. free text comments
 25.2.4.3.1. not applicable for review
@@ -1172,9 +1174,9 @@
 25.2.6.1. not applicable for review
 26. general feedback on NERC metadata review process
 26.1. amendments to the review process include 'removal of review items that could be undertaken via scripted checks 
-      and identification of other areas that could be bulk checked by appriopriate scripting' [38 - summary, point 3]
+      and identification of other areas that could be bulk checked by appropriate scripting' [38 - summary, point 3]
 26.1.1. was this work pursued in terms of identifying things that could be automated and/or implementing this action?
-26.2. more generally, will there be another around of this review (comissioning metric?)
+26.2. more generally, will there be another around of this review (commissioning metric?)
 27. Open Data Institute (ODI) certificates [39]
 27.1. criteria
 27.1.1. title
@@ -1182,7 +1184,7 @@
 27.1.2. publisher
 27.1.2.1. can be taken from the record
 27.1.3. release type
-27.1.3.1. can likely be infered from the record with manual verification
+27.1.3.1. can likely be inferred from the record with manual verification
 27.1.3.2. available options
 27.1.3.2.1. 'a one-off release of a single dataset'
 27.1.3.2.1.1. 'This is a single file and you don’t currently plan to publish similar files in the future.'
@@ -1204,7 +1206,7 @@
 27.1.4.3. guidance
 27.1.4.3.1. 'If your organisation didn't originally create or gather this data then you might not have the right to publish
             it. If you’re not sure, check with the data owner because you will need their permission to publish it.'
-27.1.4.4. default value can be choosen with manual verification
+27.1.4.4. default value can be chosen with manual verification
 27.1.5. single source
 27.1.5.1. presumably this will vary where other institutions are involved
 27.1.5.1.1. for NERC grants is there an automatic ownership
@@ -1214,7 +1216,7 @@
 27.1.5.3. guidance
 27.1.5.3.1. 'If any part of this data was sourced outside your organisation by other individuals or organisations then 
             you need to give extra information about your right to publish it.'
-27.1.5.4. default value can be choosen with manual verification
+27.1.5.4. default value can be chosen with manual verification
 27.1.6. licensing rights statement
 27.1.6.1. guidance
 27.1.6.1.1. 'Give the URL to a page that describes the right to re-use this dataset. This should include a reference to 
@@ -1317,9 +1319,9 @@
 27.1.15.1.1. 'Please provide the exact URL to a data file for download; so the link should end with a file extension, 
              e.g. CSV. Open data should be linked to directly on the web so people can easily find and reuse it.'
 27.1.15.2. we can't do this to the actual file as there's useful more than one, and even if multiple were allowed that 
-           would be infesible usually
+           would be infeasible usually
 27.1.15.3. should we use this to link to the Ramadda entry instead
-27.1.15.3.1. care should be taken to avoid listing Ramadda URLs directly since these aren't guarenteed to be stable
+27.1.15.3.1. care should be taken to avoid listing Ramadda URLs directly since these aren't guaranteed to be stable
 27.1.15.3.2. if we did, this could be be automatically taken from the record unless multiple online resources are provided
 27.1.15.4. only 1 URL can be given
 27.1.16. machine readable data
@@ -1418,7 +1420,7 @@
 27.1.25.1.1. 'If you deliver important data to people they should be able to check that what they receive is the same as 
              what you published. For example, you can digitally sign the data you publish, so people can tell if it has 
              been tampered with.'
-27.1.25.2. arugably we do provide important information that we want to ensure is authenticate and hasn't been tampered 
+27.1.25.2. arguably we do provide important information that we want to ensure is authenticate and hasn't been tampered 
            with
 27.1.25.3. this could be a general policy that applies to all datasets
 27.1.25.4. default value could be provided
@@ -1475,7 +1477,7 @@
 27.1.33. tools for working with data
 27.1.33.1. guidance
 27.1.33.1.1. 'Give a URL that lists the tools you know or recommend people can use when they work with your data.'
-27.1.33.2. this would argubably be a good thing to include but would be data-type/disicpline specific
+27.1.33.2. this would arguably be a good thing to include but would be data-type/discipline specific
 27.1.33.3. could not be automated
 27.2. in general, these questions feel much more 'human' and useful in people (possibly lay-people) understanding the 
       usefulness of a dataset
@@ -1483,7 +1485,7 @@
 27.4. additional guidance [41]
 27.5. Some questions, such as off-site backups, aren't listed here because they aren't really relevant to metadata 
       (although could be part of a linked general overview resource for the PDC (i.e. advantages/services it offers))
-28. comparision of data portals
+28. comparison of data portals
 28.1. examples compared
 28.1.1. EIDC (British) [42]
 28.1.2. NERC Data Catalogue Service (British) [43]
@@ -1514,7 +1516,6 @@
 28.1.27. data.gov (American) [68]
 28.1.28. EU Open Data Portal [69]
 28.1.29. University of Cambridge data repository [70]
-
 29. comparison of DMS external interface vs generated XML record
 29.1. the DMS external interface connects directly to the DMS database and so is unconnected to XML records generated
       by the templating process, other than that they both draw from the same source
@@ -1546,7 +1547,7 @@
 29.3.11.1. not in record, will be added (see TODO)
 29.3.12. ((12)) - creation date
 29.3.12.1. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date]
-29.3.12.2. strictly speaking this is the 'publication' rather than 'created' date (see dicussion)
+29.3.12.2. strictly speaking this is the 'publication' rather than 'created' date (see discussion)
 29.3.13. ((13)) - originating center
 29.3.13.1. not in record
 29.3.13.2. not sure what this relates to (DIF concept?)
