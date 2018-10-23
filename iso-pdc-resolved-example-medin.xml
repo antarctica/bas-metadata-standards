@@ -192,7 +192,7 @@
               <gmd:onlineResource>
                 <gmd:CI_OnlineResource>
                   <gmd:linkage>
-                    <gmd:URL>http://orcid.org/0000-0002-7342-7756</gmd:URL>
+                    <gmd:URL>https://orcid.org/0000-0002-7342-7756</gmd:URL>
                   </gmd:linkage>
                   <gmd:name>
                     <gco:CharacterString>ORCID record</gco:CharacterString>
@@ -1095,7 +1095,7 @@
 <!-- Notes -->
 <!--
 1. this file was used to tweak a metadata record such that it passes the Medin schematron
-2. this file was based on 'iso-pdc-resolved-example.xml', specifically at commit db966d8
+2. this file was based on 'iso-pdc-resolved-example.xml', specifically at commit 938d82e
 3. based on the contents of this record, it is assumed it is within the scope of Medin
 -->
 
