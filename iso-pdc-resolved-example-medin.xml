@@ -1020,15 +1020,15 @@
 3. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords] element for SeaDataNet 
    Parameter Discovery Vocabulary (BODC/NERC Vocabulary Service P02)
 3.1. only a single term has been added because this vocabulary gets very specific very quickly and I'm not qualified
-3.1.1. for discovery - if we only pin to the most specific termds will data portals support aggregation of parent terms
-3.2. this vocabulary is inheriently dynamic (although is versioned) as we use '/current' as a reference
+3.1.1. for discovery - if we only pin to the most specific terms will data portals support aggregation of parent terms
+3.2. this vocabulary is inherently dynamic (although is versioned) as we use '/current' as a reference
 3.2.1. [./gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType] as per the Medin 
        guidance [[2] Element 11], codeListValue set to 'revision' rather than 'published'
 3.3. [./gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty] element values set based on metadata
      from BODC vocabulary [3] and is not an official citation
 4. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords] harvesting keywords
 4.1. keyword for filtering MEDIN records added as our CSW endpoint will include non-Medin records
-4.1.1. this vocabulary is inheriently dynamic (although is versioned) as we use '/current' as a reference
+4.1.1. this vocabulary is inherently dynamic (although is versioned) as we use '/current' as a reference
 4.1.1.1. [./gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType] as per the Medin 
        guidance [[2] Element 11], codeListValue set to 'revision' rather than 'published'
 4.1.1.2. [./gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty] element values set based on 
@@ -1036,7 +1036,7 @@
 4.1.2. for our workflow could this keyword be added as a result of some other meta property being set
 4.2. 'NDGO0005' keyword available for MEDIN to publish to data.gov.uk
 4.2.1. if used this would presumably be in addition to NERC's data portal
-4.2.2. as the record identifer will be the same this shouldn't be a problem
+4.2.2. as the record identifier will be the same this shouldn't be a problem
 5. Medin guidance states 'MEDIN have mapped the MEDIN keywords (see element 11) to the ISO Topic Categories' [[2] Element 9]
 5.1. where is this mapping?
 6. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent]
@@ -1068,13 +1068,13 @@
 10.3.15. this should be reported to Medin as I think the URL just hasn't been updated in the assertion
 10.3.15.1. this test should be protocol neutral
 10.3.15.2. I have fixed this in a draft 1.9 schematron sent to Medin for review (2018-10-18)
-10.3.5. worth noting that this requirement, in the schematron, efectively requires all metadata using Medin to be 
+10.3.5. worth noting that this requirement, in the schematron, effectively requires all metadata using Medin to be 
         harvested (i.e. you can't have a valid metadata record that cannot be harvested)
 10.3.6. in the Medin guidance [[5] element 11] it says 'If xml files are being collected using the MEDIN harvesting 
-        process' employing this is optional in theory, but manditory in practice
+        process' employing this is optional in theory, but mandatory in practice
 10.4. test based on [[5] Element 6]
 10.4.1. we fail because only on gmd:identifier element can be specified, we use two for a link to the DMS and for a DOI
-10.4.2. the Medin guidance was updated in 2013 to allow multiple occurences of this element, previously one one was allowed
+10.4.2. the Medin guidance was updated in 2013 to allow multiple occurrences of this element, previously one one was allowed
 10.4.3. this should be reported to Medin as I think the assertion just hasn't been updated to allow multiple elements
 10.4.3.1 I have fixed this in a draft 1.9 schematron sent to Medin for review (2018-10-18)
 11. [/gmd:MD_metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName]
@@ -1082,6 +1082,47 @@
 11.2. this would preclude any free-form set of keywords, such as our list
 11.3. highlights a reason not to use Medin for all records
 11.4. this requirement is relaxed by the NERC requirements [[7] 7.3]
+12. comparision between Medin and Gemini
+12.1. this comparision takes into account differences in obligation, it doesn't take into account differences in 
+      guidance, examples, etc.
+12.2. this comparision was based on compairing Medin requirements against Gemini, rather than Gemini's against Medins
+12.2.1. as Medin is an interpretation of Gemini this shouldn't be a problem
+12.2.2. where a Medin obligation is less than Gemini a check has been made against Inspire, if the element obligation 
+        is greater the Medin obligation is changed as we must comply with Inspire, this may remove a difference
+12.3. differences
+12.3.1. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:language]
+12.3.1.1. mandatory in Gemini
+12.3.1.2. optional in Medin
+12.3.1.2.1. element is mandatory in Inspire [[6] 2.2.7 TG Requirement 8]
+12.3.1.2.2. since we are required to comply with Inspire, this element is effectively required
+12.3.1.2.3. obligation resolved to mandatory in Medin, giving no difference between Medin and Gemini
+12.3.2. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName]
+12.3.1.1. optional in Gemini
+12.3.1.2. mandatory in Medin
+12.3.3. [/gmd:MD_Metadata/gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report]
+12.3.3.1. mandatory in Gemini
+12.3.3.2. optional in Medin
+12.3.3.2.1. element is mandatory in Inspire [[6] 2.8 TG Requirement 28]
+12.3.3.2.2. since we are required to comply with Inspire, this element is effectively required
+12.3.3.2.3. obligation resolved to mandatory in Medin, giving no difference between Medin and Gemini
+12.3.4. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact] role='originator'
+12.3.4.1. optional (not mentioned) in Gemini
+12.3.4.2. mandatory in Medin
+12.3.5. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact] role='curator'
+12.3.5.1. optional (not mentioned) in Gemini
+12.3.5.2. mandatory in Medin
+12.3.6. [/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name]
+12.3.6.1. mandatory in Gemini
+12.3.6.2. optional in Medin
+12.3.7. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation>/gmd:maintenanceAndUpdateFrequency]
+12.3.7.1. optional in Gemini
+12.3.7.2. mandatory in Medin
+12.3.8. [/gmd:MD_Metadata/gmd:metadataStandardName]
+12.3.8.1. optional (not mentioned) in Gemini
+12.3.8.2. mandatory in Medin
+12.3.9. [/gmd:MD_Metadata/gmd:metadataStandardVersion]
+12.3.9.1. optional (not mentioned) in Gemini
+12.3.9.2. mandatory in Medin
 
 [1] http://www.oceannet.org/medin/sites/medin/files/documents/medin_disc_metadata_stnd_interp_of_gemini_2.pdf
 [2] http://www.oceannet.org/medin/sites/medin/files/documents/medin_schema_doc_2_3_8.pdf
