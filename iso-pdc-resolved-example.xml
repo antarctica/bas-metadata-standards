@@ -1514,7 +1514,6 @@
 28.1.27. data.gov (American) [68]
 28.1.28. EU Open Data Portal [69]
 28.1.29. University of Cambridge data repository [70]
-
 29. comparison of DMS external interface vs generated XML record
 29.1. the DMS external interface connects directly to the DMS database and so is unconnected to XML records generated
       by the templating process, other than that they both draw from the same source
@@ -1665,6 +1664,425 @@
 30.1.1.2. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date]
           as 'publication' date
 30.2. do we add explicit support for 'created' and 'revised' dates as well or instead of 'publication' date?
+31. review of DMS Admin application
+31.1. to document existing functionality and changes that would be required to implement this record
+31.2. existing functionality/fields
+31.2.1. section: basic information
+32.2.1.1. sub-section: identification
+32.2.1.1.1. 'Dataset ID'
+32.2.1.1.1.1. value hard-coded, generated dynamically when a new record is made
+32.2.1.1.2. 'Dataset Title'
+32.2.1.1.2.1. free-text
+32.2.1.1.3. 'BAS Division Responsible'
+32.2.1.1.3.1. controlled list (single selection)
+32.2.1.1.3.2. available options
+32.2.1.1.3.2.1. PSD
+32.2.1.1.3.2.2. GSD
+32.2.1.1.3.2.3. EID
+32.2.1.1.3.2.4. BSD
+32.2.1.1.3.2.5. ALD
+32.2.1.1.3.3 what is this used for?
+32.2.1.1.4. 'Dataset progress'
+32.2.1.1.4.1. controlled list (single selection)
+32.2.1.1.4.2. available options
+32.2.1.1.4.2.1. Complete (default)
+32.2.1.1.4.2.2. In Progress
+32.2.1.1.4.2.3. Planned
+32.2.1.1.4.3. is this actively used or is it only because there's a default
+32.2.1.1.4.3.1. i.e. do we record datasets that are in progress or planned, or only create them when they can be completed?
+32.2.1.1.5. ISO topic categories
+32.2.1.1.5.1. controlled list (single selection)
+32.2.1.1.5.2. available options defined by ISO schema [72]
+32.2.1.1.6. 'Creation Date'
+32.2.1.1.6.1. value hard-coded
+32.2.1.1.6.2. is this used as [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:CI_Citation/gmd:date]
+32.2.1.1.6.2.1. if so that date should probably use a codeList value of 'creation' not 'published' [73]
+32.2.1.1.6.2.2. if not then this date could be added as well (see discussion)
+32.2.1.2. sub-section: parameters
+32.2.1.2.1. available options
+32.2.1.2.1.1. GCMD
+32.2.1.2.1.1.1. which version?
+32.2.1.2.1.1.2. can be filtered - e.g. just show 'Cryosphere'
+32.2.1.2.1.1.3. can be searched
+32.2.1.2.1.2. BODC
+32.2.1.2.1.2.1. which voacbulary/version is this?
+32.2.1.2.1.2.2. can be searched
+32.2.1.2.1.3. Inspire Themes
+32.2.1.2.1.3.1. which version (if versioned)
+32.2.1.2.1.3.2. can be searched
+32.2.1.2.2. multiple options can be selected
+32.2.1.2.3. terms from each option are shown together
+32.2.1.2.4. multiple options can be selected
+32.2.1.2.4.1. when choosen from different lists they are shown together as a single list of selections
+32.2.1.2.4.1.1. when this happens there is no marker for which option a term came from, i.e. if two lists had the same
+                label it would appear as though the same term had been selected twice
+32.2.1.2.5. are parameters different from keywords in DIF?
+32.2.1.2.5.1. should we refer to them differently?
+32.2.1.3. sub-section: summary
+32.2.1.3.1. 'Summary/Abstract'
+32.2.1.1.3.1. free-text
+32.2.1.3.2. 'Keywords'
+32.2.1.3.2.1. list of free-text items (each item can be added or removed)
+32.2.1.3.2.2. uncontrolled list with no ability to see terms used in other records that might be the same
+32.2.1.3.3. 'Dataset Language'
+32.2.1.3.3.1. controlled list (single selection)
+32.2.1.3.3.1.1. available options assumed to be ISO 639-2 list (recommended by ISO) [74]
+32.2.1.3.3.1.1.1. english default option
+32.2.1.3.3.1.1.2. have other options been used?
+32.2.1.3.3. 'Parent Dataset'
+32.2.1.3.3.1. controlled list (single selection)
+32.2.1.3.3.1.1. available options are list of existing datasets
+32.2.1.3.3.1.2. this appears to be a dataset (parent) -> dataset child) relationship, rather than series -> dataset
+32.2.1.3.3.1.3. is this used?
+32.2.1.4. sub-section: personnel
+32.2.1.4.1. sub-section cannot be changed once a record is published
+32.2.1.4.2. list of personnel instances (each can be deleted)
+32.2.1.4.3. personnel instances appear to be shared across all records (common list)
+32.2.1.4.3.1. available personnel instances can be searched
+32.2.1.4.3.2. an existing instance can be copied into a new instance
+32.2.1.4.4. personnel instance contents
+32.2.1.4.4.1. name (title)
+32.2.1.4.4.1.1. controlled list (single selection)
+32.2.1.4.4.1.2. available options
+32.2.1.4.4.1.2.1. Dr
+32.2.1.4.4.1.2.2. Mr
+32.2.1.4.4.1.2.3. Mrs
+32.2.1.4.4.1.2.4. Ms
+32.2.1.4.4.1.2.5. Prof
+32.2.1.4.4.1.2.6. Sir
+32.2.1.4.4.2. name (first)
+32.2.1.4.4.2.1. free-text
+32.2.1.4.4.2.1. indicated as mandatory
+32.2.1.4.4.3. name (middle)
+32.2.1.4.4.3.1. free-text
+32.2.1.4.4.4. name (last)
+32.2.1.4.4.4.1. free-text
+32.2.1.4.4.4.1. indicated as mandatory
+32.2.1.4.4.5. role
+32.2.1.4.4.5.1. controlled list (multiple selection)
+32.2.1.4.4.5.2. available options
+32.2.1.4.4.5.2.1. Investigator
+32.2.1.4.4.5.2.2. Technical Contact
+32.2.1.4.4.5.3. what do these terms map to (DIF term)?
+32.2.1.4.4.5.4. what do technical contacts show?
+32.2.1.4.4.5.4.1. alongside investigator title (e.g. 'Investigator, Technical Contact')
+32.2.1.4.4.5.5. as personnel instances are pooled, presumably this option applies to all records
+32.2.1.4.4.6. email
+32.2.1.4.4.6.1. free-text
+32.2.1.4.4.6.2. multiple, individual items can be provided
+32.2.1.4.4.6.3. how do this work in practice?
+32.2.1.4.4.6.3.1. are all values shown, just one?
+32.2.1.4.4.6.3.2. ISO does allow multiple values [75]
+32.2.1.4.4.7. phone
+32.2.1.4.4.7.1. free-text
+32.2.1.4.4.7.2. multiple, individual items can be provided
+32.2.1.4.4.7.3. how do this work in practice?
+32.2.1.4.4.7.3.1. are all values shown, just one?
+32.2.1.4.4.7.3.2. ISO does allow multiple values [76]
+32.2.1.4.4.8. fax
+32.2.1.4.4.8.1. free-text
+32.2.1.4.4.8.2. multiple, individual items can be provided
+32.2.1.4.4.8.3. how do this work in practice?
+32.2.1.4.4.8.3.1. are all values shown, just one?
+32.2.1.4.4.8.3.2. ISO does allow multiple values [76]
+32.2.1.4.4.9. organisation
+32.2.1.4.4.9.1. free-text
+32.2.1.4.4.10. address
+32.2.1.4.4.10.2. values/parts for
+32.2.1.4.4.10.2.1. Building/Street
+32.2.1.4.4.10.2.1.1. free-text
+32.2.1.4.4.10.2.1.2. multiple, individual items can be provided
+32.2.1.4.4.10.2.1.3. how do this work in practice?
+32.2.1.4.4.10.2.1.3.1. presumably instances are concatenated together
+32.2.1.4.4.10.2.2. City
+32.2.1.4.4.10.2.2.1. free-text
+32.2.1.4.4.10.2.3. County
+32.2.1.4.4.10.2.3.1. free-text
+32.2.1.4.4.10.2.4. Post Code
+32.2.1.4.4.10.2.4.1. free-text
+32.2.1.4.4.10.2.5. Country
+32.2.1.4.4.10.2.5.1. free-text
+32.2.1.4.4.11. private
+32.2.1.4.4.11.1. binary option
+32.2.1.4.4.11.2. personnel instance not shown outside of BAS
+32.2.1.4.4.11.3. example of a private field (see discussion)
+31.2.2. section: additional information
+32.2.2.1. sub-section: reference
+32.2.2.1.1. reference
+32.2.2.1.1.1. free-text
+32.2.2.1.1.2. used for references to papers that use a dataset
+32.2.2.1.2. private
+32.2.2.1.2.1. binary option
+32.2.2.1.2.2. refernece not shown outside of BAS
+32.2.2.1.2.3. example of a private field (see discussion)
+32.2.2.2. sub-section: quality
+32.2.2.2.1. quality
+32.2.2.2.1.1. free-text
+32.2.2.2.1.2. used to describe how a resource has been quality controlled
+32.2.2.2.2. private
+32.2.2.2.2.1. binary option
+32.2.2.2.2.2. quality not shown outside of BAS
+32.2.2.2.2.3. example of a private field (see discussion)
+32.2.2.3. sub-section: quality
+32.2.2.3.1. lineage
+32.2.2.3.1.1. free-text
+32.2.2.3.1.2. used to describe how a resource was created/collected and the methodology applied to it
+32.2.2.3.2. parent dataset
+32.2.2.3.2.1. controlled list (single selection)
+32.2.2.3.2.1.1. available options are list of existing datasets
+32.2.2.3.2.2. is this a mistake or used?
+32.2.2.3.3. private
+32.2.2.3.3.1. binary option
+32.2.2.3.3.2. lineage not shown outside of BAS
+32.2.2.3.3.3. example of a private field (see discussion)
+32.2.2.4. sub-section: ownership
+32.2.2.4.1. ownership
+32.2.2.4.1.1. free-text
+32.2.2.4.1.2. not sure what this is used for
+32.2.2.4.2. private
+32.2.2.4.2.1. binary option
+32.2.2.4.2.2. owership not shown outside of BAS
+32.2.2.4.2.3. example of a private field (see discussion)
+32.2.2.5. sub-section: related URL
+32.2.2.5.1. related URLs
+32.2.2.5.1.1. list of related URL instances
+32.2.2.5.1.2. each instance can be deleted
+32.2.2.5.1.3. related URL instance contents
+32.2.2.5.1.3.1. URL content type
+32.2.2.5.1.3.1.1. controlled list (single selection)
+32.2.2.5.1.3.1.2. available options
+32.2.2.5.1.3.1.2.1. allowed values list of terms, likely from a DIF keyword list
+32.2.2.5.1.3.2. URLs
+32.2.2.5.1.3.2.1. free-text
+32.2.2.5.1.3.2.2. multiple, individual items can be provided
+32.2.2.5.1.3.2.3. how do this work in practice?
+32.2.2.5.1.3.3. URL description
+32.2.2.5.1.3.3.1. free-text
+32.2.2.5.1.3.4. private
+32.2.2.5.1.3.4.1. binary option
+32.2.2.5.1.3.4.2. owership not shown outside of BAS
+32.2.2.5.1.3.4.3. example of a private field (see discussion)
+32.2.2.6. sub-section: project
+32.2.2.6.1. controlled list (multiple selection)
+32.2.2.6.2. items can be added or removed from a list
+32.2.2.6.3. not sure where new projects are added
+32.2.2.7. sub-section: citation
+32.2.2.7.1. data set creator
+32.2.2.7.1.1. free-text
+32.2.2.7.1.2. assumed to be part of a DIF citation object
+32.2.2.7.2. data set title
+32.2.2.7.2.1. free-text
+32.2.2.7.2.2. assumed to be part of a DIF citation object
+32.2.2.7.3. data set series name
+32.2.2.7.3.1. free-text
+32.2.2.7.3.2. assumed to be part of a DIF citation object
+32.2.2.7.4. data set release date
+32.2.2.7.4.1. free-text
+32.2.2.7.4.2. assumed to be part of a DIF citation object
+32.2.2.7.5. data set release place
+32.2.2.7.5.1. free-text
+32.2.2.7.5.2. assumed to be part of a DIF citation object
+32.2.2.7.6. data set publisher
+32.2.2.7.6.1. free-text
+32.2.2.7.6.2. assumed to be part of a DIF citation object
+32.2.2.7.7. version
+32.2.2.7.7.1. free-text
+32.2.2.7.7.2. assumed to be part of a DIF citation object
+32.2.2.7.8. issue identification
+32.2.2.7.8.1. free-text
+32.2.2.7.8.2. assumed to be part of a DIF citation object
+32.2.2.7.9. data presentation form
+32.2.2.7.9.1. free-text
+32.2.2.7.9.2. assumed to be part of a DIF citation object
+32.2.2.7.10. online resource
+32.2.2.7.10.1. free-text
+32.2.2.7.10.2. assumed to be part of a DIF citation object
+32.2.2.7.11. other citation details
+32.2.2.7.11.1. free-text
+32.2.2.7.11.2. assumed to be part of a DIF citation object
+
+31.2.3. section: locality
+32.2.3.1. sub-section: temporal coverage
+32.2.3.1.1. start date
+32.2.3.1.1.1. free-text
+32.2.3.1.1.2. not sure if this value is validated as a date
+32.2.3.1.2. stop date
+32.2.3.1.2.1. free-text
+32.2.3.1.2.2. not sure if this value is validated as a date
+32.2.2.1.3. private
+32.2.2.1.3.1. binary option
+32.2.2.1.3.2. date not shown outside of BAS
+32.2.2.1.3.3. example of a private field (see discussion)
+32.2.3.1.4. multiple dates can be added
+32.2.3.1.4.1. how does this work in practice?
+32.2.3.1.4.2. no type or other qualifier can be set
+
+32.2.3.2. sub-section: paleo temporal coverage
+32.2.3.2.1. paleo start date
+32.2.3.2.1.1. free-text
+32.2.3.2.1.2. not sure if this value is validated as a date
+32.2.3.2.2. paleo stop date
+32.2.3.2.2.1. free-text
+32.2.3.2.2.2. not sure if this value is validated as a date
+32.2.2.2.3. chronostratigraphic unit
+32.2.2.2.3.1. controlled list (single selection)
+32.2.2.2.3.2. allowed values list of terms, likely from a DIF keyword list
+32.2.2.2.4. private
+32.2.2.2.4.1. binary option
+32.2.2.2.4.2. date not shown outside of BAS
+32.2.2.2.4.3. example of a private field (see discussion)
+32.2.3.1.5. multiple dates can be added
+32.2.3.1.5.1. how does this work in practice?
+32.2.3.1.5.2. no type or other qualifier can be set
+32.2.3.3. sub-section: spatial coverage
+32.2.3.3.1. latitude southernmost
+32.2.3.3.1.1. free-text
+32.2.3.3.1.2. not sure if this value is validated
+32.2.3.3.2. latitude northernmost
+32.2.3.3.2.1. free-text
+32.2.3.3.2.2. not sure if this value is validated
+32.2.3.3.3. longitude westernmost
+32.2.3.3.3.1. free-text
+32.2.3.3.3.2. not sure if this value is validated
+32.2.3.3.4. longitude easternmost
+32.2.3.3.4.1. free-text
+32.2.3.3.4.2. not sure if this value is validated
+32.2.3.3.5. min altitude
+32.2.3.3.5.1. free-text
+32.2.3.3.5.2. not sure if this value is validated
+32.2.3.3.5.3. includes unit with value
+32.2.3.3.6. max altitude
+32.2.3.3.6.1. free-text
+32.2.3.3.6.2. not sure if this value is validated
+32.2.3.3.6.3. includes unit with value
+32.2.3.3.7. min depth
+32.2.3.3.7.1. free-text
+32.2.3.3.7.2. not sure if this value is validated
+32.2.3.3.7.3. includes unit with value
+32.2.3.3.8. max depth
+32.2.3.3.8.1. free-text
+32.2.3.3.8.2. not sure if this value is validated
+32.2.3.3.8.3. includes unit with value
+32.2.3.3.9. private
+32.2.3.3.9.1. binary option
+32.2.3.3.9.2. spatial coverage not shown outside of BAS
+32.2.3.3.9.3. example of a private field (see discussion)
+32.2.3.3.10. multiple coverages can be added
+32.2.3.3.10.1. how does this work in practice?
+32.2.3.3.10.2. no type or other qualifier can be set
+
+32.2.3.4. sub-section: data resolution
+32.2.3.4.1. latitude resolution
+32.2.3.4.1.1. free-text
+32.2.3.4.1.2. not sure if this value is validated
+32.2.3.4.1.3. includes unit with value
+32.2.3.4.2. longitude resolution
+32.2.3.4.2.1. free-text
+32.2.3.4.2.2. not sure if this value is validated
+32.2.3.4.2.3. includes unit with value
+32.2.3.4.3. horizontal resolution range
+32.2.3.4.3.1. controlled list (single selection)
+32.2.3.4.3.2. allowed values list of terms, likely from a DIF keyword list
+32.2.3.4.4. vertical resolution
+32.2.3.4.4.1. free-text
+32.2.3.4.4.2. not sure if this value is validated
+32.2.3.4.4.3. includes unit with value
+32.2.3.4.5. vertical resolution range
+32.2.3.4.5.1. controlled list (single selection)
+32.2.3.4.5.2. allowed values list of terms, likely from a DIF keyword list
+32.2.3.4.6. temporal resolution
+32.2.3.4.6.1. free-text
+32.2.3.4.6.2. not sure if this value is validated
+32.2.3.4.6.3. includes unit with value
+32.2.3.4.7. temporal resolution range
+32.2.3.4.7.1. controlled list (single selection)
+32.2.3.4.7.2. allowed values list of terms, likely from a DIF keyword list
+32.2.3.4.8. private
+32.2.3.4.8.1. binary option
+32.2.3.4.8.2. resolution not shown outside of BAS
+32.2.3.4.8.3. example of a private field (see discussion)
+32.2.3.4.9. multiple reoslutions can be added
+32.2.3.4.9.1. how does this work in practice?
+32.2.3.4.9.2. no type or other qualifier can be set
+32.2.3.5. sub-section: location
+32.2.3.5.1. location
+32.2.3.5.1.1. controlled list (single selection)
+32.2.3.5.1.2. allowed values list of terms, likely from a DIF keyword list
+32.2.3.5.2. detailed location
+32.2.3.5.2.1. free-text
+32.2.3.5.3. private
+32.2.3.5.3.1. binary option
+32.2.3.5.3.2. resolution not shown outside of BAS
+32.2.3.5.3.3. example of a private field (see discussion)
+32.2.3.5.4. multiple reoslutions can be added
+32.2.3.5.4.1. how does this work in practice?
+32.2.3.5.4.2. no type or other qualifier can be set
+
+Other functionality:
+- help text links no longer work - did point to GCMD (DIF)
+- not clear which fields are manditory, optional, conditional etc.
+
+Changes:
+- remove 'BAS Division Responsible' field from interface
+- if needed, update 'Dataset progress' field with (subset of) options from ISO 'MD_ProgressCode' codelist [71]
+- unify keywords/parameters?
+- update parameter lists to latest versions
+- if needed, make sure dataset language uses a valid ISO term
+- remove Title for personnel if no longer needed (see discussion)
+- change roles to ISO terms
+- if not needed, make email, phone, fax single value fields
+- change reference to a multi-item input (i.e. store each as a separate reference instance)
+- remove private flags (see discussion)
+- allow ordering of authors
+- split references into a multi-value field to allow it be displayed better
+- - possibly add support for resolving citations from DOIs (i.e. only need to give a DOI)
+- if mistake, parent dataset for lineage
+- related URLs, change content type to ISO code list
+- related URLs, allow a single value
+- related URLs, add a title field
+- remove projects until this can be redeveloped
+- simplify citation to either a DOI (for fetching automatically) or using a text box for a free-form citation
+- add identifiers to temporal, paleo temporal and spatial coverages
+- remove multiple data resolutions
+- replace location with gazetteers
+
+To highlight
+- if 'Creation Date' is used as value for CI_Citation date, role should probably be changed to 'creation' not 'publication'
+  otherwise this date could be added as well
+- editor appears to approach things from the DIF perspective rather than ISO (strange for BGS for do this?)
+- personnel cannot be changed once a record is published
+- personnel can have multiple emails, phones, etc.
+- private information should probably live in another system, likely not something other editors will support
+- how do we represent references to papers other resources that use a dataset
+- how were projects used?
+- citation is assumed to part of the DIF standard and could be replaced by information from a DOI
+- how to represent paleo temporal coverage in ISO?
+- how to represent altitude and depth in ISO?
+- how to represent 'location' in ISO (gazetteer mapping?)
+
+Usage questions:
+- bas division
+- dataset progress
+- keywords (approach taken)
+- parameters other than GCMD used
+- other languages
+- parent datasets
+- multiple emails/phones for individuals (used?)
+- private personnel instnaces (exist?)
+- parent dataset for lineage (mistake?)
+- what is ownership used for?
+- related URLs, which content types do we use?
+- related URLs, do we use multiple URLs within a related URL instance?
+- related URLs, do we use URL descriptions
+- proejects (used?)
+- projects, if used where are new projects added?
+- citations, how are these formed?
+- are multiple temporal coverages used (if so how?)
+- are paleo temporal coverages used
+- are multiple spatial coverages used (if so how?)
+
+Funtionality questions
+- where do 'technical contacts' show up
 
 [A]
 
@@ -1751,7 +2169,12 @@
 [68] https://catalog.data.gov/dataset/protected-areas-database-of-the-united-states-pad-us
 [69] https://data.europa.eu/euodp/data/dataset/statistics_barometer-statistics
 [70] https://www.repository.cam.ac.uk/handle/1810/256566
-
+[71] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#MD_ProgressCode
+[72] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Topic_Categories
+[73] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_19115_and_19115-2_CodeList_Dictionaries#CI_DateTypeCode
+[74] https://www.loc.gov/standards/iso639-2/php/code_list.php
+[75] http://www.datypic.com/sc/niem21/e-gmd_CI_Address.html
+[76] http://www.datypic.com/sc/niem21/e-gmd_CI_Telephone.html
 -->
 
 <!-- Notes -->
@@ -1816,6 +2239,8 @@
 Creation of reference examples:
 
 1. document changes that will be required to DMS
+1. map DMS external fields to DMS internal
+1. map DMS fields to XML (to identify those from template and those from DMS)
 2. formalise project
 3. look at NASA ISO standards [5]
 4. document and add record display example
