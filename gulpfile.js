@@ -5,14 +5,19 @@ var fs   = require ('fs'),
     path = require('path');
 
 var gulp         = require('gulp'),
+    pug          = require('gulp-pug'),
     xml          = require('xml2json'),
     pump         = require('pump'),
-    inject       = require('gulp-inject-string');
+    data         = require('gulp-data'),
+    inject       = require('gulp-inject-string'),
+    rename       = require('gulp-rename'),
+    request      = require('request');
 
 const config = {
   'sources': {
     'source': path.join('.', 'src'),
-    'data': path.join('.', 'data')
+    'data': path.join('.', 'data'),
+    'html': path.join('.', 'src', 'html')
   },
   'destinations': {
     'root': path.join('.'),
@@ -26,12 +31,14 @@ const config = {
 
 gulp.task('build--styled-record-iso-rubric', buildStyledRecordIsoRubric);
 gulp.task('build--styled-record-iso-html',  buildStyledRecordIsoHtml);
+gulp.task('build--record-example',  buildRecordExample);
 
 gulp.task('test--load-record', loadRecordTest);
 
 gulp.task('build', gulp.parallel(
   'build--styled-record-iso-rubric',
-  'build--styled-record-iso-html'
+  'build--styled-record-iso-html',
+  'build--record-example'
 ));
 
 gulp.task('watch', watchBuild);
@@ -64,8 +71,26 @@ function buildStyledRecordIsoHtml(done) {
   );
 }
 
+function buildRecordExample(done) {
+  pump(
+    [
+      gulp.src([
+        path.join(config.sources.html, 'record.pug')
+      ]),
+      data(function() {
+        // Lookup values are hard-coded - in the future this would be based be dynamic based on available records
+        return prepareRecordData();
+      }),
+      rename({extname: '.html'}),
+      pug(),
+      gulp.dest(path.join(config.destinations.public))
+    ],
+    done
+  );
+}
+
 function loadRecordTest(done) {
-  var recordRaw = fs.readFileSync(path.join(config.sources.data, 'record.xml'));
+  var recordRaw = fs.readFileSync(path.join(config.sources.data, 'iso-pdc-resolved-example.xml'));
   var record = xml.toJson(recordRaw);
 
   console.log(record);
@@ -76,9 +101,57 @@ function loadRecordTest(done) {
 function watchBuild(done) {
   gulp.watch(
     [
+      path.join(config.sources.html, '*.pug'),
       path.join(config.sources.data, '*.xml')
     ],
     gulp.parallel('build')
   );
   done();
 }
+
+// Processing functions
+
+async function prepareRecordData() {
+  var record = await getRecord();
+  var doi_citation = await getDoiCitation();
+
+  return {
+    'metadata_record': record,
+    'metadata_citation': doi_citation
+  };
+}
+
+function getRecord() {
+  // Load record data from XML (hard-coded source for now)
+  var recordPath = path.join(config.sources.data, 'iso-pdc-resolved-example.xml');
+  
+  return new Promise(function(resolve, reject) {
+    // Read XML and convert into JSON object, then convert that into a JS object
+    var record = fs.readFileSync(recordPath);
+    record = xml.toJson(record);
+    record = JSON.parse(record);
+
+    resolve(record);
+  });
+}
+
+function getDoiCitation() {
+  // Load DOI citation from CrossRef (hard-coded for now)
+  var options = {
+    url: 'https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f',
+    headers: {
+      'accept': 'text/x-bibliography; style=apa'
+    }
+  };
+
+  return new Promise(function(resolve, reject) {
+    request.get(options, function(err, resp, body) {
+      if (err) {
+        console.error(err);
+        reject(err);
+      } else {
+        resolve(body);
+      }
+    });
+  });
+};
