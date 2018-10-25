@@ -2139,24 +2139,36 @@
   32.5.7. multiple emails/phones for individuals (used?)
   32.5.8. private personnel instnaces (exist?)
   32.5.9. parent dataset for lineage (mistake?)
-  32.5.10 what is ownership used for?
-  32.5.11 related URLs, which content types do we use?
-  32.5.12 related URLs, do we use multiple URLs within a related URL instance?
-  32.5.13 related URLs, do we use URL descriptions
-  32.5.14 proejects (used?)
-  32.5.15 projects, if used where are new projects added?
-  32.5.16 citations, how are these formed?
-  32.5.17 are multiple temporal coverages used (if so how?)
-  32.5.18 are paleo temporal coverages used
-  32.5.19 are multiple spatial coverages used (if so how?)
-  32.5.20 how are sensors used/added
-  32.5.21 how are sources used/added
-  32.5.22 how is data collection used
-  32.5.23 is distribution media used (as opposed to distribution format)
-  32.5.24 how is distribution information used with respect to Ramadda where the file formats may not be known
-  32.5.25 how are multiple distribution elements identified/used
-  32.5.26 how are fees used
-  32.5.27 how are multimedia samples used
+  32.5.10. what is ownership used for?
+  32.5.11. related URLs, which content types do we use?
+  32.5.12. related URLs, do we use multiple URLs within a related URL instance?
+  32.5.13. related URLs, do we use URL descriptions
+  32.5.14. proejects (used?)
+  32.5.15. projects, if used where are new projects added?
+  32.5.16. citations, how are these formed?
+  32.5.17. are multiple temporal coverages used (if so how?)
+  32.5.18. are paleo temporal coverages used
+  32.5.19. are multiple spatial coverages used (if so how?)
+  32.5.20. how are sensors used/added
+  32.5.21. how are sources used/added
+  32.5.22. how is data collection used
+  32.5.23. is distribution media used (as opposed to distribution format)
+  32.5.24. how is distribution information used with respect to Ramadda where the file formats may not be known
+  32.5.25. how are multiple distribution elements identified/used
+  32.5.26. how are fees used
+  32.5.27. how are multimedia samples used
+  33. [/MD_metadata/gmd:dateStamp] "The ISO definition of this field is "date that the metadata was created". Common 
+      usage seems to be evolving towards "date that the metadata was created or updated" because it seems reasonable 
+      that, once the metadata have been updated, the date of that update is more interesting than the original creation 
+      date. Also, the update actually creates the current metadata, so this usage seems consistent with the ISO 
+      definition." [77]
+  34. [/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_roleCode] 
+      'pointOfContact' value required by Inspire [[5] TG Requirement C.6]
+  34.1. 'pointOfContact' also seems to be a 'default' or 'generic' value 
+  35. [/gmd:MD_Metadata/gmd:hierarchyLevel] If the value is not 'service', 'dataset' or 'series', the metadata set is 
+      out of scope of Inspire [[15]- '1.2 INSPIREspecificconstraints(SC)']
+  36. [/gmd:MD_Metadata/gmd:referenceSystemInfo/gmd:code] is not an Inspire Default Coordinate Reference System 
+      Identifier [[15] Annex D.4]
 
   [A]
 
@@ -2249,62 +2261,27 @@
   [74] https://www.loc.gov/standards/iso639-2/php/code_list.php
   [75] http://www.datypic.com/sc/niem21/e-gmd_CI_Address.html
   [76] http://www.datypic.com/sc/niem21/e-gmd_CI_Telephone.html
+  [77] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
 -->
 
 <!-- Notes -->
 <!-- 
-  1. [gmd:dateStamp] "The ISO definition of this field is "date that the metadata was created". Common usage seems to be 
-    evolving towards "date that the metadata was created or updated" because it seems reasonable that, once the metadata 
-    have been updated, the date of that update is more interesting than the original creation date. Also, the update 
-    actually creates the current metadata, so this usage seems consistent with the ISO definition." [1]
-  2. We are using the 2007 versions of the ISO 19139 schemas as defined by the Inspire Technical Guidance for ISO 19115 [2]
-  3. All references to CodeList references from non-2007 versions of ISO 19139 have been updated to use the 2007 version,
+  1. this file is based on 'iso-19115/superceeded/iso-pdc-original.xml' specifically commit:
+  2. this file is valid against the Inspire Technical Guidance for ISO 19115 [1]
+  3. this file is valid against the Inspire Technical Guidance for ISO 19139 [2]
+  4. this file can be be made valid against the Gemini profile for ISO 19115 [4] (see discussion)
+  5. this file is valid against the Gemini XML element order [5]
+  6. All references to CodeList references from non-2007 versions of ISO 19139 have been updated to use the 2007 version,
     including those taken from other sources (i.e. examples from others have been updated where necessary)
-  4. [/gmd:MD_Metadata/../gmd:contact/../gmd:CI_roleCode] 'pointOfContact' value required by Inspire [[3] TG Requirement C.6]
-  5. [/gmd:MD_Metadata/gmd:hierarchyLevel] If the value is not 'service', 'dataset' or 'series', the metadata set is out 
-    of scope of Inspire [[2]- '1.2 INSPIREspecificconstraints(SC)']
-  6. role 'pointOfContact' for gmd:CI_ResponsibleParty seems to be a 'default' or 'generic' value 
-  7. when generating a boilerplate record: use '<gmd:citation gco:nilReason="template"/>' convention
-  8. when generating documentation, see outline XML in section starting 'The merge template specifies a Level 4' [4]
-  9. [/gmd:MD_Metadata/gmd:referenceSystemInfo/gmd:code] is not an Inspire Default Coordinate Reference System Identifier, as per Annex D.4 in [3]
-  10. this file is valid against the Inspire Technical Guidance for ISO 19115 [2]
-  11. this file is valid against the Inspire Technical Guidance for ISO 19139 [3]
-  12. this file can be be made valid against the Gemini profile for ISO 19115 [5] (see discussion section)
-  13. this file is valid against the Gemini XML element order [6]
-  14. a version of this file adapted to comply with the Medin standard is available as 'iso-pdc-resolved-example-medin.xml'
-  15. a local webserver is included for reviewing the affect of XML stylesheets
-  15.1. Docker and Docker Compose are required [7]
-  15.2. two containers are defined
-  15.2.1. 'app' container
-  15.2.1.1. built using 'Dockerfile'
-  15.2.1.2. built using NodeJS depenedencies defined in 'package.json'
-  15.2.1.3. uses Gulp [8] to generate files
-  15.2.2. 'web' container
-  15.2.2.1. uses Nginx webserver image
-  15.2.2.2. runs using 'nginx/default.conf' configuration file
-  15.3. containers can be started with: '$ docker-compose up'
-  15.3.1. on first run, the 'app' container will be built
-  15.3.1.1. unless you run '$ docker-compose pull' (requires access to BAS GitLab)
-  15.4. containers can be stopped with: '$ docker-compose down'
-  16. a version of this file with the 'ISO Rubric' XML stylesheet [9] applied is available through the local webserver [10]
-  17. a version of this file with the 'ISO to HTML' XML stylesheet [11][12] applied is available through the local webserver [13]
-  18. an annotated example of this record in the DMS external application is available through the local webserver [14]
-  19.1. the annotations in this example relate to a comparision between the same record in DMS external and generated XML (see discussion)
+  7. We are using the 2007 versions of the ISO 19139 schemas as defined by the Inspire Technical Guidance for ISO 19115 [1]
+  8. when generating a boilerplate record: use '<gmd:citation gco:nilReason="template"/>' convention
+  9. when generating documentation, see outline XML in section starting 'The merge template specifies a Level 4' [3]
 
-  [1] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Dates#gco:Date_Type
-  [2] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
-  [3] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
-  [4] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
-  [5] https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini
-  [6] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
-  [7] https://docs.docker.com/compose/overview/
-  [8] https://gulpjs.com
-  [9] http://www.ngdc.noaa.gov/metadata/published/xsl/isoRubricHTML.xsl
-  [10] http://localhost:9000/iso-pdc-resolved-example-rubric.xml
-  [11] https://www.ncddc.noaa.gov/metadata-standards/metadata-xml/
-  [12] https://service.ncddc.noaa.gov/rdn/www/metadata-standards/metadata-xml/documents/ISOxml2html.zip
-  [13] http://localhost:9000/iso-pdc-resolved-example-html.xml
-  [14] http://localhost:9000/dms-pdc-annotated-example.html
+  [1] https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1
+  [2] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
+  [3] https://geo-ide.noaa.gov/wiki/index.php?title=ISO_Boilerplate#Case_1._Merging_extent_and_lineage_information
+  [4] https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini
+  [5] https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order
 -->
 
 <!-- TODO -->
