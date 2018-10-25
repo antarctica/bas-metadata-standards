@@ -1900,7 +1900,6 @@
 32.2.2.7.11. other citation details
 32.2.2.7.11.1. free-text
 32.2.2.7.11.2. assumed to be part of a DIF citation object
-
 31.2.3. section: locality
 32.2.3.1. sub-section: temporal coverage
 32.2.3.1.1. start date
@@ -1916,7 +1915,6 @@
 32.2.3.1.4. multiple dates can be added
 32.2.3.1.4.1. how does this work in practice?
 32.2.3.1.4.2. no type or other qualifier can be set
-
 32.2.3.2. sub-section: paleo temporal coverage
 32.2.3.2.1. paleo start date
 32.2.3.2.1.1. free-text
@@ -1970,7 +1968,6 @@
 32.2.3.3.10. multiple coverages can be added
 32.2.3.3.10.1. how does this work in practice?
 32.2.3.3.10.2. no type or other qualifier can be set
-
 32.2.3.4. sub-section: data resolution
 32.2.3.4.1. latitude resolution
 32.2.3.4.1.1. free-text
@@ -2001,7 +1998,7 @@
 32.2.3.4.8.1. binary option
 32.2.3.4.8.2. resolution not shown outside of BAS
 32.2.3.4.8.3. example of a private field (see discussion)
-32.2.3.4.9. multiple reoslutions can be added
+32.2.3.4.9. multiple resolutions can be added
 32.2.3.4.9.1. how does this work in practice?
 32.2.3.4.9.2. no type or other qualifier can be set
 32.2.3.5. sub-section: location
@@ -2014,75 +2011,152 @@
 32.2.3.5.3.1. binary option
 32.2.3.5.3.2. resolution not shown outside of BAS
 32.2.3.5.3.3. example of a private field (see discussion)
-32.2.3.5.4. multiple reoslutions can be added
+32.2.3.5.4. multiple locations can be added
 32.2.3.5.4.1. how does this work in practice?
 32.2.3.5.4.2. no type or other qualifier can be set
-
-Other functionality:
-- help text links no longer work - did point to GCMD (DIF)
-- not clear which fields are manditory, optional, conditional etc.
-
-Changes:
-- remove 'BAS Division Responsible' field from interface
-- if needed, update 'Dataset progress' field with (subset of) options from ISO 'MD_ProgressCode' codelist [71]
-- unify keywords/parameters?
-- update parameter lists to latest versions
-- if needed, make sure dataset language uses a valid ISO term
-- remove Title for personnel if no longer needed (see discussion)
-- change roles to ISO terms
-- if not needed, make email, phone, fax single value fields
-- change reference to a multi-item input (i.e. store each as a separate reference instance)
-- remove private flags (see discussion)
-- allow ordering of authors
-- split references into a multi-value field to allow it be displayed better
-- - possibly add support for resolving citations from DOIs (i.e. only need to give a DOI)
-- if mistake, parent dataset for lineage
-- related URLs, change content type to ISO code list
-- related URLs, allow a single value
-- related URLs, add a title field
-- remove projects until this can be redeveloped
-- simplify citation to either a DOI (for fetching automatically) or using a text box for a free-form citation
-- add identifiers to temporal, paleo temporal and spatial coverages
-- remove multiple data resolutions
-- replace location with gazetteers
-
-To highlight
-- if 'Creation Date' is used as value for CI_Citation date, role should probably be changed to 'creation' not 'publication'
+31.2.4. section: instrumentation
+32.2.4.1. sub-section: sensor
+32.2.4.1.1. controlled list (multiple selection)
+32.2.4.1.2. items can be added or removed from a list
+32.2.4.1.3. not sure where new sensors are added
+32.2.4.1.4. list can be searched
+32.2.4.2. sub-section: source
+32.2.4.2.1. controlled list (multiple selection)
+32.2.4.2.2. items can be added or removed from a list
+32.2.4.2.3. not sure where new sources are added
+32.2.4.2.4. where are tehse shown?
+32.2.4.2.5. list can be searched
+32.2.4.3. sub-section: data collection
+32.2.4.3.1. data collection
+32.2.4.3.1.1. free-text
+32.2.4.3.1.1. where is this shown
+32.2.4.3.2. private
+32.2.4.3.2.1. binary option
+32.2.4.3.2.2. data collection not shown outside of BAS
+32.2.4.3.2.3. example of a private field (see discussion)
+31.2.5. section: instrumentation
+32.2.5.1. sub-section: distribution
+32.2.5.1.1. distribution media
+32.2.5.1.1.1. controlled list (single selection)
+32.2.5.1.1.2. allowed values list of terms, likely from a DIF keyword list
+32.2.5.1.2. distribution size
+32.2.5.1.2.1. free-text
+32.2.5.1.2.2. not sure if this value is validated
+32.2.5.1.2.3. value contains units
+32.2.5.1.3. distribution format
+32.2.5.1.3.1. controlled list (single selection)
+32.2.5.1.3.2. allowed values list of terms, likely from a DIF keyword list
+32.2.5.1.4. fees
+32.2.5.1.4.1. free-text
+32.2.5.1.4.2. not sure if this value is validated
+32.2.5.1.4.3. value may contain units
+32.2.5.1.5. private
+32.2.5.1.5.1. binary option
+32.2.5.1.5.2. distribution not shown outside of BAS
+32.2.5.1.5.3. example of a private field (see discussion)
+32.2.5.1.6. multiple locations can be added
+32.2.5.1.6.1. how does this work in practice?
+32.2.5.1.6.2. no type or other qualifier can be set
+32.2.5.2. sub-section: multimedia sample
+32.2.5.2.1. file
+32.2.5.2.1.1. free-text
+32.2.5.2.2. URL
+32.2.5.2.2.1. free-text
+32.2.5.2.3. format
+32.2.5.2.3.1. free-text
+32.2.5.2.4. caption
+32.2.5.2.4.1. free-text
+32.2.5.2.5. description
+32.2.5.2.5.1. free-text
+32.2.5.2.6. private
+32.2.5.2.6.1. binary option
+32.2.5.2.6.2. multimedia sample not shown outside of BAS
+32.2.5.2.6.3. example of a private field (see discussion)
+32.2.5.2.7. multiple multimedia samples can be added
+32.2.5.2.7.1. how does this work in practice?
+32.2.5.2.7.2. no type or other qualifier can be set
+32.2.5.3. sub-section: data storage
+32.2.5.3.1. data storage
+32.2.5.3.1.1. free-text
+32.2.5.3.2. private
+32.2.5.3.2.1. binary option
+32.2.5.3.2.2. data storage not shown outside of BAS
+32.2.5.3.2.3. example of a private field (see discussion)
+32.3. other functionality
+32.3.1. help text links no longer work - did point to GCMD (DIF)
+32.3.2. not clear which fields are manditory, optional, conditional etc.
+32.4.1. possible changes
+32.4.2. remove 'BAS Division Responsible' field from interface
+32.4.3. if needed, update 'Dataset progress' field with (subset of) options from ISO 'MD_ProgressCode' codelist [71]
+32.4.4. unify keywords/parameters?
+32.4.5. update parameter lists to latest versions
+32.4.6. if needed, make sure dataset language uses a valid ISO term
+32.4.7. remove Title for personnel if no longer needed (see discussion)
+32.4.8. change roles to ISO terms
+32.4.9. if not needed, make email, phone, fax single value fields
+32.4.10. change reference to a multi-item input (i.e. store each as a separate reference instance)
+32.4.11. remove private flags (see discussion)
+32.4.12. allow ordering of authors
+32.4.13. split references into a multi-value field to allow it be displayed better
+32.4.13.1. possibly add support for resolving citations from DOIs (i.e. only need to give a DOI)
+32.4.14. if mistake, parent dataset for lineage
+32.4.15. related URLs, change content type to ISO code list
+32.4.16. related URLs, allow a single value
+32.4.17. related URLs, add a title field
+32.4.18. remove projects until this can be redeveloped
+32.4.19. simplify citation to either a DOI (for fetching automatically) or using a text box for a free-form citation
+32.4.20. add identifiers to temporal, paleo temporal and spatial coverages
+32.4.21. remove multiple data resolutions
+32.4.22. replace location with gazetteers
+32.4.23. if not used remove source
+32.4.24. remove distribution media
+32.4.25. update distribution format to use ISO codelist
+32.4.26. if not used, remove multimedia sample
+32.4.27. if 'Creation Date' is used as value for CI_Citation date, role should probably be changed to 'creation' not 'publication'
   otherwise this date could be added as well
-- editor appears to approach things from the DIF perspective rather than ISO (strange for BGS for do this?)
-- personnel cannot be changed once a record is published
-- personnel can have multiple emails, phones, etc.
-- private information should probably live in another system, likely not something other editors will support
-- how do we represent references to papers other resources that use a dataset
-- how were projects used?
-- citation is assumed to part of the DIF standard and could be replaced by information from a DOI
-- how to represent paleo temporal coverage in ISO?
-- how to represent altitude and depth in ISO?
-- how to represent 'location' in ISO (gazetteer mapping?)
-
-Usage questions:
-- bas division
-- dataset progress
-- keywords (approach taken)
-- parameters other than GCMD used
-- other languages
-- parent datasets
-- multiple emails/phones for individuals (used?)
-- private personnel instnaces (exist?)
-- parent dataset for lineage (mistake?)
-- what is ownership used for?
-- related URLs, which content types do we use?
-- related URLs, do we use multiple URLs within a related URL instance?
-- related URLs, do we use URL descriptions
-- proejects (used?)
-- projects, if used where are new projects added?
-- citations, how are these formed?
-- are multiple temporal coverages used (if so how?)
-- are paleo temporal coverages used
-- are multiple spatial coverages used (if so how?)
-
-Funtionality questions
-- where do 'technical contacts' show up
+32.4.28. editor appears to approach things from the DIF perspective rather than ISO (strange for BGS for do this?)
+32.4.29. personnel cannot be changed once a record is published
+32.4.30. personnel can have multiple emails, phones, etc.
+32.4.31. private information should probably live in another system, likely not something other editors will support
+32.4.32. how do we represent references to papers other resources that use a dataset
+32.4.33. how were projects used?
+32.4.34. citation is assumed to part of the DIF standard and could be replaced by information from a DOI
+32.4.35. how to represent paleo temporal coverage in ISO?
+32.4.36. how to represent altitude and depth in ISO?
+32.4.37. how to represent 'location' in ISO (gazetteer mapping?)
+32.4.38. how to represent sensors (phase 2)
+32.4.39. how to represent sources
+32.4.40. how to represent data collection statement
+32.4.41. would multimedia sample translate to an image preview of a dataset (possible with ISO, see NOAA for examples)
+32.4.42. how to represent data storage
+32.5. DMS admin usage questions:
+32.5.1. bas division
+32.5.2. dataset progress
+32.5.3. keywords (approach taken)
+32.5.4. parameters other than GCMD used
+32.5.5. other languages
+32.5.6. parent datasets
+32.5.7. multiple emails/phones for individuals (used?)
+32.5.8. private personnel instnaces (exist?)
+32.5.9. parent dataset for lineage (mistake?)
+32.5.10 what is ownership used for?
+32.5.11 related URLs, which content types do we use?
+32.5.12 related URLs, do we use multiple URLs within a related URL instance?
+32.5.13 related URLs, do we use URL descriptions
+32.5.14 proejects (used?)
+32.5.15 projects, if used where are new projects added?
+32.5.16 citations, how are these formed?
+32.5.17 are multiple temporal coverages used (if so how?)
+32.5.18 are paleo temporal coverages used
+32.5.19 are multiple spatial coverages used (if so how?)
+32.5.20 how are sensors used/added
+32.5.21 how are sources used/added
+32.5.22 how is data collection used
+32.5.23 is distribution media used (as opposed to distribution format)
+32.5.24 how is distribution information used with respect to Ramadda where the file formats may not be known
+32.5.25 how are multiple distribution elements identified/used
+32.5.26 how are fees used
+32.5.27 how are multimedia samples used
 
 [A]
 
