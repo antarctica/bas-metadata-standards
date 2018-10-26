@@ -62,26 +62,27 @@ function buildStyledRecordIsoHtml(done) {
   pump(
     [
       gulp.src([
-        path.join(config.sources.data, 'iso-pdc-resolved-example-html.xml')
+        path.join(config.sources.data, 'iso-19115', '*.xml')
       ]),
       inject.after('<?xml version="1.0" encoding="UTF-8"?>', '\n<?xml-stylesheet href="../assets/xml-stylesheets/iso-html/xml-to-html-ISO.xsl" type="text/xsl" media="screen"?>'),
+      rename({suffix: "-html"}),
       gulp.dest(path.join(config.destinations.public))
     ],
     done
   );
 }
 
-function buildRecordExample(done) {
+function buildStyledRecordIsoRubric(done) {
   pump(
     [
       gulp.src([
-        path.join(config.sources.html, 'record.pug')
+        path.join(config.sources.data, 'iso-19115', '*.xml')
       ]),
-      data(function() {
+      inject.after('<?xml version="1.0" encoding="UTF-8"?>', '\n<?xml-stylesheet href="../assets/xml-stylesheets/iso-rubric/isoRubricHTML.xsl" type="text/xsl" media="screen"?>'),
         // Lookup values are hard-coded - in the future this would be based be dynamic based on available records
         return prepareRecordData();
       }),
-      rename({extname: '.html'}),
+      rename({suffix: "-rubric"}),
       pug(),
       gulp.dest(path.join(config.destinations.public))
     ],
@@ -90,7 +91,7 @@ function buildRecordExample(done) {
 }
 
 function loadRecordTest(done) {
-  var recordRaw = fs.readFileSync(path.join(config.sources.data, 'iso-pdc-resolved-example.xml'));
+  var recordRaw = fs.readFileSync(path.join(config.sources.data, 'iso-19115', 'uk-pdc-discovery-metadata-record-gemini.xml'));
   var record = xml.toJson(recordRaw);
 
   console.log(record);
@@ -101,8 +102,7 @@ function loadRecordTest(done) {
 function watchBuild(done) {
   gulp.watch(
     [
-      path.join(config.sources.html, '*.pug'),
-      path.join(config.sources.data, '*.xml')
+      path.join(config.sources.data, 'iso-19115', '*.xml')
     ],
     gulp.parallel('build')
   );
