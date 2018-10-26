@@ -2285,6 +2285,7 @@
   1. document changes that will be required to DMS
   1. map DMS external fields to DMS internal
   1. map DMS fields to XML (to identify those from template and those from DMS)
+  2. incorporate decisions.md into record
   3. look at NASA ISO standards [5]
   4. document and add record display example
   5. create a NERC schematron
