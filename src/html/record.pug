@@ -100,7 +100,7 @@ block main_content
         | #{ author.organisation }
       if author.email
         p(style='margin-bottom:5px;')
-          abbr(title='Email address'): i.fas.fa-fw.fa-at(aria-hidden='true')
+          abbr(title='Email address'): i.far.fa-fw.fa-envelope(aria-hidden='true')
           |
           |
           a(href='mailto:' + author.email) #{ author.email }
@@ -112,27 +112,33 @@ block main_content
           a(href=author.orcid) #{ author.orcid }
 
   mixin dataLink(link)
-    li(style='margin-bottom:10px;')
-      a(href=link.href) #{ link.title }
-      br
-      | #{ link.description }
+    tr
+      td: a(href=link.href) #{ link.description }
+      td.bsk-text-center #[i.fas.fa-fw.fa-arrow-alt-to-bottom(aria-hidden='true')] File Download
+      td.bsk-text-center.bsk-text-success #[i.fas.fa-fw.fa-unlock(aria-hidden='true')] Open Access
 
   header
     h1.bsk-page-header #{ record.title }
     p.bsk-lead #{ record.abstract }
 
-  section
+  section(style='margin:60px 0;')
     h2 Citation
     blockquote #{ record.citation }
     p You must cite this dataset using this citation. If you need an alternative format you can use the #[a(href='https://citation.crosscite.org') CrossCite Citation Formatter].
 
-  section
+  section(style='margin:60px 0;')
     h2 Data links
-    ul.bsk-list-unstyled(style='margin-bottom:0;')
-      each link in record.dataLinks
-        +dataLink(link)
+    table.bsk-table
+      thead
+        tr
+          th Name
+          th.bsk-text-center Method
+          th.bsk-text-center Access
+      tbody
+        each link in record.dataLinks
+          +dataLink(link)
 
-  section
+  section(style='margin-top:60px;')
     h2 Authors
     each authorRow, i in record.authors
       if i % 3 == 0
