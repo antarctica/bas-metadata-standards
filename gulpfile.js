@@ -7,7 +7,8 @@ var fs   = require ('fs'),
 var gulp         = require('gulp'),
     xml          = require('xml2json'),
     pump         = require('pump'),
-    inject       = require('gulp-inject-string');
+    inject       = require('gulp-inject-string'),
+    rename       = require('gulp-rename');
 
 const config = {
   'sources': {
@@ -38,26 +39,28 @@ gulp.task('watch', watchBuild);
 
 // Tasks
 
-function buildStyledRecordIsoRubric(done) {
+function buildStyledRecordIsoHtml(done) {
   pump(
     [
       gulp.src([
-        path.join(config.sources.data, 'iso-pdc-resolved-example-rubric.xml')
+        path.join(config.sources.data, 'iso-19115', '*.xml')
       ]),
-      inject.after('<?xml version="1.0" encoding="UTF-8"?>', '\n<?xml-stylesheet href="../assets/xml-stylesheets/iso-rubric/isoRubricHTML.xsl" type="text/xsl" media="screen"?>'),
+      inject.after('<?xml version="1.0" encoding="UTF-8"?>', '\n<?xml-stylesheet href="../assets/xml-stylesheets/iso-html/xml-to-html-ISO.xsl" type="text/xsl" media="screen"?>'),
+      rename({suffix: "-html"}),
       gulp.dest(path.join(config.destinations.public))
     ],
     done
   );
 }
 
-function buildStyledRecordIsoHtml(done) {
+function buildStyledRecordIsoRubric(done) {
   pump(
     [
       gulp.src([
-        path.join(config.sources.data, 'iso-pdc-resolved-example-html.xml')
+        path.join(config.sources.data, 'iso-19115', '*.xml')
       ]),
-      inject.after('<?xml version="1.0" encoding="UTF-8"?>', '\n<?xml-stylesheet href="../assets/xml-stylesheets/iso-html/xml-to-html-ISO.xsl" type="text/xsl" media="screen"?>'),
+      inject.after('<?xml version="1.0" encoding="UTF-8"?>', '\n<?xml-stylesheet href="../assets/xml-stylesheets/iso-rubric/isoRubricHTML.xsl" type="text/xsl" media="screen"?>'),
+      rename({suffix: "-rubric"}),
       gulp.dest(path.join(config.destinations.public))
     ],
     done
@@ -65,7 +68,7 @@ function buildStyledRecordIsoHtml(done) {
 }
 
 function loadRecordTest(done) {
-  var recordRaw = fs.readFileSync(path.join(config.sources.data, 'record.xml'));
+  var recordRaw = fs.readFileSync(path.join(config.sources.data, 'iso-19115', 'uk-pdc-discovery-metadata-record-gemini.xml'));
   var record = xml.toJson(recordRaw);
 
   console.log(record);
@@ -76,7 +79,7 @@ function loadRecordTest(done) {
 function watchBuild(done) {
   gulp.watch(
     [
-      path.join(config.sources.data, '*.xml')
+      path.join(config.sources.data, 'iso-19115', '*.xml')
     ],
     gulp.parallel('build')
   );
