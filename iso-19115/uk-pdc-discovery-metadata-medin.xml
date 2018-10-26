@@ -1135,7 +1135,7 @@
 
 <!-- Notes -->
 <!--
-  1. this file is based on '/iso-19115/uk-pdc-discovery-metadata-gemini', specifically commit: 
+  1. this file is based on '/iso-19115/uk-pdc-discovery-metadata-gemini', specifically commit: ee5a737
   2. this file was used to tweak a metadata record such that it passes the Medin schematron
   3. based on the contents of this record, it is assumed it is within the scope of Medin
 -->
