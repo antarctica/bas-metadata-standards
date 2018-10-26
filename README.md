@@ -230,7 +230,7 @@ profiles usually include guidance for the most common failures to help resolve a
 to fix any errors, but the record cannot be said to compliant without doing so, and may not be accepted by other 
 services until they do.
 
-| Name                                                                                | Type                 | Validation Method   | Notes                                                                        | Required            |
+| Name                                                                                | Type                 | Validation Method   | Notes                                                             |
 | ----------------------------------------------------------------------------------- | -------------------- | ------------------- | ----------------------------------------------------------------- |
 | [ISO 19115](https://www.iso.org/standard/26020.html)                                | Standard (abstract)  | *N/A*               | -                                                                 |
 | [ISO 19139](https://www.iso.org/standard/32557.html)                                | Standard (concrete)  | Schema & Schematron | -                                                                 |

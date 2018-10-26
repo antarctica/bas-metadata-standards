@@ -4,7 +4,7 @@ version: '2'
 services:
   app:
     build: .
-    image: docker-registry.data.bas.ac.uk/felnne/metadata-standards:0.1.0-alpine
+    image: docker-registry.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards:0.1.0-alpine
     command: ['watch']
     volumes:
       - ./gulpfile.js:/usr/src/app/gulpfile.js
