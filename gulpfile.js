@@ -7,8 +7,8 @@ var fs   = require ('fs'),
 var gulp         = require('gulp'),
     pug          = require('gulp-pug'),
     xml          = require('xml2json'),
-    pump         = require('pump'),
     data         = require('gulp-data'),
+    pump         = require('pump'),
     inject       = require('gulp-inject-string'),
     rename       = require('gulp-rename'),
     request      = require('request');
@@ -103,6 +103,7 @@ function loadRecordTest(done) {
 function watchBuild(done) {
   gulp.watch(
     [
+      path.join(config.sources.html, '*.pug'),,
       path.join(config.sources.data, 'iso-19115', '*.xml')
     ],
     gulp.parallel('build')
