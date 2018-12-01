@@ -45,19 +45,6 @@ gulp.task('watch', watchBuild);
 
 // Tasks
 
-function buildStyledRecordIsoRubric(done) {
-  pump(
-    [
-      gulp.src([
-        path.join(config.sources.data, 'iso-pdc-resolved-example-rubric.xml')
-      ]),
-      inject.after('<?xml version="1.0" encoding="UTF-8"?>', '\n<?xml-stylesheet href="../assets/xml-stylesheets/iso-rubric/isoRubricHTML.xsl" type="text/xsl" media="screen"?>'),
-      gulp.dest(path.join(config.destinations.public))
-    ],
-    done
-  );
-}
-
 function buildStyledRecordIsoHtml(done) {
   pump(
     [
@@ -79,10 +66,24 @@ function buildStyledRecordIsoRubric(done) {
         path.join(config.sources.data, 'iso-19115', '*.xml')
       ]),
       inject.after('<?xml version="1.0" encoding="UTF-8"?>', '\n<?xml-stylesheet href="../assets/xml-stylesheets/iso-rubric/isoRubricHTML.xsl" type="text/xsl" media="screen"?>'),
+      rename({suffix: "-rubric"}),
+      gulp.dest(path.join(config.destinations.public))
+    ],
+    done
+  );
+}
+
+function buildRecordExample(done) {
+  pump(
+    [
+      gulp.src([
+        path.join(config.sources.html, 'record.pug')
+      ]),
+      data(function() {
         // Lookup values are hard-coded - in the future this would be based be dynamic based on available records
         return prepareRecordData();
       }),
-      rename({suffix: "-rubric"}),
+      rename({extname: '.html'}),
       pug(),
       gulp.dest(path.join(config.destinations.public))
     ],
