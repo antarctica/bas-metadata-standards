@@ -91,7 +91,7 @@ function buildStyledRecordIsoRubric(done) {
 }
 
 function loadRecordTest(done) {
-  var recordRaw = fs.readFileSync(path.join(config.sources.data, 'iso-19115', 'uk-pdc-discovery-metadata-record-gemini.xml'));
+  var recordRaw = fs.readFileSync(path.join(config.sources.data, 'iso-19115', 'uk-pdc-discovery-metadata-gemini.xml'));
   var record = xml.toJson(recordRaw);
 
   console.log(record);
@@ -123,8 +123,8 @@ async function prepareRecordData() {
 
 function getRecord() {
   // Load record data from XML (hard-coded source for now)
-  var recordPath = path.join(config.sources.data, 'iso-pdc-resolved-example.xml');
-  
+  var recordPath = path.join(config.sources.data, 'iso-19115', 'uk-pdc-discovery-metadata-gemini.xml');
+
   return new Promise(function(resolve, reject) {
     // Read XML and convert into JSON object, then convert that into a JS object
     var record = fs.readFileSync(recordPath);
