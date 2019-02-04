@@ -32,7 +32,7 @@
           <gmd:address>
             <gmd:CI_Address>
               <gmd:deliveryPoint>
-                <gco:CharacterString>British Antarctic Survey, High Cross, Madingely Road</gco:CharacterString>
+                <gco:CharacterString>British Antarctic Survey, High Cross, Madingley Road</gco:CharacterString>
               </gmd:deliveryPoint>
               <gmd:city>
                 <gco:CharacterString>Cambridge</gco:CharacterString>
@@ -271,7 +271,7 @@
               <gmd:address>
                 <gmd:CI_Address>
                   <gmd:deliveryPoint>
-                    <gco:CharacterString>British Antarctic Survey, High Cross, Madingely Road</gco:CharacterString>
+                    <gco:CharacterString>British Antarctic Survey, High Cross, Madingley Road</gco:CharacterString>
                   </gmd:deliveryPoint>
                   <gmd:city>
                     <gco:CharacterString>Cambridge</gco:CharacterString>
@@ -604,7 +604,7 @@
                   <gmd:address>
                     <gmd:CI_Address>
                       <gmd:deliveryPoint>
-                        <gco:CharacterString>British Antarctic Survey, High Cross, Madingely Road</gco:CharacterString>
+                        <gco:CharacterString>British Antarctic Survey, High Cross, Madingley Road</gco:CharacterString>
                       </gmd:deliveryPoint>
                       <gmd:city>
                         <gco:CharacterString>Cambridge</gco:CharacterString>
