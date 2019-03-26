@@ -10,7 +10,7 @@
     <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
   </gmd:characterSet>
   <gmd:hierarchyLevel>
-    <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+    <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
   </gmd:hierarchyLevel>
   <gmd:hierarchyLevelName>
     <gco:CharacterString>dataset</gco:CharacterString>
@@ -68,6 +68,16 @@
   <gmd:dateStamp>
     <gco:DateTime>2018-10-08T14:40:44Z</gco:DateTime>
   </gmd:dateStamp>
+  <gmd:metadataMaintenance>
+    <gmd:MD_MaintenanceInformation>
+      <gmd:maintenanceAndUpdateFrequency>
+        <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
+      </gmd:maintenanceAndUpdateFrequency>
+      <gmd:maintenanceNote>
+        <gmd:MD_ProgressCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed">completed</gmd:MD_ProgressCode>        
+      </gmd:maintenanceNote>
+    </gmd:MD_MaintenanceInformation>
+  </gmd:metadataMaintenance>
   <gmd:metadataStandardName>
     <gco:CharacterString>ISO 19115 (UK GEMINI)</gco:CharacterString>
   </gmd:metadataStandardName>
@@ -143,13 +153,46 @@
           <gmd:date>
             <gmd:CI_Date>
               <gmd:date>
-                <gco:Date>2018-10-08</gco:Date>
+                <gco:DateTime>2018</gco:DateTime>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="created">created</gmd:CI_DateTypeCode>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:DateTime>2018</gco:DateTime>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="revised">revised</gmd:CI_DateTypeCode>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:DateTime>2018-10-08T14:40:44Z</gco:DateTime>
               </gmd:date>
               <gmd:dateType>
                 <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
               </gmd:dateType>
             </gmd:CI_Date>
           </gmd:date>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:DateTime>2018-12-08T14:40:44Z</gco:DateTime>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="released">released</gmd:CI_DateTypeCode>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:edition>
+            <gco:CharacterString>1</gco:CharacterString>
+          </gmd:edition>
           <gmd:identifier>
             <gmd:MD_Identifier>
               <gmd:code>
@@ -189,7 +232,7 @@
               <gmd:onlineResource>
                 <gmd:CI_OnlineResource>
                   <gmd:linkage>
-                    <gmd:URL>http://orcid.org/0000-0002-7342-7756</gmd:URL>
+                    <gmd:URL>https://orcid.org/0000-0002-7342-7756</gmd:URL>
                   </gmd:linkage>
                   <gmd:name>
                     <gco:CharacterString>ORCID record</gco:CharacterString>
@@ -209,7 +252,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gco:CharacterString>Carol Arrowsmith</gco:CharacterString>
+            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-3849-5179" xlink:title="ORCID record" xlink:actuate="onRequest">Carol Arrowsmith</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Geological Survey</gco:CharacterString>
@@ -219,10 +262,23 @@
               <gmd:address>
                 <gmd:CI_Address>
                   <gmd:electronicMailAddress>
-                    <gco:CharacterString>polardatacentre-intercept@bas.ac.uk</gco:CharacterString>
+                    <gco:CharacterString>noreply@bas.ac.uk</gco:CharacterString>
                   </gmd:electronicMailAddress>
                 </gmd:CI_Address>
               </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>https://orcid.org/0000-0003-3849-5179</gmd:URL>
+                  </gmd:linkage>
+                  <gmd:name>
+                    <gco:CharacterString>ORCID record</gco:CharacterString>
+                  </gmd:name>
+                  <gmd:description>
+                    <gco:CharacterString>ORCID is an open, non-profit, community-driven effort to create and maintain a registry of unique researcher identifiers and a transparent method of linking research activities and outputs to these identifiers.</gco:CharacterString>
+                  </gmd:description>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
             </gmd:CI_Contact>
           </gmd:contactInfo>
           <gmd:role>
@@ -233,7 +289,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gco:CharacterString>Melanie Leng</gco:CharacterString>
+            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-1115-5166" xlink:title="ORCID record" xlink:actuate="onRequest">Melanie Leng</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Geological Survey</gco:CharacterString>
@@ -243,10 +299,23 @@
               <gmd:address>
                 <gmd:CI_Address>
                   <gmd:electronicMailAddress>
-                    <gco:CharacterString>polardatacentre-intercept@bas.ac.uk</gco:CharacterString>
+                    <gco:CharacterString>noreply@bas.ac.uk</gco:CharacterString>
                   </gmd:electronicMailAddress>
                 </gmd:CI_Address>
               </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>https://orcid.org/0000-0003-1115-5166</gmd:URL>
+                  </gmd:linkage>
+                  <gmd:name>
+                    <gco:CharacterString>ORCID record</gco:CharacterString>
+                  </gmd:name>
+                  <gmd:description>
+                    <gco:CharacterString>ORCID is an open, non-profit, community-driven effort to create and maintain a registry of unique researcher identifiers and a transparent method of linking research activities and outputs to these identifiers.</gco:CharacterString>
+                  </gmd:description>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
             </gmd:CI_Contact>
           </gmd:contactInfo>
           <gmd:role>
@@ -304,11 +373,114 @@
           </gmd:role>
         </gmd:CI_ResponsibleParty>
       </gmd:pointOfContact>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:organisationName>
+            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone>
+                <gmd:CI_Telephone>
+                  <gmd:voice>
+                    <gco:CharacterString>+44 (0)1223 221400</gco:CharacterString>
+                  </gmd:voice>
+                </gmd:CI_Telephone>
+              </gmd:phone>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint>
+                    <gco:CharacterString>British Antarctic Survey, High Cross, Madingley Road</gco:CharacterString>
+                  </gmd:deliveryPoint>
+                  <gmd:city>
+                    <gco:CharacterString>Cambridge</gco:CharacterString>
+                  </gmd:city>
+                  <gmd:administrativeArea>
+                    <gco:CharacterString>Cambridgeshire</gco:CharacterString>
+                  </gmd:administrativeArea>
+                  <gmd:postalCode>
+                    <gco:CharacterString>CB3 0ET</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country>
+                    <gco:CharacterString>United Kingdom</gco:CharacterString>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>polardatacentre@bas.ac.uk</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre/</gmd:URL>
+                  </gmd:linkage>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:organisationName>
+            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone>
+                <gmd:CI_Telephone>
+                  <gmd:voice>
+                    <gco:CharacterString>+44 (0)1223 221400</gco:CharacterString>
+                  </gmd:voice>
+                </gmd:CI_Telephone>
+              </gmd:phone>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint>
+                    <gco:CharacterString>British Antarctic Survey, High Cross, Madingley Road</gco:CharacterString>
+                  </gmd:deliveryPoint>
+                  <gmd:city>
+                    <gco:CharacterString>Cambridge</gco:CharacterString>
+                  </gmd:city>
+                  <gmd:administrativeArea>
+                    <gco:CharacterString>Cambridgeshire</gco:CharacterString>
+                  </gmd:administrativeArea>
+                  <gmd:postalCode>
+                    <gco:CharacterString>CB3 0ET</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country>
+                    <gco:CharacterString>United Kingdom</gco:CharacterString>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>polardatacentre@bas.ac.uk</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre/</gmd:URL>
+                  </gmd:linkage>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher">publisher</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
       <gmd:resourceMaintenance>
         <gmd:MD_MaintenanceInformation>
           <gmd:maintenanceAndUpdateFrequency>
-            <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
+            <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
           </gmd:maintenanceAndUpdateFrequency>
+          <gmd:maintenanceNote>
+            <gmd:MD_ProgressCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed">completed</gmd:MD_ProgressCode>        
+          </gmd:maintenanceNote>
         </gmd:MD_MaintenanceInformation>
       </gmd:resourceMaintenance>
       <gmd:descriptiveKeywords>
@@ -318,9 +490,6 @@
           </gmd:keyword>
           <gmd:keyword>
             <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/sr" xlink:actuate="onRequest">Sea regions</gmx:Anchor>
-          </gmd:keyword>
-          <gmd:keyword>
-            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/concept/4131" xlink:actuate="onRequest">ice</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
             <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/lc" xlink:actuate="onRequest">Land Cover</gmx:Anchor>
@@ -531,9 +700,6 @@
       <gmd:language>
         <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">eng</gmd:LanguageCode>
       </gmd:language>
-      <gmd:characterSet>
-        <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
-      </gmd:characterSet>
       <gmd:topicCategory>
         <gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
       </gmd:topicCategory>
@@ -561,6 +727,23 @@
               </gmd:northBoundLatitude>
             </gmd:EX_GeographicBoundingBox>
           </gmd:geographicElement>
+          <gmd:verticalElement>
+            <gmd:EX_VerticalExtent>
+              <gmd:minimumValue gco:nilReason="inapplicable"/>
+              <gmd:maximumValue gco:nilReason="inapplicable"/>
+              <gmd:verticalCRS>
+                <gml:VerticalCRS gml:id="ogp-crs-5715">
+                  <gml:identifier codeSpace="OGP">urn:ogc:def:crs:EPSG::5715</gml:identifier>
+                  <gml:name>MSL depth</gml:name>
+                  <gml:remarks>Not specific to any location or epoch.</gml:remarks>
+                  <gml:domainOfValidity xlink:href="urn:ogc:def:area:EPSG::1262"/>
+                  <gml:scope>Hydrography.</gml:scope>
+                  <gml:verticalCS xlink:href="urn:ogc:def:cs:EPSG::6498"/>
+                  <gml:verticalDatum xlink:href="urn:ogc:def:datum:EPSG::5100"/>
+                </gml:VerticalCRS>
+              </gmd:verticalCRS>
+            </gmd:EX_VerticalExtent>
+          </gmd:verticalElement>
           <gmd:temporalElement>
             <gmd:EX_TemporalExtent>
               <gmd:extent>
