@@ -219,7 +219,7 @@
               <gmd:address>
                 <gmd:CI_Address>
                   <gmd:electronicMailAddress>
-                    <gco:CharacterString>polardatacentre-intercept@bas.ac.uk</gco:CharacterString>
+                    <gco:CharacterString>noreply@bas.ac.uk</gco:CharacterString>
                   </gmd:electronicMailAddress>
                 </gmd:CI_Address>
               </gmd:address>
@@ -256,7 +256,7 @@
               <gmd:address>
                 <gmd:CI_Address>
                   <gmd:electronicMailAddress>
-                    <gco:CharacterString>polardatacentre-intercept@bas.ac.uk</gco:CharacterString>
+                    <gco:CharacterString>noreply@bas.ac.uk</gco:CharacterString>
                   </gmd:electronicMailAddress>
                 </gmd:CI_Address>
               </gmd:address>
