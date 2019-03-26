@@ -160,6 +160,9 @@
               </gmd:dateType>
             </gmd:CI_Date>
           </gmd:date>
+          <gmd:edition>
+            <gco:CharacterString>1</gco:CharacterString>
+          </gmd:edition>
           <gmd:identifier>
             <gmd:MD_Identifier>
               <gmd:code>
