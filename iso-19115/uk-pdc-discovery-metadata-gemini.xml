@@ -492,9 +492,6 @@
             <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/sr" xlink:actuate="onRequest">Sea regions</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/concept/4131" xlink:actuate="onRequest">ice</gmx:Anchor>
-          </gmd:keyword>
-          <gmd:keyword>
             <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/lc" xlink:actuate="onRequest">Land Cover</gmx:Anchor>
           </gmd:keyword>
           <gmd:type>
