@@ -697,6 +697,23 @@
               </gmd:northBoundLatitude>
             </gmd:EX_GeographicBoundingBox>
           </gmd:geographicElement>
+          <gmd:verticalElement>
+            <gmd:EX_VerticalExtent>
+              <gmd:minimumValue gco:nilReason="inapplicable"/>
+              <gmd:maximumValue gco:nilReason="inapplicable"/>
+              <gmd:verticalCRS>
+                <gml:VerticalCRS gml:id="ogp-crs-5715">
+                  <gml:identifier codeSpace="OGP">urn:ogc:def:crs:EPSG::5715</gml:identifier>
+                  <gml:name>MSL depth</gml:name>
+                  <gml:remarks>Not specific to any location or epoch.</gml:remarks>
+                  <gml:domainOfValidity xlink:href="urn:ogc:def:area:EPSG::1262"/>
+                  <gml:scope>Hydrography.</gml:scope>
+                  <gml:verticalCS xlink:href="urn:ogc:def:cs:EPSG::6498"/>
+                  <gml:verticalDatum xlink:href="urn:ogc:def:datum:EPSG::5100"/>
+                </gml:VerticalCRS>
+              </gmd:verticalCRS>
+            </gmd:EX_VerticalExtent>
+          </gmd:verticalElement>
           <gmd:temporalElement>
             <gmd:EX_TemporalExtent>
               <gmd:extent>
