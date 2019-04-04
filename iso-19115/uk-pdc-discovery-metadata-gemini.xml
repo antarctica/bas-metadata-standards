@@ -326,7 +326,9 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+            <gmd:organisationName>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+            </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -376,7 +378,9 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+            <gmd:organisationName>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+            </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -426,7 +430,9 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+            <gmd:organisationName>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+            </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -773,7 +779,7 @@
           <gmd:distributorContact>
             <gmd:CI_ResponsibleParty>
               <gmd:organisationName>
-                <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+                <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
               </gmd:organisationName>
               <gmd:contactInfo>
                 <gmd:CI_Contact>
