@@ -326,7 +326,9 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+            <gmd:organisationName>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+            </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -376,7 +378,9 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+            <gmd:organisationName>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+            </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -426,7 +430,9 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+            <gmd:organisationName>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+            </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -680,6 +686,9 @@
           <gmd:otherConstraints>
             <gco:CharacterString>Cite this information as: "Bougamont, M. (2018). Ice flow model output for Pine Island Glacier (West Antarctica), from numerical inversions of ice surface velocities observed in 1996 and 2014 [Data set]. UK Polar Data Centre, Natural Environment Research Council, UK Research and Innovation. https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f"</gco:CharacterString>
           </gmd:otherConstraints>
+          <gmd:otherConstraints>
+            <gco:CharacterString>The data is provided 'as is', without warrenty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in conjunction with the data or the use or other dealings in the data.</gco:CharacterString>
+          </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
       <gmd:resourceConstraints>
@@ -773,7 +782,7 @@
           <gmd:distributorContact>
             <gmd:CI_ResponsibleParty>
               <gmd:organisationName>
-                <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+                <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
               </gmd:organisationName>
               <gmd:contactInfo>
                 <gmd:CI_Contact>
