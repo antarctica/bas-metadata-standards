@@ -678,9 +678,6 @@
             <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
           </gmd:useConstraints>
           <gmd:otherConstraints>
-            <gco:CharacterString>© UK Research and Innovation, 2018</gco:CharacterString>
-          </gmd:otherConstraints>
-          <gmd:otherConstraints>
             <gmx:Anchor xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" xlink:actuate="onRequest">This information is licensed under the Open Government Licence v3.0. To view this licence, visit http://www.nationalarchives.gov.uk/doc/open-government-licence/</gmx:Anchor>
           </gmd:otherConstraints>
           <gmd:otherConstraints>
