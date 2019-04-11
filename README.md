@@ -94,10 +94,11 @@ marine focus.
 **Note:** A decision is pending over whether the NERC Metadata Standard should require Medin, or if Gemini would be more 
 suitable.
 
-If Medin is only used for marine records, and the NERC Metadata Standard is based on Gemini this can be visualised as:
 **Note:** Until a decision is made on the role of the Medin and NERC standards this project concentrates on the Gemini
 profile only. 
 
+If Medin were to be used for marine records, and the NERC Metadata Standard is based on Gemini this could be visualised 
+as:
 
 ```mermaid
 graph TB
