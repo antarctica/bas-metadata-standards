@@ -930,11 +930,11 @@
   2. backround information, including changes, and discussions over proposed changes, made to this record can be found 
      in the UK-PDC Metadata Standards project [2]
   3. this canidate record is based on 'iso-19115/superceeded/iso-pdc-original.xml' specifically commit ee5a737 [3]
-  6. All references to CodeList references from non-2007 versions of ISO 19139 use the 2007 version, defined by the 
-     Inspire Technical Guidance for ISO 19115 [2], including any examples taken from others
+  4. All references to CodeList references from non-2007 versions of ISO 19139 now use the 2007 version, defined by the 
+     Inspire Technical Guidance for ISO 19115 [4], including any examples taken from others
 
   [1] https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini
   [2] https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards
   [3] https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/blob/fcabf801121bd37093cc608af49d189ba428f79c/iso-19115/superceeded/iso-pdc-original.xml
-  [2] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
+  [4] https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139
 -->
