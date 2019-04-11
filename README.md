@@ -95,6 +95,9 @@ marine focus.
 suitable.
 
 If Medin is only used for marine records, and the NERC Metadata Standard is based on Gemini this can be visualised as:
+**Note:** Until a decision is made on the role of the Medin and NERC standards this project concentrates on the Gemini
+profile only. 
+
 
 ```mermaid
 graph TB
@@ -141,24 +144,6 @@ A record which is valid against:
 * [UK Gemini (XML element order) (profile)](https://www.agi.org.uk/gemini/40-gemini/1046-xml-element-order)
 
 File: [`uk-pdc-discovery-metadata-gemini.xml`](iso-19115/uk-pdc-discovery-metadata-gemini.xml).
-
-# UK PDC - discovery metadata (Medin)
-
-A record which is valid against:
-
-* [MEDIN discovery metadata standard (profile)](http://www.oceannet.org/data-standards/medin-discovery-metadata-standard)
-
-File: [`uk-pdc-discovery-metadata-medin.xml`](iso-19115/uk-pdc-discovery-metadata-medin.xml).
-
-# UK PDC - discovery metadata (NERC)
-
-A record which is valid against:
-
-* NERC Metadata Standard (profile)
-
-File: [`uk-pdc-discovery-metadata-nerc.xml`](iso-19115/uk-pdc-discovery-metadata-nerc.xml).
-
-**Note:** This candidate record is based on a valid Medin record.
 
 ## Discovery Metadata System (DMS)
 
