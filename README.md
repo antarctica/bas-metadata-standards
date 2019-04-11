@@ -191,6 +191,8 @@ to help how fields in metadata records map to fields shown in the catalogue.
 
 It can be accessed through the [Local webserver](#local-webserver) via the [project index](`http://localhost:9000`).
 
+
+
 ## XML stylesheets
 
 To make reading [Candidate metadata records](#candidate-metadata-records) easier, two XML stylesheets are available:
