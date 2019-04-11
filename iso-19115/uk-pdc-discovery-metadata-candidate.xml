@@ -685,13 +685,6 @@
           </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
-      <gmd:resourceConstraints>
-        <gmd:MD_Constraints>
-          <gmd:useLimitation>
-            <gmx:Anchor xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" xlink:actuate="onRequest">This information is licensed under the Open Government Licence v3.0. To view this licence, visit http://www.nationalarchives.gov.uk/doc/open-government-licence/</gmx:Anchor>
-          </gmd:useLimitation>
-        </gmd:MD_Constraints>
-      </gmd:resourceConstraints>
       <gmd:supplementalInformation>
         <gco:CharacterString>It is recommended that careful attention be paid to the contents of any data, and that the originator of the data or information be contacted with any questions regarding appropriate use. If you find any errors or omissions, please report them to polardatacentre@bas.ac.uk.</gco:CharacterString>
       </gmd:supplementalInformation>
