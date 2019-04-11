@@ -146,6 +146,32 @@ A record which is valid against:
 
 File: [`uk-pdc-discovery-metadata-gemini.xml`](iso-19115/uk-pdc-discovery-metadata-gemini.xml).
 
+## Template metadata records
+
+A series of template metadata records have been created to indicate which properties in 
+[Candidate records](#candidate-metadata-records) should be changed or unchanged on a per-record basis.
+
+Templates use the `gco:nilReason="template"` attribute to indicate which elements should be changed for each record.
+
+For example:
+
+```xml
+<gmd:dateStamp gco:nilReason="template" />
+```
+
+Should be changed to a per-record value:
+
+```xml
+<gmd:dateStamp>
+    <gco:DateTime>2018-10-08T14:40:44Z</gco:DateTime>
+</gmd:dateStamp>
+```
+
+Template records do not contain optional elements, except those that should be used in all records. Other optional 
+elements, or additional instances of already included elements can be added where valid.
+
+**Note:** Elements with defined values (i.e. not using `gco:nilReason="template"`) **SHOULD NOT** be changed.
+
 ## Discovery Metadata System (DMS)
 
 The Discovery Metadata System is the in-house metadata authoring and access system used by the PDC. It consists of a

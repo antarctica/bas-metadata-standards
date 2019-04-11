@@ -16,3 +16,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * Versions of this example record with XML stylesheets applied, one for displaying the contents of a record without the
   XML structure and one for comparing an ISO record against best practices
 * The DMS external page for this example record, annotated to identify each field/property in the record
+* Template metadata records, generated from candidate records, for use by those implementing them
