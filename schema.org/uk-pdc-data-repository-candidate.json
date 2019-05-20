@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "sweet-rel": "http://sweetontology.net/rela/",
+    "sweet-kd": "http://sweetontology.net/humanKnowledgeDomain/"
+  },
+  "@type": ["Service", "ResearchProject"],
+  "@id": "https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre",
+  "legalName": "UK Polar Data Centre",
+  "name": "UK PDC",
+  "url": "https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre",
+  "description": "The UK Polar Data Centre (UK PDC) is the focal point for Arctic and Antarctic environmental data management in the UK. Part of the Natural Environmental Research Council’s (NERC) network of environmental data centres and based at the British Antarctic Survey, we coordinate the management of polar data from UK-funded research and support researchers in complying with national and international data legislation and policy.",
+  "sameAs": [],
+  "category": [
+    "Science"
+  ],
+  "sweet-rel:hasRealm": [
+    { "@id": "sweet-kd:Science" }
+  ],
+  "provider": {
+    "@id": "https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre"
+  },
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://cdn.web.bas.ac.uk/bas-style-kit/0.5.0/img/favicon/apple-touch-icon.png"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "name": "Point of contact",
+    "email": "polardatacentre@bas.ac.uk",
+    "url": "https://www.bas.ac.uk/team/business-teams/information-services/uk-polar-data-centre",
+    "contactType": "Point of contact"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "name": "British Antarctic Survey",
+    "streetAddress": "High Cross, Madingley Road",
+    "addressLocality": "Cambridge",
+    "addressRegion": "Cambridgeshire",
+    "postalCode": "CB3 0ET",
+    "addressCountry": "UK"
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "@id": "http://www.bas.ac.uk",
+    "legalName": "British Antarctic Survey",
+    "name": "BAS",
+    "url": "http://www.bas.ac.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "name": "British Antarctic Survey",
+      "streetAddress": "High Cross, Madingley Road",
+      "addressLocality": "Cambridge",
+      "addressRegion": "Cambridgeshire",
+      "postalCode": "CB3 0ET",
+      "addressCountry": "UK"
+    }
+  }
+}
