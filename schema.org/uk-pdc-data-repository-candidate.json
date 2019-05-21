@@ -131,6 +131,7 @@
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
+    "@id": "https://data.bas.ac.uk/datasets",
     "name": "UK PDC Data Catalogue",
     "description": "Discover data held by the UK Polar Data Centre and British Antarctic Survey",
     "itemListElement": [

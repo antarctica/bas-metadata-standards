@@ -1,0 +1,97 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "datacite": "http://purl.org/spar/datacite/"
+  },
+  "@type": "Dataset",
+  "identifier": {
+    "@type": ["PropertyValue", "datacite:ResourceIdentifier"],
+    "datacite:usesIdentifierScheme": { "@id": "datacite:doi" },
+    "propertyID": "DOI",
+    "url": "https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f",
+    "value": "10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f"
+  },
+  "name": "Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April 2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006",
+  "description": "The dataset contains oxygen stable isotope and salinity measurements from water samples collected from sea ice and meltwater pools in April 2016 in the region of South Georgia, Signy and deep within the Weddell Sea pack ice during the marine survey JR15006. The d18O and salinity measurements from sea ice and meltwater sources complement the same analysis from CTD casts and underway non-toxic flow water system on the RRS James Clark Ross during the JR15006. Establishing d18O and salinity values for saline water and oceanic freshwater components can be used to identify sources and changes of freshwater contributions to the ocean.",
+  "url": "https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371",
+  "version": "1",
+  "isAccessibleForFree": true,
+  "keywords": [
+    "Oceanographic geographical features",
+    "Sea regions", 
+    "Land cover",
+    "EARTH SCIENCE &gt; Hydrosphere &gt; Snow/Ice &gt; Snow Melt",
+    "EARTH SCIENCE &gt; Hydrosphere &gt; Surface Water",
+    "EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Isotopes",
+    "EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Pack Ice",
+    "EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Salinity",
+    "d18O",
+    "meltwater pool",
+    "salinity",
+    "sea ice"
+  ],
+  "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence",
+  "citation": "Bougamont, M. (2018). <i>Ice flow model output for Pine Island Glacier (West Antarctica), from numerical inversions of ice surface velocities observed in 1996 and 2014</i> (Version 1.0) [Data set]. Polar Data Centre, Natural Environment Research Council, UK Research &amp; Innovation. https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f",
+  "includedInDataCatalog": "https://data.bas.ac.uk/datasets",
+  "temporalCoverage": "2016-03-31/2016-04-26",
+  "spatialCoverage": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "-45.61521 -27.04976 -68.1511 -54.30761"
+    }
+  },
+  "creator": [
+    {
+      "@type": "Role",
+      "roleName": "Originator",
+      "creator": {
+        "@type": "Person",
+        "identifier": {
+          "@type": ["PropertyValue", "datacite:Identifier"],
+          "propertyID": "http://purl.org/spar/datacite/orcid",
+          "url": "https://orcid.org/0000-0002-7342-7756",
+          "value": "0000-0002-7342-7756"
+        },
+        "name": "Michael Meredith",
+        "url": "https://orcid.org/0000-0002-7342-7756"
+      }
+    },
+    {
+      "@type": "Role",
+      "roleName": "Originator",
+      "creator": {
+        "@type": "Person",
+        "identifier": {
+          "@type": ["PropertyValue", "datacite:Identifier"],
+          "propertyID": "http://purl.org/spar/datacite/orcid",
+          "url": "https://orcid.org/0000-0003-3849-5179",
+          "value": "0000-0003-3849-5179"
+        },
+        "name": "Carol Arrowsmith",
+        "url": "https://orcid.org/0000-0003-3849-5179"
+      }
+    },
+    {
+      "@type": "Role",
+      "roleName": "Originator",
+      "creator": {
+        "@type": "Person",
+        "identifier": {
+          "@type": ["PropertyValue", "datacite:Identifier"],
+          "propertyID": "http://purl.org/spar/datacite/orcid",
+          "url": "https://orcid.org/0000-0003-1115-5166",
+          "value": "0000-0003-1115-5166"
+        },
+        "name": "Melanie Leng",
+        "url": "https://orcid.org/0000-0003-1115-5166"
+      }
+    }
+  ],
+  "provider": {
+    "@id": "https://www.bas.ac.uk/data/uk-pdc"
+  },
+  "publisher": {
+    "@id": "https://www.bas.ac.uk/data/uk-pdc"
+  }
+}
