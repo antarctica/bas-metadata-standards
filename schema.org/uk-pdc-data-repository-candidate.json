@@ -39,7 +39,7 @@
     "name": "Point of contact",
     "email": "polardatacentre@bas.ac.uk",
     "url": "https://www.bas.ac.uk/data/uk-pdc",
-    "contactType": "Point of contact"
+    "contactType": "customer service"
   },
   "address": {
     "@type": "PostalAddress",
@@ -61,7 +61,7 @@
       "name": "Point of contact",
       "email": "information@bas.ac.uk",
       "url": "https://www.bas.ac.uk/about/contact-bas/",
-      "contactType": "Point of contact"
+      "contactType": "customer service"
     },
     "address": {
       "@type": "PostalAddress",
@@ -82,7 +82,7 @@
         "@type": "ContactPoint",
         "name": "Point of contact",
         "url": "https://nerc.ukri.org/about/enquiries/contacts/",
-        "contactType": "Point of contact"
+        "contactType": "customer service"
       },
       "address": {
         "@type": "PostalAddress",
@@ -104,7 +104,7 @@
           "name": "Point of contact",
           "email": "communications@ukri.org",
           "url": "https://www.ukri.org/contact/",
-          "contactType": "Point of contact"
+          "contactType": "customer service"
         },
         "address": {
           "@type": "PostalAddress",
