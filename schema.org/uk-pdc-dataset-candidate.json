@@ -4,6 +4,7 @@
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": "Dataset",
+  "@id": "https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f",
   "identifier": {
     "@type": ["PropertyValue", "datacite:ResourceIdentifier"],
     "datacite:usesIdentifierScheme": { "@id": "datacite:doi" },
@@ -13,7 +14,7 @@
   },
   "name": "Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April 2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006",
   "description": "The dataset contains oxygen stable isotope and salinity measurements from water samples collected from sea ice and meltwater pools in April 2016 in the region of South Georgia, Signy and deep within the Weddell Sea pack ice during the marine survey JR15006. The d18O and salinity measurements from sea ice and meltwater sources complement the same analysis from CTD casts and underway non-toxic flow water system on the RRS James Clark Ross during the JR15006. Establishing d18O and salinity values for saline water and oceanic freshwater components can be used to identify sources and changes of freshwater contributions to the ocean.",
-  "url": "https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371",
+  "url": "https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f",
   "version": "1",
   "isAccessibleForFree": true,
   "keywords": [
