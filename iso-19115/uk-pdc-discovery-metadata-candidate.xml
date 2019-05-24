@@ -134,7 +134,7 @@
             </gmd:CI_Citation>
           </gmd:authority>
           <gmd:code>
-            <gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/4326" xlink:actuate="onRequest">urn:ogc:def:crs:EPSG:4326</gmx:Anchor>
+            <gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/4326" xlink:actuate="onRequest">urn:ogc:def:crs:EPSG::4326</gmx:Anchor>
           </gmd:code>
           <gmd:version>
               <gco:CharacterString>6.18.3</gco:CharacterString>
