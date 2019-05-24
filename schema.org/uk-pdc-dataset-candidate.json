@@ -89,9 +89,9 @@
     }
   ],
   "provider": {
-    "@id": "https://www.bas.ac.uk/data/uk-pdc"
+    "@id": "https://doi.org/10.17616/R3C01K"
   },
   "publisher": {
-    "@id": "https://www.bas.ac.uk/data/uk-pdc"
+    "@id": "https://doi.org/10.17616/R3C01K"
   }
 }

@@ -6,7 +6,7 @@
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "ResearchProject"],
-  "@id": "https://www.bas.ac.uk/data/uk-pdc",
+  "@id": "https://doi.org/10.17616/R3C01K",
   "identifier": {
     "@type": "PropertyValue",
     "name": "Re3data DOI for this repository",
@@ -28,7 +28,7 @@
     { "@id": "sweet-kd:Science" }
   ],
   "provider": {
-    "@id": "https://www.bas.ac.uk/data/uk-pdc"
+    "@id": "https://doi.org/10.17616/R3C01K"
   },
   "logo": {
     "@type": "ImageObject",
@@ -52,7 +52,7 @@
   },
   "parentOrganization": {
     "@type": "Organization",
-    "@id": "https://www.bas.ac.uk",
+    "@id": "http://doi.org/10.17616/R3K036",
     "legalName": "British Antarctic Survey",
     "name": "BAS",
     "url": "https://www.bas.ac.uk",
