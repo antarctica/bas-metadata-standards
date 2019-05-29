@@ -18,7 +18,7 @@
   <gmd:contact>
     <gmd:CI_ResponsibleParty>
       <gmd:organisationName>
-        <gco:CharacterString>UK Polar Data Centre</gco:CharacterString>
+        <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
       </gmd:organisationName>
       <gmd:contactInfo>
         <gmd:CI_Contact>
@@ -222,7 +222,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gmx:Anchor xlink:href="https://orcid.org/0000-0002-7342-7756" xlink:title="ORCID record" xlink:actuate="onRequest">Michael Meredith</gmx:Anchor>
+            <gmx:Anchor xlink:href="https://orcid.org/0000-0002-7342-7756" xlink:title="orcid" xlink:actuate="onRequest">Michael Meredith</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Antarctic Survey</gco:CharacterString>
@@ -259,7 +259,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-3849-5179" xlink:title="ORCID record" xlink:actuate="onRequest">Carol Arrowsmith</gmx:Anchor>
+            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-3849-5179" xlink:title="orcid" xlink:actuate="onRequest">Carol Arrowsmith</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Geological Survey</gco:CharacterString>
@@ -296,7 +296,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-1115-5166" xlink:title="ORCID record" xlink:actuate="onRequest">Melanie Leng</gmx:Anchor>
+            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-1115-5166" xlink:title="orcid" xlink:actuate="onRequest">Melanie Leng</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Geological Survey</gco:CharacterString>
@@ -334,7 +334,7 @@
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
             <gmd:organisationName>
-              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
             </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
@@ -386,7 +386,7 @@
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
             <gmd:organisationName>
-              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
             </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
@@ -438,7 +438,7 @@
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
             <gmd:organisationName>
-              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
             </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
@@ -490,7 +490,7 @@
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
             <gmd:organisationName>
-              <gmx:Anchor xlink:href="http://isni.org/isni/0000000094781573" xlink:title="ISNI record" xlink:actuate="onRequest">Natural Environment Research Council</gmx:Anchor>
+              <gmx:Anchor xlink:href="http://isni.org/isni/0000000094781573" xlink:title="isni" xlink:actuate="onRequest">Natural Environment Research Council</gmx:Anchor>
             </gmd:organisationName>
           </gmd:organisationName>
           <gmd:contactInfo>
@@ -831,7 +831,7 @@
           <gmd:distributorContact>
             <gmd:CI_ResponsibleParty>
               <gmd:organisationName>
-                <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="ISNI record" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+                <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
               </gmd:organisationName>
               <gmd:contactInfo>
                 <gmd:CI_Contact>
