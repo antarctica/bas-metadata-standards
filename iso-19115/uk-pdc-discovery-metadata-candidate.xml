@@ -909,6 +909,12 @@
       </gmd:transferOptions>
       <gmd:transferOptions>
         <gmd:MD_DigitalTransferOptions>
+          <gmd:unitsOfDistribution>
+            <gco:CharacterString>KB</gco:CharacterString>
+          </gmd:unitsOfDistribution>
+          <gmd:transferSize>
+            <gco:Real>30</gco:Real>
+          </gmd:transferSize>
           <gmd:onLine>
             <gmd:CI_OnlineResource>
               <gmd:linkage>
