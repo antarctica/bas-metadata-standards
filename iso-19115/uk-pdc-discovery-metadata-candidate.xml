@@ -196,14 +196,14 @@
           <gmd:identifier>
             <gmd:MD_Identifier>
               <gmd:code>
-                <gco:CharacterString>https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371</gco:CharacterString>
+                <gmx:Anchor xlink:href="https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371" xlink:title="self" xlink:actuate="onRequest">https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371</gmx:Anchor>
               </gmd:code>
             </gmd:MD_Identifier>
           </gmd:identifier>
           <gmd:identifier>
             <gmd:MD_Identifier>
               <gmd:code>
-                <gmx:Anchor xlink:href="https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f" xlink:title="DOI" xlink:actuate="onRequest">https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f</gmx:Anchor>
+                <gmx:Anchor xlink:href="https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f" xlink:title="doi" xlink:actuate="onRequest">https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f</gmx:Anchor>
               </gmd:code>
             </gmd:MD_Identifier>
           </gmd:identifier>
