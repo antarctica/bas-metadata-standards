@@ -287,7 +287,7 @@
         </gmd:MD_MaintenanceInformation>
       </gmd:resourceMaintenance>
       <gmd:resourceConstraints>
-        <gmd:MD_LegalConstraints>
+        <gmd:MD_LegalConstraints id="InspireLimitationsOnPublicAccess">
           <gmd:accessConstraints>
             <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
           </gmd:accessConstraints>
@@ -295,7 +295,7 @@
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
       <gmd:resourceConstraints>
-        <gmd:MD_LegalConstraints>
+        <gmd:MD_LegalConstraints id="copyright">
           <gmd:useConstraints>
             <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
           </gmd:useConstraints>

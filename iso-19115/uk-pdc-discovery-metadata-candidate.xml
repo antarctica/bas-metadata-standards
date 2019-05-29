@@ -722,7 +722,7 @@
         </gmd:MD_Keywords>
       </gmd:descriptiveKeywords>
       <gmd:resourceConstraints>
-        <gmd:MD_LegalConstraints>
+        <gmd:MD_LegalConstraints id="InspireLimitationsOnPublicAccess">
           <gmd:accessConstraints>
             <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
           </gmd:accessConstraints>
@@ -732,13 +732,20 @@
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
       <gmd:resourceConstraints>
-        <gmd:MD_LegalConstraints>
+        <gmd:MD_LegalConstraints id="copyright">
           <gmd:useConstraints>
             <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
           </gmd:useConstraints>
           <gmd:otherConstraints>
             <gmx:Anchor xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" xlink:actuate="onRequest">This information is licensed under the Open Government Licence v3.0. To view this licence, visit http://www.nationalarchives.gov.uk/doc/open-government-licence/</gmx:Anchor>
           </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints id="citation">
+          <gmd:useConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
+          </gmd:useConstraints>
           <gmd:otherConstraints>
             <gco:CharacterString>Cite this information as: "Bougamont, M. (2018). Ice flow model output for Pine Island Glacier (West Antarctica), from numerical inversions of ice surface velocities observed in 1996 and 2014 [Data set]. UK Polar Data Centre, Natural Environment Research Council, UK Research and Innovation. https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f"</gco:CharacterString>
           </gmd:otherConstraints>
