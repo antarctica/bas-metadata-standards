@@ -619,19 +619,19 @@
       <gmd:descriptiveKeywords>
         <gmd:MD_Keywords>
           <gmd:keyword>
-            <gco:CharacterString>EARTH SCIENCE &gt; Hydrosphere &gt; Snow/Ice &gt; Snow Melt</gco:CharacterString>
+            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/dd6de9e1-61e7-41bf-a2dc-9d2afc690bb3" xlink:actuate="onRequest">EARTH SCIENCE &gt; Hydrosphere &gt; Snow/Ice &gt; Snow Melt</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gco:CharacterString>EARTH SCIENCE &gt; Hydrosphere &gt; Surface Water</gco:CharacterString>
+            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/5debb283-51e4-435e-b2a2-e8e2a977220d" xlink:actuate="onRequest">EARTH SCIENCE &gt; Hydrosphere &gt; Surface Water</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gco:CharacterString>EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Isotopes</gco:CharacterString>
+            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/9d99408d-0d8b-4642-a2cb-edee8319fe1d" xlink:actuate="onRequest">EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Isotopes</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gco:CharacterString>EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Pack Ice</gco:CharacterString>
+            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/ea85ea0b-1b7d-464a-9f8c-1f80383ffc51" xlink:actuate="onRequest">EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Pack Ice</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gco:CharacterString>EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Salinity</gco:CharacterString>
+            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/04fa9023-ab68-4dd0-a82e-abe685105a53" xlink:actuate="onRequest">EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Salinity</gmx:Anchor>
           </gmd:keyword>
           <gmd:type>
             <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
