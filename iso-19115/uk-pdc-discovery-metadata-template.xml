@@ -317,7 +317,7 @@
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
       <gmd:supplementalInformation>
-        <gco:CharacterString>It is recommended that careful attention be paid to the contents of any data, and that the originator of the data or information be contacted with any questions regarding appropriate use. If you find any errors or omissions, please report them to polardatacentre@bas.ac.uk.</gco:CharacterString>
+        <gco:CharacterString>It is recommended that careful attention be paid to the contents of any data, and that the author be contacted with any questions regarding appropriate use. If you find any errors or omissions, please report them to polardatacentre@bas.ac.uk.</gco:CharacterString>
       </gmd:supplementalInformation>
       <gmd:spatialRepresentationType>
         <gmd:MD_SpatialRepresentationTypeCode gco:nilReason="template" />
