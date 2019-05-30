@@ -3,18 +3,17 @@
   <identifier identifierType="DOI">10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f</identifier>
   <creators>
     <creator>
-      <!-- issue 1: creatorName format used normally is different to value provided in record -->
-      <creatorName>Michael Meredith</creatorName>
+      <creatorName nameType="Personal">Michael Meredith</creatorName>
       <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0000-0002-7342-7756</nameIdentifier>
       <affiliation>British Antarctic Survey</affiliation>
     </creator>
     <creator>
-      <creatorName>Carol Arrowsmith</creatorName>
+      <creatorName nameType="Personal">Carol Arrowsmith</creatorName>
       <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0000-0003-3849-5179</nameIdentifier>
       <affiliation>British Geological Survey</affiliation>
     </creator>
     <creator>
-      <creatorName>Melanie Leng</creatorName>
+      <creatorName nameType="Personal">Melanie Leng</creatorName>
       <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0000-0003-1115-5166</nameIdentifier>
       <affiliation>British Geological Survey</affiliation>
     </creator>
@@ -22,11 +21,9 @@
   <titles>
     <title xml:lang="en-GB">Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April 2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006</title>
   </titles>
-  <!-- issue 2: Publisher name used normally is longer than value provided in record -->
   <publisher>UK Polar Data Centre</publisher>
   <publicationYear>2018</publicationYear>
   <subjects>
-    <!-- issue 3: SchemeURI value used normally incorrect, should be in valueURI attribute -->
     <subject subjectScheme="General Multilingual Environmental Thesaurus (GEMET) themes" schemeURI="http://www.eionet.europa.eu/gemet/inspire_themes" valueURI="https://www.eionet.europa.eu/gemet/en/inspire-theme/of">Oceanographic geographical features</subject>
     <subject subjectScheme="General Multilingual Environmental Thesaurus (GEMET) themes" schemeURI="http://www.eionet.europa.eu/gemet/inspire_themes" valueURI="https://www.eionet.europa.eu/gemet/en/inspire-theme/sr">Sea regions</subject>
     <subject subjectScheme="General Multilingual Environmental Thesaurus (GEMET) themes" schemeURI="http://www.eionet.europa.eu/gemet/inspire_themes" valueURI="https://www.eionet.europa.eu/gemet/en/inspire-theme/lc">Land cover</subject>
@@ -41,20 +38,11 @@
     <subject>sea ice</subject>
   </subjects>
   <contributors>
-    <!-- issue 4: Additional mapping needed to map 'DataManager' to role code in record -->
     <contributor contributorType="DataManager">
-      <contributorName>UK Polar Data Centre</contributorName>
-      <affiliation>Natural Environment Research Council, UK Research &amp; Innovation</affiliation>
+      <contributorName nameType="Organizational">UK Polar Data Centre</contributorName>
     </contributor>
-    <!-- issue 5: Additional mapping needed to map 'Distributor' to role code in record -->
-    <contributor contributorType="Distributor">
-      <contributorName>UK Polar Data Centre</contributorName>
-      <affiliation>Natural Environment Research Council, UK Research &amp; Innovation</affiliation>
-    </contributor>
-    <!-- issue 6: Additional mapping needed to map 'HostingInstitution' to role code in record -->
-    <contributor contributorType="HostingInstitution">
-      <contributorName>UK Polar Data Centre</contributorName>
-      <affiliation>Natural Environment Research Council, UK Research &amp; Innovation</affiliation>
+    <contributor contributorType="DataManager">
+      <contributorName nameType="Organizational">UK Polar Data Centre</contributorName>
     </contributor>
   </contributors>
   <dates>
@@ -117,3 +105,14 @@
     <!-- issue 20: Multiple awards with different funders is not supported in record -->
   </fundingReferences>
 </resource>
+
+<!-- Notes -->
+<!-- 
+  1. this is a candidate metadata record for the DataCite metadata schema (version 4.2) [1]
+  2. background information on this record can be found in the UK-PDC Metadata Standards project [2]
+  3. this candidate record record is based on 'iso-19115/up-pdc-discovery-metadata-candidate.xml', specifically commit 36aaa663 [3]
+
+  [1] https://schema.datacite.org/meta/kernel-4.2/
+  [2] https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards
+  [3] https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/blob/36aaa6630fc9efd99d3e698bb86b5cf23ca06686/iso-19115/uk-pdc-discovery-metadata-candidate.xml
+-->
