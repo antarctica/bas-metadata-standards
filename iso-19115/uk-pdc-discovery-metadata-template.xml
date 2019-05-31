@@ -474,8 +474,8 @@
 <!-- Notes -->
 <!-- 
   1. this is a template metdata record for the ISO 19115 Gemini profile [1]
-  2. backround information on this record can be found in the UK-PDC Metadata Standards project [2]
-  3. this template record is based on 'iso-19115/up-pdc-discovery-metadata-candidate.xml' specifically commit 592458f [3]
+  2. background information on this record can be found in the UK-PDC Metadata Standards project [2]
+  3. this template record is based on 'iso-19115/up-pdc-discovery-metadata-candidate.xml', specifically commit 36aaa663 [3]
   4. all elements with the 'gco:nilReason="template"' attribute should be replaced with permitted child elements or 
      values
   5. additional elements, or additional element instances, may be added to instances of this template as relevant and
@@ -483,5 +483,5 @@
 
   [1] https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini
   [2] https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards
-  [3] https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/blob/592458fcaca7e0c5b3967aefd91756e0b1e7417b/iso-19115/up-pdc-discovery-metadata-candidate.xml
+  [3] https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/blob/36aaa6630fc9efd99d3e698bb86b5cf23ca06686/iso-19115/uk-pdc-discovery-metadata-candidate.xml
 -->
