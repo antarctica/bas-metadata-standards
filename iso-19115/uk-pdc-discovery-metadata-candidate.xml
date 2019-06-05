@@ -228,7 +228,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gmx:Anchor xlink:href="https://orcid.org/0000-0002-7342-7756" xlink:title="orcid" xlink:actuate="onRequest">Michael Meredith</gmx:Anchor>
+            <gmx:Anchor xlink:href="https://orcid.org/0000-0002-7342-7756" xlink:title="orcid" xlink:actuate="onRequest">Meredith, Michael</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Antarctic Survey</gco:CharacterString>
@@ -268,7 +268,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-3849-5179" xlink:title="orcid" xlink:actuate="onRequest">Carol Arrowsmith</gmx:Anchor>
+            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-3849-5179" xlink:title="orcid" xlink:actuate="onRequest">Arrowsmith, Carol</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Geological Survey</gco:CharacterString>
@@ -308,7 +308,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-1115-5166" xlink:title="orcid" xlink:actuate="onRequest">Melanie Leng</gmx:Anchor>
+            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-1115-5166" xlink:title="orcid" xlink:actuate="onRequest">Leng, Melanie</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Geological Survey</gco:CharacterString>

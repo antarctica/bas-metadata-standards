@@ -3,17 +3,17 @@
   <identifier identifierType="DOI">10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f</identifier>
   <creators>
     <creator>
-      <creatorName nameType="Personal">Michael Meredith</creatorName>
+      <creatorName nameType="Personal">Meredith, Michael</creatorName>
       <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0000-0002-7342-7756</nameIdentifier>
       <affiliation>British Antarctic Survey</affiliation>
     </creator>
     <creator>
-      <creatorName nameType="Personal">Carol Arrowsmith</creatorName>
+      <creatorName nameType="Personal">Arrowsmith, Carol</creatorName>
       <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0000-0003-3849-5179</nameIdentifier>
       <affiliation>British Geological Survey</affiliation>
     </creator>
     <creator>
-      <creatorName nameType="Personal">Melanie Leng</creatorName>
+      <creatorName nameType="Personal">Leng, Melanie</creatorName>
       <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">0000-0003-1115-5166</nameIdentifier>
       <affiliation>British Geological Survey</affiliation>
     </creator>
