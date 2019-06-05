@@ -940,7 +940,7 @@
       <gmd:transferOptions>
         <gmd:MD_DigitalTransferOptions>
           <gmd:unitsOfDistribution>
-            <gco:CharacterString>KB</gco:CharacterString>
+            <gco:CharacterString>kB</gco:CharacterString>
           </gmd:unitsOfDistribution>
           <gmd:transferSize>
             <gco:Real>30</gco:Real>

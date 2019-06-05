@@ -54,7 +54,7 @@
   <language>en</language>
   <resourceType resourceTypeGeneral="Dataset">Salinity analysis</resourceType>
   <sizes>
-    <size>30KB</size>
+    <size>30 kB</size>
   </sizes>
   <formats>
     <format>text/csv</format>
