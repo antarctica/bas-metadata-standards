@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas/srv/1.0/srv.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<gmd:MD_Metadata xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd http://www.isotc211.org/2005/gco https://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd http://www.isotc211.org/2005/gmx http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://inspire.ec.europa.eu/draft-schemas/inspire-md-schemas/srv/1.0/srv.xsd">
   <gmd:fileIdentifier>
-		<gco:CharacterString>b1a7d1b5-c419-41e7-9178-b1ffd76d5371</gco:CharacterString>
-	</gmd:fileIdentifier>
+    <gco:CharacterString>b1a7d1b5-c419-41e7-9178-b1ffd76d5371</gco:CharacterString>
+  </gmd:fileIdentifier>
   <gmd:language>
     <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">eng</gmd:LanguageCode>
   </gmd:language>
@@ -18,7 +18,7 @@
   <gmd:contact>
     <gmd:CI_ResponsibleParty>
       <gmd:organisationName>
-        <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+        <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni">UK Polar Data Centre</gmx:Anchor>
       </gmd:organisationName>
       <gmd:contactInfo>
         <gmd:CI_Contact>
@@ -69,7 +69,7 @@
     </gmd:CI_ResponsibleParty>
   </gmd:contact>
   <gmd:dateStamp>
-    <gco:DateTime>2018-10-08T14:40:44Z</gco:DateTime>
+    <gco:DateTime>2018-10-08T14:40:44+00:00</gco:DateTime>
   </gmd:dateStamp>
   <gmd:metadataMaintenance>
     <gmd:MD_MaintenanceInformation>
@@ -77,7 +77,7 @@
         <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
       </gmd:maintenanceAndUpdateFrequency>
       <gmd:maintenanceNote>
-        <gmd:MD_ProgressCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed">completed</gmd:MD_ProgressCode>        
+        <gmd:MD_ProgressCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed">completed</gmd:MD_ProgressCode>
       </gmd:maintenanceNote>
     </gmd:MD_MaintenanceInformation>
   </gmd:metadataMaintenance>
@@ -136,14 +136,14 @@
                     <gmd:CI_RoleCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="publisher">publisher</gmd:CI_RoleCode>
                   </gmd:role>
                 </gmd:CI_ResponsibleParty>
-              </gmd:citedResponsibleParty>                          
+              </gmd:citedResponsibleParty>
             </gmd:CI_Citation>
           </gmd:authority>
           <gmd:code>
-            <gmx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/4326" xlink:actuate="onRequest">urn:ogc:def:crs:EPSG::4326</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://www.opengis.net/def/crs/EPSG/0/4326">urn:ogc:def:crs:EPSG::4326</gmx:Anchor>
           </gmd:code>
           <gmd:version>
-              <gco:CharacterString>6.18.3</gco:CharacterString>
+            <gco:CharacterString>6.18.3</gco:CharacterString>
           </gmd:version>
         </gmd:RS_Identifier>
       </gmd:referenceSystemIdentifier>
@@ -159,7 +159,7 @@
           <gmd:date>
             <gmd:CI_Date>
               <gmd:date>
-                <gco:DateTime>2018</gco:DateTime>
+                <gco:Date>2018</gco:Date>
               </gmd:date>
               <gmd:dateType>
                 <gmd:CI_DateTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
@@ -169,7 +169,7 @@
           <gmd:date>
             <gmd:CI_Date>
               <gmd:date>
-                <gco:DateTime>2018</gco:DateTime>
+                <gco:Date>2018</gco:Date>
               </gmd:date>
               <gmd:dateType>
                 <gmd:CI_DateTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
@@ -179,7 +179,7 @@
           <gmd:date>
             <gmd:CI_Date>
               <gmd:date>
-                <gco:DateTime>2018-10-08T14:40:44Z</gco:DateTime>
+                <gco:DateTime>2018-10-08T14:40:44+00:00</gco:DateTime>
               </gmd:date>
               <gmd:dateType>
                 <gmd:CI_DateTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
@@ -189,7 +189,7 @@
           <gmd:date>
             <gmd:CI_Date>
               <gmd:date>
-                <gco:DateTime>2018-12-08T14:40:44Z</gco:DateTime>
+                <gco:DateTime>2018-12-08T14:40:44+00:00</gco:DateTime>
               </gmd:date>
               <gmd:dateType>
                 <gmd:CI_DateTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="released">released</gmd:CI_DateTypeCode>
@@ -202,33 +202,33 @@
           <gmd:identifier>
             <gmd:MD_Identifier>
               <gmd:code>
-                <gmx:Anchor xlink:href="https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371" xlink:title="self" xlink:actuate="onRequest">https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371</gmx:Anchor>
+                <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371" xlink:title="self">https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371</gmx:Anchor>
               </gmd:code>
             </gmd:MD_Identifier>
           </gmd:identifier>
           <gmd:identifier>
             <gmd:MD_Identifier>
               <gmd:code>
-                <gmx:Anchor xlink:href="https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f" xlink:title="doi" xlink:actuate="onRequest">https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f</gmx:Anchor>
+                <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f" xlink:title="doi">https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f</gmx:Anchor>
               </gmd:code>
             </gmd:MD_Identifier>
           </gmd:identifier>
           <gmd:identifier>
             <gmd:MD_Identifier>
               <gmd:code>
-                <gmx:Anchor xlink:href="https://gtr.ukri.org/projects?ref=NE%2FI022973%2F1" xlink:title="award" xlink:actuate="onRequest">NE/I022973/1</gmx:Anchor>
+                <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://gtr.ukri.org/projects?ref=NE%2FI022973%2F1" xlink:title="award">NE/I022973/1</gmx:Anchor>
               </gmd:code>
             </gmd:MD_Identifier>
           </gmd:identifier>
         </gmd:CI_Citation>
       </gmd:citation>
       <gmd:abstract>
-        <gco:CharacterString>The dataset contains oxygen stable isotope and salinity measurements from water samples collected from sea ice and meltwater pools in April 2016 in the region of South Georgia, Signy and deep within the Weddell Sea pack ice during the marine survey JR15006. &#13; The d18O and salinity measurements from sea ice and meltwater sources complement the same analysis from CTD casts and underway non-toxic flow water system on the RRS James Clark Ross during the JR15006. Establishing d18O and salinity values for saline water and oceanic freshwater components can be used to identify sources and changes of freshwater contributions to the ocean.&#13;</gco:CharacterString>
+        <gco:CharacterString>The dataset contains oxygen stable isotope and salinity measurements from water samples collected from sea ice and meltwater pools in April 2016 in the region of South Georgia, Signy and deep within the Weddell Sea pack ice during the marine survey JR15006. &#13; The d18O and salinity measurements from sea ice and meltwater sources complement the same analysis from CTD casts and underway non-toxic flow water system on the RRS James Clark Ross during the JR15006. Establishing d18O and salinity values for saline water and oceanic freshwater components can be used to identify sources and changes of freshwater contributions to the ocean.</gco:CharacterString>
       </gmd:abstract>
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gmx:Anchor xlink:href="https://orcid.org/0000-0002-7342-7756" xlink:title="orcid" xlink:actuate="onRequest">Meredith, Michael</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://orcid.org/0000-0002-7342-7756" xlink:title="orcid">Meredith, Michael</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Antarctic Survey</gco:CharacterString>
@@ -268,7 +268,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-3849-5179" xlink:title="orcid" xlink:actuate="onRequest">Arrowsmith, Carol</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://orcid.org/0000-0003-3849-5179" xlink:title="orcid">Arrowsmith, Carol</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Geological Survey</gco:CharacterString>
@@ -308,7 +308,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:individualName>
-            <gmx:Anchor xlink:href="https://orcid.org/0000-0003-1115-5166" xlink:title="orcid" xlink:actuate="onRequest">Leng, Melanie</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://orcid.org/0000-0003-1115-5166" xlink:title="orcid">Leng, Melanie</gmx:Anchor>
           </gmd:individualName>
           <gmd:organisationName>
             <gco:CharacterString>British Geological Survey</gco:CharacterString>
@@ -348,9 +348,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gmd:organisationName>
-              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
-            </gmd:organisationName>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni">UK Polar Data Centre</gmx:Anchor>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -403,9 +401,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gmd:organisationName>
-              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
-            </gmd:organisationName>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni">UK Polar Data Centre</gmx:Anchor>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -458,9 +454,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gmd:organisationName>
-              <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
-            </gmd:organisationName>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni">UK Polar Data Centre</gmx:Anchor>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -513,9 +507,7 @@
       <gmd:pointOfContact>
         <gmd:CI_ResponsibleParty>
           <gmd:organisationName>
-            <gmd:organisationName>
-              <gmx:Anchor xlink:href="http://isni.org/isni/0000000094781573" xlink:title="isni" xlink:actuate="onRequest">Natural Environment Research Council</gmx:Anchor>
-            </gmd:organisationName>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://isni.org/isni/0000000094781573" xlink:title="isni">Natural Environment Research Council</gmx:Anchor>
           </gmd:organisationName>
           <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -553,9 +545,9 @@
                   <gmd:linkage>
                     <gmd:URL>https://nerc.ukri.org</gmd:URL>
                   </gmd:linkage>
-                    <gmd:function>
-                      <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
-                    </gmd:function>
+                  <gmd:function>
+                    <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+                  </gmd:function>
                 </gmd:CI_OnlineResource>
               </gmd:onlineResource>
             </gmd:CI_Contact>
@@ -571,20 +563,20 @@
             <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
           </gmd:maintenanceAndUpdateFrequency>
           <gmd:maintenanceNote>
-            <gmd:MD_ProgressCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed">completed</gmd:MD_ProgressCode>        
+            <gmd:MD_ProgressCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed">completed</gmd:MD_ProgressCode>
           </gmd:maintenanceNote>
         </gmd:MD_MaintenanceInformation>
       </gmd:resourceMaintenance>
       <gmd:descriptiveKeywords>
         <gmd:MD_Keywords>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/of" xlink:actuate="onRequest">Oceanographic geographical features</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/of">Oceanographic geographical features</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/sr" xlink:actuate="onRequest">Sea regions</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/sr">Sea regions</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/lc" xlink:actuate="onRequest">Land Cover</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://www.eionet.europa.eu/gemet/en/inspire-theme/lc">Land cover</gmx:Anchor>
           </gmd:keyword>
           <gmd:type>
             <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
@@ -592,7 +584,7 @@
           <gmd:thesaurusName>
             <gmd:CI_Citation>
               <gmd:title>
-                <gmx:Anchor xlink:href="http://www.eionet.europa.eu/gemet/inspire_themes">General Multilingual Environmental Thesaurus - INSPIRE themes</gmx:Anchor>
+                <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://www.eionet.europa.eu/gemet/inspire_themes">General Multilingual Environmental Thesaurus - INSPIRE themes</gmx:Anchor>
               </gmd:title>
               <gmd:date>
                 <gmd:CI_Date>
@@ -616,7 +608,9 @@
                     <gmd:CI_Contact>
                       <gmd:address>
                         <gmd:CI_Address>
-                          <gmd:electronicMailAddress gco:nilReason="unknown"/>
+                          <gmd:electronicMailAddress>
+                            <gco:CharacterString>helpdesk@eionet.europa.eu</gco:CharacterString>
+                          </gmd:electronicMailAddress>
                         </gmd:CI_Address>
                       </gmd:address>
                       <gmd:onlineResource>
@@ -641,24 +635,24 @@
               </gmd:citedResponsibleParty>
             </gmd:CI_Citation>
           </gmd:thesaurusName>
-        </gmd:MD_Keywords>              
+        </gmd:MD_Keywords>
       </gmd:descriptiveKeywords>
       <gmd:descriptiveKeywords>
         <gmd:MD_Keywords>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/dd6de9e1-61e7-41bf-a2dc-9d2afc690bb3" xlink:actuate="onRequest">EARTH SCIENCE &gt; Hydrosphere &gt; Snow/Ice &gt; Snow Melt</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/dd6de9e1-61e7-41bf-a2dc-9d2afc690bb3">EARTH SCIENCE &gt; Hydrosphere &gt; Snow/Ice &gt; Snow Melt</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/5debb283-51e4-435e-b2a2-e8e2a977220d" xlink:actuate="onRequest">EARTH SCIENCE &gt; Hydrosphere &gt; Surface Water</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/5debb283-51e4-435e-b2a2-e8e2a977220d">EARTH SCIENCE &gt; Hydrosphere &gt; Surface Water</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/9d99408d-0d8b-4642-a2cb-edee8319fe1d" xlink:actuate="onRequest">EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Isotopes</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/9d99408d-0d8b-4642-a2cb-edee8319fe1d">EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Isotopes</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/ea85ea0b-1b7d-464a-9f8c-1f80383ffc51" xlink:actuate="onRequest">EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Pack Ice</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/ea85ea0b-1b7d-464a-9f8c-1f80383ffc51">EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Pack Ice</gmx:Anchor>
           </gmd:keyword>
           <gmd:keyword>
-            <gmx:Anchor xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/04fa9023-ab68-4dd0-a82e-abe685105a53" xlink:actuate="onRequest">EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Salinity</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://gcmdservices.gsfc.nasa.gov/kms/concept/04fa9023-ab68-4dd0-a82e-abe685105a53">EARTH SCIENCE &gt; Oceans &gt; Sea Ice &gt; Salinity</gmx:Anchor>
           </gmd:keyword>
           <gmd:type>
             <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
@@ -666,7 +660,7 @@
           <gmd:thesaurusName>
             <gmd:CI_Citation>
               <gmd:title>
-                <gmx:Anchor xlink:href="https://earthdata.nasa.gov/about/gcmd/global-change-master-directory-gcmd-keywords">Global Change Master Directory (GCMD) Science Keywords</gmx:Anchor>
+                <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://earthdata.nasa.gov/about/gcmd/global-change-master-directory-gcmd-keywords">Global Change Master Directory (GCMD) Science Keywords</gmx:Anchor>
               </gmd:title>
               <gmd:date>
                 <gmd:CI_Date>
@@ -727,7 +721,7 @@
               </gmd:citedResponsibleParty>
             </gmd:CI_Citation>
           </gmd:thesaurusName>
-        </gmd:MD_Keywords>                
+        </gmd:MD_Keywords>
       </gmd:descriptiveKeywords>
       <gmd:descriptiveKeywords>
         <gmd:MD_Keywords>
@@ -754,7 +748,7 @@
             <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
           </gmd:accessConstraints>
           <gmd:otherConstraints>
-            <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations" xlink:actuate="onRequest">noLimitations</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations">noLimitations</gmx:Anchor>
           </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
@@ -764,7 +758,7 @@
             <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
           </gmd:useConstraints>
           <gmd:otherConstraints>
-            <gmx:Anchor xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" xlink:actuate="onRequest">This information is licensed under the Open Government Licence v3.0. To view this licence, visit http://www.nationalarchives.gov.uk/doc/open-government-licence/</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">This information is licensed under the Open Government Licence v3.0. To view this licence, visit http://www.nationalarchives.gov.uk/doc/open-government-licence/</gmx:Anchor>
           </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
       </gmd:resourceConstraints>
@@ -855,7 +849,7 @@
       <gmd:distributionFormat>
         <gmd:MD_Format>
           <gmd:name>
-            <gmx:Anchor xlink:href="https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" xlink:actuate="onRequest">Microsoft Excel Workbook</gmx:Anchor>
+            <gmx:Anchor xlink:actuate="onRequest" xlink:href="https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">Microsoft Excel Workbook</gmx:Anchor>
           </gmd:name>
           <gmd:version gco:nilReason="unknown"/>
         </gmd:MD_Format>
@@ -865,7 +859,7 @@
           <gmd:distributorContact>
             <gmd:CI_ResponsibleParty>
               <gmd:organisationName>
-                <gmx:Anchor xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni" xlink:actuate="onRequest">UK Polar Data Centre</gmx:Anchor>
+                <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://isni.org/isni/0000000405983800" xlink:title="isni">UK Polar Data Centre</gmx:Anchor>
               </gmd:organisationName>
               <gmd:contactInfo>
                 <gmd:CI_Contact>
@@ -970,7 +964,7 @@
       <gmd:scope>
         <gmd:DQ_Scope>
           <gmd:level>
-            <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+            <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
           </gmd:level>
         </gmd:DQ_Scope>
       </gmd:scope>
@@ -991,7 +985,7 @@
               <gmd:specification>
                 <gmd:CI_Citation>
                   <gmd:title>
-                    <gmx:Anchor xlink:href="http://data.europa.eu/eli/reg/2010/1089">Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gmx:Anchor>
+                    <gmx:Anchor xlink:actuate="onRequest" xlink:href="http://data.europa.eu/eli/reg/2010/1089">Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gmx:Anchor>
                   </gmd:title>
                   <gmd:date>
                     <gmd:CI_Date>
@@ -999,7 +993,7 @@
                         <gco:Date>2010-12-08</gco:Date>
                       </gmd:date>
                       <gmd:dateType>
-                        <gmd:CI_DateTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                        <gmd:CI_DateTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
                       </gmd:dateType>
                     </gmd:CI_Date>
                   </gmd:date>
@@ -1027,9 +1021,9 @@
 </gmd:MD_Metadata>
 
 <!-- Notes -->
-<!-- 
+<!--
   1. this is a candidate metdata record for the ISO 19115 Gemini profile [1]
-  2. background information, including changes, and discussions over proposed changes, made to this record can be found 
+  2. background information, including changes, and discussions over proposed changes, made to this record can be found
      in the UK-PDC Metadata Standards project [2]
   3. this candidate record is based on 'iso-19115/superceeded/iso-pdc-original.xml', specifically commit ee5a737 [3]
 
