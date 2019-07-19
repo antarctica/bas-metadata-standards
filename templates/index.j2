@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>UK Polar Data Centre (UK PDC) Metadata Standards</title>
+    </head>
+    <body>
+        <h1>UK Polar Data Centre (UK PDC) Metadata Records</h1>
+        <p>
+            See the <a href="https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards">project repository</a>
+            on the BAS GitLab for more information on this project.
+        </p>
+
+        <h2>Candidate records</h2>
+        <h3>ISO 19115</h3>
+        <h4>UK PDC - Discovery Metadata (Gemini)</h4>
+        <ul>
+            <li><a href="{{ url_for('standard_iso_19115', configuration='uk-pdc-candidate') }}">Raw record</a></li>
+            <li><a href="{{ url_for('standard_iso_19115', configuration='uk-pdc-candidate', stylesheet='iso-html') }}">XML to HTML</a></li>
+            <li><a href="{{ url_for('standard_iso_19115', configuration='uk-pdc-candidate', stylesheet='iso-rubric') }}">ISO rubric</a></li>
+        </ul>
+    </body>
+</html>

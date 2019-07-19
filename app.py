@@ -1,6 +1,8 @@
 import metadata_record_configs
 
-from flask import Flask, Response
+from flask import Flask, Response, render_template
+# noinspection PyPackageRequirements
+from lxml.etree import PI
 
 from bas_metadata_library.standards.iso_19115_v1 import MetadataRecordConfig as ISO19115MetadataRecordConfig, \
     MetadataRecord as ISO19115MetadataRecord
@@ -8,6 +10,10 @@ from bas_metadata_library.standards.iso_19115_v1 import MetadataRecordConfig as 
 
 def create_app():
     app = Flask(__name__)
+
+    @app.route('/')
+    def index():
+        return render_template('index.j2')
 
     @app.route('/standards/iso-19115/<configuration>')
     @app.route('/standards/iso-19115/<configuration>/<stylesheet>')
