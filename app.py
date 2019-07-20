@@ -1,8 +1,11 @@
 import os
 
+import metadata_record_configs
+
 from pathlib import Path
 
 from flask import Flask, Response, render_template, url_for
+from jinja2 import PrefixLoader, PackageLoader, FileSystemLoader
 from flask_frozen import Freezer
 # noinspection PyPackageRequirements
 # Exempting Bandit security issue (Using Element to parse untrusted XML data is known to be vulnerable to XML attacks)
@@ -11,21 +14,47 @@ from flask_frozen import Freezer
 from lxml.etree import PI  # nosec
 from bas_metadata_library.standards.iso_19115_v1 import MetadataRecordConfig as ISO19115MetadataRecordConfig, \
     MetadataRecord as ISO19115MetadataRecord
+from bas_style_kit_jinja_templates import BskTemplates
 
-import metadata_record_configs
 
 freezer = Freezer()
 
 
 def create_app():
     app = Flask(__name__)
-    freezer.init_app(app)
 
+    freezer.init_app(app)
     app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
+
+    app.jinja_loader = PrefixLoader({
+        'app': FileSystemLoader('templates'),
+        'bas_style_kit': PackageLoader('bas_style_kit_jinja_templates'),
+    })
+    app.config['bsk_templates'] = BskTemplates()
+    app.config['bsk_templates'].site_title = 'BAS Metadata Standards'
+    app.config['bsk_templates'].site_description = 'Discovery metadata standards used in BAS and the UK PDC'
+    app.config['bsk_templates'].bsk_site_nav_brand_text = 'BAS Metadata Standards'
+    app.config['bsk_templates'].bsk_site_development_phase = 'alpha'
+    app.config['bsk_templates'].bsk_site_feedback_href = 'mailto:polardatacentre@bas.ac.uk'
+    app.config['bsk_templates'].bsk_site_footer_policies_cookies_href = '/legal/cookies'
+    app.config['bsk_templates'].bsk_site_footer_policies_copyright_href = '/legal/copyright'
+    app.config['bsk_templates'].bsk_site_footer_policies_privacy_href = '/legal/privacy'
 
     @app.route('/')
     def index():
-        return render_template('index.j2')
+        return render_template('app/index.j2')
+
+    @app.route('/legal/cookies/')
+    def legal_cookies():
+        return render_template('app/legal-cookies.j2')
+
+    @app.route('/legal/copyright/')
+    def legal_copyright():
+        return render_template('app/legal-copyright.j2')
+
+    @app.route('/legal/privacy/')
+    def legal_privacy():
+        return render_template('app/legal-privacy.j2')
 
     @app.route('/standards/iso-19115/<configuration>/')
     @app.route('/standards/iso-19115/<configuration>/<stylesheet>/')
@@ -56,6 +85,9 @@ def create_app():
     def freeze_standard_iso_19115():
         return [
             url_for('index'),
+            url_for('legal_cookies'),
+            url_for('legal_copyright'),
+            url_for('legal_privacy'),
             url_for('standard_iso_19115', configuration='uk-pdc-candidate'),
             url_for('standard_iso_19115', configuration='uk-pdc-candidate', stylesheet='iso-html'),
             url_for('standard_iso_19115', configuration='uk-pdc-candidate', stylesheet='iso-rubric')

@@ -1,23 +1,36 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>UK Polar Data Centre (UK PDC) Metadata Standards</title>
-    </head>
-    <body>
-        <h1>UK Polar Data Centre (UK PDC) Metadata Records</h1>
-        <p>
-            See the <a href="https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards">project repository</a>
-            on the BAS GitLab for more information on this project.
-        </p>
+{% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
 
-        <h2>Candidate records</h2>
-        <h3>ISO 19115</h3>
-        <h4>UK PDC - Discovery Metadata (Gemini)</h4>
-        <ul>
-            {# These links assume the Flask app has been frozen - they won't work in the live Flask app #}
-            <li><a href="/standards/iso-19115/uk-pdc-candidate/uk-pdc-iso-19115-candidate.xml">Raw record</a></li>
-            <li><a href="/standards/iso-19115/uk-pdc-candidate/iso-html/uk-pdc-iso-19115-candidate-html.xml">XML to HTML</a></li>
-            <li><a href="/standards/iso-19115/uk-pdc-candidate/iso-rubric/uk-pdc-iso-19115-candidate-rubric.xml">ISO rubric</a></li>
-        </ul>
-    </body>
-</html>
+{% block main_content %}
+<style>
+    .app-space-md {
+        margin-top: 35px;
+    }
+    .app-space-lg {
+        margin-top: 70px;
+    }
+</style>
+<header class="bsk-page-header bsk-col-12-md-10 bsk-col-12-md-offset-1">
+    <h1>BAS Metadata Records</h1>
+    <p class="bsk-lead">Discovery metadata standards used in BAS and the UK PDC</p>
+</header>
+
+
+<section class="app-space-lg bsk-col-12-md-10 bsk-col-12-md-offset-1">
+    <h2>ISO 19115/19139 (Inspire/Gemini)</h2>
+    <h3 class="bsk-h4 app-space-md">UK PDC - Candidate record</h3>
+    <ul class="bsk-list-inline bsk-list-unstyled">
+        {# These links assume the Flask app has been frozen - they won't work in the live Flask app #}
+        <li><a href="/standards/iso-19115/uk-pdc-candidate/uk-pdc-iso-19115-candidate.xml">Raw record</a></li>
+        <li><a href="/standards/iso-19115/uk-pdc-candidate/iso-html/uk-pdc-iso-19115-candidate-html.xml">XML to HTML</a></li>
+        <li><a href="/standards/iso-19115/uk-pdc-candidate/iso-rubric/uk-pdc-iso-19115-candidate-rubric.xml">ISO rubric</a></li>
+    </ul>
+</section>
+
+<footer class="app-space-lg bsk-col-12-md-10 bsk-col-12-md-offset-1">
+    <div class="bsk-alert bsk-alert-highlight bsk-alert-info">
+        See the
+        <a class="bsk-alert-link" href="https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards">project repository</a>
+        on the BAS GitLab for more information on this project.
+    </div>
+</footer>
+{% endblock %}
