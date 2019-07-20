@@ -1,0 +1,95 @@
+---
+
+# == Notes ==
+
+# - GitLab automatically passes artifacts from previous stages by default
+# - Set required secret variables at: https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/settings/ci_cd
+
+# = Secret variables
+# - Variables are grouped by section in KEY: "value" format (e.g. FOO: "bar")
+#   Sensitive values are represented by "[Sensitive]"
+#
+# - AWS IAM id/secret keys for 'bas-gitlab-ci-bas-metadata-standards' user
+# > AWS_ACCESS_KEY_ID: "[Sensetive]"
+# > AWS_SECRET_ACCESS_KEY: "[Sensetive]"
+#
+# - Snyk
+# > SNYK_TOKEN: "[Sensitive]"
+
+
+# == Global settings ==
+
+stages:
+  - build
+  - lint
+  - deploy
+
+variables:
+  AWS_DEFAULT_REGION: eu-west-1
+  S3_DEPLOYMENT_BUCKET_STAGE: metadata-standards-testing.data.bas.ac.uk
+  S3_DEPLOYMENT_BUCKET_PROD: metadata-standards.data.bas.ac.uk
+  APP_NAME: bas-metadata-standards
+  SNYK_ORG: antarctica
+  SNYK_PROJECT: bas-metadata-standards
+
+image:
+  name: docker-registry.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards:latest
+  entrypoint: [""]
+
+# == Jobs ==
+
+dependencies-app:
+  stage: lint
+  image:
+    name: antarctica/snyk-cli:python-3
+    entrypoint: [""]
+  script:
+   - "pip install -r requirements.txt"
+   - "snyk test"
+   - "snyk monitor --project-name=$SNYK_PROJECT --org=$SNYK_ORG"
+  only:
+    - master
+
+pep8-app:
+  stage: lint
+  script:
+    - "flake8 . --ignore=E501"
+
+bandit-app:
+  stage: lint
+  script:
+    - "bandit -r ."
+
+build-app:
+  stage: build
+  script:
+    - "flask freeze"
+  artifacts:
+    name: "$CI_BUILD_TOKEN-build"
+    paths:
+      - build
+    expire_in: 1 day
+
+s3-website-staging:
+  stage: deploy
+  image:
+    name: governmentpaas/awscli:latest
+    entrypoint: [""]
+  script: "aws s3 sync --delete build s3://$S3_DEPLOYMENT_BUCKET_STAGE/"
+  only:
+    - master
+  environment:
+    name: staging
+    url: https://metadata-standards-testing.data.bas.ac.uk
+
+s3-website-production:
+  stage: deploy
+  image:
+    name: governmentpaas/awscli:latest
+    entrypoint: [""]
+  script: "aws s3 sync --delete build s3://$S3_DEPLOYMENT_BUCKET_PROD/"
+  only:
+    - tags
+  environment:
+    name: production
+    url: https://metadata-standards.data.bas.ac.uk
