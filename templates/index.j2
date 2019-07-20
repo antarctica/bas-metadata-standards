@@ -14,9 +14,10 @@
         <h3>ISO 19115</h3>
         <h4>UK PDC - Discovery Metadata (Gemini)</h4>
         <ul>
-            <li><a href="{{ url_for('standard_iso_19115', configuration='uk-pdc-candidate') }}">Raw record</a></li>
-            <li><a href="{{ url_for('standard_iso_19115', configuration='uk-pdc-candidate', stylesheet='iso-html') }}">XML to HTML</a></li>
-            <li><a href="{{ url_for('standard_iso_19115', configuration='uk-pdc-candidate', stylesheet='iso-rubric') }}">ISO rubric</a></li>
+            {# These links assume the Flask app has been frozen - they won't work in the live Flask app #}
+            <li><a href="/standards/iso-19115/uk-pdc-candidate/uk-pdc-iso-19115-candidate.xml">Raw record</a></li>
+            <li><a href="/standards/iso-19115/uk-pdc-candidate/iso-html/uk-pdc-iso-19115-candidate-html.xml">XML to HTML</a></li>
+            <li><a href="/standards/iso-19115/uk-pdc-candidate/iso-rubric/uk-pdc-iso-19115-candidate-rubric.xml">ISO rubric</a></li>
         </ul>
     </body>
 </html>
