@@ -39,10 +39,15 @@ def create_app():
     app.config['bsk_templates'].bsk_site_footer_policies_cookies_href = '/legal/cookies'
     app.config['bsk_templates'].bsk_site_footer_policies_copyright_href = '/legal/copyright'
     app.config['bsk_templates'].bsk_site_footer_policies_privacy_href = '/legal/privacy'
+    app.config['bsk_templates'].bsk_site_nav_primary.append({'value': 'About', 'href': '/about'})
 
     @app.route('/')
     def index():
         return render_template('app/index.j2')
+
+    @app.route('/about/')
+    def about():
+        return render_template('app/about.j2')
 
     @app.route('/legal/cookies/')
     def legal_cookies():
@@ -85,6 +90,7 @@ def create_app():
     def freeze_standard_iso_19115():
         return [
             url_for('index'),
+            url_for('about'),
             url_for('legal_cookies'),
             url_for('legal_copyright'),
             url_for('legal_privacy'),
