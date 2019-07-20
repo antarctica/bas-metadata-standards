@@ -20,6 +20,7 @@
 # == Global settings ==
 
 stages:
+  - test
   - build
   - lint
   - deploy
@@ -37,6 +38,27 @@ image:
   entrypoint: [""]
 
 # == Jobs ==
+
+test-app:
+  stage: test
+  variables:
+    FLASK_ENV: testing
+  script:
+    - "flask test --test-runner junit"
+  artifacts:
+    paths:
+    reports:
+      junit: test-results.xml
+
+build-app:
+  stage: build
+  script:
+    - "flask freeze"
+  artifacts:
+    name: "$CI_BUILD_TOKEN-build"
+    paths:
+      - build
+    expire_in: 1 day
 
 dependencies-app:
   stage: lint
@@ -59,16 +81,6 @@ bandit-app:
   stage: lint
   script:
     - "bandit -r ."
-
-build-app:
-  stage: build
-  script:
-    - "flask freeze"
-  artifacts:
-    name: "$CI_BUILD_TOKEN-build"
-    paths:
-      - build
-    expire_in: 1 day
 
 s3-website-staging:
   stage: deploy
