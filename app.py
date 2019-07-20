@@ -5,7 +5,10 @@ from pathlib import Path
 from flask import Flask, Response, render_template, url_for
 from flask_frozen import Freezer
 # noinspection PyPackageRequirements
-from lxml.etree import PI
+# Exempting Bandit security issue (Using Element to parse untrusted XML data is known to be vulnerable to XML attacks)
+#
+# We don't currently allow untrusted/user-provided XML so this is not a risk
+from lxml.etree import PI  # nosec
 from bas_metadata_library.standards.iso_19115_v1 import MetadataRecordConfig as ISO19115MetadataRecordConfig, \
     MetadataRecord as ISO19115MetadataRecord
 
@@ -50,7 +53,7 @@ def create_app():
         return Response(record.generate_xml_document(), mimetype='text/xml', content_type='text/xml; charset=utf-8')
 
     @freezer.register_generator
-    def standard_iso_19115():
+    def freeze_standard_iso_19115():
         return [
             url_for('index'),
             url_for('standard_iso_19115', configuration='uk-pdc-candidate'),
