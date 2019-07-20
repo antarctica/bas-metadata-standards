@@ -4,7 +4,7 @@ version: '2'
 services:
   app:
     build: .
-    image: docker-registry.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards:0.1.0-alpine
+    image: docker-registry.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards:latest-alpine
     command: flask freeze
     volumes:
       - .:/usr/src/app

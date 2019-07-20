@@ -33,7 +33,7 @@ variables:
   SNYK_PROJECT: bas-metadata-standards
 
 image:
-  name: docker-registry.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards:latest
+  name: docker-registry.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards:latest-alpine
   entrypoint: [""]
 
 # == Jobs ==
