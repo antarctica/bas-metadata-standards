@@ -1,23 +1,21 @@
-FROM node:carbon-alpine
+FROM python:3.7-alpine
 
-LABEL maintainer="Felix Fennell <felnne@bas.ac.uk>"
+LABEL maintainer = "Felix Fennell <felnne@bas.ac.uk>"
 
 # Setup project
 WORKDIR /usr/src/app
 
-# Setup project dependencies
-COPY package.json /usr/src/app
-RUN apk add --no-cache --virtual .gyp python make g++ && \
-    npm install --global yarn && \
-    yarn install && \
-    apk del .gyp
+ENV PYTHONPATH /usr/src/app
+ENV FLASK_APP manage.py
+ENV FLASK_ENV development
 
-# Run tests
-RUN echo "node version: " && node --version && \
-    echo "npm version: " && npm --version && \
-    echo "yarn version: " && yarn --version && \
-    echo "gulp version: " && ./node_modules/gulp/bin/gulp.js --version
+# Setup project dependencies
+COPY requirements.txt /usr/src/app/
+RUN apk add --no-cache libxslt-dev && \
+    apk add --no-cache --virtual .build-deps build-base && \
+    pip install --upgrade pip && \
+    pip install -r requirements.txt --no-cache-dir && \
+    apk --purge del .build-deps
 
 # Setup runtime
-ENTRYPOINT ["./node_modules/gulp/bin/gulp.js"]
-CMD ["--tasks-simple"]
+ENTRYPOINT []
