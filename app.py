@@ -1,22 +1,26 @@
 import metadata_record_configs
 
-from flask import Flask, Response, render_template
+from flask import Flask, Response, render_template, url_for
+from flask_frozen import Freezer
 # noinspection PyPackageRequirements
 from lxml.etree import PI
 
 from bas_metadata_library.standards.iso_19115_v1 import MetadataRecordConfig as ISO19115MetadataRecordConfig, \
     MetadataRecord as ISO19115MetadataRecord
 
+freezer = Freezer()
+
 
 def create_app():
     app = Flask(__name__)
+    freezer.init_app(app)
 
     @app.route('/')
     def index():
         return render_template('index.j2')
 
-    @app.route('/standards/iso-19115/<configuration>')
-    @app.route('/standards/iso-19115/<configuration>/<stylesheet>')
+    @app.route('/standards/iso-19115/<configuration>/')
+    @app.route('/standards/iso-19115/<configuration>/<stylesheet>/')
     def standard_iso_19115(configuration: str, stylesheet: str = None):
         if configuration == 'uk-pdc-candidate':
             configuration_object = metadata_record_configs.iso19115_v1_gemini_v2_3_uk_pdc_candidate
@@ -38,6 +42,6 @@ def create_app():
                     'type="text/xsl" href="/static/xml-stylesheets/iso-rubric/isoRubricHTML.xsl"'
                 ))
 
-        return Response(record.generate_xml_document(), mimetype='text/xml')
+        return Response(record.generate_xml_document(), mimetype='text/xml', content_type='text/xml; charset=utf-8')
 
     return app

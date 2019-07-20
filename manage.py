@@ -1,9 +1,15 @@
 import os
 
-from app import create_app
-
+from app import create_app, freezer
 
 app = create_app()
+
+
+@app.cli.command('freeze')
+def freeze_app():
+    """Build static version of application"""
+    freezer.freeze()
+
 
 if 'PYCHARM_HOSTED' in os.environ:
     # Exempting Bandit security issue (binding to all network interfaces)
