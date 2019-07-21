@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * BAS Style Kit styling
 * Missing documentation on using Flask Freeze
 
+### Fixed
+
+* Case sensitivity on ISO to HTML stylesheet file (`printTextLines.xsl`)
+
 ### Changed
 
 * End user documentation moved from README to static site
