@@ -87,7 +87,7 @@ def create_app():
         return Response(record.generate_xml_document(), mimetype='text/xml', content_type='text/xml; charset=utf-8')
 
     @freezer.register_generator
-    def freeze_standard_iso_19115():
+    def freeze_routes():
         return [
             url_for('index'),
             url_for('about'),

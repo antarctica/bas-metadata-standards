@@ -63,12 +63,70 @@ are implemented using different libraries:
 | [DataCite Metadata Standard](https://schema.datacite.org/meta) | Standard (concrete)  | *None*                                                                 | Not yet implemented |
 | [Schema.org](https://schema.org)                               | Standard (concrete)  | *None*                                                                 | Not yet implemented |
  
+These records are generated dynamically with the option to apply XML stylesheets where relevant.
+
+For ease of distribution a static versions of these dynamically generated records are captured using 
+[Frozen Flask](https://github.com/Frozen-Flask/Frozen-Flask). See the [Generating static site](#generating-static-site)
+section for more information.
+ 
 ### Adding a new standard
 
 To add a new standard:
 
 1. update the inbuilt Flask application in `app.py` with a route for generating candidate records for the new standard
 2. add relevant [Integration tests](#integration-tests) with methods to test candidate records are generated correctly
+
+### Generating static site
+
+A custom CLI command, `freeze`, is available for *freezing* the Flask application to a series of static files, written
+to a `build/` (Git ignored).
+
+Flask Freeze is configured in the `freeze_routes()` method in `app.py`.
+
+There are some limitations with Flask Freeze:
+
+* all routes need to use a trailing slash [1]
+* routes producing non-HTML content needs to be manually corrected [2]
+* methods with multiple routes will trigger a `MissingURLGeneratorWarning` warning [3]
+
+[1]
+
+I.e. `@app.route('/legal/privacy')` should be written as `@app.route('/legal/privacy/')`.
+
+Without the route will be saved as a bare file (`/build/legal/privacy`) rather than as an index file 
+(`/build/legal/privacy/index.html`).
+
+[2]
+
+I.e. a route producing XML content will still create an `index.html` file rather than `index.xml`. The generated file 
+will need to be manually renamed, see the `freeze` custom CLI command for where examples.
+
+**Note:** As the static site for this project is hosted in AWS, which only allows a single index document`, non-HTML
+content is renamed more extensively than just to correct the file extension.
+
+[3]
+
+I.e. a route such as:
+
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/standards/iso-19115/<configuration>/')
+@app.route('/standards/iso-19115/<configuration>/<stylesheet>/')
+def standard_iso_19115(configuration: str, stylesheet: str = None):
+    pass
+```
+
+Will generate a warning:
+
+```
+/usr/local/lib/python3.7/site-packages/flask_frozen/__init__.py:199: MissingURLGeneratorWarning: Nothing frozen for endpoints standard_iso_19115. Did you forget a URL generator?
+  return set(page.url for page in self.freeze_yield())
+```
+
+This can be safely ignored, as 
+[acknowledged](https://github.com/Frozen-Flask/Frozen-Flask/issues/2#issuecomment-1378960) by Flask Freeze project.
 
 ### Code Style
 

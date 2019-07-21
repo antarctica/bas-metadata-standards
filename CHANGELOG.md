@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 * BAS Style Kit styling
+* Missing documentation on using Flask Freeze
 
 ### Changed
 
