@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+* BAS Style Kit styling
+
+### Changed
+
+* End user documentation moved from README to static site
+
 ## [0.1.0] 2019-07-19
 
 ### Added
