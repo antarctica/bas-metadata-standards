@@ -201,29 +201,6 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
                     'publisher',
                     'distributor'
                 ]
-            },
-            {
-                'organisation': {
-                    'name': 'Natural Environment Research Council',
-                    'href': 'http://isni.org/isni/0000000094781573',
-                    'title': 'isni'
-                },
-                'phone': '+44 (0)1793 411500',
-                'address': {
-                    'delivery_point': 'Natural Environment Research Council, Polaris House, North Star Avenue',
-                    'city': 'Swindon',
-                    'administrative_area': 'Hampshire',
-                    'postal_code': 'SN2 1EU',
-                    'country': 'United Kingdom'
-                },
-                'email': 'researchgrants@nerc.ukri.org',
-                'online_resource': {
-                    'href': 'https://nerc.ukri.org',
-                    'function': 'information'
-                },
-                'role': [
-                    'funder'
-                ]
             }
         ],
         'maintenance': {
