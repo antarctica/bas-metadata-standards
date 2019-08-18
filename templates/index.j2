@@ -5,33 +5,31 @@
     .app-space-md {
         margin-top: 35px;
     }
-    .app-space-lg {
-        margin-top: 70px;
-    }
 </style>
-<header class="bsk-page-header bsk-col-12-md-10 bsk-col-12-md-offset-1">
+<header class="bsk-page-header">
     <h1>BAS Metadata Records</h1>
-    <p class="bsk-lead">Discovery metadata standards used in BAS and the UK PDC</p>
+    <p class="bsk-lead">Metadata standards used in BAS and the UK PDC</p>
 </header>
+<div class="bsk-row">
+    <div class="bsk-col-12-md-10 app-space-md">
+        <section>
+            <p>This website documents the <a href="https://www.bas.ac.uk">British Antarctic Survey's</a> and the
+                <a href="https://www.bas.ac.uk/pdc">UK Polar Data Centre's</a> compliance with various metadata standards and
+                profiles for producing discovery level metadata.</p>
 
-<section class="bsk-col-12-md-10 bsk-col-12-md-offset-1">
-    <p>This project aims to document the <a href="https://www.bas.ac.uk">British Antarctic Survey's</a> and the
-        <a href="https://www.bas.ac.uk/pdc">UK Polar Data Centre's</a> compliance with various metadata standards and
-        profiles for producing discovery level metadata.</p>
-
-    <p>Currently this project consists of candidate records that implement all the requirements of these metadata
-        standards and profiles. In addition to conformance, these candidate records improve interoperability between
-        standards and implement best practices for discovery metadata.</p>
-
-    <p>These candidate records are being used to guide the requirements for changes to the tools, processes and
-        policies used by BAS and the UK PDC (such as editing, validating and cataloguing metadata records).</p>
-
-    <p>Longer term this project will act as a reference for how to implement metadata standards, containing reference
-        records, templates and guidance.</p>
-
-    <p><strong>Note:</strong> Whilst this project is focused on the UK Polar Data Centre, it will have relevance to
-        metadata producers in BAS and possibly NERC, and may be useful to others more generally.</p>
-</section>
+            <div class="bsk-alert bsk-alert-highlight bsk-alert-info app-space-md">
+                <p>
+                    This website is part of the
+                    <a class="bsk-alert-link" href="https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards">BAS Metadata Standards</a>
+                    [BAS GitLab access required] project, which aims to:
+                </p>
+                <ul class="app-space-md">
+                    <li>improve conformance to metadata standards and profiles</li>
+                    <li>improve interoperability between standards</li>
+                    <li>provide guidance on best practices for discovery metadaa</li>
+                </ul>
+            </div>
+        </section>
         <section class="app-space-md">
             <h2>Metadata standards and profiles</h2>
             <p>The standards and profiles currently used by BAS and the UK PDC for discovery metadata are:</p>
@@ -97,16 +95,11 @@
                 information on the differences between <em>standards</em> and <em>profiles</em>.
             </p>
 
-<footer class="app-space-lg bsk-col-12-md-10 bsk-col-12-md-offset-1">
-    <div class="bsk-alert bsk-alert-highlight bsk-alert-info">
-        See the
-        <a class="bsk-alert-link" href="https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards">project repository</a>
-        on the BAS GitLab for more information on this project.
             <p>These standards and profiles can be visualised as layers, with standards as bases that profiles sit upon.
                 Where multiple profiles inherit from each other they can be visualised as a chain, with the top most
                 profile depending on all the others in order.</p>
             <img src="/static/mermaid.svg" class="bsk-center-block" style="max-width: 15%;" />
         </section>
     </div>
-</footer>
+</div>
 {% endblock %}

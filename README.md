@@ -60,12 +60,10 @@ are implemented using different libraries:
 | [ISO 19139](https://www.iso.org/standard/32557.html)           | Standard (concrete)  | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
 | [EU Inspire](https://inspire.ec.europa.eu/about-inspire/563)   | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
 | [UK Gemini](https://www.agi.org.uk/gemini/)                    | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
-| [DataCite Metadata Standard](https://schema.datacite.org/meta) | Standard (concrete)  | *None*                                                                 | Not yet implemented |
-| [Schema.org](https://schema.org)                               | Standard (concrete)  | *None*                                                                 | Not yet implemented |
- 
+
 These records are generated dynamically with the option to apply XML stylesheets where relevant.
 
-For ease of distribution a static versions of these dynamically generated records are captured using 
+For ease of distribution, static versions of these dynamically generated records are captured using 
 [Frozen Flask](https://github.com/Frozen-Flask/Frozen-Flask). See the [Generating static site](#generating-static-site)
 section for more information.
  
@@ -73,8 +71,12 @@ section for more information.
 
 To add a new standard:
 
-1. update the inbuilt Flask application in `app.py` with a route for generating candidate records for the new standard
-2. add relevant [Integration tests](#integration-tests) with methods to test candidate records are generated correctly
+1. update the inbuilt Flask application in `app.py` with a route for generating sample records for the new standard
+2. add relevant [Integration tests](#integration-tests) with methods to test sample records are generated correctly
+3. add a page for the standard and/or profiles to the website and update the `freeze_routes()` method to capture them
+4. if needed, update the site navigation defined in `app.py`
+5. update the summary table in the index page of the website
+6. update the README summary table to describe how the standard and/or profile is implemented
 
 ### Generating static site
 

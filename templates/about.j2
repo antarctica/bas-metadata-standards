@@ -1,113 +1,52 @@
 {% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
 
 {% block main_content %}
-    <header class="bsk-page-header bsk-col-12-md-10 bsk-col-12-md-offset-1">
-        <h1>About</h1>
-    </header>
+<header class="bsk-page-header bsk-col-12-md-10">
+    <h1>About</h1>
+</header>
+<div class="bsk-row">
+    <div class="bsk-col-12-md-10 app-space-md">
+        <section id="standards-profiles">
+            <h2>Metadata standards and profiles</h2>
+            <p>Metadata <em>standards</em> and <em>profiles</em> explain how to describe a resource such that it can be
+                understood, unambiguously, by others.</p>
 
-    <section class="bsk-col-12-md-10 bsk-col-12-md-offset-1">
-        <h2>Metadata standards</h2>
-        <p>A metadata <em>standard</em>, explains how to describe a resource such that it can be understood
-            unambiguously by others.</p>
+            <p>An <em>abstract standard</em> describes an information model. A <em>concrete implementation</em> describes
+                how to implement an abstract model, such as using XML. There are relatively few standards usually made by
+                international bodies such as ISO.</p>
 
-        <p>An <em>abstract standard</em> describes an information model. A <em>concrete implementation</em> describes
-            how to implement an abstract model, such as using XML. There are relatively few standards usually made by
-            international bodies such as ISO.</p>
-        <p>A metadata <em>profile</em>, applies on top of a metadata standard and is focused on a particular topic
-            discipline or other initiative. Profiles can restrict which elements in a standard may be used, make
-            optional elements mandatory, add or restrict options for elements with controlled values and provide
-            guidance on which elements and values to use in different situations. There are a large range of profiles
-            from different groups such as national and international standards bodies, discipline or location specific
-            groups and large collaborative projects.
-        </p>
+            <p>A metadata <em>profile</em>, applies on top of a metadata standard and is focused on a particular topic
+                discipline or other initiative. Profiles can restrict which elements in a standard may be used, make
+                optional elements mandatory, add or restrict options for elements with controlled values and provide
+                guidance on which elements and values to use in different situations.</p>
+            <p> There are a large range of profiles from different groups such as national and international standards
+                bodies, discipline or location specific groups and large collaborative projects.</p>
+            <p>Profile's cannot make mandatory elements in the standard they apply to, optional (i.e. a profile can
+                only be restrictive, not permissive).</p>
+        </section>
 
-        <p>Profile's cannot make mandatory elements in the standard they apply to, optional (i.e. a profile can only be
-            restrictive, not permissive).</p>
-        <p>A metadata <em>cross walk</em> is a mapping of how elements in one metadata standard relate to elements in
-            another. Cross walks can be <em>abstract</em>, for interpretation by a human, or <em>concrete</em>, where
-            tools can automatically move metadata from one standard to another.
-        </p>
+        <section id="validation">
+            <h3>Metadata validation</h3>
+            <p>To ensure compliance, metadata standards and profiles typically include a means to programmatically check
+                records contain:
+            </p>
+            <ul>
+                <li>any required elements</li>
+                <li>any required/controlled element values</li>
+                <li>elements in the correct order</li>
+            </ul>
 
-        <h3>Metadata guidance</h3>
-        <p>To ensure compliance, metadata standards and profiles typically provide encoding and/or implementation guidance.</p>
-        <p>Guidance used by this project:</p>
-        <ul>
-            <li>
-                DataCite
-                <ul>
-                    <li><a href="https://schema.datacite.org/meta/kernel-4.2/doc/DataCite-MetadataKernel_v4.2.pdf">DataCite Metadata Schema Documentation for the Publication and Citation of Research Data</a> [PDF]</li>
-                </ul>
-            </li>
-            <li>
-                Schema.org
-                <ul>
-                    <li><a href="https://github.com/ESIPFed/science-on-schema.org">ESIP Schema.org for science</a></li>
-                </ul>
-            </li>
-        </ul>
+            <p>Metadata standards typically use schemas and schematrons to determine if a record is valid:</p>
+            <ul>
+                <li>a <em>schema</em> checks the structure of elements in a record</li>
+                <li>a <em>schematron</em> checks specific elements in a record using a series of rules and patterns</li>
+            </ul>
 
-        <h3>Metadata validation</h3>
-        <p>To ensure compliance, metadata standards and profiles typically include a means to programmatically check
-            records contain:
-        </p>
-        <ul>
-            <li>any required elements</li>
-            <li>any required/controlled element values</li>
-            <li>elements in the correct order</li>
-        </ul>
-
-        <p>Metadata standards typically use schemas and schematrons to determine if a record is valid:</p>
-        <ul>
-            <li>a <em>schema</em> checks the structure of elements in a record</li>
-            <li>a <em>schematron</em> checks specific elements in a record using a series of rules and patterns</li>
-        </ul>
-
-        <p>Notably a schematron can be use conditional logic, such as to ensure an element is included when certain
-            conditions are met.</p>
-        <p>Some standards or profiles provide a validation service with a user interface and/or API for validating
-            records.</p>
-
-        <table class="bsk-table">
-            <thead>
-                <tr>
-                    <th>Standard/Profile</th>
-                    <th>Type</th>
-                    <th>Validation Method</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="https://www.iso.org/standard/26020.html">ISO 19115</a></td>
-                    <td>Standard (abstract)</td>
-                    <td><em>N/A</em></td>
-                </tr>
-                <tr>
-                    <td><a href="https://www.iso.org/standard/32557.html">ISO 19139</a></td>
-                    <td>Standard (concrete)</td>
-                    <td>Schema</td>
-                </tr>
-                <tr>
-                    <td><a href="https://inspire.ec.europa.eu/about-inspire/563">EU Inspire</a></td>
-                    <td>Profile</td>
-                    <td><em>None</em></td>
-                </tr>
-                <tr>
-                    <td><a href="https://www.agi.org.uk/gemini/">UK Gemini</a></td>
-                    <td>Profile</td>
-                    <td>Schematron</td>
-                </tr>
-                <tr>
-                    <td><a href="https://schema.datacite.org/meta">DataCite Metadata Standard</a></td>
-                    <td>Profile</td>
-                    <td><em>None</em></td>
-                </tr>
-                <tr>
-                    <td><a href="https://schema.org">Schema.org</a></td>
-                    <td>Profile</td>
-                    <td><em>None</em></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
+            <p>Notably a schematron can be use conditional logic, such as to ensure an element is included when certain
+                conditions are met.</p>
+            <p>Some standards or profiles provide a validation service with a user interface and/or API for validating
+                records.</p>
+        </section>
+    </div>
+</div>
 {% endblock %}
