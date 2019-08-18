@@ -87,7 +87,8 @@ s3-website-staging:
   image:
     name: governmentpaas/awscli:latest
     entrypoint: [""]
-  script: "aws s3 sync --delete build s3://$S3_DEPLOYMENT_BUCKET_STAGE/"
+  script:
+    - "aws s3 sync build s3://$S3_DEPLOYMENT_BUCKET_STAGE/"
   only:
     - master
   environment:
@@ -99,7 +100,8 @@ s3-website-production:
   image:
     name: governmentpaas/awscli:latest
     entrypoint: [""]
-  script: "aws s3 sync --delete build s3://$S3_DEPLOYMENT_BUCKET_PROD/"
+  script:
+    - "aws s3 sync build s3://$S3_DEPLOYMENT_BUCKET_PROD/"
   only:
     - tags
   environment:

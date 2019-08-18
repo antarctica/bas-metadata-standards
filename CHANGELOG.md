@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+* CD no longer deletes items in S3 buckets it doesn't own, as other projects now publish to them as well
+
 ## [0.1.1] 2019-07-22
 
 ### Added
