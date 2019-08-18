@@ -40,6 +40,27 @@ def create_app():
     app.config['bsk_templates'].bsk_site_footer_policies_copyright_href = '/legal/copyright'
     app.config['bsk_templates'].bsk_site_footer_policies_privacy_href = '/legal/privacy'
     app.config['bsk_templates'].bsk_site_nav_primary.append({'value': 'About', 'href': '/about'})
+    app.config['bsk_templates'].bsk_site_nav_primary.append({
+        'value': 'Standards',
+        'items': [
+            {
+                'value': 'ISO 19115 (19139)',
+                'href': '/standards/iso-19115'
+            },
+            {
+                'value': 'ISO 19115 - EU INSPIRE profile',
+                'href': '/standards/iso-19115/profiles/inspire'
+            },
+            {
+                'value': 'ISO 19115 - UK GEMINI profile',
+                'href': '/standards/iso-19115/profiles/gemini'
+            },
+            {
+                'value': 'ISO 19115 - UK PDC Discovery profile',
+                'href': '/standards/iso-19115/profiles/uk-pdc-discovery'
+            }
+        ]
+    })
 
     @app.route('/')
     def index():
@@ -61,13 +82,29 @@ def create_app():
     def legal_privacy():
         return render_template('app/legal-privacy.j2')
 
-    @app.route('/standards/iso-19115/<configuration>/')
-    @app.route('/standards/iso-19115/<configuration>/<stylesheet>/')
-    def standard_iso_19115(configuration: str, stylesheet: str = None):
-        if configuration == 'uk-pdc-candidate':
-            configuration_object = metadata_record_configs.iso19115_v1_gemini_v2_3_uk_pdc_candidate
+    @app.route('/standards/iso-19115/')
+    def standard_iso_19115():
+        return render_template('app/standards/iso-19115/index.j2')
+
+    @app.route('/standards/iso-19115/profiles/inspire/')
+    def standard_iso_19115_profile_inspire():
+        return render_template('app/standards/iso-19115/profiles/inspire.j2')
+
+    @app.route('/standards/iso-19115/profiles/gemini/')
+    def standard_iso_19115_profile_gemini():
+        return render_template('app/standards/iso-19115/profiles/gemini.j2')
+
+    @app.route('/standards/iso-19115/profiles/uk-pdc-discovery/')
+    def standard_iso_19115_profile_uk_pdc_discovery():
+        return render_template('app/standards/iso-19115/profiles/uk-pdc-discovery.j2')
+
+    @app.route('/records/standards/iso-19115/<configuration>/')
+    @app.route('/records/standards/iso-19115/<configuration>/<stylesheet>/')
+    def records_standard_iso_19115(configuration: str, stylesheet: str = None):
+        if configuration == 'uk-pdc-discovery':
+            configuration_object = metadata_record_configs.iso19115_v1_gemini_v2_3_uk_pdc_discovery_sample
         else:
-            return KeyError('Invalid configuration, valid options: [uk-pdc-candidate]')
+            return KeyError('Invalid configuration, valid options: [uk-pdc-discovery]')
 
         configuration = ISO19115MetadataRecordConfig(**configuration_object)
 
@@ -94,9 +131,13 @@ def create_app():
             url_for('legal_cookies'),
             url_for('legal_copyright'),
             url_for('legal_privacy'),
-            url_for('standard_iso_19115', configuration='uk-pdc-candidate'),
-            url_for('standard_iso_19115', configuration='uk-pdc-candidate', stylesheet='iso-html'),
-            url_for('standard_iso_19115', configuration='uk-pdc-candidate', stylesheet='iso-rubric')
+            url_for('standard_iso_19115'),
+            url_for('standard_iso_19115_profile_inspire'),
+            url_for('standard_iso_19115_profile_gemini'),
+            url_for('standard_iso_19115_profile_uk_pdc_discovery'),
+            url_for('records_standard_iso_19115', configuration='uk-pdc-discovery'),
+            url_for('records_standard_iso_19115', configuration='uk-pdc-discovery', stylesheet='iso-html'),
+            url_for('records_standard_iso_19115', configuration='uk-pdc-discovery', stylesheet='iso-rubric')
         ]
 
     @app.cli.command('freeze')
@@ -105,16 +146,17 @@ def create_app():
         freezer.freeze()
         # Rename records as XML as Frozen Flask saves everything as 'index.html'
         os.rename(
-            Path('./build/standards/iso-19115/uk-pdc-candidate/index.html'),
-            Path('./build/standards/iso-19115/uk-pdc-candidate/uk-pdc-iso-19115-candidate.xml')
+            Path('./build/records/standards/iso-19115/uk-pdc-discovery/index.html'),
+            Path('./build/records/standards/iso-19115/uk-pdc-discovery/uk-pdc-iso-19115-discovery.xml')
         )
         os.rename(
-            Path('./build/standards/iso-19115/uk-pdc-candidate/iso-html/index.html'),
-            Path('./build/standards/iso-19115/uk-pdc-candidate/iso-html/uk-pdc-iso-19115-candidate-html.xml')
+            Path('./build/records/standards/iso-19115/uk-pdc-discovery/iso-html/index.html'),
+            Path('./build/records/standards/iso-19115/uk-pdc-discovery/iso-html/uk-pdc-iso-19115-discovery-html.xml')
         )
         os.rename(
-            Path('./build/standards/iso-19115/uk-pdc-candidate/iso-rubric/index.html'),
-            Path('./build/standards/iso-19115/uk-pdc-candidate/iso-rubric/uk-pdc-iso-19115-candidate-rubric.xml')
+            Path('./build/records/standards/iso-19115/uk-pdc-discovery/iso-rubric/index.html'),
+            Path('./build/records/standards/iso-19115/uk-pdc-discovery/iso-rubric/'
+                 'uk-pdc-iso-19115-discovery-rubric.xml')
         )
 
     return app

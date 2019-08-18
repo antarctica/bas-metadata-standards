@@ -1,0 +1,36 @@
+{% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
+
+{% block main_content %}
+<header class="bsk-page-header bsk-page-header-stacked">
+  <h1>
+    <small>Profile</small>
+    <br>
+    ISO 19115 - EU INSPIRE
+  </h1>
+</header>
+
+<div class="bsk-row">
+    <div class="bsk-col-12-md-10">
+        <a href="https://inspire.ec.europa.eu/about-inspire/563">EU INSPIRE</a> is a profile implemented on top of the
+        <a href="/standards/iso-19115">ISO 19115 (19139)</a> standard.
+
+        <section>
+            <h2>Guidance</h2>
+            <ul>
+                <li><a href="https://inspire.ec.europa.eu/documents/inspire-metadata-implementing-rules-technical-guidelines-based-en-iso-19115-and-en-iso-1">Inspire Technical Guidance for ISO 19115 (profile)</a></li>
+                <li><a href="https://inspire.ec.europa.eu/id/document/tg/metadata-iso19139">Inspire Technical Guidance for ISO 19139 (for datasets) (profile)</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Validation</h2>
+            <p class="bsk-alert bsk-alert-highlight bsk-alert-info">
+                See the <a class="bsk-alert-link" href="/about#validation">about</a> page for general information on
+                how metadata records are validated.
+            </p>
+            <p>Records can be validated against this profile using the
+                <a href="http://inspire.ec.europa.eu/validator/about/">INSPIRE validator service</a>.</p>
+        </section>
+    </div>
+</div>
+{% endblock %}

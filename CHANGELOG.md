@@ -7,12 +7,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+* Per-standard/profile information pages with links to sample records where relevant
+* Updating to BAS metadata generator library 0.2.1
+* Fake artefacts for sample records to refer to
+
+### Changed
+
+* Replacing candidate record with new UK PDC Discovery profile
+* References to candidate records changed to sample records
+* Refactoring about page content into other pages (notably summary of standards moved to home page)
+* CD no longer deletes items in S3 buckets it doesn't own, as other projects now publish to them as well
+
+### Removed
+
+* References to DataCite and Schema.org until these are implemented properly
+
 ## [0.1.1] 2019-07-22
 
 ### Added
 
 * BAS Style Kit styling
 * Missing documentation on using Flask Freeze
+* Snyk project URL
 
 ### Fixed
 

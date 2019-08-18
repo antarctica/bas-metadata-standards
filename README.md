@@ -51,21 +51,20 @@ $ docker-compose run app flask
 
 ## Development
 
-Candidate records in this project are generated with a bundled Flask application. Records for each metadata standard 
+Sample records in this project are generated with a bundled Flask application. Records for each metadata standard 
 are implemented using different libraries:
 
-| Standard/Profile                                               | Type                 | Implemented With                                                       | Notes               |
-| -------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------- | ------------------- |
-| [ISO 19115](https://www.iso.org/standard/26020.html)           | Standard (abstract)  | *N/A*                                                                  | -                   |
-| [ISO 19139](https://www.iso.org/standard/32557.html)           | Standard (concrete)  | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
-| [EU Inspire](https://inspire.ec.europa.eu/about-inspire/563)   | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
-| [UK Gemini](https://www.agi.org.uk/gemini/)                    | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
-| [DataCite Metadata Standard](https://schema.datacite.org/meta) | Standard (concrete)  | *None*                                                                 | Not yet implemented |
-| [Schema.org](https://schema.org)                               | Standard (concrete)  | *None*                                                                 | Not yet implemented |
- 
+| Standard/Profile                                                                                            | Type                 | Implemented With                                                       | Notes               |
+| ----------------------------------------------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------- | ------------------- |
+| [ISO 19115](https://www.iso.org/standard/26020.html)                                                        | Standard (abstract)  | *N/A*                                                                  | -                   |
+| [ISO 19139](https://www.iso.org/standard/32557.html)                                                        | Standard (concrete)  | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
+| [EU Inspire](https://inspire.ec.europa.eu/about-inspire/563)                                                | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
+| [UK Gemini](https://www.agi.org.uk/gemini/)                                                                 | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
+| [UK PDC Discovery](https://metadata-standards.data.bas.ac.uk/standards/iso-19115/profiles/uk-pdc-discovery) | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
+
 These records are generated dynamically with the option to apply XML stylesheets where relevant.
 
-For ease of distribution a static versions of these dynamically generated records are captured using 
+For ease of distribution, static versions of these dynamically generated records are captured using 
 [Frozen Flask](https://github.com/Frozen-Flask/Frozen-Flask). See the [Generating static site](#generating-static-site)
 section for more information.
  
@@ -73,8 +72,12 @@ section for more information.
 
 To add a new standard:
 
-1. update the inbuilt Flask application in `app.py` with a route for generating candidate records for the new standard
-2. add relevant [Integration tests](#integration-tests) with methods to test candidate records are generated correctly
+1. update the inbuilt Flask application in `app.py` with a route for generating sample records for the new standard
+2. add relevant [Integration tests](#integration-tests) with methods to test sample records are generated correctly
+3. add a page for the standard and/or profiles to the website and update the `freeze_routes()` method to capture them
+4. if needed, update the site navigation defined in `app.py`
+5. update the summary table in the index page of the website
+6. update the README summary table to describe how the standard and/or profile is implemented
 
 ### Generating static site
 
@@ -168,7 +171,7 @@ $ docker-compose push
 ### Dependency vulnerability scanning
 
 To ensure the security of this API, all dependencies are checked against 
-[Snyk](https://app.snyk.io/org/antarctica/project/-/history) for vulnerabilities. 
+[Snyk](https://app.snyk.io/org/antarctica/project/dc5643c8-1a05-48ab-b441-747a8cae8267) for vulnerabilities. 
 
 **Warning:** Snyk relies on known vulnerabilities and can't check for issues that are not in it's database. As with all 
 security tools, Snyk is an aid for spotting common mistakes, not a guarantee of secure code.
