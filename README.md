@@ -51,15 +51,16 @@ $ docker-compose run app flask
 
 ## Development
 
-Candidate records in this project are generated with a bundled Flask application. Records for each metadata standard 
+Sample records in this project are generated with a bundled Flask application. Records for each metadata standard 
 are implemented using different libraries:
 
-| Standard/Profile                                               | Type                 | Implemented With                                                       | Notes               |
-| -------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------- | ------------------- |
-| [ISO 19115](https://www.iso.org/standard/26020.html)           | Standard (abstract)  | *N/A*                                                                  | -                   |
-| [ISO 19139](https://www.iso.org/standard/32557.html)           | Standard (concrete)  | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
-| [EU Inspire](https://inspire.ec.europa.eu/about-inspire/563)   | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
-| [UK Gemini](https://www.agi.org.uk/gemini/)                    | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
+| Standard/Profile                                                                                            | Type                 | Implemented With                                                       | Notes               |
+| ----------------------------------------------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------- | ------------------- |
+| [ISO 19115](https://www.iso.org/standard/26020.html)                                                        | Standard (abstract)  | *N/A*                                                                  | -                   |
+| [ISO 19139](https://www.iso.org/standard/32557.html)                                                        | Standard (concrete)  | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
+| [EU Inspire](https://inspire.ec.europa.eu/about-inspire/563)                                                | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
+| [UK Gemini](https://www.agi.org.uk/gemini/)                                                                 | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
+| [UK PDC Discovery](https://metadata-standards.data.bas.ac.uk/standards/iso-19115/profiles/uk-pdc-discovery) | Profile              | [bas-metadata-library](https://pypi.org/project/bas-metadata-library/) | -                   |
 
 These records are generated dynamically with the option to apply XML stylesheets where relevant.
 

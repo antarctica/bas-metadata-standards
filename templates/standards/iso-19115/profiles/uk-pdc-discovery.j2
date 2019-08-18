@@ -1,0 +1,37 @@
+{% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
+
+{% block main_content %}
+<header class="bsk-page-header bsk-page-header-stacked">
+  <h1>
+    <small>Profile</small>
+    <br>
+    ISO 19115 - UK Polar Data Centre Discovery
+  </h1>
+</header>
+
+<div class="bsk-row">
+    <div class="bsk-col-12-md-10">
+        <p>UK PDC Discovery is a profile implemented on top of the
+            <a href="/standards/iso-19115/profiles/gemini">UK GEMINI</a> profile.</p>
+        <p class="bsk-alert bsk-alert-solid bsk-alert-info">
+            This metadata profile should be used for all UK PDC discovery metadata (i.e. records in
+            <a class="bsk-alert-link" href="https://data.bas.ac.uk">data.bas.ac.uk</a>).
+        </p>
+
+        <section>
+            <h2>Sample record</h2>
+            <ul class="bsk-list-inline bsk-list-unstyled">
+                {# These links assume the Flask app has been frozen - they won't work in the live Flask app #}
+                <li><a href="/records/standards/iso-19115/uk-pdc-discovery/uk-pdc-iso-19115-discovery.xml">Raw record</a></li>
+                <li><a href="/records/standards/iso-19115/uk-pdc-discovery/iso-html/uk-pdc-iso-19115-discovery-html.xml">XML to HTML</a></li>
+                <li><a href="/records/standards/iso-19115/uk-pdc-discovery/iso-rubric/uk-pdc-iso-19115-discovery-rubric.xml">ISO rubric</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Validation</h2>
+            <p>There is currently no way to validate records against this profile.</p>
+        </section>
+    </div>
+</div>
+{% endblock %}

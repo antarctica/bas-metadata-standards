@@ -9,10 +9,10 @@ from lxml.etree import fromstring  # nosec
 from tests.test_base import BaseTestCase
 
 
-class CandidateMetadataRecordTestCase(BaseTestCase):
+class UKPDCDiscoveryMetadataRecordTestCase(BaseTestCase):
     def test_raw_record(self):
         response = self.client.get(
-            '/standards/iso-19115/uk-pdc-candidate/',
+            '/records/standards/iso-19115/uk-pdc-discovery/',
             base_url='http://localhost:9000'
         )
         self.assertEqual(response.status_code, HTTPStatus.OK)
@@ -23,7 +23,7 @@ class CandidateMetadataRecordTestCase(BaseTestCase):
 
     def test_iso_html_record(self):
         response = self.client.get(
-            '/standards/iso-19115/uk-pdc-candidate/iso-html/',
+            '/records/standards/iso-19115/uk-pdc-discovery/iso-html/',
             base_url='http://localhost:9000'
         )
         self.assertEqual(response.status_code, HTTPStatus.OK)
@@ -34,7 +34,7 @@ class CandidateMetadataRecordTestCase(BaseTestCase):
 
     def test_iso_rubric_record(self):
         response = self.client.get(
-            '/standards/iso-19115/uk-pdc-candidate/iso-rubric/',
+            '/records/standards/iso-19115/uk-pdc-discovery/iso-rubric/',
             base_url='http://localhost:9000'
         )
         self.assertEqual(response.status_code, HTTPStatus.OK)

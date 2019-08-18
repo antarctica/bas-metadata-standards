@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+* Replacing candidate record with new UK PDC Discovery profile
+* References to candidate records changed to sample records
 * Refactoring about page content into other pages (notably summary of standards moved to home page)
 * CD no longer deletes items in S3 buckets it doesn't own, as other projects now publish to them as well
 

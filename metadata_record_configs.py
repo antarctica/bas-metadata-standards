@@ -1,8 +1,8 @@
 from datetime import datetime, timezone, date
 
 
-iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
-    'file_identifier': 'b1a7d1b5-c419-41e7-9178-b1ffd76d5371',
+iso19115_v1_gemini_v2_3_uk_pdc_discovery_sample = {
+    'file_identifier': '84340f7c-e4f1-4a01-9309-93f8d115c571',
     'language': 'eng',
     'character_set': 'utf8',
     'hierarchy_level': 'dataset',
@@ -29,7 +29,7 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
             'role': ['pointOfContact']
         }
     ],
-    'date_stamp': datetime(2018, 10, 8, 14, 40, 44, tzinfo=timezone.utc),
+    'date_stamp': datetime(2019, 8, 17, 14, 51, 30, tzinfo=timezone.utc),
     'maintenance': {
         'maintenance_frequency': 'asNeeded',
         'progress': 'completed'
@@ -67,111 +67,69 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
     },
     'resource': {
         'title': {
-            'value': 'Analysis of d18O and salinity from sea ice and meltwater pool water samples collected in April '
-                     '2016 in the Weddell Sea and Scotia Sea of the Southern Ocean during the marine survey JR15006'
+            'value': 'Atmospheric Ozone measurements at Halley Clean Air Sector Laboratory (CASLab) 2011-2012 '
+                     '- BAS Metadata Standards sample record (UK PDC discovery metadata)'
         },
-        'abstract': 'The dataset contains oxygen stable isotope and salinity measurements from water samples collected '
-                    'from sea ice and meltwater pools in April 2016 in the region of South Georgia, Signy and deep '
-                    'within the Weddell Sea pack ice during the marine survey JR15006. <br /> The d18O and salinity '
-                    'measurements from sea ice and meltwater sources complement the same analysis from CTD casts and '
-                    'underway non-toxic flow water system on the RRS James Clark Ross during the JR15006. Establishing '
-                    'd18O and salinity values for saline water and oceanic freshwater components can be used to '
-                    'identify sources and changes of freshwater contributions to the ocean.',
+        'abstract': 'This abstract, and the record to which it belongs, is fictitious. This record is a demonstration '
+                    'of typical UK Polar Data Centre discovery level metadata. It is part of the BAS Metadata '
+                    'Standards project (https://metadata-standards.data.bas.ac.uk), which documents the metadata '
+                    'standards used by the British Antarctic Survey (BAS) and UK Polar Data Centre (UK PDC), and how '
+                    'these are to be implemented correctly and consistently. This sample record demonstrates the UK '
+                    'Polar Data Centre\'s discovery metadata profile, which is implemented on top of the ISO '
+                    '19115 / 19139 standards and EU INSPIRE / UK GEMINI profiles. See the BAS Data Catalogue to '
+                    'discover real dataset\'s from the British Antarctic Survey and UK Polar Data Centre '
+                    '(https://www.data.bas.ac.uk).',
         'dates': [
             {
-                'date': date(2018, 1, 1),
-                'date_precision': 'year',
+                'date': date(2012, 1, 1),
                 'date_type': 'creation'
             },
             {
-                'date': date(2018, 1, 1),
-                'date_precision': 'year',
+                'date': date(2012, 2, 20),
                 'date_type': 'revision'
             },
             {
-                'date': datetime(2018, 10, 8, 14, 40, 44, tzinfo=timezone.utc),
+                'date': datetime(2012, 2, 24, 14, 40, 44, tzinfo=timezone.utc),
                 'date_type': 'publication'
             },
             {
-                'date': datetime(2018, 12, 8, 14, 40, 44, tzinfo=timezone.utc),
+                'date': datetime(2012, 2, 24, 14, 40, 44, tzinfo=timezone.utc),
                 'date_type': 'released'
             }
         ],
-        'edition': '1',
+        'edition': '2',
         'identifiers': [
             {
-                'identifier': 'https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371',
-                'href': 'https://data.bas.ac.uk/metadata.php?id=b1a7d1b5-c419-41e7-9178-b1ffd76d5371',
+                'identifier': 'https://metadata-standards.data.bas.ac.uk/standards/iso-19115/uk-pdc-discovery',
+                'href': 'https://metadata-standards.data.bas.ac.uk/standards/iso-19115/uk-pdc-discovery',
                 'title': 'self'
             },
             {
-                'identifier': 'https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f',
-                'href': 'https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f',
+                'identifier': 'https://handle.test.datacite.org/10.5285/84340f7c-e4f1-4a01-9309-93f8d115c571',
+                'href': 'https://handle.test.datacite.org/10.5285/84340f7c-e4f1-4a01-9309-93f8d115c571',
                 'title': 'doi'
             },
             {
-                'identifier': 'NE/I022973/1',
-                'href': 'https://gtr.ukri.org/projects?ref=NE%2FI022973%2F1',
+                'identifier': 'bas0100032',
+                'href': 'https://gtr.ukri.org/projects?ref=bas0100032',
                 'title': 'award'
             }
         ],
         'contacts': [
             {
                 'individual': {
-                    'name': 'Meredith, Michael',
-                    'href': 'https://orcid.org/0000-0002-7342-7756',
+                    'name': 'Watson, Constance',
+                    'href': 'https://sandbox.orcid.org/0000-0001-8373-6934',
                     'title': 'orcid'
                 },
                 'organisation': {
                     'name': 'British Antarctic Survey'
                 },
-                'email': 'mmm@bas.ac.uk',
+                'email': 'conwat@bas.ac.uk',
                 'online_resource': {
-                    'href': 'https://orcid.org/0000-0002-7342-7756',
-                    'title': 'ORCID record',
-                    'description': 'ORCID is an open, non-profit, community-driven effort to create and maintain a '
-                                   'registry of unique researcher identifiers and a transparent method of linking '
-                                   'research activities and outputs to these identifiers.',
-                    'function': 'information'
-                },
-                'role': ['author']
-            },
-            {
-                'individual': {
-                    'name': 'Arrowsmith, Carol',
-                    'href': 'https://orcid.org/0000-0003-3849-5179',
-                    'title': 'orcid'
-                },
-                'organisation': {
-                    'name': 'British Geological Survey'
-                },
-                'email': 'noreply@bas.ac.uk',
-                'online_resource': {
-                    'href': 'https://orcid.org/0000-0003-3849-5179',
-                    'title': 'ORCID record',
-                    'description': 'ORCID is an open, non-profit, community-driven effort to create and maintain a '
-                                   'registry of unique researcher identifiers and a transparent method of linking '
-                                   'research activities and outputs to these identifiers.',
-                    'function': 'information'
-                },
-                'role': ['author']
-            },
-            {
-                'individual': {
-                    'name': 'Leng, Melanie',
-                    'href': 'https://orcid.org/0000-0003-1115-5166',
-                    'title': 'orcid'
-                },
-                'organisation': {
-                    'name': 'British Geological Survey'
-                },
-                'email': 'noreply@bas.ac.uk',
-                'online_resource': {
-                    'href': 'https://orcid.org/0000-0003-1115-5166',
-                    'title': 'ORCID record',
-                    'description': 'ORCID is an open, non-profit, community-driven effort to create and maintain a '
-                                   'registry of unique researcher identifiers and a transparent method of linking '
-                                   'research activities and outputs to these identifiers.',
+                    'href': 'https://www.bas.ac.uk/profile/conwat',
+                    'title': 'BAS staff profile',
+                    'description': 'Staff profile for Constance Watson in the British Antarctic Survey public website.',
                     'function': 'information'
                 },
                 'role': ['author']
@@ -211,16 +169,12 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
             {
                 'terms': [
                     {
-                        'term': 'Oceanographic geographical features',
-                        'href': 'https://www.eionet.europa.eu/gemet/en/inspire-theme/of'
+                        'term': 'Atmospheric conditions',
+                        'href': 'https://www.eionet.europa.eu/gemet/en/inspire-theme/ac'
                     },
                     {
-                        'term': 'Sea regions',
-                        'href': 'https://www.eionet.europa.eu/gemet/en/inspire-theme/sr'
-                    },
-                    {
-                        'term': 'Land cover',
-                        'href': 'https://www.eionet.europa.eu/gemet/en/inspire-theme/lc'
+                        'term': 'Environmental monitoring facilities',
+                        'href': 'https://www.eionet.europa.eu/gemet/en/inspire-theme/ef'
                     }
                 ],
                 'type': 'theme',
@@ -254,24 +208,12 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
             {
                 'terms': [
                     {
-                        'term': 'EARTH SCIENCE > Hydrosphere > Snow/Ice > Snow Melt',
-                        'href': 'https://gcmdservices.gsfc.nasa.gov/kms/concept/dd6de9e1-61e7-41bf-a2dc-9d2afc690bb3'
+                        'term': 'EARTH SCIENCE > ATMOSPHERE > AIR QUALITY > TROPOSPHERIC OZONE',
+                        'href': 'https://gcmdservices.gsfc.nasa.gov/kms/concept/426aee98-764c-4c21-ab65-1e9d4bd6b0d0'
                     },
                     {
-                        'term': 'EARTH SCIENCE > Hydrosphere > Surface Water',
-                        'href': 'https://gcmdservices.gsfc.nasa.gov/kms/concept/5debb283-51e4-435e-b2a2-e8e2a977220d'
-                    },
-                    {
-                        'term': 'EARTH SCIENCE > Oceans > Sea Ice > Isotopes',
-                        'href': 'https://gcmdservices.gsfc.nasa.gov/kms/concept/9d99408d-0d8b-4642-a2cb-edee8319fe1d'
-                    },
-                    {
-                        'term': 'EARTH SCIENCE > Oceans > Sea Ice > Pack Ice',
-                        'href': 'https://gcmdservices.gsfc.nasa.gov/kms/concept/ea85ea0b-1b7d-464a-9f8c-1f80383ffc51'
-                    },
-                    {
-                        'term': 'EARTH SCIENCE > Oceans > Sea Ice > Salinity',
-                        'href': 'https://gcmdservices.gsfc.nasa.gov/kms/concept/04fa9023-ab68-4dd0-a82e-abe685105a53'
+                        'term': ' EARTH SCIENCE > ATMOSPHERE > ATMOSPHERIC CHEMISTRY > OXYGEN COMPOUNDS > OZONE',
+                        'href': 'https://gcmdservices.gsfc.nasa.gov/kms/concept/dd316647-9043-40c3-9329-f22f9215fefa'
                     }
                 ],
                 'type': 'theme',
@@ -309,23 +251,6 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
                         'role': ['publisher']
                     },
                 }
-            },
-            {
-                'terms': [
-                    {
-                        'term': 'd18O'
-                    },
-                    {
-                        'term': 'meltwater pool'
-                    },
-                    {
-                        'term': 'salinity'
-                    },
-                    {
-                        'term': 'sea ice'
-                    }
-                ],
-                'type': 'theme'
             }
         ],
         'constraints': {
@@ -347,11 +272,12 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
                 },
                 {
                     'restriction_code': 'otherRestrictions',
-                    'required_citation': 'Bougamont, M. (2018). Ice flow model output for Pine Island Glacier (West '
-                                         'Antarctica), from numerical inversions of ice surface velocities observed in '
-                                         '1996 and 2014 [Data set]. UK Polar Data Centre, Natural Environment Research '
-                                         'Council, UK Research and Innovation. '
-                                         'https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f'
+                    'required_citation': {
+                        'statement': 'Cite this information as: "Watson, C. (2012). Atmospheric Ozone measurements at '
+                                     'Halley Clean Air Sector Laboratory (CASLab) 2011-2012 - BAS Metadata Standards '
+                                     'sample record (UK PDC discovery metadata). UK Polar Data Centre. '
+                                     'https://doi.org/10.5285/84340F7C-E4F1-4A01-9309-93F8D115C571"'
+                    }
                 }
             ]
         },
@@ -363,22 +289,23 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
         'language': 'eng',
         'topics': [
             'environment',
-            'inlandWaters',
-            'oceans'
+            'climatologyMeteorologyAtmosphere'
         ],
         'extent': {
             'geographic': {
                 'bounding_box': {
-                    'west_longitude': -45.61521,
-                    'east_longitude': -27.04976,
-                    'south_latitude': -68.1511,
-                    'north_latitude': -54.30761
+                    'west_longitude': -26.65,
+                    'east_longitude': -26.65,
+                    'south_latitude': -75.58,
+                    'north_latitude': -75.58
                 }
             },
             'vertical': {
-                'identifier': 'ogp-crs-5715',
-                'code': 'urn:ogc:def:crs:EPSG::5715',
-                'name': 'MSL depth',
+                'minimum': 25,
+                'maximum': 35,
+                'identifier': 'ogp-crs-5714',
+                'code': 'urn:ogc:def:crs:EPSG::5714',
+                'name': 'MSL height',
                 'remarks': 'Not specific to any location or epoch.',
                 'scope': 'Hydrography.',
                 'domain_of_validity': {
@@ -393,40 +320,31 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
             },
             'temporal': {
                 'period': {
-                    'start': date(2016, 3, 31),
-                    'end': date(2016, 4, 26)
+                    'start': datetime(2011, 6, 21, 0, 0, 0),
+                    'end': datetime(2012, 6, 20, 23, 59, 30)
                 }
             }
         },
         'formats': [
             {
-                'format': 'Microsoft Excel Workbook',
-                'href': 'https://www.iana.org/assignments/media-types/application/'
-                        'vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                'format': 'Comma Separated Values (CSV)',
+                'href': 'https://www.iana.org/assignments/media-types/text/csv'
             }
         ],
         'transfer_options': [
             {
-                'online_resource': {
-                    'href': 'https://www.bodc.ac.uk/data/bodc_database/nodb/data_collection/6618/',
-                    'title': 'Get Data',
-                    'description': 'Download underlying CTD data',
-                    'function': 'download'
-                }
-            },
-            {
                 'size': {
-                    'unit': 'kB',
-                    'magnitude': 30
+                    'unit': 'MB',
+                    'magnitude': 26.4
                 },
                 'online_resource': {
-                    'href': 'https://ramadda.data.bas.ac.uk/repository/entry/show?entryid='
-                            '63af1e57-8f20-4fb1-a55c-bd0e703f8a56',
-                    'title': 'Get Data',
+                    'href': 'https://metadata-standards.data.bas.ac.uk/sample-record-artefacts/'
+                            'caslab-ozone-2011-2012.csv',
+                    'title': 'Download Data',
                     'description': 'Download measurement data',
                     'function': 'download'
                 }
-            },
+            }
         ],
         'measures': [
             {
@@ -448,22 +366,14 @@ iso19115_v1_gemini_v2_3_uk_pdc_candidate = {
                 'explanation': 'See the referenced specification'
             }
         ],
-        'lineage': 'At all sample locations, 2 or more salinity bottles and d18O vials were filled following the usual '
-                   'procedure. The d18O vials were rinsed 3 times, filled and dried before being closed with a stopper '
-                   'and sealed with the crimper. Oxygen isotope (d18O) measurements were made using the CO2 '
-                   'equilibration method with an Isoprime 100 mass spectrometer plus Aquaprep device. 90 samples '
-                   '(200μl of water) were loaded into Labco Limited exetainers (3.7ml) and placed in the heated '
-                   'sample tray at 40°C. The exetainers were then evacuated to remove atmosphere then flushed '
-                   'with CO2 and left to equilibrate for between 12 (first sample) - 37 (last sample) hours. Each '
-                   'individual gas sample was then admitted to the cryogenic water trap where any water vapour is '
-                   'removed. The dry sample gas was then expanded into the dual inlet where it was measured on the '
-                   'transducer before being expanded in the dual inlet bellows. Ionvantage software then balances the '
-                   'reference bellows relative to this volume. The sample and reference CO2 gases enter alternatively '
-                   'into the Isoprime100 through the dual changeover valve for isotope ratio measurement. In each run '
-                   'two laboratory standards (CA-HI and CA-LO) plus up to 2 secondary standards were analysed in '
-                   'triplicate. The value of these laboratory standards has been accurately determined by comparison '
-                   'with international calibration and reference materials (VSMOW2, SLAP2 and GISP) and so the 18O/16O '
-                   'ratios (versus VSMOW2) of the unknown samples can be calculated and are expressed in delta units, '
-                   'd18O (parts per mille). Errors are < +/- 0.05 per mil.'
+        'lineage': 'This lineage statement, and data referenced in this record, are fictitious. This lineage statement '
+                   'has been included as a demonstration of a typical UK Polar Data Centre discovery level metadata '
+                   'record. Ozone measurements where recorded using an Ozone measuring instrument every 30 seconds, '
+                   'with a 60 second moving average. The standard deviation for a one hour data sample (at low '
+                   'atmospheric variability) is estimated at 0.2 ppbv. Standard quality assurance procedures where '
+                   'then applied to the raw data resulting in: 360 missing measurements (due to maintenance or '
+                   'malfunction); 40 measurements discarded as erroneous (due to malfunction); 1,204 measurements '
+                   'discarded as being anomalous. The ozone measuring instrument was calibrated using standard '
+                   'calibration procedures and verified against known true values prior to use.'
     }
 }
