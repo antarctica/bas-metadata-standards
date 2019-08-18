@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+* Updating to BAS metadata generator library 0.2.1
+
 ### Changed
 
 * CD no longer deletes items in S3 buckets it doesn't own, as other projects now publish to them as well
