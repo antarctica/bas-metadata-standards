@@ -89,6 +89,7 @@ s3-website-staging:
     entrypoint: [""]
   script:
     - "aws s3 sync build s3://$S3_DEPLOYMENT_BUCKET_STAGE/"
+    - "aws s3 sync sample-record-artefacts s3://$S3_DEPLOYMENT_BUCKET_STAGE/sample-record-artefacts"
   only:
     - master
   environment:
@@ -102,6 +103,7 @@ s3-website-production:
     entrypoint: [""]
   script:
     - "aws s3 sync build s3://$S3_DEPLOYMENT_BUCKET_PROD/"
+    - "aws s3 sync sample-record-artefacts s3://$S3_DEPLOYMENT_BUCKET_PROD/sample-record-artefacts"
   only:
     - tags
   environment:

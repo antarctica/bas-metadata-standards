@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 * Updating to BAS metadata generator library 0.2.1
+* Fake artefacts for sample records to refer to
 
 ### Changed
 
