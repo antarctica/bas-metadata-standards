@@ -110,7 +110,8 @@ def create_app():
 
     @app.route('/records/standards/iso-19115/<configuration>/')
     @app.route('/records/standards/iso-19115/<configuration>/<stylesheet>/')
-    def records_standard_iso_19115(configuration: str, stylesheet: str = None):
+    @app.route('/records/standards/iso-19115/<configuration>/<stylesheet>/<mode>')
+    def records_standard_iso_19115(configuration: str, stylesheet: str = None, mode: str = None):
         if configuration == 'uk-pdc-discovery':
             configuration_object = metadata_record_configs.iso19115_v1_gemini_v2_3_uk_pdc_discovery_sample
         else:
@@ -119,17 +120,21 @@ def create_app():
         configuration = ISO19115MetadataRecordConfig(**configuration_object)
 
         record = ISO19115MetadataRecord(configuration)
-        if stylesheet is not None:
-            if stylesheet == 'iso-html':
-                record.record.addprevious(PI(
-                    'xml-stylesheet',
-                    'type="text/xsl" href="/static/xml-stylesheets/iso-html/xml-to-html-ISO.xsl"'
-                ))
-            elif stylesheet == 'iso-rubric':
-                record.record.addprevious(PI(
-                    'xml-stylesheet',
-                    'type="text/xsl" href="/static/xml-stylesheets/iso-rubric/isoRubricHTML.xsl"'
-                ))
+        if stylesheet == 'iso-html':
+            record.record.addprevious(PI(
+                'xml-stylesheet',
+                'type="text/xsl" href="/static/xml-stylesheets/iso-html/xml-to-html-ISO.xsl"'
+            ))
+        elif stylesheet == 'iso-rubric':
+            record.record.addprevious(PI(
+                'xml-stylesheet',
+                'type="text/xsl" href="/static/xml-stylesheets/iso-rubric/isoRubricHTML.xsl"'
+            ))
+
+        if mode == 'inspire-compatible':
+            record.record.attrib['{http://www.w3.org/2001/XMLSchema-instance}schemaLocation'] = \
+                'http://www.isotc211.org/2005/gmd https://inspire.ec.europa.eu/draft-schemas/' \
+                'inspire-md-schemas-temp/apiso-inspire/'
 
         return Response(record.generate_xml_document(), mimetype='text/xml', content_type='text/xml; charset=utf-8')
 
@@ -146,6 +151,8 @@ def create_app():
             url_for('standard_iso_19115_profile_gemini'),
             url_for('standard_iso_19115_profile_uk_pdc_discovery'),
             url_for('records_standard_iso_19115', configuration='uk-pdc-discovery'),
+            url_for('records_standard_iso_19115', configuration='uk-pdc-discovery', stylesheet='default',
+                    mode='inspire-compatible'),
             url_for('records_standard_iso_19115', configuration='uk-pdc-discovery', stylesheet='iso-html'),
             url_for('records_standard_iso_19115', configuration='uk-pdc-discovery', stylesheet='iso-rubric')
         ]
@@ -168,5 +175,11 @@ def create_app():
             Path('./build/records/standards/iso-19115/uk-pdc-discovery/iso-rubric/'
                  'uk-pdc-iso-19115-discovery-rubric.xml')
         )
+        os.rename(
+            Path('./build/records/standards/iso-19115/uk-pdc-discovery/default/inspire-compatible'),
+            Path('./build/records/standards/iso-19115/uk-pdc-discovery/'
+                 'uk-pdc-iso-19115-discovery-inspire-compatible.xml')
+        )
+        os.rmdir('./build/records/standards/iso-19115/uk-pdc-discovery/default')
 
     return app

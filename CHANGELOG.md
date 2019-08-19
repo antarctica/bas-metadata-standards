@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+* INSPIRE compatible sample record with altered schemaLocation
 * Per-standard/profile information pages with links to sample records where relevant
 * Updating to BAS metadata generator library 0.2.1
 * Fake artefacts for sample records to refer to
