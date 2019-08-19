@@ -62,6 +62,10 @@ def create_app():
             }
         ]
     })
+    app.config['bsk_templates'].bsk_site_nav_primary.append({
+        'value': 'Wiki',
+        'href': 'https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/wikis/home'
+    })
 
     @app.route('/')
     def index():
