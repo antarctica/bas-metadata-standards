@@ -5,6 +5,7 @@ import metadata_record_configs
 from pathlib import Path
 
 from flask import Flask, Response, render_template, url_for
+# noinspection PyPackageRequirements
 from jinja2 import PrefixLoader, PackageLoader, FileSystemLoader
 from flask_frozen import Freezer
 # noinspection PyPackageRequirements
@@ -64,38 +65,47 @@ def create_app():
 
     @app.route('/')
     def index():
+        # noinspection PyUnresolvedReferences
         return render_template('app/index.j2')
 
     @app.route('/about/')
     def about():
+        # noinspection PyUnresolvedReferences
         return render_template('app/about.j2')
 
     @app.route('/legal/cookies/')
     def legal_cookies():
+        # noinspection PyUnresolvedReferences
         return render_template('app/legal-cookies.j2')
 
     @app.route('/legal/copyright/')
     def legal_copyright():
+        # noinspection PyUnresolvedReferences
         return render_template('app/legal-copyright.j2')
 
     @app.route('/legal/privacy/')
     def legal_privacy():
+        # noinspection PyUnresolvedReferences
         return render_template('app/legal-privacy.j2')
 
     @app.route('/standards/iso-19115/')
     def standard_iso_19115():
+        # noinspection PyUnresolvedReferences
         return render_template('app/standards/iso-19115/index.j2')
 
     @app.route('/standards/iso-19115/profiles/inspire/')
     def standard_iso_19115_profile_inspire():
+        # noinspection PyUnresolvedReferences
         return render_template('app/standards/iso-19115/profiles/inspire.j2')
 
     @app.route('/standards/iso-19115/profiles/gemini/')
     def standard_iso_19115_profile_gemini():
+        # noinspection PyUnresolvedReferences
         return render_template('app/standards/iso-19115/profiles/gemini.j2')
 
     @app.route('/standards/iso-19115/profiles/uk-pdc-discovery/')
     def standard_iso_19115_profile_uk_pdc_discovery():
+        # noinspection PyUnresolvedReferences
         return render_template('app/standards/iso-19115/profiles/uk-pdc-discovery.j2')
 
     @app.route('/records/standards/iso-19115/<configuration>/')
