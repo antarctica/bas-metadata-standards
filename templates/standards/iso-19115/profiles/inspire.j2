@@ -22,7 +22,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="validation">
             <h2>Validation</h2>
             <p class="bsk-alert bsk-alert-highlight bsk-alert-info">
                 See the <a class="bsk-alert-link" href="/about#validation">about</a> page for general information on
@@ -30,6 +30,11 @@
             </p>
             <p>Records can be validated against this profile using the
                 <a href="http://inspire.ec.europa.eu/validator/about/">INSPIRE validator service</a>.</p>
+            <h3>Inspire validation compatibility</h3>
+            <p>Use <em>INSPIRE compatible</em> version of sample records when using the validator. This will change the
+                schema location (<code>xsi:schemaLocation</code>) to use an INSPIRE provided XSD for the
+                <code>http://www.isotc211.org/2005/gmd</code> namespace. This is a
+                <a href="https://github.com/inspire-eu-validation/community/issues/37">known limitation</a> of the validator.</p>
         </section>
     </div>
 </div>
