@@ -138,7 +138,7 @@ def create_app():
         if mode == 'inspire-compatible':
             record.record.attrib['{http://www.w3.org/2001/XMLSchema-instance}schemaLocation'] = \
                 'http://www.isotc211.org/2005/gmd https://inspire.ec.europa.eu/draft-schemas/' \
-                'inspire-md-schemas-temp/apiso-inspire/'
+                'inspire-md-schemas-temp/apiso-inspire/apiso-inspire.xsd'
 
         return Response(record.generate_xml_document(), mimetype='text/xml', content_type='text/xml; charset=utf-8')
 
