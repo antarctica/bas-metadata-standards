@@ -1,6 +1,14 @@
 {% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
 
 {% block main_content %}
+<style>
+    .app-space-md {
+        margin-top: 35px;
+    }
+    .app-space-lg {
+        margin-top: 70px;
+    }
+</style>
 <header class="bsk-page-header bsk-page-header-stacked">
   <h1>
     <small>Profile</small>
@@ -11,14 +19,15 @@
 
 <div class="bsk-row">
     <div class="bsk-col-12-md-10">
-        <p>UK PDC Discovery is a profile implemented on top of the
+        <p><em>UK PDC Discovery</em> is a profile implemented on top of the
             <a href="/standards/iso-19115/profiles/gemini">UK GEMINI</a> profile.</p>
-        <p class="bsk-alert bsk-alert-solid bsk-alert-info">
-            This metadata profile should be used for all UK PDC discovery metadata (i.e. records in
-            <a class="bsk-alert-link" href="https://data.bas.ac.uk">data.bas.ac.uk</a>).
-        </p>
+        <p>It defines rules and requirements needed to ensure metadata is useful for discovery through catalogues and
+            portals, such as <a href="https://data.bas.ac.uk">data.bas.ac.uk</a>, and to meet the minimum requirements
+        of other standards, such as DataCite, to allow for effective cross-walks.</p>
+        <p class="bsk-alert bsk-alert-solid bsk-alert-info">This metadata profile should be used for all UK PDC
+            discovery metadata.</p>
 
-        <section>
+        <section class="app-space-lg">
             <h2>Sample record</h2>
             <ul class="bsk-list-inline bsk-list-unstyled">
                 {# These links assume the Flask app has been frozen - they won't work in the live Flask app #}
@@ -29,11 +38,626 @@
             </ul>
             <p class="bsk-alert bsk-alert-highlight bsk-alert-info">
                 See the <a class="bsk-alert-link" href="/standards/iso-19115/profiles/inspire#validation">validation</a>
-                section of the EU INSPIRE profile for information on <em>INSPIRE compatible</em> records.
+                section of the EU INSPIRE profile for information about <em>INSPIRE compatible</em> records.
             </p>
         </section>
 
-        <section>
+        <section id="guidance" class="app-space-lg">
+            <h2>Guidance</h2>
+
+            <p>This profile is defined by this project and is therefore documented here.</p>
+
+            <p class="bsk-alert bsk-alert-highlight bsk-alert-info">
+                See the <a class="bsk-alert-link" href="https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/wikis/standards/iso-19115/profiles/uk-pdc-discovery#encoding-requirements">Wiki</a>
+                for further encoding guidelines.
+            </p>
+
+            <ul>
+                <li><a href="#obligation-summary">Summary of obligation</a></li>
+            </ul>
+            <ol>
+                <li><a href="#rule-01">Responsible parties - individual or organisational name</a></li>
+                <li><a href="#rule-02">Responsible parties - Individual/Organisational name anchor reference</a></li>
+                <li><a href="#rule-03">Responsible parties - Individual/Organisational name anchor title</a></li>
+                <li><a href="#rule-04">Online resource function</a></li>
+                <li><a href="#rule-05">File identifier</a></li>
+                <li><a href="#rule-06">Character set (metadata)</a></li>
+                <li><a href="#rule-07">Hierarchy level</a></li>
+                <li><a href="#rule-08">Maintenance (metadata)</a></li>
+                <li><a href="#rule-09">Metadata standard (name)</a></li>
+                <li><a href="#rule-10">Metadata standard (version)</a></li>
+                <li><a href="#rule-11">Maintenance (resource)</a></li>
+                <li><a href="#rule-12">Edition</a></li>
+                <li><a href="#rule-13">Supplemental information</a></li>
+                <li><a href="#rule-14">Lineage statement</a></li>
+                <li><a href="#rule-15">Dates</a></li>
+                <li><a href="#rule-16">Identifier anchor reference</a></li>
+                <li><a href="#rule-17">Identifier anchor title</a></li>
+                <li><a href="#rule-18">Point of contact</a></li>
+            </ol>
+
+            <section id="obligation-summary" class="app-space-md">
+                <h3>Summary of obligation</h3>
+                <table class="bsk-table">
+                    <thead>
+                        <tr>
+                            <th>ISO 19115 Element</th>
+                            <th>Gemini Obligation</th>
+                            <th><em>UK-PDC Discovery</em> Obligation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Responsible parties - individual or organisational name</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Responsible parties - Individual/Organisational name anchor reference</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Responsible parties - Individual/Organisational name anchor title</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Online resource function code</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>File identifier</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Character set</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Hierarchy level (scope)</td>
+                            <td>(M) Mandatory</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Hierarchy level (name)</td>
+                            <td>(M) Mandatory</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Maintenance (metadata)</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Metadata standard (name)</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Metadata standard (version)</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Maintenance (resource)</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Edition</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Supplemental information</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Lineage statement</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Dates</td>
+                            <td>(M) Mandatory</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Identifier anchor reference</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Identifier anchor title</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td>Point of contact</td>
+                            <td>(O) Optional</td>
+                            <td>(M) Mandatory</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="rule-01" class="app-space-md">
+                <h3>Responsible parties - individual or organisational name</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        ../<a href="http://www.datypic.com/sc/niem21/e-gmd_CI_ResponsibleParty.html"><code>gmd:CI_ResponsibleParty</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_individualName-1.html"><code>gmd:individualName</code></a>,
+                        <br />
+                        ../<a href="http://www.datypic.com/sc/niem21/e-gmd_CI_ResponsibleParty.html"><code>gmd:CI_ResponsibleParty</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_organisationName-1.html"><code>gmd:organisationalName</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All responsible parties <strong>MUST</strong> have either or both of:</p>
+                <ul>
+                    <li><a href="http://www.datypic.com/sc/niem21/e-gmd_individualName-1.html"><code>gmd:individualName</code></a></li>
+                    <li><a href="http://www.datypic.com/sc/niem21/e-gmd_organisationName-1.html"><code>gmd:organisationalName</code></a></li>
+                </ul>
+            </section>
+
+            <section id="rule-02" class="app-space-md">
+                <h3>Responsible parties - Individual/Organisational name anchor reference</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        ../<a href="http://www.datypic.com/sc/niem21/e-gmd_CI_ResponsibleParty.html"><code>gmd:CI_ResponsibleParty</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_individualName-1.html"><code>gmd:individualName</code></a>/
+                            <a href="http://www.datypic.com/sc/niem20/e-gmx_Anchor.html"><code>gmx:Anchor</code></a>[@
+                            <a href="http://www.datypic.com/sc/niem20/a-niem-xlink_href.html"><code>xlink:href</code></a>],
+                        <br />
+                        ../<a href="http://www.datypic.com/sc/niem21/e-gmd_CI_ResponsibleParty.html"><code>gmd:CI_ResponsibleParty</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_organisationName-1.html"><code>gmd:organisationalName</code></a>/
+                        <a href="http://www.datypic.com/sc/niem20/e-gmx_Anchor.html"><code>gmx:Anchor</code></a>[@
+                        <a href="http://www.datypic.com/sc/niem20/a-niem-xlink_href.html"><code>xlink:href</code></a>]
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All responsible party individual or organisational names <strong>MUST</strong> be an
+                    <a href="http://www.datypic.com/sc/niem20/e-gmx_Anchor.html">gmx:Anchor</a> element, which
+                    <strong>MUST</strong> contain a
+                    <a href="http://www.datypic.com/sc/niem20/a-niem-xlink_href.html">xlink:href</a> attribute.
+                </p>
+            </section>
+
+            <section id="rule-03" class="app-space-md">
+                <h3>Responsible parties - Individual/Organisational name anchor title</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        ../<a href="http://www.datypic.com/sc/niem21/e-gmd_CI_ResponsibleParty.html"><code>gmd:CI_ResponsibleParty</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_individualName-1.html"><code>gmd:individualName</code></a>/
+                            <a href="http://www.datypic.com/sc/niem20/e-gmx_Anchor.html"><code>gmx:Anchor</code></a>[@
+                            <a href="http://www.datypic.com/sc/niem20/a-niem-xlink_title.html"><code>xlink_title</code></a>],
+                        <br />
+                        ../<a href="http://www.datypic.com/sc/niem21/e-gmd_CI_ResponsibleParty.html"><code>gmd:CI_ResponsibleParty</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_organisationName-1.html"><code>gmd:organisationalName</code></a>/
+                        <a href="http://www.datypic.com/sc/niem20/e-gmx_Anchor.html"><code>gmx:Anchor</code></a>[@
+                        <a href="http://www.datypic.com/sc/niem20/a-niem-xlink_title.html"><code>xlink_title</code></a>]
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All responsible party individual or organisational names <strong>MUST</strong> be an
+                    <a href="http://www.datypic.com/sc/niem20/e-gmx_Anchor.html">gmx:Anchor</a> element, which
+                    <strong>MUST</strong> contain a
+                    <a href="http://www.datypic.com/sc/niem20/a-niem-xlink_title.html">xlink:title</a> attribute.
+                </p>
+                <p>The value of this <code>xlink:title</code> element <strong>MUST</strong> be one of:</p>
+                <table class="bsk-table">
+                    <thead>
+                        <tr>
+                            <th>Value</th>
+                            <th>Meaning</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><em>isni</em></td>
+                            <td><a href="http://www.isni.org">International Standard Name Identifier (ISNI)</a></td>
+                            <td>recommended identifier for organisations</td>
+                        </tr>
+                        <tr>
+                            <td><em>orcid</em></td>
+                            <td><a href="https://orcid.org">ORCID</a></td>
+                            <td>recommended identifier for individuals</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="rule-04" class="app-space-md">
+                <h3>Online resource function</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        ../<a href="http://www.datypic.com/sc/niem21/e-gmd_CI_OnlineResource.html"><code>gmd:CI_OnlineResource</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_function-1.html"><code>gmd:function</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_CI_OnLineFunctionCode.html"><code>gmd:CI_OnLineFunctionCode</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All online resources <strong>MUST</strong> have a function code element
+                    (<code>CI_OnLineFunctionCode</code>).</p>
+            </section>
+
+            <section id="rule-05" class="app-space-md">
+                <h3>File identifier</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_fileIdentifier-1.html"><code>gmd:fileIdentifier</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All records <strong>MUST</strong> have a file identifier, the value of which
+                    <strong>MUST</strong> be a UUID (version 4).</p>
+            </section>
+
+            <section id="rule-06" class="app-space-md">
+                <h3>Character set (metadata)</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_characterSet-1.html"><code>gmd:characterSet</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All records <strong>MUST</strong> have a (metadata) character set, the value of which
+                    <strong>MUST</strong> be one of:</p>
+                <ul>
+                    <li><em>utf8</em></li>
+                </ul>
+            </section>
+
+            <section id="rule-07" class="app-space-md">
+                <h3>Hierarchy level</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_hierarchyLevel-1.html"><code>gmd:hierarchyLevel</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_ScopeCode.html"><code>http://www.datypic.com/sc/niem21/e-gmd_MD_ScopeCode.html</code></a>
+                        <br />
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_hierarchyLevelName-1.html"><code>gmd:hierarchyLevelName</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All records <strong>MUST</strong> have a hierarchy level name and scope code, the value of both
+                    <strong>MUST</strong> be one of:</p>
+                <ul>
+                    <li><em>dataset</em></li>
+                </ul>
+            </section>
+
+            <section id="rule-08" class="app-space-md">
+                <h3>Maintenance (metadata)</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_metadataMaintenance-1.html"><code>gmd:metadataMaintenance</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_MaintenanceInformation.html"><code>gmd:MD_MaintenanceInformation</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All online resources <strong>MUST</strong> have a (metadata) maintenance element with at least a:</p>
+                <ul>
+                    <li>
+                        <a href="http://www.datypic.com/sc/niem21/e-gmd_maintenanceAndUpdateFrequency-1.html"><code>gmd:maintenanceAndUpdateFrequency</code></a>/
+                        <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_MaintenanceFrequencyCode.html"><code>gmd:MD_MaintenanceFrequencyCode</code></a></li>
+                    <li>
+                        <a href="http://www.datypic.com/sc/niem21/e-gmd_maintenanceNote-1.html"><code>gmd:maintenanceNote</code></a>/
+                        <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_ProgressCode.html"><code>gmd:MD_ProgressCode</code></a>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="rule-09" class="app-space-md">
+                <h3>Metadata standard (name)</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_metadataStandardName-1.html"><code>gmd:metadataStandardName</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All online resources <strong>MUST</strong> have a (metadata) standard and version element.</p>
+            </section>
+
+            <section id="rule-10" class="app-space-md">
+                <h3>Metadata standard (version)</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_metadataStandardVersion-1.html"><code>gmd:metadataStandardVersion</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All online resources <strong>MUST</strong> have a metadata standard name element the value of which
+                    <strong>MUST</strong> be: <em>ISO 19115 (UK GEMINI)</em>.</p>
+                <p>All online resources <strong>MUST</strong> have a metadata standard version element the value of
+                    which <strong>MUST</strong> be: <em>1.0 (2.3)</em>.</p>
+            </section>
+
+            <section id="rule-11" class="app-space-md">
+                <h3>Maintenance (resource)</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_identificationInfo-1.html"><code>gmd:identificationInfo</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_DataIdentification.html"><code>gmd:MD_DataIdentification</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_resourceMaintenance-1.html"><code>gmd:resourceMaintenance</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_MaintenanceInformation.html"><code>gmd:MD_MaintenanceInformation</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All online resources <strong>MUST</strong> have a (resource) maintenance element with at least a:</p>
+                <ul>
+                    <li>
+                        <a href="http://www.datypic.com/sc/niem21/e-gmd_maintenanceAndUpdateFrequency-1.html"><code>gmd:maintenanceAndUpdateFrequency</code></a>/
+                        <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_MaintenanceFrequencyCode.html"><code>gmd:MD_MaintenanceFrequencyCode</code></a></li>
+                    <li>
+                        <a href="http://www.datypic.com/sc/niem21/e-gmd_maintenanceNote-1.html"><code>gmd:maintenanceNote</code></a>/
+                        <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_ProgressCode.html"><code>gmd:MD_ProgressCode</code></a>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="rule-12" class="app-space-md">
+                <h3>Edition</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_identificationInfo-1.html"><code>gmd:identificationInfo</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_DataIdentification.html"><code>gmd:MD_DataIdentification</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_citation-1.html"><code>gmd:citation</code></a>/
+                        <a href="http://www.datypic.com/sc/niem21/e-gmd_edition-1.html"><code>gmd:edition</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All records <strong>MUST</strong> have an edition (version).</p>
+            </section>
+
+            <section id="rule-13" class="app-space-md">
+                <h3>Supplemental information</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_identificationInfo-1.html"><code>gmd:identificationInfo</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_DataIdentification.html"><code>gmd:MD_DataIdentification</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_supplementalInformation-1.html"><code>gmd:supplementalInformation</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All records <strong>MUST</strong> have supplemental information with a value of:</p>
+                <blockquote>
+                    It is recommended that careful attention be paid to the contents of any data, and that the author
+                    be contacted with any questions regarding appropriate use. If you find any errors or omissions,
+                    please report them to polardatacentre@bas.ac.uk.
+                </blockquote>
+            </section>
+
+            <section id="rule-14" class="app-space-md">
+                <h3>Lineage statement</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_dataQualityInfo-1.html"><code>gmd:dataQualityInfo</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_DQ_DataQuality.html"><code>gmd:DQ_DataQuality</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_lineage-1.html"><code>gmd:lineage</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_LI_Lineage.html"><code>gmd:LI_Lineage</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_statement-1.html"><code>gmd:statement</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..1</dd>
+                </dl>
+                <p>All records <strong>MUST</strong> have a lineage statement.</p>
+            </section>
+
+            <section id="rule-15" class="app-space-md">
+                <h3>Dates</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_identificationInfo-1.html"><code>gmd:identificationInfo</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_DataIdentification.html"><code>gmd:MD_DataIdentification</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_citation-1.html"><code>gmd:citation</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_date-1.html"><code>gmd:date</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_CI_Date.html"><code>gmd:CI_Date</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..*</dd>
+                </dl>
+                <p>All records <strong>MUST</strong> have a date with at least these <code>dateType</code> codes:</p>
+                <ul>
+                    <li><em>creation</em></li>
+                    <li><em>released</em></li>
+                </ul>
+            </section>
+
+            <section id="rule-16" class="app-space-md">
+                <h3>Identifier anchor reference</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_identificationInfo-1.html"><code>gmd:identificationInfo</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_DataIdentification.html"><code>gmd:MD_DataIdentification</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_citation-1.html"><code>gmd:citation</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_identifier-1.html"><code>gmd:identifier</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Identifier.html"><code>gmd:MD_Identifier</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_code-1.html"><code>gmd:code</code></a>[@
+                            <a href="http://www.datypic.com/sc/niem20/a-niem-xlink_href.html"><code>xlink:href</code></a>]
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..*</dd>
+                </dl>
+                <p>All record identifier codes <strong>MUST</strong> be a
+                    <a href="http://www.datypic.com/sc/niem20/e-gmx_Anchor.html">gmx:Anchor</a> element, which
+                    <strong>MUST</strong> contain a
+                    <a href="http://www.datypic.com/sc/niem20/a-niem-xlink_href.html">xlink:href</a> attribute.
+                </p>
+            </section>
+
+            <section id="rule-17" class="app-space-md">
+                <h3>Identifier anchor title</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_identificationInfo-1.html"><code>gmd:identificationInfo</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_DataIdentification.html"><code>gmd:MD_DataIdentification</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_citation-1.html"><code>gmd:citation</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_identifier-1.html"><code>gmd:identifier</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Identifier.html"><code>gmd:MD_Identifier</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_code-1.html"><code>gmd:code</code></a>[@
+                            <a href="http://www.datypic.com/sc/niem20/a-niem-xlink_href.html"><code>xlink:title</code></a>]
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..*</dd>
+                </dl>
+                <p>All record identifier codes <strong>MUST</strong> be a
+                    <a href="http://www.datypic.com/sc/niem20/e-gmx_Anchor.html">gmx:Anchor</a> element, which
+                    <strong>MUST</strong> contain a
+                    <a href="http://www.datypic.com/sc/niem20/a-niem-xlink:title.html">xlink:title</a> attribute.
+                </p>
+                <p>At least one record identifiers <strong>MUST</strong> have a <code>xlink:title</code> value of
+                    <code>self</code>.</p>
+                <p>The value of this <code>xlink:title</code> element <strong>MUST</strong> be one of:</p>
+                <table class="bsk-table">
+                    <thead>
+                        <tr>
+                            <th>Value</th>
+                            <th>Meaning</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><em>self</em></td>
+                            <td>Link to this record in its original data catalogue (i.e. <em>data.bas.ac.uk</em>)</td>
+                            <td>Mandatory</td>
+                        </tr>
+                        <tr>
+                            <td><em>doi</em></td>
+                            <td>Digital Object Identifier (DOI)</td>
+                            <td>If assigned to record</td>
+                        </tr>
+                        <tr>
+                            <td><em>award</em></td>
+                            <td>Reference to an award or grant related to the record</td>
+                            <td>If applicable</td>
+                        </tr>
+                        <tr>
+                            <td><em>publication</em></td>
+                            <td>Reference to a publication related to the record</td>
+                            <td>If applicable</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="rule-18" class="app-space-md">
+                <h3>Point of contact</h3>
+                <dl class="bsk-dl-lg">
+                    <dt>ISO element</dt>
+                    <dd>
+                        /<a href="http://www.datypic.com/sc/niem21/e-gmd_MD_Metadata.html"><code>gmd:MD_Metadata</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_identificationInfo-1.html"><code>gmd:identificationInfo</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_MD_DataIdentification.html"><code>gmd:MD_DataIdentification</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_pointOfContact-1.html"><code>gmd:pointOfContact</code></a>/
+                            <a href="http://www.datypic.com/sc/niem21/e-gmd_CI_ResponsibleParty.html"><code>gmd:CI_ResponsibleParty</code></a>
+                    </dd>
+                    <dt><em>UK-PDC Discovery</em> obligation</dt>
+                    <dd>(M) Mandatory</dd>
+                    <dt><em>UK-PDC Discovery</em> occurrence</dt>
+                    <dd>1..*</dd>
+                </dl>
+                <p>All records <strong>MUST</strong> have a point of contact element containing both:</p>
+                <ul>
+                    <li><a href="http://www.datypic.com/sc/niem21/e-gmd_organisationName-1.html"><code>gmd:organisationName</code></a>
+                        with a value of <em>UK Polar Data Centre</em></li>
+                    <li>a <a href="http://www.datypic.com/sc/niem21/e-gmd_role-1.html"><code>gmd:role</code></a> with these codes:
+                        <ul>
+                            <li><em>pointOfContact</em></li>
+                            <li><em>custodian</em></li>
+                            <li><em>publisher</em></li>
+                            <li><em>distributor</em></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="validation" class="app-space-lg">
             <h2>Validation</h2>
             <p>Not currently supported.</p>
         </section>

@@ -1,11 +1,16 @@
 {% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
 
 {% block main_content %}
+<style>
+    .app-space-md {
+        margin-top: 35px;
+    }
+</style>
 <header class="bsk-page-header bsk-col-12-md-10">
     <h1>About</h1>
 </header>
 <div class="bsk-row">
-    <div class="bsk-col-12-md-10 app-space-md">
+    <div class="bsk-col-12-md-10">
         <section id="standards-profiles">
             <h2>Metadata standards and profiles</h2>
             <p>Metadata <em>standards</em> and <em>profiles</em> explain how to describe a resource such that it can be
@@ -25,7 +30,7 @@
                 only be restrictive, not permissive).</p>
         </section>
 
-        <section id="validation">
+        <section id="validation" class="app-space-md">
             <h3>Metadata validation</h3>
             <p>To ensure compliance, metadata standards and profiles typically include a means to programmatically check
                 records contain:

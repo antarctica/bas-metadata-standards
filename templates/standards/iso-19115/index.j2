@@ -1,6 +1,14 @@
 {% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
 
 {% block main_content %}
+<style>
+    .app-space-md {
+        margin-top: 35px;
+    }
+    .app-space-lg {
+        margin-top: 70px;
+    }
+</style>
 <header class="bsk-page-header bsk-page-header-stacked">
   <h1>
     <small>Standard</small>
@@ -10,12 +18,18 @@
 </header>
 
 <div class="bsk-row">
-    <div class="bsk-col-12-md-10 app-space-md">
-        <a href="https://www.iso.org/standard/26020.html">ISO 19115</a> is an <em>abstract</em> schema.
-        <a href="https://www.iso.org/standard/32557.html">ISO 19139</a> is its <em>concrete</em> implementation in XML.
+    <div class="bsk-col-12-md-10">
+        <p>
+            <a href="https://www.iso.org/standard/26020.html">ISO 19115</a> is a standard for describing geographic data
+        and services. It is an <em>abstract</em> schema, meaning it describes it a data model other standards implement.
+            <a href="https://www.iso.org/standard/32557.html">ISO 19139</a> is a <em>concrete</em> implementation of ISO
+        19115 schema in XML.
+        </p>
 
-        <section>
+        <section class="app-space-lg">
             <h2>Profiles</h2>
+            <p>There are various profiles for ISO 19115 that constrain its use for interoperability with
+            various initiatives.</p>
             <p class="bsk-alert bsk-alert-highlight bsk-alert-info">
                 See the <a class="bsk-alert-link" href="/about#standards-profiles">about</a> page for general
                 information on the differences between <em>standards</em> and <em>profiles</em>.
@@ -27,7 +41,7 @@
             </ul>
         </section>
 
-        <section>
+        <section class="app-space-lg">
             <h2>Validation</h2>
             <p class="bsk-alert bsk-alert-highlight bsk-alert-info">
                 See the <a class="bsk-alert-link" href="/about#validation">about</a> page for general information on
@@ -40,22 +54,25 @@
             </p>
         </section>
 
-        <section>
+        <section class="app-space-lg">
             <h2>XML stylesheets</h2>
             <p>XML stylesheets are used to aid reading and improving ISO 19115 based metadata records.</p>
 
-            <h3 class="bsk-h4">XML to HTML stylesheet</h3>
-            <p>The <a href="https://service.ncddc.noaa.gov/rdn/www/metadata-standards/metadata-xml/documents/ISOxml2html.zip">ISO 19115 to HTML</a>
-                stylesheet, from the National Centers for Environmental Information (NCEI), presents metadata in a more
-                readable form than raw XML. This stylesheet is useful for reviewing the contents, rather than technical
-                structure of an XML record.
-            </p>
-
-            <h3 class="bsk-h4">ISO rubric stylesheet</h3>
-            <p>The <a href="https://www.ngdc.noaa.gov/metadata/published/xsl/isoRubricHTML.xsl">SpiralTracker report</a>
-                stylesheet, from the National Centers for Environmental Information (NCEI), assesses the quality of a
-                metadata record against ISO 19115.
-            </p>
+            <section class="app-space-md">
+                <h3 class="bsk-h4">XML to HTML stylesheet</h3>
+                <p>The <a href="https://service.ncddc.noaa.gov/rdn/www/metadata-standards/metadata-xml/documents/ISOxml2html.zip">ISO 19115 to HTML</a>
+                    stylesheet, from the National Centers for Environmental Information (NCEI), presents metadata in a more
+                    readable form than raw XML. This stylesheet is useful for reviewing the contents, rather than technical
+                    structure of an XML record.
+                </p>
+            </section>
+            <section class="app-space-md">
+                <h3 class="bsk-h4">ISO rubric stylesheet</h3>
+                <p>The <a href="https://www.ngdc.noaa.gov/metadata/published/xsl/isoRubricHTML.xsl">SpiralTracker report</a>
+                    stylesheet, from the National Centers for Environmental Information (NCEI), assesses the quality of a
+                    metadata record against ISO 19115.
+                </p>
+            </section>
         </section>
     </div>
 </div>
