@@ -63,6 +63,27 @@ def create_app():
         ]
     })
     app.config['bsk_templates'].bsk_site_nav_primary.append({
+        'value': 'Vocabularies',
+        'items': [
+            {
+                'value': 'ISO 19115',
+                'href': '/vocabularies/iso-19115'
+            },
+            {
+                'value': 'INSPIRE',
+                'href': '/vocabularies/inspire'
+            },
+            {
+                'value': 'GCMD',
+                'href': '/vocabularies/gcmd'
+            },
+            {
+                'value': 'Other',
+                'href': '/vocabularies/other'
+            }
+        ]
+    })
+    app.config['bsk_templates'].bsk_site_nav_primary.append({
         'value': 'Wiki',
         'href': 'https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/wikis/home'
     })
@@ -141,6 +162,26 @@ def create_app():
                 'inspire-md-schemas-temp/apiso-inspire/apiso-inspire.xsd'
 
         return Response(record.generate_xml_document(), mimetype='text/xml', content_type='text/xml; charset=utf-8')
+
+    @app.route('/vocabularies/iso-19115/')
+    def vocabulary_iso_19115():
+        # noinspection PyUnresolvedReferences
+        return render_template('app/vocabularies/iso-19115.j2')
+
+    @app.route('/vocabularies/inspire/')
+    def vocabulary_inspire():
+        # noinspection PyUnresolvedReferences
+        return render_template('app/vocabularies/inspire.j2')
+
+    @app.route('/vocabularies/gcmd/')
+    def vocabulary_gcmd():
+        # noinspection PyUnresolvedReferences
+        return render_template('app/vocabularies/gcmd.j2')
+
+    @app.route('/vocabularies/other/')
+    def vocabulary_other():
+        # noinspection PyUnresolvedReferences
+        return render_template('app/vocabularies/other.j2')
 
     @freezer.register_generator
     def freeze_routes():

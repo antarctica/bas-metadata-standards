@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+* Documentation on vocabularies used
 * Documentation for the UK Discovery profile
 * Link to project wiki in the project website
 * INSPIRE compatible sample record with altered schemaLocation

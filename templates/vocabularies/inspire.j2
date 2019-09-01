@@ -1,0 +1,44 @@
+{% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
+
+{% block main_content %}
+<style>
+    .app-space-md {
+        margin-top: 35px;
+    }
+    .app-space-lg {
+        margin-top: 70px;
+    }
+</style>
+<header class="bsk-page-header bsk-page-header-stacked">
+  <h1>
+    <small>Vocabulary</small>
+    <br>
+    EU INSPIRE (Code lists)
+  </h1>
+</header>
+
+<div class="bsk-row">
+    <div class="bsk-col-12-md-10">
+        <p>
+            <a href="/standards/iso-19115/profiles/inspire">EU INSPIRE</a> is a metadata profile that includes a number
+            of controlled terms for elements such as limitations on public access and topic categories. These
+            controlled terms are selected through descriptive keywords and anchor elements.
+        </p>
+        <section class="app-space-lg">
+            <h2>Vocabularies</h2>
+            <section class="app-space-md">
+                <h3>INSPIRE Spatial Data Themes</h3>
+                <h4>Terms</h4>
+                <p>Terms for INSPIRE Spatial Data Themes are officially documented in the
+                <a href="http://inspire.ec.europa.eu/theme">INSPIRE Registry</a>.</p>
+            </section>
+            <section class="app-space-md">
+                <h3>INSPIRE Limitation On Public Access</h3>
+                <h4>Terms</h4>
+                <p>Terms for INSPIRE Limitation On Public Access are officially documented in the
+                <a href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/">INSPIRE Registry</a>.</p>
+            </section>
+        </section>
+    </div>
+</div>
+{% endblock %}

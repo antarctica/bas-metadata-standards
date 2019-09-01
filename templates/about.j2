@@ -5,6 +5,9 @@
     .app-space-md {
         margin-top: 35px;
     }
+    .app-space-lg {
+        margin-top: 70px;
+    }
 </style>
 <header class="bsk-page-header bsk-col-12-md-10">
     <h1>About</h1>
@@ -53,6 +56,31 @@
             </section>
         </section>
 
+        <section id="vocabularies-code-lists" class="app-space-lg">
+            <h2>Metadata vocabularies and code lists</h2>
+            <p>Metadata <em>vocabularies</em> and <em>code lists</em> describe lists of controlled terms such that
+                meaning can be expressed unambiguously and consistently by others.</p>
+
+            <p>
+                A <em>vocabulary</em> can take different forms, from simple lists of values to complex graphs. Simple
+                vocabularies are often encoded as CSV files or similar, whilst those that are more complex, typically
+                use linked data concepts, such as the
+                <a href="https://www.w3.org/TR/skos-reference/">Simple Knowledge Organisation System (SKOS)</a>.</p>
+            <p>
+                This ontology allows relationships between terms to be expressed, such as a one term being broader/narrower
+                than another, or that a term is an alias for or broadly similar to another. These more complex
+                vocabularies are typically encoded as RDF triples.</p>
+            <p>
+                A <em>code list</em> is a concept from the <a href="/standards/iso-19115">ISO 19115</a> standard. It
+                consists of a <em>code list</em> and <em>code list value</em> attribute. The <em>code list</em> is a
+                URI to a specific list of terms and the <em>code list value</em> is a value from this list. The list
+                and its terms are encoded in XML.
+            </p>
+            <p>
+                For example, a code list is used to control the types of date in an ISO 19115 record. The
+                <em>code list</em> for date types is:
+                <code>https://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode</code>.
+                This list defines entries such as a 'creation' or 'publication' date.
             </p>
         </section>
     </div>
