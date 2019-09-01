@@ -1,0 +1,71 @@
+{% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
+
+{% block main_content %}
+<style>
+    .app-space-md {
+        margin-top: 35px;
+    }
+    .app-space-lg {
+        margin-top: 70px;
+    }
+    .app-vocab-term-aliases {
+       font-size: 80%;
+    }
+</style>
+<header class="bsk-page-header bsk-page-header-stacked">
+  <h1>
+    <small>Vocabulary Term</small>
+    <br>
+    {{ term.name }}
+    {% if term.aliases %}
+      <em class="app-vocab-term-aliases">{{ term.aliases | join(', ') }}</em>
+    {% endif %}
+  </h1>
+</header>
+<div class="bsk-row">
+    <div class="bsk-col-12-md-10">
+        {% if term.definition %}
+            <p class="bsk-lead">{{ term.definition | capitalize }}</p>
+        {% endif %}
+        <section class="app-space-lg">
+            <h2>Relations</h2>
+            <section id="notes" class="app-space-md">
+                <h3>Broader terms</h3>
+                {% if not term.relationships.broader %}
+                    <p>None.</p>
+                {% endif %}
+                <ul>
+                    {% for narrower in term.relationships.broader %}
+                        <li><a href="/vocabularies/gcmd/earth-science/terms/{{ narrower }}">{{ narrower }}</a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section id="notes" class="app-space-md">
+                <h3>Narrower terms</h3>
+                {% if not term.relationships.narrower %}
+                    <p>None.</p>
+                {% endif %}
+                <ul>
+                    {% for narrower in term.relationships.narrower %}
+                        <li><a href="/vocabularies/gcmd/earth-science/terms/{{ narrower }}">{{ narrower }}</a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </section>
+    </div>
+    <div class="bsk-col-12-md-10">
+        <section class="app-space-lg">
+            <h2>Notes</h2>
+            <section id="notes" class="app-space-md">
+                <h3>Change notes</h3>
+                {% if not term.notes.change %}
+                    <p>None.</p>
+                {% endif %}
+                {% for change_note in term.notes.change %}
+                    <p>{{ change_note }}</p>
+                {% endfor %}
+            </section>
+        </section>
+    </div>
+</div>
+{% endblock %}

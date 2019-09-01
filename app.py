@@ -1,5 +1,9 @@
 import os
 
+from flask_caching import Cache
+from rdflib import Graph, Namespace, URIRef
+from rdflib.namespace import SKOS, RDF
+
 import metadata_record_configs
 
 from pathlib import Path
@@ -17,14 +21,17 @@ from bas_metadata_library.standards.iso_19115_v1 import MetadataRecordConfig as 
     MetadataRecord as ISO19115MetadataRecord
 from bas_style_kit_jinja_templates import BskTemplates
 
-
 freezer = Freezer()
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+
+gcmd_rdf_terms_path = 'vocabularies/gcmd-earth-science.rdf'
 
 
 def create_app():
     app = Flask(__name__)
 
     freezer.init_app(app)
+    cache.init_app(app)
     app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 
     app.jinja_loader = PrefixLoader({
@@ -87,6 +94,63 @@ def create_app():
         'value': 'Wiki',
         'href': 'https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/wikis/home'
     })
+
+    @cache.cached(timeout=60, key_prefix='gcmd_terms')
+    def process_gcmd_terms():
+        terms = {}
+
+        scheme = Graph()
+        with open(gcmd_rdf_terms_path, "r") as file_input:
+            scheme.parse(file_input, format="application/rdf+xml")
+
+            gcmd_ns = Namespace('http://gcmd.gsfc.nasa.gov/kms#')
+            scheme.bind("gcmd", gcmd_ns)
+            scheme.bind("skos", SKOS)
+            scheme.bind("rdf", RDF)
+
+            gcmd_concept_scheme = URIRef(
+                'https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords'
+            )
+            for t_subject, t_predicate, t_object in scheme.triples((None, SKOS.inScheme, gcmd_concept_scheme)):
+                term_id = str(t_subject).replace('https://gcmdservices.gsfc.nasa.gov/kms/concept/', '').replace('/', '')
+                terms[term_id] = {
+                    'name': None,
+                    'aliases': [],
+                    'definition': None,
+                    'relationships': {
+                        'broader': [],
+                        'narrower': []
+                    },
+                    'notes': {
+                        'change': []
+                    }
+                }
+
+            for term_id in terms.keys():
+                subject = URIRef(f"https://gcmdservices.gsfc.nasa.gov/kms/concept/{term_id}")
+                for t_subject, t_predicate, t_object in scheme.triples((subject, None, None)):
+                    if t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#broader'):
+                        terms[term_id]['relationships']['broader'].append(
+                            str(t_object)
+                            .replace('https://gcmdservices.gsfc.nasa.gov/kms/concept/', '')
+                            .replace('/', '')
+                         )
+                    elif t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#narrower'):
+                        terms[term_id]['relationships']['narrower'].append(
+                            str(t_object)
+                            .replace('https://gcmdservices.gsfc.nasa.gov/kms/concept/', '')
+                            .replace('/', '')
+                         )
+                    elif t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#definition'):
+                        terms[term_id]['definition'] = str(t_object)
+                    elif t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#changeNote'):
+                        terms[term_id]['notes']['change'].append(str(t_object))
+                    elif t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#prefLabel'):
+                        terms[term_id]['name'] = str(t_object)
+                    elif t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#altLabel'):
+                        terms[term_id]['aliases'].append(str(t_object))
+
+        return terms
 
     @app.route('/')
     def index():
@@ -175,13 +239,44 @@ def create_app():
 
     @app.route('/vocabularies/gcmd/')
     def vocabulary_gcmd():
+        vocabularies = {
+            'earth_science': {
+                'version': None,
+                'revision': None
+            }
+        }
+
+        scheme = Graph()
+        with open(gcmd_rdf_terms_path, "r") as file_input:
+            scheme.parse(file_input, format="application/rdf+xml")
+
+            gcmd_ns = Namespace('http://gcmd.gsfc.nasa.gov/kms#')
+            scheme.bind("gcmd", gcmd_ns)
+            scheme.bind("skos", SKOS)
+            scheme.bind("rdf", RDF)
+
+            gcmd_version_predicate = gcmd_ns.keywordVersion
+            for t_subject, t_predicate, t_object in scheme.triples((None, gcmd_version_predicate, None)):
+                vocabularies['earth_science']['version'] = str(t_object)
+
+            gcmd_revision_predicate = gcmd_ns.schemeVersion
+            for t_subject, t_predicate, t_object in scheme.triples((None, gcmd_revision_predicate, None)):
+                vocabularies['earth_science']['revision'] = str(t_object)
+
         # noinspection PyUnresolvedReferences
-        return render_template('app/vocabularies/gcmd.j2')
+        return render_template('app/vocabularies/gcmd.j2', vocabularies=vocabularies)
 
     @app.route('/vocabularies/other/')
     def vocabulary_other():
         # noinspection PyUnresolvedReferences
         return render_template('app/vocabularies/other.j2')
+
+    @app.route('/vocabularies/gcmd/earth-science/terms/<term_id>/')
+    def vocabulary_term_gcmd_earth_science(term_id: str):
+        terms = process_gcmd_terms()
+
+        # noinspection PyUnresolvedReferences
+        return render_template('app/vocabulary-terms/gcmd-earth-science.j2', term=terms[term_id])
 
     @freezer.register_generator
     def freeze_routes():
@@ -201,6 +296,27 @@ def create_app():
             url_for('records_standard_iso_19115', configuration='uk-pdc-discovery', stylesheet='iso-html'),
             url_for('records_standard_iso_19115', configuration='uk-pdc-discovery', stylesheet='iso-rubric')
         ]
+
+    @freezer.register_generator
+    def vocabulary_term_gcmd_earth_science():
+        scheme = Graph()
+        with open(gcmd_rdf_terms_path, "r") as file_input:
+            scheme.parse(file_input, format="application/rdf+xml")
+
+            gcmd_ns = Namespace('http://gcmd.gsfc.nasa.gov/kms#')
+            scheme.bind("gcmd", gcmd_ns)
+            scheme.bind("skos", SKOS)
+            scheme.bind("rdf", RDF)
+
+            gcmd_concept_scheme = URIRef(
+                'https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords'
+            )
+            for t_subject, t_predicate, t_object in scheme.triples((None, SKOS.inScheme, gcmd_concept_scheme)):
+                yield {
+                    'term_id': str(t_subject)
+                    .replace('https://gcmdservices.gsfc.nasa.gov/kms/concept/', '')
+                    .replace('/', '')
+                }
 
     @app.cli.command('freeze')
     def freeze_app():
