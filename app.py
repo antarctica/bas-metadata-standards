@@ -1,5 +1,6 @@
 import os
 
+from anytree import Node
 from flask_caching import Cache
 from rdflib import Graph, Namespace, URIRef
 from rdflib.namespace import SKOS, RDF
@@ -114,6 +115,7 @@ def create_app():
             for t_subject, t_predicate, t_object in scheme.triples((None, SKOS.inScheme, gcmd_concept_scheme)):
                 term_id = str(t_subject).replace('https://gcmdservices.gsfc.nasa.gov/kms/concept/', '').replace('/', '')
                 terms[term_id] = {
+                    'term_id': term_id,
                     'name': None,
                     'aliases': [],
                     'definition': None,
@@ -150,7 +152,36 @@ def create_app():
                     elif t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#altLabel'):
                         terms[term_id]['aliases'].append(str(t_object))
 
+            for term in terms.values():
+                if len(term['relationships']['broader']) > 0:
+                    for _index, broader_term_id in enumerate(term['relationships']['broader']):
+                        if broader_term_id in terms.keys():
+                            term['relationships']['broader'][_index] = terms[broader_term_id]
+                        else:
+                            term['relationships']['broader'].pop(_index)
+                if len(term['relationships']['narrower']) > 0:
+                    for _index, narrower_term_id in enumerate(term['relationships']['narrower']):
+                        if narrower_term_id in terms.keys():
+                            term['relationships']['narrower'][_index] = terms[narrower_term_id]
+                        else:
+                            term['relationships']['narrower'].pop(_index)
+
         return terms
+
+    @cache.cached(timeout=60, key_prefix='gcmd_term_nodes')
+    def process_gcmd_term_nodes():
+        terms = process_gcmd_terms()
+        term_nodes = {}
+
+        for term in terms.values():
+            term_nodes[term['term_id']] = Node(term['name'], aliases=term['aliases'], term_id=term['term_id'])
+
+        for term in terms.values():
+            if len(term['relationships']['broader']) == 1:
+                if term['relationships']['broader'][0]['term_id'] in term_nodes.keys():
+                    term_nodes[term['term_id']].parent = term_nodes[term['relationships']['broader'][0]['term_id']]
+
+        return term_nodes
 
     @app.route('/')
     def index():
@@ -274,9 +305,19 @@ def create_app():
     @app.route('/vocabularies/gcmd/earth-science/terms/<term_id>/')
     def vocabulary_term_gcmd_earth_science(term_id: str):
         terms = process_gcmd_terms()
+        term_nodes = process_gcmd_term_nodes()
+
+        term = terms[term_id]
+        term_node = term_nodes[term_id]
+        term_ancestors = list(term_node.ancestors)
+        term_ancestors.append(term_node)
 
         # noinspection PyUnresolvedReferences
-        return render_template('app/vocabulary-terms/gcmd-earth-science.j2', term=terms[term_id])
+        return render_template(
+            'app/vocabulary-terms/gcmd-earth-science.j2',
+            term=term,
+            term_ancestors=term_ancestors
+        )
 
     @freezer.register_generator
     def freeze_routes():

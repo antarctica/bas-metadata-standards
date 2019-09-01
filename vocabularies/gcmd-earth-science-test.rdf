@@ -25,7 +25,6 @@
         <skos:broader rdf:resource="1eb0ea0a-312c-4d74-8d42-6f1ad758f999"/>
         <skos:narrower rdf:resource="c47f6052-634e-40ef-a5ac-13f69f6f4c2a"/>
         <skos:narrower rdf:resource="91697b7d-8f2b-4954-850e-61d5f61c867d"/>
-        <skos:narrower rdf:resource="fb93d937-c17c-45d0-a9e3-ca5c8a800ca8"/>
     </skos:Concept>
 
     <!-- Second level term [1/2] -->

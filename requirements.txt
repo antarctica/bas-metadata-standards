@@ -1,3 +1,4 @@
+anytree==2.6.0
 bandit==1.6.2
 bas-metadata-library==0.2.2
 bas-style-kit-jinja-templates==0.4.0

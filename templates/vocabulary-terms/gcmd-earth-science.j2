@@ -1,5 +1,16 @@
 {% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
 
+{% macro display_related_term(term) %}
+<li>
+    <a href="/vocabularies/gcmd/earth-science/terms/{{ term.term_id }}">
+        {{ term.name }}
+        {% if term.aliases %}
+          <em class="app-vocab-term-aliases">{{ term.aliases | join(', ') }}</em>
+        {% endif %}
+    </a>
+</li>
+{% endmacro %}
+
 {% block main_content %}
 <style>
     .app-space-md {
@@ -27,6 +38,25 @@
         {% if term.definition %}
             <p class="bsk-lead">{{ term.definition | capitalize }}</p>
         {% endif %}
+
+        <section class="app-space-lg">
+            <h2>Path</h2>
+            <ul>
+                {% for term in term_ancestors %}
+                    {% if not loop.last %}
+                        {{ display_related_term(term) }}
+                    {% else %}
+                        <li>
+                            {{ term.name }}
+                            {% if term.aliases %}
+                              <em class="app-vocab-term-aliases">{{ term.aliases | join(', ') }}</em>
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </section>
+
         <section class="app-space-lg">
             <h2>Relations</h2>
             <section id="notes" class="app-space-md">
@@ -35,8 +65,8 @@
                     <p>None.</p>
                 {% endif %}
                 <ul>
-                    {% for narrower in term.relationships.broader %}
-                        <li><a href="/vocabularies/gcmd/earth-science/terms/{{ narrower }}">{{ narrower }}</a></li>
+                    {% for broader in term.relationships.broader %}
+                        {{ display_related_term(broader) }}
                     {% endfor %}
                 </ul>
             </section>
@@ -47,13 +77,12 @@
                 {% endif %}
                 <ul>
                     {% for narrower in term.relationships.narrower %}
-                        <li><a href="/vocabularies/gcmd/earth-science/terms/{{ narrower }}">{{ narrower }}</a></li>
+                        {{ display_related_term(narrower) }}
                     {% endfor %}
                 </ul>
             </section>
         </section>
-    </div>
-    <div class="bsk-col-12-md-10">
+
         <section class="app-space-lg">
             <h2>Notes</h2>
             <section id="notes" class="app-space-md">
