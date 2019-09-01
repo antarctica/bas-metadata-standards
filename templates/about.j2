@@ -28,29 +28,32 @@
                 bodies, discipline or location specific groups and large collaborative projects.</p>
             <p>Profile's cannot make mandatory elements in the standard they apply to, optional (i.e. a profile can
                 only be restrictive, not permissive).</p>
+
+            <section id="validation" class="app-space-md">
+                <h3>Metadata validation</h3>
+                <p>To ensure compliance, metadata standards and profiles typically include a means to programmatically check
+                    records contain:
+                </p>
+                <ul>
+                    <li>any required elements</li>
+                    <li>any required/controlled element values</li>
+                    <li>elements in the correct order</li>
+                </ul>
+
+                <p>Metadata standards typically use schemas and schematrons to determine if a record is valid:</p>
+                <ul>
+                    <li>a <em>schema</em> checks the structure of elements in a record</li>
+                    <li>a <em>schematron</em> checks specific elements in a record using a series of rules and patterns</li>
+                </ul>
+
+                <p>Notably a schematron can be use conditional logic, such as to ensure an element is included when certain
+                    conditions are met.</p>
+                <p>Some standards or profiles provide a validation service with a user interface and/or API for validating
+                    records.</p>
+            </section>
         </section>
 
-        <section id="validation" class="app-space-md">
-            <h3>Metadata validation</h3>
-            <p>To ensure compliance, metadata standards and profiles typically include a means to programmatically check
-                records contain:
             </p>
-            <ul>
-                <li>any required elements</li>
-                <li>any required/controlled element values</li>
-                <li>elements in the correct order</li>
-            </ul>
-
-            <p>Metadata standards typically use schemas and schematrons to determine if a record is valid:</p>
-            <ul>
-                <li>a <em>schema</em> checks the structure of elements in a record</li>
-                <li>a <em>schematron</em> checks specific elements in a record using a series of rules and patterns</li>
-            </ul>
-
-            <p>Notably a schematron can be use conditional logic, such as to ensure an element is included when certain
-                conditions are met.</p>
-            <p>Some standards or profiles provide a validation service with a user interface and/or API for validating
-                records.</p>
         </section>
     </div>
 </div>
