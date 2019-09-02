@@ -1,18 +1,19 @@
 import os
 
-from anytree import Node
-from flask_caching import Cache
-from rdflib import Graph, Namespace, URIRef
-from rdflib.namespace import SKOS, RDF
-
 import metadata_record_configs
 
 from pathlib import Path
+from datetime import datetime
+from time import strptime, mktime
 
 from flask import Flask, Response, render_template, url_for
 # noinspection PyPackageRequirements
 from jinja2 import PrefixLoader, PackageLoader, FileSystemLoader
 from flask_frozen import Freezer
+from flask_caching import Cache
+from anytree import Node
+from rdflib import Graph, Namespace, URIRef
+from rdflib.namespace import SKOS, RDF
 # noinspection PyPackageRequirements
 # Exempting Bandit security issue (Using Element to parse untrusted XML data is known to be vulnerable to XML attacks)
 #
@@ -208,7 +209,9 @@ def create_app():
 
         for term in terms.values():
             if len(term['relationships']['broader']) == 1:
+                # noinspection PyTypeChecker
                 if term['relationships']['broader'][0]['term_id'] in term_nodes.keys():
+                    # noinspection PyTypeChecker
                     term_nodes[term['term_id']].parent = term_nodes[term['relationships']['broader'][0]['term_id']]
 
         return term_nodes
