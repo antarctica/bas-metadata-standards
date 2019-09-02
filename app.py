@@ -40,6 +40,9 @@ def create_app():
         'bas_style_kit': PackageLoader('bas_style_kit_jinja_templates'),
     })
     app.config['bsk_templates'] = BskTemplates()
+    app.config['bsk_templates'].site_styles.append({
+        'href': 'https://cdn.web.bas.ac.uk/libs/font-awesome-pro/5.9.0/css/all.min.css'
+    })
     app.config['bsk_templates'].site_title = 'BAS Metadata Standards'
     app.config['bsk_templates'].site_description = 'Discovery metadata standards used in BAS and the UK PDC'
     app.config['bsk_templates'].bsk_site_nav_brand_text = 'BAS Metadata Standards'
@@ -95,6 +98,33 @@ def create_app():
         'value': 'Wiki',
         'href': 'https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/wikis/home'
     })
+
+    @cache.cached(timeout=60, key_prefix='gcmd_metadata')
+    def process_gcmd_metadata():
+        gcmd_metadata = {
+            'name': 'GCMD Earth Science keywords',
+            'version': None,
+            'revision': None
+        }
+
+        scheme = Graph()
+        with open(gcmd_rdf_terms_path, "r") as file_input:
+            scheme.parse(file_input, format="application/rdf+xml")
+
+            gcmd_ns = Namespace('http://gcmd.gsfc.nasa.gov/kms#')
+            scheme.bind("gcmd", gcmd_ns)
+            scheme.bind("skos", SKOS)
+            scheme.bind("rdf", RDF)
+
+            gcmd_version_predicate = gcmd_ns.keywordVersion
+            for t_subject, t_predicate, t_object in scheme.triples((None, gcmd_version_predicate, None)):
+                gcmd_metadata['version'] = str(t_object)
+
+            gcmd_revision_predicate = gcmd_ns.schemeVersion
+            for t_subject, t_predicate, t_object in scheme.triples((None, gcmd_revision_predicate, None)):
+                gcmd_metadata['revision'] = str(t_object)
+
+        return gcmd_metadata
 
     @cache.cached(timeout=60, key_prefix='gcmd_terms')
     def process_gcmd_terms():
@@ -183,6 +213,20 @@ def create_app():
 
         return term_nodes
 
+    def process_ancestors(ancestors):
+        ancestor = ancestors[0]
+        ancestors.pop(0)
+
+        if len(ancestors) == 0:
+            return {
+                'ancestor': ancestor
+            }
+
+        return {
+            'ancestor': ancestor,
+            'ancestors': process_ancestors(ancestors)
+        }
+
     @app.route('/')
     def index():
         # noinspection PyUnresolvedReferences
@@ -270,29 +314,7 @@ def create_app():
 
     @app.route('/vocabularies/gcmd/')
     def vocabulary_gcmd():
-        vocabularies = {
-            'earth_science': {
-                'version': None,
-                'revision': None
-            }
-        }
-
-        scheme = Graph()
-        with open(gcmd_rdf_terms_path, "r") as file_input:
-            scheme.parse(file_input, format="application/rdf+xml")
-
-            gcmd_ns = Namespace('http://gcmd.gsfc.nasa.gov/kms#')
-            scheme.bind("gcmd", gcmd_ns)
-            scheme.bind("skos", SKOS)
-            scheme.bind("rdf", RDF)
-
-            gcmd_version_predicate = gcmd_ns.keywordVersion
-            for t_subject, t_predicate, t_object in scheme.triples((None, gcmd_version_predicate, None)):
-                vocabularies['earth_science']['version'] = str(t_object)
-
-            gcmd_revision_predicate = gcmd_ns.schemeVersion
-            for t_subject, t_predicate, t_object in scheme.triples((None, gcmd_revision_predicate, None)):
-                vocabularies['earth_science']['revision'] = str(t_object)
+        vocabularies = {'earth_science': process_gcmd_metadata()}
 
         # noinspection PyUnresolvedReferences
         return render_template('app/vocabularies/gcmd.j2', vocabularies=vocabularies)
@@ -306,17 +328,22 @@ def create_app():
     def vocabulary_term_gcmd_earth_science(term_id: str):
         terms = process_gcmd_terms()
         term_nodes = process_gcmd_term_nodes()
+        vocabulary = process_gcmd_metadata()
 
         term = terms[term_id]
         term_node = term_nodes[term_id]
         term_ancestors = list(term_node.ancestors)
         term_ancestors.append(term_node)
 
+
+        term_ancestors_nested = process_ancestors(term_ancestors)
+
         # noinspection PyUnresolvedReferences
         return render_template(
             'app/vocabulary-terms/gcmd-earth-science.j2',
             term=term,
-            term_ancestors=term_ancestors
+            term_ancestors=term_ancestors_nested,
+            vocabulary=vocabulary
         )
 
     @freezer.register_generator
