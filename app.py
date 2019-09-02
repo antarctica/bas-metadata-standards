@@ -167,13 +167,13 @@ def create_app():
                             str(t_object)
                             .replace('https://gcmdservices.gsfc.nasa.gov/kms/concept/', '')
                             .replace('/', '')
-                         )
+                        )
                     elif t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#narrower'):
                         terms[term_id]['relationships']['narrower'].append(
                             str(t_object)
                             .replace('https://gcmdservices.gsfc.nasa.gov/kms/concept/', '')
                             .replace('/', '')
-                         )
+                        )
                     elif t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#definition'):
                         terms[term_id]['definition'] = str(t_object)
                     elif t_predicate == URIRef('http://www.w3.org/2004/02/skos/core#changeNote'):
@@ -382,7 +382,7 @@ def create_app():
             url_for('records_standard_iso_19115', configuration='uk-pdc-discovery', stylesheet='iso-rubric')
         ]
 
-    @freezer.register_generator
+    @freezer.register_generator  # noqa: F811
     def vocabulary_term_gcmd_earth_science():
         scheme = Graph()
         with open(gcmd_rdf_terms_path, "r") as file_input:
