@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:gcmd="http://gcmd.gsfc.nasa.gov/kms#">
+    <gcmd:gcmd>
+        <gcmd:termsOfUse>http://gcmd.nasa.gov/r/l/TermsOfUse</gcmd:termsOfUse>
+        <gcmd:keywordVersion>8.6</gcmd:keywordVersion>
+        <gcmd:schemeVersion>2019-04-05 11:57:34</gcmd:schemeVersion>
+    </gcmd:gcmd>
+
+    <!-- Root element [1/1] -->
+    <skos:Concept rdf:about="1eb0ea0a-312c-4d74-8d42-6f1ad758f999" xml:base="https://gcmdservices.gsfc.nasa.gov/kms/concept/"
+                  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+        <skos:inScheme rdf:resource="https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"/>
+        <skos:prefLabel xml:lang="en">Science Keywords</skos:prefLabel>
+        <skos:narrower rdf:resource="e9f67a66-e9fc-435c-b720-ae32a2c3d8f5"/>
+        <skos:changeNote>2015-10-09 14:16:54.0 [gee-cee] Remove Concepts delete narrower relation (null);</skos:changeNote>
+    </skos:Concept>
+
+    <!-- First level term [1/1] -->
+    <skos:Concept rdf:about="e9f67a66-e9fc-435c-b720-ae32a2c3d8f5" xml:base="https://gcmdservices.gsfc.nasa.gov/kms/concept/"
+                  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+        <skos:inScheme rdf:resource="https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"/>
+        <skos:prefLabel xml:lang="en">EARTH SCIENCE</skos:prefLabel>
+        <skos:definition xml:lang="en">any of various sciences, as geography, geology, or meteorology, that deal with the earth, its composition, or any of its changing aspects.</skos:definition>
+        <skos:broader rdf:resource="1eb0ea0a-312c-4d74-8d42-6f1ad758f999"/>
+        <skos:narrower rdf:resource="c47f6052-634e-40ef-a5ac-13f69f6f4c2a"/>
+        <skos:narrower rdf:resource="91697b7d-8f2b-4954-850e-61d5f61c867d"/>
+    </skos:Concept>
+
+    <!-- Second level term [1/2] -->
+    <skos:Concept rdf:about="c47f6052-634e-40ef-a5ac-13f69f6f4c2a" xml:base="https://gcmdservices.gsfc.nasa.gov/kms/concept/"
+                  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+        <skos:inScheme rdf:resource="https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"/>
+        <skos:prefLabel xml:lang="en">ATMOSPHERE</skos:prefLabel>
+        <skos:altLabel xml:lang="en">BIOSPHERE</skos:altLabel>
+        <skos:altLabel xml:lang="en">OCEANS</skos:altLabel>
+        <skos:definition xml:lang="en">A gaseous envelope gravitationally bound to a celestial body (e.g., a planet, its satellite, or a star).</skos:definition>
+        <skos:broader rdf:resource="e9f67a66-e9fc-435c-b720-ae32a2c3d8f5"/>
+        <skos:narrower rdf:resource="df160e31-ae45-41a4-9093-a80fe5303cea"/>
+        <skos:changeNote>2018-07-18 13:28:24.0 [sritz] insert Definition (id: null text: A gaseous envelope gravitationally bound to a celestial body (e.g., a planet, its satellite, or a star). language code: en);</skos:changeNote>
+    </skos:Concept>
+
+    <!-- Third level term [1/1] -->
+    <skos:Concept rdf:about="df160e31-ae45-41a4-9093-a80fe5303cea" xml:base="https://gcmdservices.gsfc.nasa.gov/kms/concept/"
+                  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+        <skos:inScheme rdf:resource="https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"/>
+        <skos:prefLabel xml:lang="en">ATMOSPHERIC WINDS</skos:prefLabel>
+        <skos:definition xml:lang="en">Air in motion relative to the surface of the earth.</skos:definition>
+        <skos:broader rdf:resource="c47f6052-634e-40ef-a5ac-13f69f6f4c2a"/>
+        <skos:changeNote>2017-04-21 14:16:41.0 [sritz] Remove Concepts delete narrower relation (null);</skos:changeNote>
+        <skos:changeNote>2017-04-21 13:59:07.0 [sritz] update Definition (Air in motion relative to the surface of the earth.); update Definition (Glossary of Meteorology, American Meteorological Society);</skos:changeNote>
+        <skos:changeNote>2017-04-20 14:45:01.0 [sritz] Move Concepts delete narrower relation (null);</skos:changeNote>
+    </skos:Concept>
+
+    <!-- Second level term [2/2] -->
+    <skos:Concept rdf:about="91697b7d-8f2b-4954-850e-61d5f61c867d" xml:base="https://gcmdservices.gsfc.nasa.gov/kms/concept/"
+                  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+        <skos:inScheme rdf:resource="https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"/>
+        <skos:prefLabel xml:lang="en">OCEANS</skos:prefLabel>
+        <skos:definition xml:lang="en">Ocean is a very large expanse of sea, in particular, each of the main areas into which the sea is divided geographically.</skos:definition>
+        <skos:broader rdf:resource="e9f67a66-e9fc-435c-b720-ae32a2c3d8f5"/>
+    </skos:Concept>
+</rdf:RDF>

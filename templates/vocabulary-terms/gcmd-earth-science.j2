@@ -1,0 +1,129 @@
+{% extends 'bas_style_kit/layouts/bsk_standard.j2' %}
+
+{% macro display_related_term(term) %}
+<a href="/vocabularies/gcmd/earth-science/terms/{{ term.term_id }}">
+    {{ term.name }}
+    {% if term.aliases %}
+      <em class="app-vocab-term-aliases">{{ term.aliases | join(', ') }}</em>
+    {% endif %}
+</a>
+{% endmacro %}
+
+{% macro display_ancestor_level(ancestor_level) %}
+<ul class="fa-ul">
+    <li>
+        <span class="fa-li"><i class="far fa-level-up fa-flip-horizontal"></i></span>
+        {% if ancestor_level.ancestors %}
+            {{ display_related_term(ancestor_level.ancestor) }}
+            {{ display_ancestor_level(ancestor_level.ancestors) }}
+        {% else %}
+            {{ ancestor_level.ancestor.name }}
+            {% if ancestor_level.ancestor.aliases %}
+              <em class="app-vocab-term-aliases">{{ ancestor_level.ancestor.aliases | join(', ') }}</em>
+            {% endif %}
+        {% endif %}
+    </li>
+</ul>
+{% endmacro %}
+
+{% block main_content %}
+<style>
+    .app-space-md {
+        margin-top: 35px;
+    }
+    .app-space-lg {
+        margin-top: 70px;
+    }
+    .app-vocab-term-aliases {
+       font-size: 80%;
+    }
+    .app-vocab-term-path ul.fa-ul,
+    .app-vocab-term-relations ul.fa-ul {
+        margin-left: 1.5em;
+    }
+</style>
+<header class="bsk-page-header bsk-page-header-stacked">
+  <h1>
+    <small>Vocabulary Term</small>
+    <br>
+    {{ term.name }}
+    {% if term.aliases %}
+      <em class="app-vocab-term-aliases">{{ term.aliases | join(', ') }}</em>
+    {% endif %}
+  </h1>
+</header>
+<div class="bsk-row">
+    <div class="bsk-col-12-md-10">
+        <section>
+            <nav class="app-vocab-term-path bsk-sidebar bsk-sidebar-default">
+                <p>{{ vocabulary.name }} ({{ vocabulary.version }})</p>
+                {{ display_ancestor_level(term_ancestors) }}
+            </nav>
+        </section>
+
+        {% if term.definition %}
+            <p class="bsk-lead">{{ term.definition | capitalize }}</p>
+        {% endif %}
+
+        <section class="app-space-lg">
+            <h2>Change notes</h2>
+            {% if not term.notes.change %}
+                <p>None.</p>
+            {% endif %}
+            {% for change_note in term.notes.change %}
+                <blockquote>
+                    {{ change_note.note }}
+                    <footer>
+                        {{ change_note.author }} - {{ change_note.date.strftime('%Y-%b-%d') | upper }}
+                    </footer>
+                </blockquote>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+<div class="bsk-row">
+    <section class="app-space-lg app-vocab-term-relations">
+        <hr />
+        <div class="bsk-col-12-md-6">
+            <section class="app-space-md">
+                <h3>Broader terms</h3>
+                <ul class="fa-ul">
+                    {% if not term.relationships.broader %}
+                        <li>
+                            <span class="fa-li"><i class="far fa-arrow-left bsk-text-muted"></i></span>
+                            None
+                        </li>
+                    {% else %}
+                        {% for broader in term.relationships.broader %}
+                            <li>
+                                <span class="fa-li"><i class="far fa-arrow-left bsk-text-muted"></i></span>
+                                {{ display_related_term(broader) }}
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </section>
+        </div>
+        <div class="bsk-col-12-md-6">
+            <section class="app-space-md">
+                <h3>Narrower terms</h3>
+                <ul class="fa-ul">
+                {% if not term.relationships.narrower %}
+                    <li>
+                        <span class="fa-li"><i class="far fa-arrow-right bsk-text-muted"></i></span>
+                        None
+                    </li>
+                {% else %}
+                    {% for narrower in term.relationships.narrower %}
+                        <li>
+                            <span class="fa-li"><i class="far fa-arrow-right bsk-text-muted"></i></span>
+                            {{ display_related_term(narrower) }}
+                        </li>
+                    {% endfor %}
+                {% endif %}
+                </ul>
+            </section>
+        </div>
+    </section>
+</div>
+{% endblock %}
