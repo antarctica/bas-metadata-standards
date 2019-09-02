@@ -66,6 +66,18 @@
         {% endif %}
 
         <section class="app-space-lg">
+            <h2>Change notes</h2>
+            {% if not term.notes.change %}
+                <p>None.</p>
+            {% endif %}
+            {% for change_note in term.notes.change %}
+                <blockquote>
+                    {{ change_note.note }}
+                    <footer>
+                        {{ change_note.author }} - {{ change_note.date.strftime('%Y-%b-%d') | upper }}
+                    </footer>
+                </blockquote>
+            {% endfor %}
         </section>
     </div>
 </div>
@@ -108,18 +120,9 @@
                             {{ display_related_term(narrower) }}
                         </li>
                     {% endfor %}
-            <h2>Notes</h2>
-            <section id="notes" class="app-space-md">
-                <h3>Change notes</h3>
-                {% if not term.notes.change %}
-                    <p>None.</p>
                 {% endif %}
-                {% for change_note in term.notes.change %}
-                    <p>{{ change_note }}</p>
-                {% endfor %}
                 </ul>
             </section>
-        </section>
         </div>
     </section>
 </div>

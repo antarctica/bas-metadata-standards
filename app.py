@@ -338,6 +338,20 @@ def create_app():
         term_ancestors = list(term_node.ancestors)
         term_ancestors.append(term_node)
 
+        if 'change' in term['notes']:
+            for _index, change_note in enumerate(term['notes']['change']):
+                parts = change_note.split('.0 [')
+                # 2015-10-09 14:16:54 = '%Y-%m-%d %H:%M:%S'
+                date = datetime.fromtimestamp(mktime(strptime(parts[0], '%Y-%m-%d %H:%M:%S')))
+                parts = parts[1].split('] ')
+                author = parts[0]
+                note = parts[1]
+
+                term['notes']['change'][_index] = {
+                    'date': date,
+                    'author': author,
+                    'note': note
+                }
 
         term_ancestors_nested = process_ancestors(term_ancestors)
 
