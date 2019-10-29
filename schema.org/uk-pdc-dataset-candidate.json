@@ -116,7 +116,7 @@
     {
       "@type": "MonetaryGrant",
       "fundedItem": {
-        "@id": "https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f",
+        "@id": "https://doi.org/10.5285/3cf26ab6-7f47-4868-a87d-c62a2eefea1f"
       },
       "identifier": "NE/I022973/1",
       "sameAs": "https://gtr.ukri.org/projects?ref=NE%2FI022973%2F1",
