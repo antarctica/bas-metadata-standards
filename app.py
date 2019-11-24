@@ -47,7 +47,7 @@ def create_app():
     app.config['bsk_templates'].site_title = 'BAS Metadata Standards'
     app.config['bsk_templates'].site_description = 'Discovery metadata standards used in BAS and the UK PDC'
     app.config['bsk_templates'].bsk_site_nav_brand_text = 'BAS Metadata Standards'
-    app.config['bsk_templates'].bsk_site_development_phase = 'alpha'
+    app.config['bsk_templates'].bsk_site_development_phase = 'beta'
     app.config['bsk_templates'].bsk_site_feedback_href = 'mailto:polardatacentre@bas.ac.uk'
     app.config['bsk_templates'].bsk_site_footer_policies_cookies_href = '/legal/cookies'
     app.config['bsk_templates'].bsk_site_footer_policies_copyright_href = '/legal/copyright'
@@ -96,7 +96,7 @@ def create_app():
         ]
     })
     app.config['bsk_templates'].bsk_site_nav_primary.append({
-        'value': 'Wiki',
+        'value': 'Wiki (Internal)',
         'href': 'https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/wikis/home'
     })
 
