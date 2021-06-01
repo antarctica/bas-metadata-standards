@@ -1,0 +1,62 @@
+# Build settings
+#
+
+markdown: kramdown
+
+theme: jekyll-theme-bas-style-kit
+
+# Server settings
+#
+
+host: 0.0.0.0
+port: 9000
+encoding: UTF-8
+
+# Site settings
+#
+
+# e.g. /foo
+baseurl: ''
+
+defaults:
+  -
+    scope:
+      # an empty string here means all files in the project
+      path: ""
+    values:
+      layout: "bas-style-kit/bsk--standard-page"
+      bas_style_kit_jekyll_theme:
+        feature_flags:
+          page:
+            toc: false
+
+collections:
+  standard:
+    output: true
+    permalink: /:collection/:slug/
+  profile:
+    output: true
+    permalink: /:collection/:slug/
+
+# Theme settings
+#
+
+bas_style_kit_jekyll_theme:
+  attributes:
+    container: fixed
+    head_title:
+      # Used when `page.title` isn't set
+      default: 'BAS Metadata Standards'
+      appended: ' - BAS Metadata Standards'
+    head_description: 'Metadata standards, profiles and vocabularies used by BAS and the UK PDC for discovery metadata.'
+    site_brand:
+        text: 'BAS Metadata Standards'
+        href: '/'
+    site_development_phase: 'beta'
+    site_styles:
+        -
+          href: '/css/main.css'
+          type: 'local'
+  feature_flags:
+    standard_header:
+      cookie_notice: false

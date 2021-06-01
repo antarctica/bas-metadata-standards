@@ -1,21 +1,18 @@
-FROM python:3.7-alpine
+FROM docker-registry.data.bas.ac.uk/web-apps/infrastructure/bdi/jekyll-image:0.7.0-alpine
 
 LABEL maintainer = "Felix Fennell <felnne@bas.ac.uk>"
 
 # Setup project
 WORKDIR /usr/src/app
 
-ENV PYTHONPATH /usr/src/app
-ENV FLASK_APP manage.py
-ENV FLASK_ENV development
+# Setup dependencies
+ADD Gemfile /usr/src/app/
+RUN apk add --no-cache build-base libffi && \
+    bundle install && \
+    apk del build-base
 
-# Setup project dependencies
-COPY requirements.txt /usr/src/app/
-RUN apk add --no-cache libxslt-dev && \
-    apk add --no-cache --virtual .build-deps build-base && \
-    pip install --upgrade pip && \
-    pip install -r requirements.txt --no-cache-dir && \
-    apk --purge del .build-deps
+# Patch Jekyll menus (needed until https://github.com/forestryio/jekyll-menus/issues/18 is fixed)
+ADD support/gems/jekyll-menus/lib/jekyll/menus.rb /usr/local/bundle/gems/jekyll-menus-0.6.1/lib/jekyll/menus.rb
 
 # Setup runtime
-ENTRYPOINT []
+CMD ["serve"]
