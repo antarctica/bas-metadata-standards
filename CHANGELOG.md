@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed [BREAKING!]
+
+* Flask application replaced with Jekyll static site
+* Sample ISO 19915 record replaced with real world example record
+
+### Removed [BREAKING!]
+
+* Candidate records for DataCite and Schema.org, until these can be introduced properly as supported standards
+* GEMINI ISO 19115 profile due to its incompatibility with ISO 19115-2
+* Vocabulary information from website, including GCMD keyword term listings
+* Link to internal wiki from website
+
+### Changed
+
+* switching copyright holder to UKRI
+
+### Removed
+
+* Synk support
+
 ## [0.2.0] 2019-09-02
 
 ### Added

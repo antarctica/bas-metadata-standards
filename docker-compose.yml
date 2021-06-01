@@ -1,18 +1,12 @@
 ---
-version: '2'
+version: '3.8'
 
 services:
   app:
     build: .
     image: docker-registry.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards:latest-alpine
-    command: flask freeze
+    working_dir: /usr/src/app/site
     volumes:
-      - .:/usr/src/app
-
-  web:
-      image: nginx:alpine
-      volumes:
-        - ./support/nginx/default.conf:/etc/nginx/conf.d/default.conf
-        - ./build:/usr/share/nginx/html/public
-      ports:
-        - "9000:9000"
+      - ./site:/usr/src/app/site
+    ports:
+      - "9000:9000"

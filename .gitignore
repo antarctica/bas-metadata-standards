@@ -1,4 +1,5 @@
 __pycache__
 /.idea
-build
 /provisioning/terraform/.terraform
+/site/_site
+/site/.jekyll-cache

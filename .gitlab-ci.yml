@@ -3,6 +3,9 @@
 # == Notes ==
 
 # - GitLab automatically passes artifacts from previous stages by default
+
+# - This CI definition uses a GitLab provided include template
+
 # - Set required secret variables at: https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/settings/ci_cd
 
 # = Secret variables
@@ -10,20 +13,19 @@
 #   Sensitive values are represented by "[Sensitive]"
 #
 # - AWS IAM id/secret keys for 'bas-gitlab-ci-bas-metadata-standards' user
-# > AWS_ACCESS_KEY_ID: "[Sensetive]"
-# > AWS_SECRET_ACCESS_KEY: "[Sensetive]"
-#
-# - Snyk
-# > SNYK_TOKEN: "[Sensitive]"
+# > AWS_ACCESS_KEY_ID: "[Sensitive]"
+# > AWS_SECRET_ACCESS_KEY: "[Sensitive]"
 
+# == Includes ==
+
+include:
+  - template: 'Workflows/MergeRequest-Pipelines.gitlab-ci.yml'
 
 # == Global settings ==
 
 stages:
-  - test
-  - build
-  - lint
-  - deploy
+  - 🏗 build
+  - 🚀 deploy
 
 variables:
   AWS_DEFAULT_REGION: eu-west-1
@@ -39,57 +41,43 @@ image:
 
 # == Jobs ==
 
-test-app:
-  stage: test
-  variables:
-    FLASK_ENV: testing
-  script:
-    - "flask test --test-runner junit"
-  artifacts:
-    paths:
-    reports:
-      junit: test-results.xml
-
-build-app:
-  stage: build
-  script:
-    - "flask freeze"
-  artifacts:
-    name: "$CI_BUILD_TOKEN-build"
-    paths:
-      - build
-    expire_in: 1 day
-
-dependencies-app:
-  stage: lint
-  image:
-    name: antarctica/snyk-cli:python-3
-    entrypoint: [""]
-  script:
-   - "pip install -r requirements.txt"
-   - "snyk test"
-   - "snyk monitor --project-name=$SNYK_PROJECT --org=$SNYK_ORG"
+jekyll-build-staging:
+  stage: 🏗 build
   only:
     - master
+  variables:
+    JEKYLL_ENV: staging
+  before_script:
+    - "cd site"
+  script: "jekyll build"
+  artifacts:
+    name: "$CI_BUILD_TOKEN-content"
+    paths:
+      - site/_site
+    expire_in: 1 day
 
-pep8-app:
-  stage: lint
-  script:
-    - "flake8 . --ignore=E501"
-
-bandit-app:
-  stage: lint
-  script:
-    - "bandit -r ."
+jekyll-build-production:
+  stage: 🏗 build
+  only:
+    - tags
+  variables:
+    JEKYLL_ENV: production
+  before_script:
+    - "cd site"
+  script: "jekyll build"
+  artifacts:
+    name: "$CI_BUILD_TOKEN-content"
+    paths:
+      - site/_site
+    expire_in: 1 month
 
 s3-website-staging:
-  stage: deploy
+  stage: 🚀 deploy
   image:
     name: governmentpaas/awscli:latest
     entrypoint: [""]
   script:
-    - "aws s3 sync build s3://$S3_DEPLOYMENT_BUCKET_STAGE/"
-    - "aws s3 sync sample-record-artefacts s3://$S3_DEPLOYMENT_BUCKET_STAGE/sample-record-artefacts"
+    - "aws s3 sync site/_site s3://$S3_DEPLOYMENT_BUCKET_STAGE/"
   only:
     - master
   environment:
@@ -97,13 +85,12 @@ s3-website-staging:
     url: https://metadata-standards-testing.data.bas.ac.uk
 
 s3-website-production:
-  stage: deploy
+  stage: 🚀 deploy
   image:
     name: governmentpaas/awscli:latest
     entrypoint: [""]
   script:
-    - "aws s3 sync build s3://$S3_DEPLOYMENT_BUCKET_PROD/"
-    - "aws s3 sync sample-record-artefacts s3://$S3_DEPLOYMENT_BUCKET_PROD/sample-record-artefacts"
+    - "aws s3 sync site/_site s3://$S3_DEPLOYMENT_BUCKET_PROD/"
   only:
     - tags
   environment:
