@@ -7,12 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.0] 2022-02-14 [BREAKING!]
+
+### Changed [BREAKING!]
+
+* Re-licencing project under the MIT licence
+
 ### Added
 
 * Tools menu (BAS Metadata Library)
 
 ### Changed
 
+* Updating project README
 * Updating project website (profiles and standards)
 
 ## [0.3.0] 2021-06-09
