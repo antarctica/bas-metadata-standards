@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed [BREAKING!]
+
+* Re-licencing project under the MIT licence
+
 ### Added
 
 * Tools menu (BAS Metadata Library)
