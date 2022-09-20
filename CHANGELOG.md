@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+* SpatioTemporal Asset Catalogue (STAC) as a new candidate standard
+  [#206](https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/-/issues/206)
 * IEC 61174 (RTZ) as a new standard
   [#192](https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/-/issues/192)
 
