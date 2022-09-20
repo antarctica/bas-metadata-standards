@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+* IEC 61174 (RTZ) as a new standard
+  [#192](https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/-/issues/192)
+
 ### Changed
 
 * Scripts to allow example ISO 19115 records to be updated from configuration files
