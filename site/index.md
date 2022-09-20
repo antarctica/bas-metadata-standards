@@ -1,6 +1,7 @@
 ---
 title: BAS Metadata Standards
 lead: Metadata standards used in BAS and the UK PDC
+layout: "bas-style-kit/bsk--standard"
 ---
 
 This website documents the metadata standards used by the [British Antarctic Survey](https://www.bas.ac.uk) (BAS), and
@@ -42,6 +43,14 @@ Standards and profiles currently used by BAS and the UK PDC for discovery metada
 | [ISO 19115-2:2009](/standard/iso-19115-19139) | Standard Extension (abstract) | ISO 19115:2003             | N/A       | Extensions to ISO 19115:2003 conceptual model to describe acquisition and processing related concepts |
 | [ISO 19139:2007](/standard/iso-19115-19139)   | Standard (encoding)           | ISO 19115:2003             | XML       | Encodes the conceptual model defined by ISO 19115:2003 using XML                                      |
 | [ISO 19139-2:2012](/standard/iso-19115-19139) | Standard Extension (encoding) | ISO 19115-2:2009           | XML       | Encodes the conceptual model defined by ISO 19115-2:2009 using XML                                    |
+{: .bsk-table .bsk-table-responsive }
+
+Standards and profiles currently used by BAS and the UK PDC for exchanging route information:
+
+| Standard/Profile                                    | Type                                        | Based On       | Encoding  | Description                                                                                                                  |
+| --------------------------------------------------- | ------------------------------------------- | -------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| [IEC 61174:2015 (RTZ 1.0)](/standard/iec-61174)     | Standard (abstract &amp; encoding)          | None           | XML       | Conceptual model and encodings for Route Plan Exchange (RTZ) files used in marine navigation and electronic charting systems |
+| [IEC PAS 61174:2021 (RTZ 1.2)](/standard/iec-61174) | Standard Revision (abstract &amp; encoding) | IEC 61174:2015 | XML       | Revisions and improvements to IEC 61174:2015 including extensions support                                                    |
 {: .bsk-table .bsk-table-responsive }
 
 Other standards and profiles, either previously used by BAS and the UK PDC, or that are under consideration for use:
