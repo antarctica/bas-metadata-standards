@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+* Scripts to allow example ISO 19115 records to be updated from configuration files
+  [#201](https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/-/issues/201)
+
 ## [0.4.0] 2022-02-14 [BREAKING!]
 
 ### Changed [BREAKING!]

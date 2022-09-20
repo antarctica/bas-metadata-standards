@@ -3,3 +3,4 @@ __pycache__
 /provisioning/terraform/.terraform
 /site/_site
 /site/.jekyll-cache
+/support/example-records/.venv

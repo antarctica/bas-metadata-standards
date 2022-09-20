@@ -51,11 +51,24 @@ menus:
 
 Where the weight option, and the weight option of existing profiles pages, should be set to create an alphabetical list.
 
+### Updating example ISO 19115 records
+
+1. update record configurations in `support/example-records/configs/` as needed
+2. follow the steps in the [Build example ISO 19115 records](#build-example-iso-19115-records) section
+
 ## Implementation
 
-This website uses [Jekyll](https://jekyllrb.com) as a framework to produce a static website hosted using AWS S3 and
-Cloudfront. The [BAS Style Kit Jekyll Theme](https://style-kit.web.bas.ac.uk/start/introduction/#jekyll) is used to
-provide common styling and page templates.
+### Jekyll static website
+
+[Jekyll](https://jekyllrb.com) is used as a framework to build a static website from content in `site/`. The
+[BAS Style Kit Jekyll Theme](https://style-kit.web.bas.ac.uk/start/introduction/#jekyll) is used to provide common
+styling and page templates. This site is hosted using AWS S3 and Cloudfront, managed using Terraform in `provisioning/`.
+
+### Example ISO 19115 records
+
+Example records for the ISO 19115 standards family are created using the
+[BAS Metadata Library](https://pypi.org/project/bas-metadata-library/) from configuration files stored in
+`support/example-records/`.
 
 ## Setup
 
@@ -148,6 +161,39 @@ To stop the development server:
 ```shell
 # quit the running container using [ctrl] + c
 $ docker compose down
+```
+
+### Build example ISO 19115 records
+
+To update example ISO 19115 records:
+
+1. update the source record configurations in `support/example-records/configs`
+2. setup a Python virtual environment (if needed) [1]
+3. run the `support/example-records/generate-example-iso19115-records.py` script [2]
+3. copy the generated example records to the relevant part of the static site source content [3]
+
+[1]
+
+```shell
+$ cd support/example-records/
+$ python -m venv .venv
+$ source .venv/bin/activate
+$ python -m pip install --upgrade pip
+$ python -m pip install bas-metadata-library==0.8.0
+```
+
+[2]
+
+```shell
+$ cd support/example-records/
+$ source .venv/bin/activate
+$ python generate-example-iso19115-records.py
+```
+
+[3]
+
+```shell
+$ cp -r support/example-records/output/ site/static/example-records/
 ```
 
 ## Deployment
