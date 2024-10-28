@@ -27,7 +27,7 @@ publish-content-stage:
   needs: []
   script:
     - "aws s3 cp site/index.html s3://$S3_RESOURCES_BUCKET_STAGE/index.html"
-    - "aws s3 cp resources/xml-stylesheets s3://$S3_RESOURCES_BUCKET_STAGE/xml-stylesheets"
+    - "aws s3 sync resources/xml-stylesheets s3://$S3_RESOURCES_BUCKET_STAGE/xml-stylesheets"
   # rules:
   #   - if: '$CI_COMMIT_BRANCH == "main" && $CI_COMMIT_TAG == null'
 
@@ -36,6 +36,6 @@ publish-content-prod:
   needs: []
   script:
     - "aws s3 cp site/index.html s3://$S3_RESOURCES_BUCKET_PROD/index.html"
-    - "aws s3 cp resources/xml-stylesheets s3://$S3_RESOURCES_BUCKET_PROD/xml-stylesheets"
+    - "aws s3 sync resources/xml-stylesheets s3://$S3_RESOURCES_BUCKET_PROD/xml-stylesheets"
   # rules:
   #   - if: $CI_COMMIT_TAG
