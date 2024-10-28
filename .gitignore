@@ -1,6 +1,4 @@
 __pycache__
 /.idea
 .terraform
-/site/_site
-/site/.jekyll-cache
 /support/example-records/.venv

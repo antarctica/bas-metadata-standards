@@ -1,40 +1,12 @@
 ---
 
-# == Notes ==
-
-# - GitLab automatically passes artifacts from previous stages by default
-
-# - This CI definition uses a GitLab provided include template
-
-# - Set required secret variables at: https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/settings/ci_cd
-
-# = Secret variables
-# - Variables are grouped by section in KEY: "value" format (e.g. FOO: "bar")
-#   Sensitive values are represented by "[Sensitive]"
-#
-# - AWS IAM id/secret keys for 'bas-gitlab-ci-bas-metadata-standards' user
-# > AWS_ACCESS_KEY_ID: "[Sensitive]"
-# > AWS_SECRET_ACCESS_KEY: "[Sensitive]"
-
-# == Includes ==
-
 include:
   - template: 'Workflows/MergeRequest-Pipelines.gitlab-ci.yml'
 
-# == Global settings ==
-
 stages:
-  - 🏗 build
-  - 🚀 deploy
   - 🚚 publish
 
 variables:
-  AWS_DEFAULT_REGION: eu-west-1
-  S3_DEPLOYMENT_BUCKET_STAGE: metadata-standards-testing.data.bas.ac.uk
-  S3_DEPLOYMENT_BUCKET_PROD: metadata-standards.data.bas.ac.uk
-  APP_NAME: bas-metadata-standards
-  SNYK_ORG: antarctica
-  SNYK_PROJECT: bas-metadata-standards
   # Secrets (set in GitLab CI/CD settings)
   # - AWS IAM id/secret key for 'bas-gitlab-ci-bas-metadata-standards' user
   #   - AWS_ACCESS_KEY_ID: "[Sensitive]"
@@ -48,60 +20,12 @@ image:
   name: governmentpaas/awscli:latest
   entrypoint: [""]
 
-# == Jobs ==
-
-jekyll-build-staging:
-  stage: 🏗 build
-  only:
-    - master
-  variables:
-    JEKYLL_ENV: staging
-  before_script:
-    - "cd site"
-  script: "jekyll build"
-  artifacts:
-    name: "$CI_BUILD_TOKEN-content"
-    paths:
-      - site/_site
-    expire_in: 1 day
 # Jobs
 
-jekyll-build-production:
-  stage: 🏗 build
-  only:
-    - tags
-  variables:
-    JEKYLL_ENV: production
-  before_script:
-    - "cd site"
-  script: "jekyll build"
-  artifacts:
-    name: "$CI_BUILD_TOKEN-content"
-    paths:
-      - site/_site
-    expire_in: 1 month
-
-s3-website-staging:
-  stage: 🚀 deploy
-  image:
-    name: governmentpaas/awscli:latest
-    entrypoint: [""]
 publish-content-stage:
   stage: 🚚 publish
   needs: []
   script:
-    - "aws s3 sync site/_site s3://$S3_DEPLOYMENT_BUCKET_STAGE/"
-  only:
-    - master
-  environment:
-    name: staging
-    url: https://metadata-standards-testing.data.bas.ac.uk
-
-s3-website-production:
-  stage: 🚀 deploy
-  image:
-    name: governmentpaas/awscli:latest
-    entrypoint: [""]
     - "aws s3 cp site/index.html s3://$S3_RESOURCES_BUCKET_STAGE/index.html"
     - "aws s3 cp resources/xml-stylesheets s3://$S3_RESOURCES_BUCKET_STAGE/xml-stylesheets"
   # rules:
@@ -111,12 +35,6 @@ publish-content-prod:
   stage: 🚚 publish
   needs: []
   script:
-    - "aws s3 sync site/_site s3://$S3_DEPLOYMENT_BUCKET_PROD/"
-  only:
-    - tags
-  environment:
-    name: production
-    url: https://metadata-standards.data.bas.ac.uk
     - "aws s3 cp site/index.html s3://$S3_RESOURCES_BUCKET_PROD/index.html"
     - "aws s3 cp resources/xml-stylesheets s3://$S3_RESOURCES_BUCKET_PROD/xml-stylesheets"
   # rules:
