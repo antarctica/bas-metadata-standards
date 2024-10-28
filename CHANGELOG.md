@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+* Standalone `metadata-resources.data.bas.ac.uk` website setup for related resources (XML stylesheets, etc.)
+
+### Changed
+
+* Replacing and upgrading Terraform configuration
+
 ## [0.5.0] 2022-09-20
 
 ### Added
