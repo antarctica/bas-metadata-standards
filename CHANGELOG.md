@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * Jekyll static site replaced with GitBook rewrite
 
+### Removed [BREAKING!]
+
+* Outdated example ISO 19115 records
+
 ### Added
 
 * Standalone `metadata-resources.data.bas.ac.uk` website setup for related resources (XML stylesheets, etc.)
