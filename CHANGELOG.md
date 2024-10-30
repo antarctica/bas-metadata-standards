@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 * Standalone `metadata-resources.data.bas.ac.uk` website setup for related resources (XML stylesheets, etc.)
+* Local media type definitions for zipped Shapefiles/GeoPackages and georeferenced PDFs
 
 ### Changed
 
