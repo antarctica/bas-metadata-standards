@@ -24,6 +24,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * Replacing and upgrading Terraform configuration
 
+### Removed
+
+* Old contributing policy
+
 ## [0.5.0] 2022-09-20
 
 ### Added
