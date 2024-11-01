@@ -357,18 +357,31 @@ resource "aws_cloudfront_distribution" "production" {
   }
 }
 
+## DNS
+##
+
+resource "aws_route53_record" "bas-metadata-standards-staging" {
+  zone_id = data.terraform_remote_state.BAS-CORE-DOMAINS.outputs.DATA-BAS-AC-UK-ID
+
+  name = "metadata-standards-testing"
+  type = "CNAME"
+  ttl  = 300
+
+  records = [
+    "7c24422890-hosting.gitbook.io",
+  ]
+}
+
 ## IAM
 ##
 
-# Disabled until legacy resources are removed and remote state namespace available
-# resource "aws_iam_user" "gitlab-ci" {
-#   name = "bas-gitlab-ci-bas-metadata-standards"
-# }
+resource "aws_iam_user" "gitlab-ci" {
+  name = "bas-gitlab-ci-bas-metadata-standards"
+}
 
 resource "aws_iam_user_policy" "ci-testing" {
   name = "ci-policy-testing"
-  # user = aws_iam_user.gitlab-ci.name
-  user = "bas-gitlab-ci-bas-metadata-standards"
+  user = aws_iam_user.gitlab-ci.name
   policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
@@ -393,8 +406,7 @@ resource "aws_iam_user_policy" "ci-testing" {
 
 resource "aws_iam_user_policy" "ci-production" {
   name = "ci-policy-production"
-  # user = aws_iam_user.gitlab-ci.name
-  user = "bas-gitlab-ci-bas-metadata-standards"
+  user = aws_iam_user.gitlab-ci.name
   policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
