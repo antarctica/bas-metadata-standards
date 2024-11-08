@@ -48,6 +48,9 @@ Each `index.html` file should:
 **Note:** IANA registrations are known to be inconsistent over time. Our local registrations can similarly vary based
 on need (for example the `x-service` series are more minimal).
 
+Once added, media types should be listed in the 
+[Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/media-types).
+
 [1] Common preamble for local media types:
 
 ```
@@ -135,11 +138,6 @@ suitable permissions to contribute content.
 ### Continuous Deployment
 
 A Continuous Deployment process using GitLab's CI/CD platform is configured in [`.gitlab-ci.yml`](/.gitlab-ci.yml). 
-This will:
-
-- publish [Resources](#resources) managed directly by this project to S3
-  - commits to the `main` branch will be published to the testing bucket
-  - tagged commits will be published to the production bucket
 
 ## Project maintainer
 

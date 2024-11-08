@@ -22,7 +22,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+* Project copyright dates updated
+* Static site content significantly streamlined and updated
+* Managing XML stylesheets as a resource within this project
 * Replacing and upgrading Terraform configuration
+* Project README rewritten
 
 ### Removed
 
