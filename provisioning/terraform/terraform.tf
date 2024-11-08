@@ -11,14 +11,13 @@ terraform {
     }
   }
 
-  # Disabled until legacy resources are removed and remote state namespace available
-  #   # Remote state backend
-  #   # Source: https://gitlab.data.bas.ac.uk/WSF/terraform-remote-state
-  #   backend "s3" {
-  #     bucket = "bas-terraform-remote-state-prod"
-  #     key    = "v2/BAS-METADATA-STANDARDS/terraform.tfstate"
-  #     region = "eu-west-1"
-  #   }
+  # Remote state backend
+  # Source: https://gitlab.data.bas.ac.uk/WSF/terraform-remote-state
+  backend "s3" {
+    bucket = "bas-terraform-remote-state-prod"
+    key    = "v2/BAS-METADATA-STANDARDS/terraform.tfstate"
+    region = "eu-west-1"
+  }
 }
 
 provider "aws" {
@@ -149,6 +148,18 @@ resource "aws_s3_bucket_website_configuration" "production" {
 
 ## DNS & TLS
 ##
+
+resource "aws_route53_record" "docs" {
+  zone_id = data.terraform_remote_state.BAS-CORE-DOMAINS.outputs.DATA-BAS-AC-UK-ID
+
+  name = "metadata-standards"
+  type = "CNAME"
+  ttl  = 300
+
+  records = [
+    "7c24422890-hosting.gitbook.io",
+  ]
+}
 
 resource "aws_route53_record" "testing" {
   zone_id = data.terraform_remote_state.BAS-CORE-DOMAINS.outputs.DATA-BAS-AC-UK-ID
@@ -355,21 +366,6 @@ resource "aws_cloudfront_distribution" "production" {
     minimum_protocol_version = "TLSv1.2_2021"
     acm_certificate_arn      = aws_acm_certificate_validation.production.certificate_arn
   }
-}
-
-## DNS
-##
-
-resource "aws_route53_record" "bas-metadata-standards-staging" {
-  zone_id = data.terraform_remote_state.BAS-CORE-DOMAINS.outputs.DATA-BAS-AC-UK-ID
-
-  name = "metadata-standards-testing"
-  type = "CNAME"
-  ttl  = 300
-
-  records = [
-    "7c24422890-hosting.gitbook.io",
-  ]
 }
 
 ## IAM
