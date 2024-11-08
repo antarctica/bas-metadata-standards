@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.6.0] 2024-11-08
+
+### Changed [BREAKING!]
+
+* Jekyll static site replaced with GitBook rewrite
+
+### Removed [BREAKING!]
+
+* Outdated example ISO 19115 records
+
+### Added
+
+* Standalone `metadata-resources.data.bas.ac.uk` website setup for related resources (XML stylesheets, etc.)
+* Local media type definitions for zipped Shapefiles/GeoPackages and georeferenced PDFs
+
+### Changed
+
+* Project copyright dates updated
+* Static site content significantly streamlined and updated
+* Managing XML stylesheets as a resource within this project
+* Replacing and upgrading Terraform configuration
+* Project README rewritten
+
+### Removed
+
+* Old contributing policy
+
 ## [0.5.0] 2022-09-20
 
 ### Added

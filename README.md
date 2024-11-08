@@ -1,100 +1,113 @@
 # BAS Metadata Standards
 
-[This website](https://metadata-standards.data.bas.ac.uk) documents the metadata standards used by the
-[British Antarctic Survey](https://www.bas.ac.uk) (BAS), and the [UK Polar Data Centre](https://www.bas.ac.uk/pdc)
-(PDC), for producing discovery level metadata.
+Management, documentation, and resources for, standards used by the [British Antarctic Survey](https://www.bas.ac.uk) 
+(BAS), and the [UK Polar Data Centre](https://www.bas.ac.uk/pdc) (PDC), for producing metadata records.
 
-Decisions on which standards to use, and how to use them consistently, are managed and discussed through this project's
-[Issue Tracker](#issue-tracking) [Internal].
+## Overview
 
-The remainder of this README relates to managing the website for this project.
+**Note:** This project is focused on needs within the British Antarctic Survey. It has been open-sourced in case it is
+of interest to others. Some resources, indicated with a '🛡' or '🔒' symbol, can only be accessed by BAS staff or
+project members respectively. Contact the [Project Maintainer](#project-maintainer) to request access.
 
-## Usage
+This project aims to promote alignment and best practice across BAS for producing consistent, high quality metadata.
 
-**Note:** You will need a [Local Development Environment](#local-development-environment) to perform these tasks.
+It consists project consists of:
 
-### Adding a new standard
+- an [Issue Tracker 🛡️](https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/-/issues),
+  used to discuss and agree the use of metadata standards, profiles and the development of any associated resources
+- a [Documentation Website](https://metadata-standards.data.bas.ac.uk), providing high level information about these
+  standards, profiles and resources
+- hosting for associated resources which aid in the implementation of standards and profiles, such as JSON schemas, 
+  XML stylesheets, sample files, etc
 
-1. create a new page for the standard in `/site/_standard/`
-1. in the front matter for this page, add the page to the standards drop down menu [1]
-1. link to the new standard from the site index (`/site/index.md`)
+### Scope
 
-[1]
+This project is primarily focused on discover level metadata to aid users in finding and evaluating BAS information 
+holdings. Metadata for other use-cases may be managed by this project as well on a case by case basis.
 
-```markdown
----
-title: Foo Standard
-menus:
-  standards:
-    weight: 5
----
+## Resources
+
+### Local media types
+
+**Note:** See the [Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/media-types) for why 
+these media types exist.
+
+Local media types (MIME types) should be defined in [`resources/media-types/`](/resources/media-types/) in the form:
+`{media type name}/{media subtype name}/index.html`, e.g. `resources/media-types/application/foo/index.html`.
+
+**Note:** If registering a media type outside of the established IANA top-level types (application, text, etc.), prefix 
+it with `x-`. E.g. `resources/media-types/x-foo/bar/index.html`.
+
+Each `index.html` file should:
+
+- resemble a text file by wrapping content in a `<pre>` element
+- include a common preamble [1]
+- define the local media type using a template based on those used in the 
+  [IANA media types registry](https://www.iana.org/assignments/media-types/media-types.xhtml)
+
+**Note:** IANA registrations are known to be inconsistent over time. Our local registrations can similarly vary based
+on need (for example the `x-service` series are more minimal).
+
+Once added, media types should be listed in the 
+[Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/media-types).
+
+[1] Common preamble for local media types:
+
+```
+This file represents a local media-type registration for use within the British Antarctic Survey (BAS).
+
+It is not an official IANA media type as defined by: https://www.iana.org/assignments/media-types/media-types.xhtml
+
+For more information see: https://metadata-standards.data.bas.ac.uk/resources/media-types#local-media-types
+
+A pseudo media-type template follows.
+
+----
 ```
 
-Where the weight option, and the weight option of existing standards pages, should be set to create an alphabetical list.
+### XML stylesheets
 
-### Adding a new profile
+Any XML stylesheets should be defined in [`resources/xml-stylesheets/`](/resources/xml-stylesheets/) within a directory.
 
-1. create a new page for the profile in `/site/_profile/`
-1. in the front matter for this page, add the page to the profiles drop down menu [1]
-1. link to the new profile from the site index (`/site/index.md`)
-
-[1]
-
-```markdown
----
-title: Foo Profile
-menus:
-  profiles:
-    weight: 5
----
-```
-
-Where the weight option, and the weight option of existing profiles pages, should be set to create an alphabetical list.
-
-### Updating example ISO 19115 records
-
-1. update record configurations in `support/example-records/configs/` as needed
-2. follow the steps in the [Build example ISO 19115 records](#build-example-iso-19115-records) section
+**Note:** Browsers don't support loading stylesheets across origins. Therefore stylesheets will likely need to be
+copied to the origin the XML document will be served from, or reversed proxied to appear as though it is.
 
 ## Implementation
 
-### Jekyll static website
+### Documentation website
 
-[Jekyll](https://jekyllrb.com) is used as a framework to build a static website from content in `site/`. The
-[BAS Style Kit Jekyll Theme](https://style-kit.web.bas.ac.uk/start/introduction/#jekyll) is used to provide common
-styling and page templates. This site is hosted using AWS S3 and Cloudfront, managed using Terraform in `provisioning/`.
+The [Documentation Website](https://metadata-standards.data.bas.ac.uk) uses [GitBook](https://www.gitbook.com), 
+managed under the MAGIC account.
 
-### Example ISO 19115 records
+[GitBook Site 🔒](https://app.gitbook.com/o/-MbhSFJ1AEZxhIfX9tgr/sites/site_lZkoI).
 
-Example records for the ISO 19115 standards family are created using the
-[BAS Metadata Library](https://pypi.org/project/bas-metadata-library/) from configuration files stored in
-`support/example-records/`.
+The site configured with a custom URL, via a DNS record managed by [Terraform](#terraform), and styled to align with 
+the [BAS Style Kit](https://style-kit.web.bas.ac.uk) to the extent possible.
+
+### Resources hosting
+
+Resources can be remotely hosted via S3. Separate buckets are provided for testing and production:
+
+- Testing: [metadata-resources-testing.data.bas.ac.uk](https://metadata-resources-testing.data.bas.ac.uk)
+- Production: [metadata-resources.data.bas.ac.uk](https://metadata-resources.data.bas.ac.uk)
+
+All items within these buckets are accessible publicly. All AWS resources are managed by [Terraform](#terraform).
 
 ## Setup
 
 ### Terraform
 
-Terraform resources are defined in [`provisioning/terraform/`](/provisioning/terraform/).
+[Terraform](https://terraform.io) resources are defined in [`provisioning/terraform/`](/provisioning/terraform/).
 
-[Terraform](https://terraform.io) is used for configuring two static sites (testing/production) using AWS S3,
-CloudFront and the Amazon Certificate Manager (for HTTPS).
-
-
-Access to the [BAS AWS account](https://gitlab.data.bas.ac.uk/WSF/bas-aws) is required to provision these resources.
-Docker and Docker Compose are recommended for running Terraform.
+Access to the [BAS AWS account 🛡️](https://gitlab.data.bas.ac.uk/WSF/bas-aws) is required to provision these resources.
+Docker and Docker Compose are recommended but not required for running Terraform.
 
 ```shell
 $ cd provisioning/terraform
-$ docker-compose run terraform
+$ docker compose run terraform
 
 $ terraform init
-$ terraform validate
-$ terraform fmt
-
-$ terraform apply
-
-$ exit
-$ docker-compose down
+$ terraform ...
 ```
 
 #### Terraform remote state
@@ -103,7 +116,7 @@ State information for this project is stored remotely using a
 [Backend](https://www.terraform.io/docs/backends/index.html).
 
 Specifically the [AWS S3](https://www.terraform.io/docs/backends/types/s3.html) backend as part of the
-[BAS Terraform Remote State](https://gitlab.data.bas.ac.uk/WSF/terraform-remote-state) project.
+[BAS Terraform Remote State 🛡️](https://gitlab.data.bas.ac.uk/WSF/terraform-remote-state) project.
 
 Remote state storage will be automatically initialised when running `terraform init`. Any changes to remote state will
 be automatically saved to the remote backend, there is no need to push or pull changes.
@@ -113,125 +126,29 @@ be automatically saved to the remote backend, there is no need to push or pull c
 Permission to read and/or write remote state information for this project is restricted to authorised users. Contact
 the [BAS Web & Applications Team](mailto:servicedesk@bas.ac.uk) to request access.
 
-See the [BAS Terraform Remote State](https://gitlab.data.bas.ac.uk/WSF/terraform-remote-state) project for how these
+See the [BAS Terraform Remote State 🛡️](https://gitlab.data.bas.ac.uk/WSF/terraform-remote-state) project for how these
 permissions to remote state are enforced.
-
-## Development
-
-### Local development environment
-
-To create a local development environment:
-
-1. checkout project [1]
-2. from within project, pull or build Docker image for the static site [2]
-
-[1]
-
-```shell
-# If you have access to gitlab.data.bas.ac.uk
-$ git clone https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards.git
-# Otherwise you can checkout a read only copy
-https://github.com/antarctica/bas-metadata-standards.git
-```
-
-[2]
-
-```shell
-# If you have access to gitlab.data.bas.ac.uk
-$ docker login docker-registry.data.bas.ac.uk
-$ docker compose pull
-# If you don't have access
-$ docker compose build
-```
-
-### Build Jekyll site locally
-
-To test changes from a local development environment using the Jekyll development server:
-
-```shell
-$ docker compose up
-```
-
-Then visit http://localhost:9000.
-
-Jekyll will automatically regenerate the static site as source files are changed.
-
-To stop the development server:
-
-```shell
-# quit the running container using [ctrl] + c
-$ docker compose down
-```
-
-### Build example ISO 19115 records
-
-To update example ISO 19115 records:
-
-1. update the source record configurations in `support/example-records/configs`
-2. setup a Python virtual environment (if needed) [1]
-3. run the `support/example-records/generate-example-iso19115-records.py` script [2]
-3. copy the generated example records to the relevant part of the static site source content [3]
-
-[1]
-
-```shell
-$ cd support/example-records/
-$ python -m venv .venv
-$ source .venv/bin/activate
-$ python -m pip install --upgrade pip
-$ python -m pip install bas-metadata-library==0.8.0
-```
-
-[2]
-
-```shell
-$ cd support/example-records/
-$ source .venv/bin/activate
-$ python generate-example-iso19115-records.py
-```
-
-[3]
-
-```shell
-$ cp -r support/example-records/output/ site/static/example-records/
-```
 
 ## Deployment
 
+[Resources](#resources) managed directly by this project (i.e. within [`/resources`](#resources)) are synced to S3 
+using [Continuous Deployment](#continuous-deployment). External resources will need to provision an IAM user with 
+suitable permissions to contribute content.
+
 ### Continuous Deployment
 
-A Continuous Deployment process using GitLab's CI/CD platform is configured in `.gitlab-ci.yml`. This will:
+A Continuous Deployment process using GitLab's CI/CD platform is configured in [`.gitlab-ci.yml`](/.gitlab-ci.yml). 
 
-* build the Jekyll site
-* publish this build to the relevant AWS S3 bucket (testing or production)
+## Project maintainer
 
-Commits to the `main` branch will be published to the testing site:
-[metadata-standards-testing.data.bas.ac.uk](https://metadata-standards-testing.data.bas.ac.uk).
+British Antarctic Survey ([BAS](https://www.bas.ac.uk)) Mapping and Geographic Information Centre
+([MAGIC](https://www.bas.ac.uk/teams/magic)). Contact [magic@bas.ac.uk](mailto:magic@bas.ac.uk).
 
-Tagged commits will be published to the production site:
-[metadata-standards.data.bas.ac.uk](https://metadata-standards.data.bas.ac.uk).
-
-## Release procedure
-
-### At release
-
-1. create a `release` branch
-2. close release in `CHANGELOG.md`
-3. push changes, merge the `release` branch into `main` and tag with version
-
-The project will be built and published automatically through [Continuous Deployment](#continuous-deployment).
-
-## Issue tracking
-
-This project uses issue tracking, both for managing this website, and discussions on how metadata standards should be
-used. See the [issue tracker](https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/issues)
-[Internal] for more information.
-
-**Note**: Read & write access to this issue tracker is restricted. Contact the project maintainer to request access.
+The project lead is [@felnne](https://www.bas.ac.uk/profile/felnne).
 
 ## License
 
-Copyright (c) 2018-2022 UK Research and Innovation (UKRI), British Antarctic Survey (BAS).
+Copyright (c) 2018-2024 UK Research and Innovation (UKRI), British Antarctic Survey (BAS).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
