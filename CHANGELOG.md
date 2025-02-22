@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+* Local media type definitions for ArcGIS hosted OGC API Features services
+
 ## [0.6.0] 2024-11-08
 
 ### Changed [BREAKING!]
