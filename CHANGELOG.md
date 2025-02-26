@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.8.0] 2025-02-26
+
+### Added
+
+* Local licences
+* Operations mapping local licence v1
+
 ## [0.7.0] 2025-02-22
 
 ### Added

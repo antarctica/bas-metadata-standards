@@ -11,7 +11,7 @@ project members respectively. Contact the [Project Maintainer](#project-maintain
 
 This project aims to promote alignment and best practice across BAS for producing consistent, high quality metadata.
 
-It consists project consists of:
+It consists of:
 
 - an [Issue Tracker 🛡️](https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/-/issues),
   used to discuss and agree the use of metadata standards, profiles and the development of any associated resources
@@ -26,6 +26,19 @@ This project is primarily focused on discover level metadata to aid users in fin
 holdings. Metadata for other use-cases may be managed by this project as well on a case by case basis.
 
 ## Resources
+
+### Local licences
+
+**Note:** See the [Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/licences) for why 
+these licences exist.
+
+Local licences should be defined in [`resources/licences/`](/resources/licences/) in the form: `{licence}/index.html`, 
+e.g. `resources/licences/foo/index.html`.
+
+Each `index.html` file should contain the terms of the licence for use by end-users.
+
+Once added, licences should be listed in the 
+[Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/licences).
 
 ### Local media types
 
