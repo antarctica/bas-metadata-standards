@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * Local licences
 * Operations mapping local licence v1
+* All rights reserved local licence v1
 
 ## [0.7.0] 2025-02-22
 
