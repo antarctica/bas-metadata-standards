@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+* Moving resources site pages within resources directory to prepare for documentation site migration
+
 ## [0.8.1] 2025-03-14
 
 ### Changed
