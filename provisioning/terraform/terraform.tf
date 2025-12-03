@@ -97,10 +97,22 @@ module "resources_prod" {
   }
 }
 
+module "docs_test" {
+  source = "./modules/static-site"
 
+  providers = {
+    aws.us-east-1 = aws.us-east-1
   }
 
+  bucket_name        = "metadata-standards-testing.data.bas.ac.uk"
+  route53_zone_id    = data.terraform_remote_state.BAS-CORE-DOMAINS.outputs.DATA-BAS-AC-UK-ID
+  cloudfront_comment = "BAS Metadata Standards (Testing)"
+  ci_user_name       = aws_iam_user.gitlab-ci.name
 
+  tags = {
+    Name         = "metadata-standards-testing"
+    X-Project    = "BAS Metadata Standards"
+    X-Managed-By = "Terraform"
   }
 }
 
