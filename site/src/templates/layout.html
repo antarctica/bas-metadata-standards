@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% if page.title %}{{ page.title }} | {% endif %}BAS Metadata Standards</title>
+        <style>
+            .admonition.note {
+                color: deepskyblue;
+            }
+            .admonition.important {
+                color: rebeccapurple;
+            }
+            .admonition.tip {
+                color: lime;
+            }
+            .admonition.warning {
+                color: orange;
+            }
+            .admonition.caution {
+                color: red;
+            }
+            table {
+                border-collapse: collapse;
+                border: 1px solid black;
+            }
+            table th, table td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/">BAS Metadata Standards</a>
+                <a href="https://www.bas.ac.uk">Part of British Antarctic Survey</a>
+            </nav>
+        </header>
+        <aside>
+            {% include 'sidebar.html' %}
+        </aside>
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+        <footer>
+            FOOTER
+        </footer>
+    </body>
+</html>

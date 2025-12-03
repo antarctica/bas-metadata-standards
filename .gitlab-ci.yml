@@ -4,6 +4,7 @@ include:
   - template: 'Workflows/MergeRequest-Pipelines.gitlab-ci.yml'
 
 stages:
+  - 🏗 build
   - 🚚 publish
 
 variables:
@@ -20,6 +21,25 @@ image:
   name: governmentpaas/awscli:latest
   entrypoint: [""]
 
+build:
+  stage: 🏗 build
+  needs: []
+  image: ghcr.io/astral-sh/uv:0.9.9-python3.14-trixie-slim
+  before_script:
+    - 'cd site/'
+    - 'uv --version'
+    - 'uv sync --all-groups'
+  script:
+    - 'uv run python src/build.py'
+  artifacts:
+    paths:
+      - site/build
+    expire_in: 1 month
+  rules:
+    -
+      changes:
+        - 'site/**/*.*'
+
 publish-resources-stage:
   stage: 🚚 publish
   needs: []
@@ -27,7 +47,8 @@ publish-resources-stage:
     - "aws s3 sync resources/ s3://$S3_RESOURCES_BUCKET_STAGE/ --exclude '_site/*' --exclude '*/_site/*'"
     - "aws s3 sync resources/_site/ s3://$S3_RESOURCES_BUCKET_STAGE/"
   rules:
-    - changes:
+    -
+      changes:
         - 'resources/**/*.*'
       if: '$CI_COMMIT_BRANCH != "main" && $CI_COMMIT_TAG == null'
 
