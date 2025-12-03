@@ -16,6 +16,8 @@ variables:
   # Publishing
   S3_RESOURCES_BUCKET_STAGE: metadata-resources-testing.data.bas.ac.uk
   S3_RESOURCES_BUCKET_PROD: metadata-resources.data.bas.ac.uk
+  S3_DOCS_BUCKET_STAGE: metadata-standards-testing.data.bas.ac.uk
+  S3_DOCS_BUCKET_PROD: metadata-standards.data.bas.ac.uk
 
 image:
   name: governmentpaas/awscli:latest
@@ -46,6 +48,9 @@ publish-resources-stage:
   script:
     - "aws s3 sync resources/ s3://$S3_RESOURCES_BUCKET_STAGE/ --exclude '_site/*' --exclude '*/_site/*'"
     - "aws s3 sync resources/_site/ s3://$S3_RESOURCES_BUCKET_STAGE/"
+  environment:
+    name: resources-testing
+    url: "http://$S3_RESOURCES_BUCKET_STAGE"
   rules:
     -
       changes:
@@ -58,7 +63,26 @@ publish-resources-prod:
   script:
     - "aws s3 sync resources/ s3://$S3_RESOURCES_BUCKET_PROD/ --exclude '_site/*' --exclude '*/_site/*'"
     - "aws s3 sync resources/_site/ s3://$S3_RESOURCES_BUCKET_PROD/"
+  environment:
+    name: resources-prod
+    url: "http://$S3_RESOURCES_BUCKET_PROD"
   rules:
     - changes:
         - 'resources/**/*.*'
       if: $CI_COMMIT_TAG
+
+publish-docs-stage:
+  stage: 🚚 publish
+  needs:
+    - job: build
+      artifacts: true
+  script:
+    - "aws s3 sync site/build/ s3://$S3_DOCS_BUCKET_STAGE/ --delete"
+  environment:
+    name: docs-testing
+    url: "http://$S3_DOCS_BUCKET_STAGE"
+  rules:
+    -
+      changes:
+        - 'site/**/*.*'
+      if: '$CI_COMMIT_BRANCH != "main" && $CI_COMMIT_TAG == null'
