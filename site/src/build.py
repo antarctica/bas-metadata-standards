@@ -1,8 +1,21 @@
+import shutil
+import subprocess
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from flask_frozen import Freezer
+from jinja2 import FileSystemLoader, Environment, select_autoescape
 
 from app import app
+
+
+def _freeze_site(base_path: Path) -> None:
+    """Freeze Flask site to static files."""
+    app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
+    app.config['FREEZER_DESTINATION'] = str(base_path.resolve())
+    freezer = Freezer(app)
+    freezer.freeze()
+
 
 def _fix_pages(base_path: Path) -> None:
     """For bare files, replace with a directory containing an index.html file."""
@@ -33,12 +46,52 @@ def _fix_pages(base_path: Path) -> None:
         path.replace(new_dir / "index.html")
 
 
-output_path = Path(__file__).parent.parent / "build"
+def _build_styles(base_path: Path) -> None:
+    """
+    Generate Tailwind CSS styles.
 
-app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
-app.config['FREEZER_DESTINATION'] = str(output_path.resolve())
-freezer = Freezer(app)
+    Based on Lantern v0.5.0 build process.
+    """
+    tw_bin = Path(".venv/bin/tailwindcss")
+    styles_path = Path(__file__).parent / "styles"
+    output_path = base_path / "static" / "css" / "main.css"
+
+    _jinja = Environment(loader=FileSystemLoader(styles_path), autoescape=select_autoescape())
+    src_css = _jinja.get_template("main.css.j2").render(site_path=base_path.resolve())
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with TemporaryDirectory() as tmp_dir:
+        src_path = Path(tmp_dir) / "main.src.css"
+        with src_path.open("w") as src_file:
+            src_file.write(src_css)
+
+        subprocess.run(  # noqa: S603
+            [tw_bin, "-i", str(src_path.resolve()), "-o", str(output_path.resolve()), "--minify"], check=True
+        )
+
+    # append trailing new line
+    with output_path.open("a") as out_file:
+        out_file.write("\n")
+
+
+def _copy_fonts(base_path: Path) -> None:
+    fonts_path = Path(__file__).parent / "fonts"
+    output_path = base_path / "static" / "fonts"
+    shutil.copytree(fonts_path, output_path)
+
+
+def main() -> None:
+    """Entrypoint."""
+    output_path = Path(__file__).parent.parent / "build"
+
+    if output_path.exists():
+        shutil.rmtree(output_path)
+
+    _freeze_site(output_path)
+    _fix_pages(output_path)
+    _copy_fonts(output_path)
+    _build_styles(output_path)
+
 
 if __name__ == '__main__':
-    freezer.freeze()
-    _fix_pages(output_path)
+    main()
