@@ -7,11 +7,9 @@ This website documents the metadata standards used by the [British Antarctic Sur
 the [UK Polar Data Centre](https://www.bas.ac.uk/pdc) (UK-PDC), for producing discovery level metadata.
 
 > [!NOTE]
-> If you have been asked to provide metadata to the PDC as part of a data deposit, please see the 
-> [Creating quality metadata for research data](https://www.bas.ac.uk/data/uk-pdc/metadata-guidance/) page on the BAS 
-> website instead.
-
-> [!NOTE]
+> If you have been asked to provide metadata to the PDC as part of a data deposit, please follow the 
+> [Creating quality metadata for research data](https://www.bas.ac.uk/data/uk-pdc/metadata-guidance/) guidance instead.
+>
 > To discover BAS / UK PDC data, please see the [BAS Data Catalogue](https://data.bas.ac.uk/).
 
 ## Overview
@@ -29,4 +27,4 @@ the [UK Polar Data Centre](https://www.bas.ac.uk/pdc) (UK-PDC), for producing di
 
 > [!NOTE]
 > Standards used to exchange route information, for use in Electronic Chart Display and Information Systems (ECDIS), 
-> can be found on the [previous](https://webarchive.nationalarchives.gov.uk/ukgwa/20240701080555/https://metadata-standards.data.bas.ac.uk/standard/iec-61174/) Metadata Standards website.
+> can be found on the [Archived](https://webarchive.nationalarchives.gov.uk/ukgwa/20240701080555/https://metadata-standards.data.bas.ac.uk/standard/iec-61174/) Metadata Standards website.
