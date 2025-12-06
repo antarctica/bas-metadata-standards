@@ -74,10 +74,12 @@ def _build_styles(base_path: Path) -> None:
         out_file.write("\n")
 
 
-def _copy_fonts(base_path: Path) -> None:
-    fonts_path = Path(__file__).parent / "fonts"
-    output_path = base_path / "static" / "fonts"
-    shutil.copytree(fonts_path, output_path)
+def _copy_static(base_path: Path) -> None:
+    types = ['fonts', 'img', 'txt']
+    for t in types:
+        static_path = Path(__file__).parent / t
+        output_path = base_path / "static" / t
+        shutil.copytree(static_path, output_path)
 
 
 def main() -> None:
@@ -89,7 +91,7 @@ def main() -> None:
 
     _freeze_site(output_path)
     _fix_pages(output_path)
-    _copy_fonts(output_path)
+    _copy_static(output_path)
     _build_styles(output_path)
 
 
