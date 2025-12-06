@@ -1,68 +1,66 @@
 # BAS Metadata Standards
 
-Management, documentation, and resources for, standards used by the [British Antarctic Survey](https://www.bas.ac.uk) 
-(BAS), and the [UK Polar Data Centre](https://www.bas.ac.uk/pdc) (PDC), for producing metadata records.
+Management, documentation, and resources for, metadata standards used by the 
+[British Antarctic Survey](https://www.bas.ac.uk) and [UK Polar Data Centre](https://www.bas.ac.uk/data/uk-pdc/).
 
 ## Overview
 
-**Note:** This project is focused on needs within the British Antarctic Survey. It has been open-sourced in case it is
-of interest to others. Some resources, indicated with a '🛡' or '🔒' symbol, can only be accessed by BAS staff or
-project members respectively. Contact the [Project Maintainer](#project-maintainer) to request access.
-
-This project aims to promote alignment and best practice across BAS for producing consistent, high quality metadata.
+This project aims to promote alignment and best practice across teams within BAS for producing consistent and 
+high-quality metadata.
 
 It consists of:
 
 - an [Issue Tracker 🛡️](https://gitlab.data.bas.ac.uk/uk-pdc/metadata-infrastructure/metadata-standards/-/issues),
   used to discuss and agree the use of metadata standards, profiles and the development of any associated resources
-- a [Documentation Website](https://metadata-standards.data.bas.ac.uk), providing high level information about these
+- a [Documentation Website](https://metadata-standards.data.bas.ac.uk), providing high-level information about these
   standards, profiles and resources
-- hosting for associated resources which aid in the implementation of standards and profiles, such as JSON schemas, 
-  XML stylesheets, sample files, etc
+- a [Resources Website](https://metadata-resources.data.bas.ac.uk) for supporting resources to implement standards and 
+  profiles, including JSON schemas, XML stylesheets, sample files, etc.
 
-### Scope
-
-This project is primarily focused on discover level metadata to aid users in finding and evaluating BAS information 
-holdings. Metadata for other use-cases may be managed by this project as well on a case by case basis.
+> [!NOTE]
+> This project is focused on needs within the British Antarctic Survey. It has been open-sourced in case parts are of
+> interest to others. Some resources, indicated with a '🛡' or '🔒' symbol, can only be accessed by BAS staff or
+> project members respectively. Contact the [Project Maintainer](#project-maintainer) to request access.
 
 ## Resources
 
 ### Local licences
 
-**Note:** See the [Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/licences) for why 
-these licences exist.
+> [!NOTE]
+> See the [Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/licences) for existing licences
+> and why they exist.
 
-Local licences should be defined in [`resources/licences/`](/resources/licences/) in the form: `{licence}/index.html`, 
-e.g. `resources/licences/foo/index.html`.
+To add new licences:
 
-Each `index.html` file should contain the terms of the licence for use by end-users.
-
-Once added, licences should be listed in the 
-[Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/licences).
+- define the licence in `resources/licences/` in the form: `{licence}/index.html`
+- wrap content in a `<pre>` element to resemble a text file
+- reference the licence in `site/src/pages/resources/licences.md`
 
 ### Local media types
 
-**Note:** See the [Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/media-types) for why 
-these media types exist.
+> [!NOTE]
+> See the [Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/media-types) for existing 
+> media types and why they exist.
 
-Local media types (MIME types) should be defined in [`resources/media-types/`](/resources/media-types/) in the form:
-`{media type name}/{media subtype name}/index.html`, e.g. `resources/media-types/application/foo/index.html`.
+To add new media types:
 
-**Note:** If registering a media type outside of the established IANA top-level types (application, text, etc.), prefix 
-it with `x-`. E.g. `resources/media-types/x-foo/bar/index.html`.
+- define the media type in `resources/media-types/` in the form: `{media-type}/{media-subtype}index.html`
+- reference the licence in `site/src/pages/resources/media-types.md`
+
+> [!NOTE]
+> If registering a media type outside the established IANA top-level types (application, text, etc.), prefix it with 
+> `x-`. E.g. `resources/media-types/x-service/foo/index.html`.
 
 Each `index.html` file should:
 
-- resemble a text file by wrapping content in a `<pre>` element
+- wrap content in a `<pre>` element to resemble a text file
 - include a common preamble [1]
 - define the local media type using a template based on those used in the 
   [IANA media types registry](https://www.iana.org/assignments/media-types/media-types.xhtml)
 
-**Note:** IANA registrations are known to be inconsistent over time. Our local registrations can similarly vary based
-on need (for example the `x-service` series are more minimal).
-
-Once added, media types should be listed in the 
-[Documentation Website](https://metadata-standards.data.bas.ac.uk/resources/media-types).
+> [!NOTE]
+> IANA registrations are known to be inconsistent over time. Our local registrations can similarly vary based on need 
+> (for example the `x-service` series are more minimal).
 
 [1] Common preamble for local media types:
 
@@ -80,22 +78,39 @@ A pseudo media-type template follows.
 
 ### XML stylesheets
 
-Any XML stylesheets should be defined in [`resources/xml-stylesheets/`](/resources/xml-stylesheets/) within a directory.
+Any XML stylesheets should be defined in `resources/xml-stylesheets/` within a directory.
 
-**Note:** Browsers don't support loading stylesheets across origins. Therefore stylesheets will likely need to be
-copied to the origin the XML document will be served from, or reversed proxied to appear as though it is.
+> [!NOTE]
+> Browsers don't support loading stylesheets across origins. Therefore stylesheets will likely need to be copied to the 
+> origin the XML document will be served from, or reversed proxied to appear as though it is.
 
 ## Implementation
 
 ### Documentation website
 
-The [Documentation Website](https://metadata-standards.data.bas.ac.uk) uses [GitBook](https://www.gitbook.com), 
-managed under the MAGIC account.
+The [Documentation Website](https://metadata-standards.data.bas.ac.uk) uses a [Flask](https://flask.palletsprojects.com) 
+based static site generator, with content written in Markdown.
 
-[GitBook Site 🔒](https://app.gitbook.com/o/-MbhSFJ1AEZxhIfX9tgr/sites/site_lZkoI).
+Content stored in `site/src/pages/` is built to `site/build` by the `site/src/build.py` script which uses:
 
-The site configured with a custom URL, via a DNS record managed by [Terraform](#terraform), and styled to align with 
-the [BAS Style Kit](https://style-kit.web.bas.ac.uk) to the extent possible.
+- [Frozen-Flask](https://frozen-flask.readthedocs.io/en/latest/) to capture a Flask site as static HTML
+- [Flask file routes](https://github.com/hyperflask/flask-file-routes) within this app to render Markdown files as HTML
+- [pytailwindcss](https://github.com/timonweb/pytailwindcss) to generate Tailwind CSS styles
+- a simple method to copy other static assets (favicons, etc.)
+
+To build a preview the documentation site locally:
+
+```
+% cd site/
+% uv run python src/build.py
+% uv run python -m http.server 9000 --directory build
+```
+
+To debug the underlying Flask app locally:
+
+```
+% uv run flask --app src/app.py run --port 9000
+```
 
 ### Resources hosting
 
@@ -144,9 +159,9 @@ permissions to remote state are enforced.
 
 ## Deployment
 
-[Resources](#resources) managed directly by this project (i.e. within [`/resources`](#resources)) are synced to S3 
-using [Continuous Deployment](#continuous-deployment). External resources will need to provision an IAM user with 
-suitable permissions to contribute content.
+[Resources](#resources) and the [Documentation Website](#documentation-website) are synced to S3 using 
+[Continuous Deployment](#continuous-deployment). Related external projects can contribute their own resources by 
+provisioning an IAM user with suitable S3 permissions.
 
 ### Continuous Deployment
 
@@ -154,10 +169,14 @@ A Continuous Deployment process using GitLab's CI/CD platform is configured in [
 
 ## Project maintainer
 
-British Antarctic Survey ([BAS](https://www.bas.ac.uk)) Mapping and Geographic Information Centre
-([MAGIC](https://www.bas.ac.uk/teams/magic)). Contact [magic@bas.ac.uk](mailto:magic@bas.ac.uk).
+Mapping and Geographic Information Centre ([MAGIC](https://www.bas.ac.uk/teams/magic)), British Antarctic Survey
+([BAS](https://www.bas.ac.uk)).
 
-The project lead is [@felnne](https://www.bas.ac.uk/profile/felnne).
+Project lead: [@felnne](https://www.bas.ac.uk/profile/felnne).
+
+## Data protection
+
+A Data Protection Impact Assessment (DPIA) does not apply to this project.
 
 ## License
 
