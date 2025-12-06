@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+* Local media type definition for ArcGIS hosted raster tiles
+* Local media type definition for Garmin FPL files
+* Local media type definition for GPX files
+
 ## [0.9.0] 2025-12-06
 
 ### Changed

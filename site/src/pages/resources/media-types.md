@@ -37,6 +37,8 @@ media type is available. Wherever possible, local types are based on a broader o
 | Type                                                                                                                             | Name                        |
 |----------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
 | [`application/pdf+geo`](https://metadata-resources-testing.data.bas.ac.uk/media-types/application/pdf+geo)                       | Geo-referenced PDF document |
+| [`application/fpl+xml`](https://metadata-resources.data.bas.ac.uk/media-types/application/fpl+xml)                               | Garmin Flight Plan          |
+| [`application/gpx+xml`](https://metadata-resources.data.bas.ac.uk/media-types/application/gpx+xml)                               | GPS Exchange Format         |
 | [`application/geopackage+sqlite3+zip`](https://metadata-resources.data.bas.ac.uk/media-types/application/geopackage+sqlite3+zip) | Zipped GeoPackage           |
 | [`application/vnd.shp+zip`](https://metadata-resources.data.bas.ac.uk/media-types/application/vnd.shp+zip)                       | Zipped Shapefile            |
 
@@ -46,7 +48,7 @@ A set of additional [Local Media Types](https://metadata-standards.data.bas.ac.u
 are defined to represent services within distribution options.
 
 > [!WARNING]
-> This approach is known bad practice but cannot be fixed until services (and service bindings) can be used within the 
+> This approach is a known bad practice but cannot be fixed until services (and service bindings) can be used within the 
 > BAS metadata ecosystem.
 
 | Type                                                                                                                                 | Name                                 |
@@ -54,6 +56,8 @@ are defined to represent services within distribution options.
 | [`x-service/arcgis+service+feature`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+feature)         | Esri ArcGIS Feature Service          |
 | [`x-service/ogc+api+feature`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/ogc+api+feature/)                      | OGC API Features Service             |
 | [`x-service/arcgis+service+tile+vector`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+tile+vector) | Esri ArcGIS Vector Tile Service      |
+| [`x-service/arcgis+service+tile+raster`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+tile+raster) | Esri ArcGIS Raster Tile Service      |
 | [`x-service/arcgis+layer+feature`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+feature)             | Esri ArcGIS Hosted Feature Layer     |
 | [`x-service/arcgis+layer+feature+ogc`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+feature+ogc/)    | Esri ArcGIS Hosted OGC Feature Layer |
 | [`x-service/arcgis+layer+tile+vector`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+tile+vector)     | Esri ArcGIS Hosted Vector Tile Layer |
+| [`x-service/arcgis+layer+tile+raster`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+tile+raster)     | Esri ArcGIS Hosted Raster Tile Layer |
