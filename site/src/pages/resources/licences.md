@@ -36,4 +36,11 @@ It is the most restrictive licence we can assign (separate to limiting access to
 
 ### Operations Mapping (v1)
 
+> [!IMPORTANT]
+> This licence is replaced by the 'MAGIC Products' licence and is no longer recommended for use in new works.
+
 [Licence Text](https://metadata-resources.data.bas.ac.uk/licences/operations-mapping-v1/)
+
+### MAGIC Products (v1)
+
+[Licence Text](https://metadata-resources.data.bas.ac.uk/licences/magic-products-v1)
