@@ -42,19 +42,6 @@ data "terraform_remote_state" "BAS-CORE-DOMAINS" {
   }
 }
 
-
-resource "aws_route53_record" "docs" {
-  zone_id = data.terraform_remote_state.BAS-CORE-DOMAINS.outputs.DATA-BAS-AC-UK-ID
-
-  name = "metadata-standards"
-  type = "CNAME"
-  ttl  = 300
-
-  records = [
-    "haproxy0.nerc-bas.ac.uk",
-  ]
-}
-
 resource "aws_iam_user" "gitlab-ci" {
   name = "bas-gitlab-ci-bas-metadata-standards"
 }
@@ -116,3 +103,21 @@ module "docs_test" {
   }
 }
 
+module "docs_prod" {
+  source = "./modules/static-site"
+
+  providers = {
+    aws.us-east-1 = aws.us-east-1
+  }
+
+  bucket_name        = "metadata-standards.data.bas.ac.uk"
+  route53_zone_id    = data.terraform_remote_state.BAS-CORE-DOMAINS.outputs.DATA-BAS-AC-UK-ID
+  cloudfront_comment = "BAS Metadata Standards"
+  ci_user_name       = aws_iam_user.gitlab-ci.name
+
+  tags = {
+    Name         = "metadata-standards"
+    X-Project    = "BAS Metadata Standards"
+    X-Managed-By = "Terraform"
+  }
+}
