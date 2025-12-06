@@ -10,3 +10,8 @@ dependencies = [
     "markdown-gfm-admonition>=0.3.0",
     "pytailwindcss>=0.3.0",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.8",
+]

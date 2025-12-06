@@ -11,8 +11,8 @@ from app import app
 
 def _freeze_site(base_path: Path) -> None:
     """Freeze Flask site to static files."""
-    app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
-    app.config['FREEZER_DESTINATION'] = str(base_path.resolve())
+    app.config["FREEZER_IGNORE_MIMETYPE_WARNINGS"] = True
+    app.config["FREEZER_DESTINATION"] = str(base_path.resolve())
     freezer = Freezer(app)
     freezer.freeze()
 
@@ -56,7 +56,9 @@ def _build_styles(base_path: Path) -> None:
     styles_path = Path(__file__).parent / "styles"
     output_path = base_path / "static" / "css" / "main.css"
 
-    _jinja = Environment(loader=FileSystemLoader(styles_path), autoescape=select_autoescape())
+    _jinja = Environment(
+        loader=FileSystemLoader(styles_path), autoescape=select_autoescape()
+    )
     src_css = _jinja.get_template("main.css.j2").render(site_path=base_path.resolve())
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -66,7 +68,15 @@ def _build_styles(base_path: Path) -> None:
             src_file.write(src_css)
 
         subprocess.run(  # noqa: S603
-            [tw_bin, "-i", str(src_path.resolve()), "-o", str(output_path.resolve()), "--minify"], check=True
+            [
+                tw_bin,
+                "-i",
+                str(src_path.resolve()),
+                "-o",
+                str(output_path.resolve()),
+                "--minify",
+            ],
+            check=True,
         )
 
     # append trailing new line
@@ -75,7 +85,7 @@ def _build_styles(base_path: Path) -> None:
 
 
 def _copy_static(base_path: Path) -> None:
-    types = ['fonts', 'img', 'txt']
+    types = ["fonts", "img", "txt"]
     for t in types:
         static_path = Path(__file__).parent / t
         output_path = base_path / "static" / t
@@ -95,5 +105,5 @@ def main() -> None:
     _build_styles(output_path)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
