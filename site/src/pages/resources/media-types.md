@@ -28,7 +28,7 @@ A set of local media types are registered for use within BAS to provide addition
 media type is available. Wherever possible, local types are based on a broader or closest matching IANA registered type.
 
 > [!NOTE]
-> For example the [`application/pdf+geo`](https://metadata-resources-testing.data.bas.ac.uk/media-types/application/pdf+geo) 
+> For example the [`application/pdf+geo`](https://metadata-resources.data.bas.ac.uk/media-types/application/pdf+geo) 
 > local media type is based on the IANA [`application/pdf`](https://www.iana.org/assignments/media-types/application/pdf) type.
 
 > [!WARNING]
@@ -36,7 +36,7 @@ media type is available. Wherever possible, local types are based on a broader o
 
 | Type                                                                                                                             | Name                        |
 |----------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [`application/pdf+geo`](https://metadata-resources-testing.data.bas.ac.uk/media-types/application/pdf+geo)                       | Geo-referenced PDF document |
+| [`application/pdf+geo`](https://metadata-resources.data.bas.ac.uk/media-types/application/pdf+geo)                               | Geo-referenced PDF document |
 | [`application/fpl+xml`](https://metadata-resources.data.bas.ac.uk/media-types/application/fpl+xml)                               | Garmin Flight Plan          |
 | [`application/gpx+xml`](https://metadata-resources.data.bas.ac.uk/media-types/application/gpx+xml)                               | GPS Exchange Format         |
 | [`application/geopackage+sqlite3+zip`](https://metadata-resources.data.bas.ac.uk/media-types/application/geopackage+sqlite3+zip) | Zipped GeoPackage           |
