@@ -46,6 +46,30 @@ def _fix_pages(base_path: Path) -> None:
         path.replace(new_dir / "index.html")
 
 
+def _handle_legacy_urls(base_path: Path) -> None:
+    """Create legacy URL redirects."""
+    legacy_map = {
+        "profiles/magic-discovery-v1/index.html": "/profiles/magic-discovery/v1/",
+    }
+
+    for old, new in legacy_map.items():
+        old_path = base_path / old
+        old_path.parent.mkdir(parents=True, exist_ok=True)
+        with old_path.open("w") as f:
+            f.write(f"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={new}">
+    <title>Redirect</title>
+</head>
+<body>
+    <p>Redirecting to new URL...</p>
+</body>
+</html>
+""")
+
 def _build_styles(base_path: Path) -> None:
     """
     Generate Tailwind CSS styles.
@@ -101,6 +125,7 @@ def main() -> None:
 
     _freeze_site(output_path)
     _fix_pages(output_path)
+    _handle_legacy_urls(output_path)
     _copy_static(output_path)
     _build_styles(output_path)
 
