@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * Local media type definition for GPX files
 * MAGIC products local licence v1
 * MAGIC Administrative metadata profile v1
+* MAGIC Discovery metadata profile v2
 
 ## [0.9.0] 2025-12-06
 
