@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+* MAGIC Administrative metadata profile v1
+* MAGIC Discovery metadata profile v2
+
 ## [0.10.0] 2026-02-11
 
 ### Added
