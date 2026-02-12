@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * MAGIC Administrative metadata profile v1
 * MAGIC Discovery metadata profile v2
 
+### Changed
+
+* Streamlining Terraform/OpenTofu provisioning, and improving security configuration of AWS CloudFront distributions
+
 ## [0.9.0] 2025-12-06
 
 ### Changed
