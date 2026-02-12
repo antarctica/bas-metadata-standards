@@ -23,8 +23,6 @@ the [UK Polar Data Centre](https://www.bas.ac.uk/pdc) (UK-PDC), for producing di
 | [ISO 19139](/standards/iso-19115-19139#iso-19139)              | Standard (Encoding)            | ISO 19115   | Encoding of ISO 19115:2003 implemented using XML                            |
 | [ISO 19139-2](/standards/iso-19115-19139#iso-19139)            | Standard (Encoding, Extension) | ISO 19115-2 | ISO 19115-2:2009 implemented using XML                                      |
 | [MAGIC Discovery (v1)](/profiles/magic-discovery/v1)           | Profile                        | ISO 19115-2 | Minimum metadata for MAGIC discovery records                                |
-| [MAGIC Discovery (v2)](/profiles/magic-discovery/v2)           | Profile                        | ISO 19115-2 | Minimum metadata for MAGIC discovery records                                |
-| [MAGIC Administrative (v1)](/profiles/magic-administrative/v1) | Profile                        | -           | Minimum metadata for internally administrating MAGIC records                |
 
 > [!NOTE]
 > Standards used to exchange route information, for use in Electronic Chart Display and Information Systems (ECDIS), 
