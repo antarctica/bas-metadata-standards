@@ -9,12 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+### Added
+
 * Local media type definition for ArcGIS hosted raster tiles
 * Local media type definition for Garmin FPL files
 * Local media type definition for GPX files
 * MAGIC products local licence v1
-* MAGIC Administrative metadata profile v1
-* MAGIC Discovery metadata profile v2
 
 ### Changed
 
