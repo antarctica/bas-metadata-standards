@@ -125,37 +125,28 @@ All items within these buckets are accessible publicly. All AWS resources are ma
 
 ### Terraform
 
-[Terraform](https://terraform.io) resources are defined in [`provisioning/terraform/`](/provisioning/terraform/).
+[Terraform](https://terraform.io) resources, managed using [OpenTofu](https://opentofu.org), are defined in 
+`provisioning/terraform/`.
 
-Access to the [BAS AWS account 🛡️](https://gitlab.data.bas.ac.uk/WSF/bas-aws) is required to provision these resources.
-Docker and Docker Compose are recommended but not required for running Terraform.
+> [!IMPORTANT]
+> Access to the [BAS AWS account 🛡️](https://gitlab.data.bas.ac.uk/WSF/bas-aws) is required to provision these resources.
 
 ```shell
-$ cd provisioning/terraform
-$ docker compose run terraform
-
-$ terraform init
-$ terraform ...
+% brew install opentofu
+% tofu init
+% tofu ...
 ```
 
 #### Terraform remote state
 
 State information for this project is stored remotely using a
-[Backend](https://www.terraform.io/docs/backends/index.html).
-
-Specifically the [AWS S3](https://www.terraform.io/docs/backends/types/s3.html) backend as part of the
+[Backend](https://opentofu.org/docs/v1.11/language/settings/backends/configuration/). Specifically the 
+[AWS S3](https://opentofu.org/docs/v1.11/language/settings/backends/s3/) backend as part of the
 [BAS Terraform Remote State 🛡️](https://gitlab.data.bas.ac.uk/WSF/terraform-remote-state) project.
 
-Remote state storage will be automatically initialised when running `terraform init`. Any changes to remote state will
-be automatically saved to the remote backend, there is no need to push or pull changes.
-
-##### Remote state authentication
-
-Permission to read and/or write remote state information for this project is restricted to authorised users. Contact
-the [BAS Web & Applications Team](mailto:servicedesk@bas.ac.uk) to request access.
-
-See the [BAS Terraform Remote State 🛡️](https://gitlab.data.bas.ac.uk/WSF/terraform-remote-state) project for how these
-permissions to remote state are enforced.
+> [!TIP] 
+> Remote state storage configured automatically via `tofu init` and updated automatically, there is no need to push or 
+> pull changes.
 
 ## Deployment
 
