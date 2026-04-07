@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+* Amendment to MAGIC Discovery metadata profile v2 (catalogue identifier namespace)
+
 ## [0.11.0] 2026-02-25
 
 ### Added
