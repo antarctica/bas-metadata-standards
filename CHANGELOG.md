@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.13.0] 2026-06-29
+
+### Added
+
+* Local media type definition for Georeferenced TIFFs
+
+### Changed
+
+* Local media type definition for Georeferenced PDFs from `application/pdf+geo` to `application/geo+pdf`
+
 ## [0.12.0] 2026-04-07
 
 ### Changed
