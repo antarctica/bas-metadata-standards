@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.14.0] 2026-07-06
+
+### Added
+
+* Local media type definitions for ArcGIS S3 scenes and web maps
+
 ## [0.13.0] 2026-06-29
 
 ### Added
