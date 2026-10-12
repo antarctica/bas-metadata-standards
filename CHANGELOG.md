@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+* Correcting HTML character encoding in media type registrations (for author emails)
+
 ## [0.14.0] 2026-07-06
 
 ### Added
