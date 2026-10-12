@@ -54,18 +54,25 @@ A set of additional [Local Media Types](https://metadata-standards.data.bas.ac.u
 are defined to represent services within distribution options.
 
 > [!WARNING]
-> This approach is not a best practice but cannot be fixed until services are supported within the BAS metadata ecosystem.
+> This approach is a known bad practice but cannot be fixed until services (and service bindings) can be used within the 
+> BAS metadata ecosystem.
 
-| Type                                                                                                                                 | Name                            | Status |
-|--------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|--------|
-| [`x-service/arcgis+service+feature`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+feature)         | Esri ArcGIS Feature Service     | Live   |
-| [`x-service/ogc+api+feature`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/ogc+api+feature)                       | OGC API Features Service        | Live   |
-| [`x-service/arcgis+service+scene`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+scene)             | Esri ArcGIS Scene Service       | Live   |
-| [`x-service/arcgis+service+tile+raster`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+tile+raster) | Esri ArcGIS Raster Tile Service | Live   |
-| [`x-service/arcgis+service+tile+vector`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+tile+vector) | Esri ArcGIS Vector Tile Service | Live   |
-| [`x-service/arcgis+layer+feature`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+feature)             | Esri ArcGIS Feature Layer       | Live   |
-| [`x-service/arcgis+layer+feature+ogc`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+feature+ogc)     | Esri ArcGIS OGC Feature Layer   | Live   |
-| [`x-service/arcgis+layer+scene`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+scene)                 | Esri ArcGIS Scene Layer         | Live   |
-| [`x-service/arcgis+layer+tile+raster`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+tile+raster)     | Esri ArcGIS Raster Tile Layer   | Live   |
-| [`x-service/arcgis+layer+tile+vector`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+tile+vector)     | Esri ArcGIS Vector Tile Layer   | Live   |
-| [`x-service/arcgis+webmap`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+webmap)                           | Esri ArcGIS Web Map             | Live   |
+| Type                                                                                                                                 | Name                                 | Status  |
+|--------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|---------|
+| [`x-service/arcgis+service+feature`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+feature)         | Esri ArcGIS Feature Service          | Live    |
+| [`x-service/ogc+api+feature`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/ogc+api+feature)                       | OGC API Features Service             | Live    |
+| [`x-service/arcgis+service+tile+vector`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+tile+vector) | Esri ArcGIS Vector Tile Service      | Live    |
+| [`x-service/arcgis+service+tile+raster`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+tile+raster) | Esri ArcGIS Raster Tile Service      | Live    |
+| [`x-service/arcgis+layer+feature`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+feature)             | Esri ArcGIS Hosted Feature Layer     | Live    |
+| [`x-service/arcgis+layer+feature+ogc`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+feature+ogc)     | Esri ArcGIS Hosted OGC Feature Layer | Live    |
+| [`x-service/arcgis+layer+tile+vector`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+tile+vector)     | Esri ArcGIS Hosted Vector Tile Layer | Live    |
+| [`x-service/arcgis+layer+tile+raster`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+tile+raster)     | Esri ArcGIS Hosted Raster Tile Layer | Live    |
+| [`x-service/arcgis+web+map`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+web+map)                         | ArcGIS Web Map                       | Live    |
+| [`x-service/arcgis+web+scene`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+web+scene)                     | ArcGIS Web Scene                     | Live    |
+| [`x-service/arcgis+webmap`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+webmap)                           | ArcGIS Web Map                       | Retired |
+| [`x-service/arcgis+service+scene`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+service+scene)             | ArcGIS Scene Service (Invalid)       | Retired |
+| [`x-service/arcgis+layer+scene`](https://metadata-resources.data.bas.ac.uk/media-types/x-service/arcgis+layer+scene)                 | ArcGIS Scene Layer (Invalid)         | Retired |
+
+> [!NOTE]
+> The `x-service/arcgis+service+scene` and `x-service/arcgis+layer+scene` registrations were created by mistake and are
+> retired. The `x-service/arcgis+web+scene` MAY make sense as an alternative/replacement.

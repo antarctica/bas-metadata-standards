@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed [BREAKING!]
+
+* Replacing media type registrations for ArcGIS web maps and scenes
+
 ### Fixed
 
 * Correcting HTML character encoding in media type registrations (for author emails)
