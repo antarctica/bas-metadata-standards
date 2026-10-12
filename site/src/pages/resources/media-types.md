@@ -28,11 +28,12 @@ A set of local media types are registered for use within BAS to provide addition
 media type is available. Wherever possible, local types are based on a broader or closest matching IANA registered type.
 
 > [!NOTE]
-> For example the [`application/geo+pdf`](https://metadata-resources.data.bas.ac.uk/media-types/application/geo+pdf) 
+> For example the [`application/pdf+geo`](https://metadata-resources.data.bas.ac.uk/media-types/application/pdf+geo) 
 > local media type is based on the IANA [`application/pdf`](https://www.iana.org/assignments/media-types/application/pdf) type.
 
 > [!WARNING]
-> These local types are intended for use within metadata records included in the BAS Data Catalogue. They may be used by others for other purposes if useful, but may be changed or removed at any time.
+> These local types are intended for use within metadata records included in the BAS Data Catalogue. They may be used 
+> by others for other purposes if useful, but may be changed or removed at any time.
 
 | Type                                                                                                                             | Name                        | Status     |
 |----------------------------------------------------------------------------------------------------------------------------------|-----------------------------|------------|

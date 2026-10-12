@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.15.0] 2026-10-12
+
 ### Changed [BREAKING!]
 
 * Replacing media type registrations for ArcGIS web maps and scenes
@@ -15,11 +17,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * Correcting HTML character encoding in media type registrations (for author emails)
 
+### Changed
+
+* Marking MAGIC Discovery profile v1 as retired
+
 ## [0.14.0] 2026-07-06
 
 ### Added
 
-* Local media type definitions for ArcGIS S3 scenes and web maps
+* Local media type definitions for ArcGIS 3D scenes and web maps
 
 ## [0.13.0] 2026-06-29
 
